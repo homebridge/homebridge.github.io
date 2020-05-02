@@ -1,0 +1,4710 @@
+[
+    {
+        "name": "AccessControlLevel",
+        "displayName": "Access Control Level",
+        "UUID": "000000E5-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint16",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": 1,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "AccessoryFlags",
+        "displayName": "Accessory Flags",
+        "UUID": "000000A6-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint32",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "AccessoryIdentifier",
+        "displayName": "Accessory Identifier",
+        "UUID": "00000057-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "string",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "Active",
+        "displayName": "Active",
+        "UUID": "000000B0-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "INACTIVE",
+                "value": 0
+            },
+            {
+                "key": "ACTIVE",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "ActiveIdentifier",
+        "displayName": "Active Identifier",
+        "UUID": "000000E7-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint32",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "AdministratorOnlyAccess",
+        "displayName": "Administrator Only Access",
+        "UUID": "00000001-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "AirParticulateDensity",
+        "displayName": "Air Particulate Density",
+        "UUID": "00000064-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1000,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "AirParticulateSize",
+        "displayName": "Air Particulate Size",
+        "UUID": "00000065-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "_2_5_M",
+                "value": 0
+            },
+            {
+                "key": "_10_M",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "AirQuality",
+        "displayName": "Air Quality",
+        "UUID": "00000095-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 5,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "constValues": [
+            {
+                "key": "UNKNOWN",
+                "value": 0
+            },
+            {
+                "key": "EXCELLENT",
+                "value": 1
+            },
+            {
+                "key": "GOOD",
+                "value": 2
+            },
+            {
+                "key": "FAIR",
+                "value": 3
+            },
+            {
+                "key": "INFERIOR",
+                "value": 4
+            },
+            {
+                "key": "POOR",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "name": "AppMatchingIdentifier",
+        "displayName": "App Matching Identifier",
+        "UUID": "000000A4-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "AudioFeedback",
+        "displayName": "Audio Feedback",
+        "UUID": "00000005-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "BatteryLevel",
+        "displayName": "Battery Level",
+        "UUID": "00000068-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": "percentage",
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "Brightness",
+        "displayName": "Brightness",
+        "UUID": "00000008-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "int",
+            "unit": "percentage",
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ButtonEvent",
+        "displayName": "Button Event",
+        "UUID": "00000126-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "adminOnlyAccess": [
+                2
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CameraOperatingModeIndicator",
+        "displayName": "Camera Operating Mode Indicator",
+        "UUID": "0000021D-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev",
+                "tw"
+            ]
+        },
+        "constValues": [
+            {
+                "key": "DISABLE",
+                "value": 0
+            },
+            {
+                "key": "ENABLE",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "CarbonDioxideDetected",
+        "displayName": "Carbon Dioxide Detected",
+        "UUID": "00000092-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "CO2_LEVELS_NORMAL",
+                "value": 0
+            },
+            {
+                "key": "CO2_LEVELS_ABNORMAL",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "CarbonDioxideLevel",
+        "displayName": "Carbon Dioxide Level",
+        "UUID": "00000093-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 100000,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CarbonDioxidePeakLevel",
+        "displayName": "Carbon Dioxide Peak Level",
+        "UUID": "00000094-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 100000,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CarbonMonoxideDetected",
+        "displayName": "Carbon Monoxide Detected",
+        "UUID": "00000069-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "CO_LEVELS_NORMAL",
+                "value": 0
+            },
+            {
+                "key": "CO_LEVELS_ABNORMAL",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "CarbonMonoxideLevel",
+        "displayName": "Carbon Monoxide Level",
+        "UUID": "00000090-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CarbonMonoxidePeakLevel",
+        "displayName": "Carbon Monoxide Peak Level",
+        "UUID": "00000091-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "Category",
+        "displayName": "Category",
+        "UUID": "000000A3-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint16",
+            "unit": null,
+            "minValue": 1,
+            "maxValue": 16,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ChargingState",
+        "displayName": "Charging State",
+        "UUID": "0000008F-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        "constValues": [
+            {
+                "key": "NOT_CHARGING",
+                "value": 0
+            },
+            {
+                "key": "CHARGING",
+                "value": 1
+            },
+            {
+                "key": "NOT_CHARGEABLE",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "ClosedCaptions",
+        "displayName": "Closed Captions",
+        "UUID": "000000DD-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "DISABLED",
+                "value": 0
+            },
+            {
+                "key": "ENABLED",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "ColorTemperature",
+        "displayName": "Color Temperature",
+        "UUID": "000000CE-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint32",
+            "unit": null,
+            "minValue": 140,
+            "maxValue": 500,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ConfigureBridgedAccessory",
+        "displayName": "Configure Bridged Accessory",
+        "UUID": "000000A0-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ConfigureBridgedAccessoryStatus",
+        "displayName": "Configure Bridged Accessory Status",
+        "UUID": "0000009D-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ConfiguredName",
+        "displayName": "Configured Name",
+        "UUID": "000000E3-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "string",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ContactSensorState",
+        "displayName": "Contact Sensor State",
+        "UUID": "0000006A-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "CONTACT_DETECTED",
+                "value": 0
+            },
+            {
+                "key": "CONTACT_NOT_DETECTED",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "CoolingThresholdTemperature",
+        "displayName": "Cooling Threshold Temperature",
+        "UUID": "0000000D-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": "celsius",
+            "minValue": 10,
+            "maxValue": 35,
+            "minStep": 0.1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CurrentAirPurifierState",
+        "displayName": "Current Air Purifier State",
+        "UUID": "000000A9-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        "constValues": [
+            {
+                "key": "INACTIVE",
+                "value": 0
+            },
+            {
+                "key": "IDLE",
+                "value": 1
+            },
+            {
+                "key": "PURIFYING_AIR",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "CurrentAmbientLightLevel",
+        "displayName": "Current Ambient Light Level",
+        "UUID": "0000006B-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": "lux",
+            "minValue": 0.0001,
+            "maxValue": 100000,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CurrentDoorState",
+        "displayName": "Current Door State",
+        "UUID": "0000000E-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 4,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        "constValues": [
+            {
+                "key": "OPEN",
+                "value": 0
+            },
+            {
+                "key": "CLOSED",
+                "value": 1
+            },
+            {
+                "key": "OPENING",
+                "value": 2
+            },
+            {
+                "key": "CLOSING",
+                "value": 3
+            },
+            {
+                "key": "STOPPED",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "name": "CurrentFanState",
+        "displayName": "Current Fan State",
+        "UUID": "000000AF-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        "constValues": [
+            {
+                "key": "INACTIVE",
+                "value": 0
+            },
+            {
+                "key": "IDLE",
+                "value": 1
+            },
+            {
+                "key": "BLOWING_AIR",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "CurrentHeaterCoolerState",
+        "displayName": "Current Heater Cooler State",
+        "UUID": "000000B1-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 3,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3
+            ]
+        },
+        "constValues": [
+            {
+                "key": "INACTIVE",
+                "value": 0
+            },
+            {
+                "key": "IDLE",
+                "value": 1
+            },
+            {
+                "key": "HEATING",
+                "value": 2
+            },
+            {
+                "key": "COOLING",
+                "value": 3
+            }
+        ]
+    },
+    {
+        "name": "CurrentHeatingCoolingState",
+        "displayName": "Current Heating Cooling State",
+        "UUID": "0000000F-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        "constValues": [
+            {
+                "key": "OFF",
+                "value": 0
+            },
+            {
+                "key": "HEAT",
+                "value": 1
+            },
+            {
+                "key": "COOL",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "CurrentHorizontalTiltAngle",
+        "displayName": "Current Horizontal Tilt Angle",
+        "UUID": "0000006C-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "int",
+            "unit": "arcdegrees",
+            "minValue": -90,
+            "maxValue": 90,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CurrentHumidifierDehumidifierState",
+        "displayName": "Current Humidifier Dehumidifier State",
+        "UUID": "000000B3-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 3,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3
+            ]
+        },
+        "constValues": [
+            {
+                "key": "INACTIVE",
+                "value": 0
+            },
+            {
+                "key": "IDLE",
+                "value": 1
+            },
+            {
+                "key": "HUMIDIFYING",
+                "value": 2
+            },
+            {
+                "key": "DEHUMIDIFYING",
+                "value": 3
+            }
+        ]
+    },
+    {
+        "name": "CurrentMediaState",
+        "displayName": "Current Media State",
+        "UUID": "000000E0-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 5,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "constValues": [
+            {
+                "key": "PLAY",
+                "value": 0
+            },
+            {
+                "key": "PAUSE",
+                "value": 1
+            },
+            {
+                "key": "STOP",
+                "value": 2
+            },
+            {
+                "key": "LOADING",
+                "value": 4
+            },
+            {
+                "key": "INTERRUPTED",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "name": "CurrentPosition",
+        "displayName": "Current Position",
+        "UUID": "0000006D-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": "percentage",
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CurrentRelativeHumidity",
+        "displayName": "Current Relative Humidity",
+        "UUID": "00000010-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": "percentage",
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CurrentSlatState",
+        "displayName": "Current Slat State",
+        "UUID": "000000AA-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        "constValues": [
+            {
+                "key": "FIXED",
+                "value": 0
+            },
+            {
+                "key": "JAMMED",
+                "value": 1
+            },
+            {
+                "key": "SWINGING",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "CurrentTemperature",
+        "displayName": "Current Temperature",
+        "UUID": "00000011-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": "celsius",
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": 0.1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CurrentTiltAngle",
+        "displayName": "Current Tilt Angle",
+        "UUID": "000000C1-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "int",
+            "unit": "arcdegrees",
+            "minValue": -90,
+            "maxValue": 90,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CurrentTime",
+        "displayName": "Current Time",
+        "UUID": "0000009B-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "string",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CurrentVerticalTiltAngle",
+        "displayName": "Current Vertical Tilt Angle",
+        "UUID": "0000006E-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "int",
+            "unit": "arcdegrees",
+            "minValue": -90,
+            "maxValue": 90,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CurrentVisibilityState",
+        "displayName": "Current Visibility State",
+        "UUID": "00000135-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 3,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3
+            ]
+        },
+        "constValues": [
+            {
+                "key": "SHOWN",
+                "value": 0
+            },
+            {
+                "key": "HIDDEN",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "DayoftheWeek",
+        "displayName": "Day of the Week",
+        "UUID": "00000098-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 1,
+            "maxValue": 7,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "DiagonalFieldOfView",
+        "displayName": "Diagonal Field Of View",
+        "UUID": "00000224-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": "arcdegrees",
+            "minValue": 0,
+            "maxValue": 360,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "DigitalZoom",
+        "displayName": "Digital Zoom",
+        "UUID": "0000011D-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "DiscoverBridgedAccessories",
+        "displayName": "Discover Bridged Accessories",
+        "UUID": "0000009E-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": [
+            {
+                "key": "START_DISCOVERY",
+                "value": 0
+            },
+            {
+                "key": "STOP_DISCOVERY",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "DiscoveredBridgedAccessories",
+        "displayName": "Discovered Bridged Accessories",
+        "UUID": "0000009F-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint16",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "DisplayOrder",
+        "displayName": "Display Order",
+        "UUID": "00000136-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "EventSnapshotsActive",
+        "displayName": "Event Snapshots Active",
+        "UUID": "00000223-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": [
+            {
+                "key": "DISABLE",
+                "value": 0
+            },
+            {
+                "key": "ENABLE",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "FilterChangeIndication",
+        "displayName": "Filter Change Indication",
+        "UUID": "000000AC-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "FILTER_OK",
+                "value": 0
+            },
+            {
+                "key": "CHANGE_FILTER",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "FilterLifeLevel",
+        "displayName": "Filter Life Level",
+        "UUID": "000000AB-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "FirmwareRevision",
+        "displayName": "Firmware Revision",
+        "UUID": "00000052-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "string",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "HardwareRevision",
+        "displayName": "Hardware Revision",
+        "UUID": "00000053-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "string",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "HeatingThresholdTemperature",
+        "displayName": "Heating Threshold Temperature",
+        "UUID": "00000012-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": "celsius",
+            "minValue": 0,
+            "maxValue": 25,
+            "minStep": 0.1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "HoldPosition",
+        "displayName": "Hold Position",
+        "UUID": "0000006F-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "HomeKitCameraActive",
+        "displayName": "HomeKit Camera Active",
+        "UUID": "0000021B-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev",
+                "tw"
+            ]
+        },
+        "constValues": [
+            {
+                "key": "OFF",
+                "value": 0
+            },
+            {
+                "key": "ON",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "Hue",
+        "displayName": "Hue",
+        "UUID": "00000013-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": "arcdegrees",
+            "minValue": 0,
+            "maxValue": 360,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "Identifier",
+        "displayName": "Identifier",
+        "UUID": "000000E6-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint32",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": null,
+            "minStep": 1,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "Identify",
+        "displayName": "Identify",
+        "UUID": "00000014-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ImageMirroring",
+        "displayName": "Image Mirroring",
+        "UUID": "0000011F-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ImageRotation",
+        "displayName": "Image Rotation",
+        "UUID": "0000011E-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": "arcdegrees",
+            "minValue": 0,
+            "maxValue": 270,
+            "minStep": 90,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "InUse",
+        "displayName": "In Use",
+        "UUID": "000000D2-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "NOT_IN_USE",
+                "value": 0
+            },
+            {
+                "key": "IN_USE",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "InputDeviceType",
+        "displayName": "Input Device Type",
+        "UUID": "000000DC-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 5,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "constValues": [
+            {
+                "key": "OTHER",
+                "value": 0
+            },
+            {
+                "key": "TV",
+                "value": 1
+            },
+            {
+                "key": "RECORDING",
+                "value": 2
+            },
+            {
+                "key": "TUNER",
+                "value": 3
+            },
+            {
+                "key": "PLAYBACK",
+                "value": 4
+            },
+            {
+                "key": "AUDIO_SYSTEM",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "name": "InputSourceType",
+        "displayName": "Input Source Type",
+        "UUID": "000000DB-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 10,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+            ]
+        },
+        "constValues": [
+            {
+                "key": "OTHER",
+                "value": 0
+            },
+            {
+                "key": "HOME_SCREEN",
+                "value": 1
+            },
+            {
+                "key": "TUNER",
+                "value": 2
+            },
+            {
+                "key": "HDMI",
+                "value": 3
+            },
+            {
+                "key": "COMPOSITE_VIDEO",
+                "value": 4
+            },
+            {
+                "key": "S_VIDEO",
+                "value": 5
+            },
+            {
+                "key": "COMPONENT_VIDEO",
+                "value": 6
+            },
+            {
+                "key": "DVI",
+                "value": 7
+            },
+            {
+                "key": "AIRPLAY",
+                "value": 8
+            },
+            {
+                "key": "USB",
+                "value": 9
+            },
+            {
+                "key": "APPLICATION",
+                "value": 10
+            }
+        ]
+    },
+    {
+        "name": "IsConfigured",
+        "displayName": "Is Configured",
+        "UUID": "000000D6-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "NOT_CONFIGURED",
+                "value": 0
+            },
+            {
+                "key": "CONFIGURED",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "LeakDetected",
+        "displayName": "Leak Detected",
+        "UUID": "00000070-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "LEAK_NOT_DETECTED",
+                "value": 0
+            },
+            {
+                "key": "LEAK_DETECTED",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "LinkQuality",
+        "displayName": "Link Quality",
+        "UUID": "0000009C-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 1,
+            "maxValue": 4,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "LockControlPoint",
+        "displayName": "Lock Control Point",
+        "UUID": "00000019-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "LockCurrentState",
+        "displayName": "Lock Current State",
+        "UUID": "0000001D-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 3,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3
+            ]
+        },
+        "constValues": [
+            {
+                "key": "UNSECURED",
+                "value": 0
+            },
+            {
+                "key": "SECURED",
+                "value": 1
+            },
+            {
+                "key": "JAMMED",
+                "value": 2
+            },
+            {
+                "key": "UNKNOWN",
+                "value": 3
+            }
+        ]
+    },
+    {
+        "name": "LockLastKnownAction",
+        "displayName": "Lock Last Known Action",
+        "UUID": "0000001C-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 8,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ]
+        },
+        "constValues": [
+            {
+                "key": "SECURED_PHYSICALLY_INTERIOR",
+                "value": 0
+            },
+            {
+                "key": "UNSECURED_PHYSICALLY_INTERIOR",
+                "value": 1
+            },
+            {
+                "key": "SECURED_PHYSICALLY_EXTERIOR",
+                "value": 2
+            },
+            {
+                "key": "UNSECURED_PHYSICALLY_EXTERIOR",
+                "value": 3
+            },
+            {
+                "key": "SECURED_BY_KEYPAD",
+                "value": 4
+            },
+            {
+                "key": "UNSECURED_BY_KEYPAD",
+                "value": 5
+            },
+            {
+                "key": "SECURED_REMOTELY",
+                "value": 6
+            },
+            {
+                "key": "UNSECURED_REMOTELY",
+                "value": 7
+            },
+            {
+                "key": "SECURED_BY_AUTO_SECURE_TIMEOUT",
+                "value": 8
+            }
+        ]
+    },
+    {
+        "name": "LockManagementAutoSecurityTimeout",
+        "displayName": "Lock Management Auto Security Timeout",
+        "UUID": "0000001A-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint32",
+            "unit": "seconds",
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "LockPhysicalControls",
+        "displayName": "Lock Physical Controls",
+        "UUID": "000000A7-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "CONTROL_LOCK_DISABLED",
+                "value": 0
+            },
+            {
+                "key": "CONTROL_LOCK_ENABLED",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "LockTargetState",
+        "displayName": "Lock Target State",
+        "UUID": "0000001E-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "UNSECURED",
+                "value": 0
+            },
+            {
+                "key": "SECURED",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "Logs",
+        "displayName": "Logs",
+        "UUID": "0000001F-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ManagedNetworkEnable",
+        "displayName": "Managed Network Enable",
+        "UUID": "00000215-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev",
+                "tw"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "DISABLED",
+                "value": 0
+            },
+            {
+                "key": "ENABLED",
+                "value": 1
+            },
+            {
+                "key": "UNKNOWN",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "ManuallyDisabled",
+        "displayName": "Manually disabled",
+        "UUID": "00000227-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": [
+            {
+                "key": "ENABLED",
+                "value": 0
+            },
+            {
+                "key": "DISABLED",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "Manufacturer",
+        "displayName": "Manufacturer",
+        "UUID": "00000020-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "string",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "Model",
+        "displayName": "Model",
+        "UUID": "00000021-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "string",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "MotionDetected",
+        "displayName": "Motion Detected",
+        "UUID": "00000022-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "Mute",
+        "displayName": "Mute",
+        "UUID": "0000011A-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "Name",
+        "displayName": "Name",
+        "UUID": "00000023-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "string",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "NetworkAccessViolationControl",
+        "displayName": "Network Access Violation Control",
+        "UUID": "0000021F-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev",
+                "tw",
+                "wr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "NetworkClientProfileControl",
+        "displayName": "Network Client Profile Control",
+        "UUID": "0000020C-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev",
+                "tw",
+                "wr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "NetworkClientStatusControl",
+        "displayName": "Network Client Status Control",
+        "UUID": "0000020D-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "wr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "NightVision",
+        "displayName": "Night Vision",
+        "UUID": "0000011B-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev",
+                "tw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "NitrogenDioxideDensity",
+        "displayName": "Nitrogen Dioxide Density",
+        "UUID": "000000C4-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1000,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ObstructionDetected",
+        "displayName": "Obstruction Detected",
+        "UUID": "00000024-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "OccupancyDetected",
+        "displayName": "Occupancy Detected",
+        "UUID": "00000071-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "OCCUPANCY_NOT_DETECTED",
+                "value": 0
+            },
+            {
+                "key": "OCCUPANCY_DETECTED",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "On",
+        "displayName": "On",
+        "UUID": "00000025-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "OpticalZoom",
+        "displayName": "Optical Zoom",
+        "UUID": "0000011C-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "OutletInUse",
+        "displayName": "Outlet In Use",
+        "UUID": "00000026-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "OzoneDensity",
+        "displayName": "Ozone Density",
+        "UUID": "000000C3-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1000,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "PM10Density",
+        "displayName": "PM10 Density",
+        "UUID": "000000C7-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1000,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "PM2_5Density",
+        "displayName": "PM2.5 Density",
+        "UUID": "000000C6-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1000,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "PairSetup",
+        "displayName": "Pair Setup",
+        "UUID": "0000004C-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "PairVerify",
+        "displayName": "Pair Verify",
+        "UUID": "0000004E-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "PairingFeatures",
+        "displayName": "Pairing Features",
+        "UUID": "0000004F-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "PairingPairings",
+        "displayName": "Pairing Pairings",
+        "UUID": "00000050-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "PasswordSetting",
+        "displayName": "Password Setting",
+        "UUID": "000000E4-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "PeriodicSnapshotsActive",
+        "displayName": "Periodic Snapshots Active",
+        "UUID": "00000225-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": [
+            {
+                "key": "DISABLE",
+                "value": 0
+            },
+            {
+                "key": "ENABLE",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "PictureMode",
+        "displayName": "Picture Mode",
+        "UUID": "000000E2-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 13,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+            ]
+        },
+        "constValues": [
+            {
+                "key": "OTHER",
+                "value": 0
+            },
+            {
+                "key": "STANDARD",
+                "value": 1
+            },
+            {
+                "key": "CALIBRATED",
+                "value": 2
+            },
+            {
+                "key": "CALIBRATED_DARK",
+                "value": 3
+            },
+            {
+                "key": "VIVID",
+                "value": 4
+            },
+            {
+                "key": "GAME",
+                "value": 5
+            },
+            {
+                "key": "COMPUTER",
+                "value": 6
+            },
+            {
+                "key": "CUSTOM",
+                "value": 7
+            }
+        ]
+    },
+    {
+        "name": "PositionState",
+        "displayName": "Position State",
+        "UUID": "00000072-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        "constValues": [
+            {
+                "key": "DECREASING",
+                "value": 0
+            },
+            {
+                "key": "INCREASING",
+                "value": 1
+            },
+            {
+                "key": "STOPPED",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "PowerModeSelection",
+        "displayName": "Power Mode Selection",
+        "UUID": "000000DF-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pw"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "SHOW",
+                "value": 0
+            },
+            {
+                "key": "HIDE",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "ProductData",
+        "displayName": "Product Data",
+        "UUID": "00000220-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "data",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ProgramMode",
+        "displayName": "Program Mode",
+        "UUID": "000000D1-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        "constValues": [
+            {
+                "key": "NO_PROGRAM_SCHEDULED",
+                "value": 0
+            },
+            {
+                "key": "PROGRAM_SCHEDULED",
+                "value": 1
+            },
+            {
+                "key": "PROGRAM_SCHEDULED_MANUAL_MODE_",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "ProgrammableSwitchEvent",
+        "displayName": "Programmable Switch Event",
+        "UUID": "00000073-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        "constValues": [
+            {
+                "key": "SINGLE_PRESS",
+                "value": 0
+            },
+            {
+                "key": "DOUBLE_PRESS",
+                "value": 1
+            },
+            {
+                "key": "LONG_PRESS",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "ProgrammableSwitchOutputState",
+        "displayName": "Programmable Switch Output State",
+        "UUID": "00000074-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "Reachable",
+        "displayName": "Reachable",
+        "UUID": "00000063-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "RecordingAudioActive",
+        "displayName": "Recording Audio Active",
+        "UUID": "00000226-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": [
+            {
+                "key": "DISABLE",
+                "value": 0
+            },
+            {
+                "key": "ENABLE",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "RelativeHumidityDehumidifierThreshold",
+        "displayName": "Relative Humidity Dehumidifier Threshold",
+        "UUID": "000000C9-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "RelativeHumidityHumidifierThreshold",
+        "displayName": "Relative Humidity Humidifier Threshold",
+        "UUID": "000000CA-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": "percentage",
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "RelayControlPoint",
+        "displayName": "Relay Control Point",
+        "UUID": "0000005E-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "RelayEnabled",
+        "displayName": "Relay Enabled",
+        "UUID": "0000005B-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "RelayState",
+        "displayName": "Relay State",
+        "UUID": "0000005C-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "RemainingDuration",
+        "displayName": "Remaining Duration",
+        "UUID": "000000D4-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint32",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 3600,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "RemoteKey",
+        "displayName": "Remote Key",
+        "UUID": "000000E1-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 16,
+            "minStep": null,
+            "perms": [
+                "pw"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+            ]
+        },
+        "constValues": [
+            {
+                "key": "REWIND",
+                "value": 0
+            },
+            {
+                "key": "FAST_FORWARD",
+                "value": 1
+            },
+            {
+                "key": "NEXT_TRACK",
+                "value": 2
+            },
+            {
+                "key": "PREVIOUS_TRACK",
+                "value": 3
+            },
+            {
+                "key": "ARROW_UP",
+                "value": 4
+            },
+            {
+                "key": "ARROW_DOWN",
+                "value": 5
+            },
+            {
+                "key": "ARROW_LEFT",
+                "value": 6
+            },
+            {
+                "key": "ARROW_RIGHT",
+                "value": 7
+            },
+            {
+                "key": "SELECT",
+                "value": 8
+            },
+            {
+                "key": "BACK",
+                "value": 9
+            },
+            {
+                "key": "EXIT",
+                "value": 10
+            },
+            {
+                "key": "PLAY_PAUSE",
+                "value": 11
+            },
+            {
+                "key": "INFORMATION",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "name": "ResetFilterIndication",
+        "displayName": "Reset Filter Indication",
+        "UUID": "000000AD-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 1,
+            "maxValue": 1,
+            "minStep": 1,
+            "perms": [
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "RotationDirection",
+        "displayName": "Rotation Direction",
+        "UUID": "00000028-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "int",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "CLOCKWISE",
+                "value": 0
+            },
+            {
+                "key": "COUNTER_CLOCKWISE",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "RotationSpeed",
+        "displayName": "Rotation Speed",
+        "UUID": "00000029-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": "percentage",
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "RouterStatus",
+        "displayName": "Router Status",
+        "UUID": "0000020E-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "READY",
+                "value": 0
+            },
+            {
+                "key": "NOT_READY",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "Saturation",
+        "displayName": "Saturation",
+        "UUID": "0000002F-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": "percentage",
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SecuritySystemAlarmType",
+        "displayName": "Security System Alarm Type",
+        "UUID": "0000008E-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SecuritySystemCurrentState",
+        "displayName": "Security System Current State",
+        "UUID": "00000066-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 4,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        "constValues": [
+            {
+                "key": "STAY_ARM",
+                "value": 0
+            },
+            {
+                "key": "AWAY_ARM",
+                "value": 1
+            },
+            {
+                "key": "NIGHT_ARM",
+                "value": 2
+            },
+            {
+                "key": "DISARMED",
+                "value": 3
+            },
+            {
+                "key": "ALARM_TRIGGERED",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "name": "SecuritySystemTargetState",
+        "displayName": "Security System Target State",
+        "UUID": "00000067-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 3,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3
+            ]
+        },
+        "constValues": [
+            {
+                "key": "STAY_ARM",
+                "value": 0
+            },
+            {
+                "key": "AWAY_ARM",
+                "value": 1
+            },
+            {
+                "key": "NIGHT_ARM",
+                "value": 2
+            },
+            {
+                "key": "DISARM",
+                "value": 3
+            }
+        ]
+    },
+    {
+        "name": "SelectedAudioStreamConfiguration",
+        "displayName": "Selected Audio Stream Configuration",
+        "UUID": "00000128-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SelectedCameraRecordingConfiguration",
+        "displayName": "Selected Camera Recording Configuration",
+        "UUID": "00000209-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SelectedRTPStreamConfiguration",
+        "displayName": "Selected RTP Stream Configuration",
+        "UUID": "00000117-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SerialNumber",
+        "displayName": "Serial Number",
+        "UUID": "00000030-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "string",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ServiceLabelIndex",
+        "displayName": "Service Label Index",
+        "UUID": "000000CB-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 1,
+            "maxValue": 255,
+            "minStep": 1,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ServiceLabelNamespace",
+        "displayName": "Service Label Namespace",
+        "UUID": "000000CD-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "DOTS",
+                "value": 0
+            },
+            {
+                "key": "ARABIC_NUMERALS",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "SetDuration",
+        "displayName": "Set Duration",
+        "UUID": "000000D3-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint32",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 3600,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SetupDataStreamTransport",
+        "displayName": "Setup Data Stream Transport",
+        "UUID": "00000131-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "wr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SetupEndpoints",
+        "displayName": "Setup Endpoints",
+        "UUID": "00000118-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SetupTransferTransport",
+        "displayName": "Setup Transfer Transport",
+        "UUID": "00000201-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pw",
+                "wr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SiriInputType",
+        "displayName": "Siri Input Type",
+        "UUID": "00000132-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 0,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ],
+            "validValues": [
+                0
+            ]
+        },
+        "constValues": [
+            {
+                "key": "PUSH_BUTTON_TRIGGERED_APPLE_TV",
+                "value": 0
+            }
+        ]
+    },
+    {
+        "name": "SlatType",
+        "displayName": "Slat Type",
+        "UUID": "000000C0-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "HORIZONTAL",
+                "value": 0
+            },
+            {
+                "key": "VERTICAL",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "SleepDiscoveryMode",
+        "displayName": "Sleep Discovery Mode",
+        "UUID": "000000E8-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "NOT_DISCOVERABLE",
+                "value": 0
+            },
+            {
+                "key": "ALWAYS_DISCOVERABLE",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "SmokeDetected",
+        "displayName": "Smoke Detected",
+        "UUID": "00000076-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "SMOKE_NOT_DETECTED",
+                "value": 0
+            },
+            {
+                "key": "SMOKE_DETECTED",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "SoftwareRevision",
+        "displayName": "Software Revision",
+        "UUID": "00000054-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "string",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "StatusActive",
+        "displayName": "Status Active",
+        "UUID": "00000075-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "StatusFault",
+        "displayName": "Status Fault",
+        "UUID": "00000077-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "NO_FAULT",
+                "value": 0
+            },
+            {
+                "key": "GENERAL_FAULT",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "StatusJammed",
+        "displayName": "Status Jammed",
+        "UUID": "00000078-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "NOT_JAMMED",
+                "value": 0
+            },
+            {
+                "key": "JAMMED",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "StatusLowBattery",
+        "displayName": "Status Low Battery",
+        "UUID": "00000079-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "BATTERY_LEVEL_NORMAL",
+                "value": 0
+            },
+            {
+                "key": "BATTERY_LEVEL_LOW",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "StatusTampered",
+        "displayName": "Status Tampered",
+        "UUID": "0000007A-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "NOT_TAMPERED",
+                "value": 0
+            },
+            {
+                "key": "TAMPERED",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "StreamingStatus",
+        "displayName": "Streaming Status",
+        "UUID": "00000120-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SulphurDioxideDensity",
+        "displayName": "Sulphur Dioxide Density",
+        "UUID": "000000C5-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1000,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SupportedAudioRecordingConfiguration",
+        "displayName": "Supported Audio Recording Configuration",
+        "UUID": "00000207-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SupportedAudioStreamConfiguration",
+        "displayName": "Supported Audio Stream Configuration",
+        "UUID": "00000115-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SupportedCameraRecordingConfiguration",
+        "displayName": "Supported Camera Recording Configuration",
+        "UUID": "00000205-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SupportedDataStreamTransportConfiguration",
+        "displayName": "Supported Data Stream Transport Configuration",
+        "UUID": "00000130-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SupportedRTPConfiguration",
+        "displayName": "Supported RTP Configuration",
+        "UUID": "00000116-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SupportedRouterConfiguration",
+        "displayName": "Supported Router Configuration",
+        "UUID": "00000210-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SupportedTransferTransportConfiguration",
+        "displayName": "Supported Transfer Transport Configuration",
+        "UUID": "00000202-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SupportedVideoRecordingConfiguration",
+        "displayName": "Supported Video Recording Configuration",
+        "UUID": "00000206-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SupportedVideoStreamConfiguration",
+        "displayName": "Supported Video Stream Configuration",
+        "UUID": "00000114-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SwingMode",
+        "displayName": "Swing Mode",
+        "UUID": "000000B6-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "SWING_DISABLED",
+                "value": 0
+            },
+            {
+                "key": "SWING_ENABLED",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "TargetAirPurifierState",
+        "displayName": "Target Air Purifier State",
+        "UUID": "000000A8-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "MANUAL",
+                "value": 0
+            },
+            {
+                "key": "AUTO",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "TargetAirQuality",
+        "displayName": "Target Air Quality",
+        "UUID": "000000AE-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        "constValues": [
+            {
+                "key": "EXCELLENT",
+                "value": 0
+            },
+            {
+                "key": "GOOD",
+                "value": 1
+            },
+            {
+                "key": "FAIR",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "TargetControlList",
+        "displayName": "Target Control List",
+        "UUID": "00000124-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pw",
+                "pr",
+                "wr"
+            ],
+            "adminOnlyAccess": [
+                0,
+                1
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TargetControlSupportedConfiguration",
+        "displayName": "Target Control Supported Configuration",
+        "UUID": "00000123-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TargetDoorState",
+        "displayName": "Target Door State",
+        "UUID": "00000032-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "OPEN",
+                "value": 0
+            },
+            {
+                "key": "CLOSED",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "TargetFanState",
+        "displayName": "Target Fan State",
+        "UUID": "000000BF-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "MANUAL",
+                "value": 0
+            },
+            {
+                "key": "AUTO",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "TargetHeaterCoolerState",
+        "displayName": "Target Heater Cooler State",
+        "UUID": "000000B2-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        "constValues": [
+            {
+                "key": "AUTO",
+                "value": 0
+            },
+            {
+                "key": "HEAT",
+                "value": 1
+            },
+            {
+                "key": "COOL",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "TargetHeatingCoolingState",
+        "displayName": "Target Heating Cooling State",
+        "UUID": "00000033-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 3,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3
+            ]
+        },
+        "constValues": [
+            {
+                "key": "OFF",
+                "value": 0
+            },
+            {
+                "key": "HEAT",
+                "value": 1
+            },
+            {
+                "key": "COOL",
+                "value": 2
+            },
+            {
+                "key": "AUTO",
+                "value": 3
+            }
+        ]
+    },
+    {
+        "name": "TargetHorizontalTiltAngle",
+        "displayName": "Target Horizontal Tilt Angle",
+        "UUID": "0000007B-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "int",
+            "unit": "arcdegrees",
+            "minValue": -90,
+            "maxValue": 90,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TargetHumidifierDehumidifierState",
+        "displayName": "Target Humidifier Dehumidifier State",
+        "UUID": "000000B4-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        "constValues": [
+            {
+                "key": "AUTO",
+                "value": 0
+            },
+            {
+                "key": "HUMIDIFIER_OR_DEHUMIDIFIER",
+                "value": 0
+            },
+            {
+                "key": "HUMIDIFIER",
+                "value": 1
+            },
+            {
+                "key": "DEHUMIDIFIER",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "TargetMediaState",
+        "displayName": "Target Media State",
+        "UUID": "00000137-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3
+            ]
+        },
+        "constValues": [
+            {
+                "key": "PLAY",
+                "value": 0
+            },
+            {
+                "key": "PAUSE",
+                "value": 1
+            },
+            {
+                "key": "STOP",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "TargetPosition",
+        "displayName": "Target Position",
+        "UUID": "0000007C-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": "percentage",
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TargetRelativeHumidity",
+        "displayName": "Target Relative Humidity",
+        "UUID": "00000034-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": "percentage",
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TargetSlatState",
+        "displayName": "Target Slat State",
+        "UUID": "000000BE-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "MANUAL",
+                "value": 0
+            },
+            {
+                "key": "AUTO",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "TargetTemperature",
+        "displayName": "Target Temperature",
+        "UUID": "00000035-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": "celsius",
+            "minValue": 10,
+            "maxValue": 38,
+            "minStep": 0.1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TargetTiltAngle",
+        "displayName": "Target Tilt Angle",
+        "UUID": "000000C2-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "int",
+            "unit": "arcdegrees",
+            "minValue": -90,
+            "maxValue": 90,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TargetVerticalTiltAngle",
+        "displayName": "Target Vertical Tilt Angle",
+        "UUID": "0000007D-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "int",
+            "unit": "arcdegrees",
+            "minValue": -90,
+            "maxValue": 90,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TargetVisibilityState",
+        "displayName": "Target Visibility State",
+        "UUID": "00000134-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "SHOWN",
+                "value": 0
+            },
+            {
+                "key": "HIDDEN",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "TemperatureDisplayUnits",
+        "displayName": "Temperature Display Units",
+        "UUID": "00000036-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "CELSIUS",
+                "value": 0
+            },
+            {
+                "key": "FAHRENHEIT",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "ThirdPartyCameraActive",
+        "displayName": "Third Party Camera Active",
+        "UUID": "0000021C-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": [
+            {
+                "key": "OFF",
+                "value": 0
+            },
+            {
+                "key": "ON",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "TimeUpdate",
+        "displayName": "Time Update",
+        "UUID": "0000009A-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TunnelConnectionTimeout",
+        "displayName": "Tunnel Connection Timeout ",
+        "UUID": "00000061-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint32",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pw",
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TunneledAccessoryAdvertising",
+        "displayName": "Tunneled Accessory Advertising",
+        "UUID": "00000060-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pw",
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TunneledAccessoryConnected",
+        "displayName": "Tunneled Accessory Connected",
+        "UUID": "00000059-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pw",
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TunneledAccessoryStateNumber",
+        "displayName": "Tunneled Accessory State Number",
+        "UUID": "00000058-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "VOCDensity",
+        "displayName": "VOC Density",
+        "UUID": "000000C8-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1000,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ValveType",
+        "displayName": "Valve Type",
+        "UUID": "000000D5-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 3,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3
+            ]
+        },
+        "constValues": [
+            {
+                "key": "GENERIC_VALVE",
+                "value": 0
+            },
+            {
+                "key": "IRRIGATION",
+                "value": 1
+            },
+            {
+                "key": "SHOWER_HEAD",
+                "value": 2
+            },
+            {
+                "key": "WATER_FAUCET",
+                "value": 3
+            }
+        ]
+    },
+    {
+        "name": "Version",
+        "displayName": "Version",
+        "UUID": "00000037-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "string",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "Volume",
+        "displayName": "Volume",
+        "UUID": "00000119-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": "percentage",
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "VolumeControlType",
+        "displayName": "Volume Control Type",
+        "UUID": "000000E9-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 3,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2,
+                3
+            ]
+        },
+        "constValues": [
+            {
+                "key": "NONE",
+                "value": 0
+            },
+            {
+                "key": "RELATIVE",
+                "value": 1
+            },
+            {
+                "key": "RELATIVE_WITH_CURRENT",
+                "value": 2
+            },
+            {
+                "key": "ABSOLUTE",
+                "value": 3
+            }
+        ]
+    },
+    {
+        "name": "VolumeSelector",
+        "displayName": "Volume Selector",
+        "UUID": "000000EA-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": null,
+            "perms": [
+                "pw"
+            ],
+            "validValues": [
+                0,
+                1
+            ]
+        },
+        "constValues": [
+            {
+                "key": "INCREMENT",
+                "value": 0
+            },
+            {
+                "key": "DECREMENT",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "WANConfigurationList",
+        "displayName": "WAN Configuration List",
+        "UUID": "00000211-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "WANStatusList",
+        "displayName": "WAN Status List",
+        "UUID": "00000212-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "WakeConfiguration",
+        "displayName": "Wake Configuration",
+        "UUID": "00000222-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "WaterLevel",
+        "displayName": "Water Level",
+        "UUID": "000000B5-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "float",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 100,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "WiFiSatelliteStatus",
+        "displayName": "Wi-Fi Satellite Status",
+        "UUID": "0000021E-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ],
+            "validValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        "constValues": [
+            {
+                "key": "UNKNOWN",
+                "value": 0
+            },
+            {
+                "key": "CONNECTED",
+                "value": 1
+            },
+            {
+                "key": "NOT_CONNECTED",
+                "value": 2
+            }
+        ]
+    }
+]
