@@ -1206,6 +1206,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }
         }
       });
+      /** Sidebar control - from the CoderDocs theme */
+
+      $(window).on('load resize', function () {
+        var w = $(window).width();
+
+        if (w >= 1200) {
+          // if larger
+          $('#docs-sidebar').addClass('sidebar-visible').removeClass('sidebar-hidden');
+        } else {
+          // if smaller
+          $('#docs-sidebar').addClass('sidebar-hidden').removeClass('sidebar-visible');
+        }
+      });
+      $(document).ready(function () {
+        $('#docs-sidebar-toggler').on('click', function () {
+          if ($('#docs-sidebar').hasClass('sidebar-visible')) {
+            $('#docs-sidebar').removeClass('sidebar-visible').addClass('sidebar-hidden');
+          } else {
+            $('#docs-sidebar').removeClass('sidebar-hidden').addClass('sidebar-visible');
+          }
+        });
+      });
     };
 
     AppComponent.ɵfac = function AppComponent_Factory(t) {

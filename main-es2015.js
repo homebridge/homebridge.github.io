@@ -67,7 +67,7 @@ ApiReferenceEntryComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
         args: [{
                 selector: 'app-api-reference-entry',
                 templateUrl: './api-reference-entry.component.html',
-                styleUrls: ['./api-reference-entry.component.scss']
+                styleUrls: ['./api-reference-entry.component.scss'],
             }]
     }], function () { return []; }, { method: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
@@ -559,7 +559,7 @@ ApiReferenceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
         args: [{
                 selector: 'app-api-reference',
                 templateUrl: './api-reference.component.html',
-                styleUrls: ['./api-reference.component.scss']
+                styleUrls: ['./api-reference.component.scss'],
             }]
     }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"] }]; }, null); })();
 
@@ -605,7 +605,7 @@ const routes = [
     },
     {
         path: 'service',
-        redirectTo: 'service/AccessControl'
+        redirectTo: 'service/AccessControl',
     },
     {
         path: 'service/:serviceName',
@@ -613,12 +613,12 @@ const routes = [
     },
     {
         path: 'characteristic',
-        redirectTo: 'characteristic/AccessControlLevel'
+        redirectTo: 'characteristic/AccessControlLevel',
     },
     {
         path: 'characteristic/:characteristicName',
         component: _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_4__["CharacteristicComponent"],
-    }
+    },
 ];
 class AppRoutingModule {
 }
@@ -630,7 +630,7 @@ AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineI
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
                 imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, { useHash: true, scrollPositionRestoration: 'top' })],
-                exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
+                exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]],
             }]
     }], null, null); })();
 
@@ -719,6 +719,28 @@ class AppComponent {
                 }
             }
         });
+        /** Sidebar control - from the CoderDocs theme */
+        $(window).on('load resize', () => {
+            const w = $(window).width();
+            if (w >= 1200) {
+                // if larger
+                $('#docs-sidebar').addClass('sidebar-visible').removeClass('sidebar-hidden');
+            }
+            else {
+                // if smaller
+                $('#docs-sidebar').addClass('sidebar-hidden').removeClass('sidebar-visible');
+            }
+        });
+        $(document).ready(() => {
+            $('#docs-sidebar-toggler').on('click', () => {
+                if ($('#docs-sidebar').hasClass('sidebar-visible')) {
+                    $('#docs-sidebar').removeClass('sidebar-visible').addClass('sidebar-hidden');
+                }
+                else {
+                    $('#docs-sidebar').removeClass('sidebar-hidden').addClass('sidebar-visible');
+                }
+            });
+        });
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_hap_service__WEBPACK_IMPORTED_MODULE_2__["HapService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"])); };
@@ -779,7 +801,7 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
         args: [{
                 selector: 'app-root',
                 templateUrl: './app.component.html',
-                styleUrls: ['./app.component.scss']
+                styleUrls: ['./app.component.scss'],
             }]
     }], function () { return [{ type: _hap_service__WEBPACK_IMPORTED_MODULE_2__["HapService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }]; }, null); })();
 
@@ -885,7 +907,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
                 ],
                 bootstrap: [
-                    _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]
+                    _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
                 ],
             }]
     }], null, null); })();
@@ -1192,7 +1214,7 @@ CharacteristicComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
         args: [{
                 selector: 'app-characteristic',
                 templateUrl: './characteristic.component.html',
-                styleUrls: ['./characteristic.component.scss']
+                styleUrls: ['./characteristic.component.scss'],
             }]
     }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"] }, { type: _hap_service__WEBPACK_IMPORTED_MODULE_2__["HapService"] }, { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["Title"] }]; }, null); })();
 
@@ -1262,7 +1284,7 @@ HapService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInject
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HapService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
-                providedIn: 'root'
+                providedIn: 'root',
             }]
     }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }]; }, null); })();
 
@@ -1312,7 +1334,7 @@ IntroductionComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
         args: [{
                 selector: 'app-introduction',
                 templateUrl: './introduction.component.html',
-                styleUrls: ['./introduction.component.scss']
+                styleUrls: ['./introduction.component.scss'],
             }]
     }], function () { return [{ type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["Title"] }]; }, null); })();
 
@@ -1368,13 +1390,13 @@ class SearchComponent {
             results.push(...matchingServices.map(x => {
                 return {
                     routerLink: ['/service', x.name],
-                    label: `Service: ${x.displayName}`
+                    label: `Service: ${x.displayName}`,
                 };
             }));
             results.push(...matchingCharacteristics.map(x => {
                 return {
                     routerLink: ['/characteristic', x.name],
-                    label: `Characteristic: ${x.displayName}`
+                    label: `Characteristic: ${x.displayName}`,
                 };
             }));
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(results);
@@ -1404,7 +1426,7 @@ SearchComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         args: [{
                 selector: 'app-search',
                 templateUrl: './search.component.html',
-                styleUrls: ['./search.component.scss']
+                styleUrls: ['./search.component.scss'],
             }]
     }], function () { return [{ type: _hap_service__WEBPACK_IMPORTED_MODULE_3__["HapService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }]; }, null); })();
 
@@ -1653,7 +1675,7 @@ ServiceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         args: [{
                 selector: 'app-service',
                 templateUrl: './service.component.html',
-                styleUrls: ['./service.component.scss']
+                styleUrls: ['./service.component.scss'],
             }]
     }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"] }, { type: _hap_service__WEBPACK_IMPORTED_MODULE_2__["HapService"] }, { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["Title"] }]; }, null); })();
 
@@ -1767,7 +1789,7 @@ SidebarComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         args: [{
                 selector: 'app-sidebar',
                 templateUrl: './sidebar.component.html',
-                styleUrls: ['./sidebar.component.scss']
+                styleUrls: ['./sidebar.component.scss'],
             }]
     }], function () { return [{ type: _hap_service__WEBPACK_IMPORTED_MODULE_1__["HapService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
 
@@ -1788,7 +1810,7 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const environment = {
-    production: false
+    production: false,
 };
 /*
  * For easier debugging in development mode, you can import the following file
