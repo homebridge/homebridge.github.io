@@ -70,7 +70,7 @@ ${this.generateMethods(this.requiredCharacteristics)}
   }
 
   generateRequiredBindings(characteristics: Characteristic[]): string {
-    return characteristics.map((x) => {
+    return characteristics.filter(x => x.props.format !== 'tlv8').map((x) => {
       return `      this.service.getCharacteristic(this.Characteristic.${x.name})
 ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`
     }).join('\n')
@@ -94,7 +94,7 @@ ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`
   }
 
   generateMethods(characteristics: Characteristic[]) {
-    return characteristics.map((x) => {
+    return characteristics.filter(x => x.props.format !== 'tlv8').map((x) => {
       return `${this.generateGetMethod(x)}${this.generateSetMethod(x)}`
     }).join('\n')
   }

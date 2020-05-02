@@ -44,6 +44,10 @@
           <th scope="row">Permissions</th>
           <td>{{ characteristicPermissions }}</td>
         </tr>
+        <tr *ngIf="characteristic.props.perms">
+          <th scope="row">Supported Events</th>
+          <td>{{ characteristicEvents }}</td>
+        </tr>
       </tbody>
     </table>
   </section>

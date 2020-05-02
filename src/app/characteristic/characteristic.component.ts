@@ -35,4 +35,18 @@ export class CharacteristicComponent implements OnInit {
     return this.characteristic.props.perms.map(x => this.hapService.perms[x]).join(', ');
   }
 
+  get characteristicEvents() {
+    const events: string[] = [];
+
+    if (this.characteristic.props.perms.includes('pr')) {
+      events.push('get')
+    }
+
+    if (this.characteristic.props.perms.includes('pw')) {
+      events.push('set')
+    }
+
+    return events.join(', ');
+  }
+
 }
