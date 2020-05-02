@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, Observer } from 'rxjs';
 
 export interface Service {
   name: string;
@@ -46,10 +47,14 @@ export class HapService {
     wr: 'Write Response',
   }
 
+  searchProvider: Observable<any>;
+
   constructor(
     private httpClient: HttpClient,
   ) {
     this.load();
+
+
   }
 
   load() {
