@@ -59,7 +59,7 @@ class Example${this.serviceName}Accessory {
       this.name = config.name;
 
       // create a new ${this.service.displayName} service
-      this.service = new this.Service(this.name);
+      this.service = new this.Service(this.Service.${this.serviceName});
 
       // create handlers for required characteristics
 ${this.generateRequiredBindings(this.requiredCharacteristics)}
