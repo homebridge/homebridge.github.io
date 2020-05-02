@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --output-path dist",
     "test": "ng test",
     "lint": "ng lint",
     "gen": "ts-node -P tsconfig.gen.json scripts/gen.ts"

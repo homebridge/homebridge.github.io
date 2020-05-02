@@ -17,6 +17,7 @@ jobs:
       - name: Install and Build 
         run: |
           npm install
+          npm run gen
           npm run build
 
       - name: Install SSH Client 🔑
