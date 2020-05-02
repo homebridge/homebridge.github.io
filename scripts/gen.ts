@@ -8,6 +8,10 @@ import * as path from 'path';
 const services = [];
 const characteristics = [];
 
+const hiddenServices = [
+  'CameraControl',
+];
+
 for (const [name, value] of Object.entries(Service)) {
   if (value.UUID) {
     try {
@@ -25,7 +29,7 @@ for (const [name, value] of Object.entries(Service)) {
         displayName: inflection.titleize(decamelize(service.constructor.name)).replace('Wi Fi', 'WiFi'),
         UUID: service.UUID,
         requiredCharacteristics: service.characteristics.map(x => x.UUID),
-        optionalCharacteristics: service.optionalCharacteristics.map(x => x.UUID)
+        optionalCharacteristics: service.optionalCharacteristics.map(x => x.UUID),
       };
 
       services.push(payload);
@@ -35,7 +39,6 @@ for (const [name, value] of Object.entries(Service)) {
     }
   }
 }
-
 
 for (const [name, value] of Object.entries(Characteristic)) {
   if (value.UUID) {
@@ -53,7 +56,7 @@ for (const [name, value] of Object.entries(Characteristic)) {
   }
 }
 
-const sortedServices = services.sort((a, b) => (a.displayName > b.displayName) ? 1 : -1);
+const sortedServices = services.filter(x => !hiddenServices.includes(x.name)).sort((a, b) => (a.displayName > b.displayName) ? 1 : -1);
 const sortedCharacteristics = characteristics.sort((a, b) => (a.displayName > b.displayName) ? 1 : -1);
 
 fs.writeFileSync(path.resolve(__dirname, '../src/assets/services.json'), JSON.stringify(sortedServices, null, 4));
