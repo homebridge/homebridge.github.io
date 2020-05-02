@@ -1,0 +1,58 @@
+<article class="docs-article">
+  <header class="docs-header">
+    <h1>
+      {{ service.displayName }}
+    </h1>
+    <p>
+      UUID: {{ service.UUID }}
+    </p>
+  </header>
+
+  <section>
+    <h3>Required Characteristics</h3>
+
+    <ul>
+      <li *ngFor="let characteristic of requiredCharacteristics">
+          <a [routerLink]="['/characteristic', characteristic.name]">{{ characteristic.displayName}}</a>
+      </li>
+    </ul>
+
+  </section>
+
+    <section *ngIf="optionalCharacteristics.length">
+      <h3>Optional Characteristics</h3>
+    
+      <ul>
+        <li *ngFor="let characteristic of optionalCharacteristics">
+          <a [routerLink]="['/characteristic', characteristic.name]">{{ characteristic.displayName }}</a>
+        </li>
+      </ul>
+    
+    </section>
+
+    <section *ngIf="exampleCode">
+      <h3>Example</h3>
+
+    <div class="callout-block callout-block-warning">
+      <div class="content">
+        <h4 class="callout-title">
+          <span class="callout-icon-holder mr-1">
+            <i class="fas fa-info-circle"></i>
+          </span>
+          Note
+        </h4>
+        <p>
+          The example below is automatically generated and may not be a complete example of what is required to create a working "{{ service.displayName }}" Homebridge plugin.
+        </p>
+      </div>
+    </div>
+
+      <div class="docs-code-block">
+        <pre class="shadow-lg rounded"><code [highlight]="exampleCode"></code></pre>
+      </div>
+          
+    
+    </section>
+
+
+</article>

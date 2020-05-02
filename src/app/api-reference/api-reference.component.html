@@ -1,0 +1,237 @@
+<article class="docs-article" id="section-1">
+  <header class="docs-header">
+    <h1>API Reference</h1>
+  </header>
+
+      <div class="callout-block callout-block-warning">
+        <div class="content">
+          <h4 class="callout-title">
+            <span class="callout-icon-holder mr-1">
+              <i class="fas fa-info-circle"></i>
+            </span>
+            Note
+          </h4>
+          <p>
+            This is a summary of the most commonly used API methods you will need when creating plugins. It is by no means comprehensive.
+          </p>
+        </div>
+      </div>
+
+  <section>
+
+    <app-api-reference-entry method="API.registerAccessory">
+    <p class="text-info">
+      API.registerAccessory(accessoryName: string, constructor: AccessoryPluginConstructor): void
+    </p>
+    <p>
+      Register a "Accessory" type plugin. Accessory style plugins only expose a single accessory, 
+      but can be configured multiple times in the Homebridge config.json (once per accessory the user wants to create).
+    </p>
+    <pre><code [languages]="['javascript']" [highlight]="registerAccessoryExample"></code></pre>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="API.registerPlatform">
+      <p class="text-info">
+        API.registerPlatform(platformName: string, constructor: PlatformPluginConstructor): void
+      </p>
+      <p>
+        Register a "Platform" type plugin. Platform style plugins can expose any number of accessories and can
+        dynamically remove and add accessories at any time. Only a single instance of a given platform may be configured in
+        the Homebridge config.json.
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="registerPlatformExample"></code></pre>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="API.registerPlatformAccessories">
+      <p class="text-info">
+        API.registerPlatformAccessories(pluginIdentifier: string, platformName: string, accessories: PlatformAccessory[]): void
+      </p>
+      <p>For use in Platform plugins only.</p>
+      <p>
+        Publish one or more accessories to Homebridge.
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="registerPlatformAccessoriesExample"></code></pre>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="API.unregisterPlatformAccessories">
+      <p class="text-info">
+        API.unregisterPlatformAccessories(pluginIdentifier: string, platformName: string, accessories: PlatformAccessory[]):
+        void
+      </p>
+      <p>For use in Platform plugins only.</p>
+      <p>
+        Remove one or more accessories from Homebridge.
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="unregisterPlatformAccessoriesExample"></code></pre>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="API.publishExternalAccessories">
+      <p class="text-info">
+        API.publishExternalAccessories(pluginIdentifier: string, accessories: PlatformAccessory[]): void
+      </p>
+      <p>For use in Platform plugins only.</p>
+      <p>
+        Accessories published externally will need to be paired seperately by the user. Common uses for external accessories include Cameras and TVs.
+      </p>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="API.updatePlatformAccessories">
+      <p class="text-info">
+        API.updatePlatformAccessories(accessories: PlatformAccessory[]): void
+      </p>
+      <p>For use in Platform plugins only.</p>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="API.on">
+      <p class="text-info">
+        API.on(event: "didFinishLaunching", listener: () => void): API
+      </p>
+      <p>
+        When this event is fired it means Homebridge has restored all cached accessories from disk.
+        Dynamic Platform plugins should only register new accessories after this event has fired in
+        order to ensure they weren't already added to Homebridge. This event can also be used
+        to start discovery of new accessories.
+      </p>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="API.user.storagePath">
+      <p class="text-info">
+        User.storagePath(): string
+      </p>
+      <p>
+        Returns the path to the Homebridge storage folder.
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="userStoragePathExample"></code></pre>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="API.user.configPath">
+      <p class="text-info">
+        User.configPath(): string
+      </p>
+      <p>
+        Returns the path to the Homebridge config.json file.
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="userConfigPathExample"></code></pre>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="API.version">
+      <p class="text-info">
+        API.version: number
+      </p>
+      <p>
+        Returns the current Homebridge API version. Note that this is different from the Homebridge package version.
+      </p>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="API.platformAccessory">
+      <p class="text-info">
+        API.platformAccessory(displayName: string, uuid: string, category?: any): PlatformAccessory
+      </p>
+      <p>For use in Platform plugins only.</p>
+      <p>
+        Creates a new platform accessory. It will not be active until you register the created accessory with
+        <a routerLink="/reference/API.registerPlatformAccessories">API.registerPlatformAccessories</a>.
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="platformAccessoryExample"></code></pre>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="PlatformAccessory.addService">
+      <p class="text-info">
+        PlatformAccessory.addService(service: Service, ...constructorArgs: any[]): Service
+      </p>
+      <p>
+        Adds a new service to a platform accessory.
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="hapServiceExample"></code></pre>
+      <p>
+        If you are adding more than one service of the same type to an accessory, you will need
+        to give the service a name and "subtype".
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="hapAddServiceSubtypeExample"></code></pre>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="PlatformAccessory.getService">
+      <p class="text-info">
+        PlatformAccessory.getService(name: string | T): any
+      </p>
+      <p>
+        Returns an existing service from the platform accessory.
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="hapGetServiceExample"></code></pre>
+      <p>
+        If you have added more than one service of the same type to an accessory, you will need
+        to get the service using the name you defined when adding it.
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="hapGetServiceSubtypeExample"></code></pre>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="PlatformAccessory.removeService">
+      <p class="text-info">
+        PlatformAccessory.removeService(service: Service): void
+      </p>
+      <p>
+        Removes the service from the platform accessory.
+      </p>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="PlatformAccessory.context">
+      <p class="text-info">
+        PlatformAccessory.context
+      </p>
+      <p>
+        Store custom data with accessory that will persist through Homebridge restarts.
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="platformAccessoryContextExample"></code></pre>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="PlatformAccessory.services">
+      <p class="text-info">
+        PlatformAccessory.services: Service[]
+      </p>
+      <p>
+        An array of services currently added to the accessory.
+      </p>
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="Service.getCharacteristic">
+      <p class="text-info">
+        Service.getCharacteristic: (name: string | T) => Characteristic
+      </p>
+      <p>
+        Returns the requested Characteristic for the service.
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="serviceGetCharacteristicExample"></code></pre>
+
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="Service.setCharacteristic">
+      <p class="text-info">
+        Service.setCharacteristic: (name: string | T, value: CharacteristicValue) => Characteristic
+      </p>
+      <div class="alert alert-primary" role="alert">
+        Calling <a routerLink="/reference/Service.setCharacteristic">Service.setCharacteristic</a> will trigger the "set"
+        handler if it exists and may lead to unexpected results, depending on your use case, you may wish to use the 
+        <a routerLink="/reference/Service.updateCharacteristic">Service.updateCharacteristic</a> method instead.
+      </div>
+      <p>
+        Set the characteristic value.
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="serviceSetCharacteristicExample"></code></pre>
+
+    </app-api-reference-entry>
+
+    <app-api-reference-entry method="Service.updateCharacteristic">
+      <p class="text-info">
+        Service.updateCharacteristic: (name: string | T, value: CharacteristicValue) => Characteristic
+      </p>
+      <p>
+        Updates the characteristic value. This can be used to update the state of a characteristic at any time,
+        for example, when triggering a motion sensor.
+      </p>
+      <pre><code [languages]="['javascript']" [highlight]="serviceUpdateCharacteristicExample"></code></pre>
+    
+    </app-api-reference-entry>
+
+  </section>
+
+</article>
