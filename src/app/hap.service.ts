@@ -30,7 +30,7 @@ export interface Characteristic {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HapService {
   public ready = false;
@@ -45,7 +45,7 @@ export class HapService {
     tw: 'Timed Write',
     hd: 'Hidden',
     wr: 'Write Response',
-  }
+  };
 
   searchProvider: Observable<any>;
 

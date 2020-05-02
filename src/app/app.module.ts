@@ -40,7 +40,7 @@ import { SearchComponent } from './search/search.component';
     AppRoutingModule,
   ],
   bootstrap: [
-    AppComponent
+    AppComponent,
   ],
 })
 export class AppModule { }

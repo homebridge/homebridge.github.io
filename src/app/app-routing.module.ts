@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'service',
-    redirectTo: 'service/AccessControl'
+    redirectTo: 'service/AccessControl',
   },
   {
     path: 'service/:serviceName',
@@ -28,16 +28,16 @@ const routes: Routes = [
   },
   {
     path: 'characteristic',
-    redirectTo: 'characteristic/AccessControlLevel'
+    redirectTo: 'characteristic/AccessControlLevel',
   },
   {
     path: 'characteristic/:characteristicName',
     component: CharacteristicComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,  {useHash: true, scrollPositionRestoration: 'top'})],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

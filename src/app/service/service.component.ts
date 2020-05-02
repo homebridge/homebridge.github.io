@@ -7,7 +7,7 @@ import { HapService, Service, Characteristic } from '../hap.service';
 @Component({
   selector: 'app-service',
   templateUrl: './service.component.html',
-  styleUrls: ['./service.component.scss']
+  styleUrls: ['./service.component.scss'],
 })
 export class ServiceComponent implements OnInit {
   public serviceName: string;
@@ -66,22 +66,22 @@ ${this.generateRequiredBindings(this.requiredCharacteristics)}
   }
 
 ${this.generateMethods(this.requiredCharacteristics)}
-}`
+}`;
   }
 
   generateRequiredBindings(characteristics: Characteristic[]): string {
     return characteristics.filter(x => x.props.format !== 'tlv8').map((x) => {
       return `      this.service.getCharacteristic(this.Characteristic.${x.name})
-${this.generateGetHandler(x)}${this.generateSetHandler(x)}`
-    }).join('\n')
+${this.generateGetHandler(x)}${this.generateSetHandler(x)}`;
+    }).join('\n');
   }
 
   generateGetHandler(characteristic: Characteristic): string {
     if (characteristic.props.perms.includes('pr')) {
       const value =  `        .on('get', this.handle${characteristic.name}Get.bind(this))`;
-      return characteristic.props.perms.includes('pw') ? value + '\n        ' : value + ';\n'
+      return characteristic.props.perms.includes('pw') ? value + '\n        ' : value + ';\n';
     } else {
-      return `        `
+      return `        `;
     }
   }
 
@@ -89,14 +89,14 @@ ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`
     if (characteristic.props.perms.includes('pw')) {
       return `.on('set', this.handle${characteristic.name}Set.bind(this));\n`;
     } else {
-      return ``
+      return ``;
     }
   }
 
   generateMethods(characteristics: Characteristic[]) {
     return characteristics.filter(x => x.props.format !== 'tlv8').map((x) => {
-      return `${this.generateGetMethod(x)}${this.generateSetMethod(x)}`
-    }).join('\n')
+      return `${this.generateGetMethod(x)}${this.generateSetMethod(x)}`;
+    }).join('\n');
   }
 
   generateGetMethod(characteristic: Characteristic) {
@@ -111,9 +111,9 @@ ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`
     const currentValue = 1;
 
     callback(null, currentValue);
-  }\n\n`
+  }\n\n`;
     } else {
-      return ``
+      return ``;
     }
   }
 
@@ -126,9 +126,9 @@ ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`
     this.log.debug('Triggered SET ${characteristic.name}:' value);
 
     callback(null);
-  }\n`
+  }\n`;
     } else {
-      return ``
+      return ``;
     }
   }
 

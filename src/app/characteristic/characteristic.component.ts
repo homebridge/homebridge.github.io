@@ -7,7 +7,7 @@ import { HapService, Characteristic, Service } from '../hap.service';
 @Component({
   selector: 'app-characteristic',
   templateUrl: './characteristic.component.html',
-  styleUrls: ['./characteristic.component.scss']
+  styleUrls: ['./characteristic.component.scss'],
 })
 export class CharacteristicComponent implements OnInit {
   public characteristicName: string;
@@ -39,11 +39,11 @@ export class CharacteristicComponent implements OnInit {
     const events: string[] = [];
 
     if (this.characteristic.props.perms.includes('pr')) {
-      events.push('get')
+      events.push('get');
     }
 
     if (this.characteristic.props.perms.includes('pw')) {
-      events.push('set')
+      events.push('set');
     }
 
     return events.join(', ');

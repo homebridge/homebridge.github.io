@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-api-reference',
   templateUrl: './api-reference.component.html',
-  styleUrls: ['./api-reference.component.scss']
+  styleUrls: ['./api-reference.component.scss'],
 })
 export class ApiReferenceComponent implements OnInit {
 
@@ -17,7 +17,7 @@ export class ApiReferenceComponent implements OnInit {
       if (params.anchor) {
         setTimeout(() => {
           const el = document.getElementById(params.anchor);
-          window.scrollTo(0, el.offsetTop + el.offsetHeight - 40)
+          window.scrollTo(0, el.offsetTop + el.offsetHeight - 40);
         });
       }
     });
@@ -32,7 +32,7 @@ class ExampleAccessoryPlugin {
   constructor(log, config, api) {
     log.debug('Example Accessory Plugin Loaded');
   }
-}`
+}`;
   }
 
   get registerPlatformExample() {
@@ -44,7 +44,7 @@ class ExamplePlatformPlugin {
   constructor(log, config, api) {
     log.debug('Example Platform Plugin Loaded');
   }
-}`
+}`;
   }
 
   get registerPlatformAccessoriesExample() {
@@ -80,7 +80,7 @@ class ExamplePlatformPlugin {
   configureAccessory(accessory) {
     this.accessories.push(accessory);
   }
-}`
+}`;
   }
 
   get unregisterPlatformAccessoriesExample() {
@@ -109,7 +109,7 @@ class ExamplePlatformPlugin {
   configureAccessory(accessory) {
     this.accessories.push(accessory);
   }
-}`
+}`;
   }
 
   get userStoragePathExample() {
@@ -117,7 +117,7 @@ class ExamplePlatformPlugin {
   constructor(log, config, api) {
     const storagePath = api.user.storagePath();
   }
-}`
+}`;
   }
 
   get userConfigPathExample() {
@@ -125,7 +125,7 @@ class ExamplePlatformPlugin {
   constructor(log, config, api) {
     const configPath = api.user.configPath();
   }
-}`
+}`;
   }
 
   get hapServiceExample() {
@@ -143,20 +143,20 @@ class ExamplePlatformPlugin {
       service = accessory.addService(this.api.Service.Lightbulb);
     }
   }
-}`
+}`;
   }
 
   get hapAddServiceSubtypeExample() {
-    return `const service1 = accessory.addService(Service.Lightbulb, 'Light Bulb 1', 'USER_DEFINED_SUBTYPE');`
+    return `const service1 = accessory.addService(Service.Lightbulb, 'Light Bulb 1', 'USER_DEFINED_SUBTYPE');`;
   }
 
   get hapGetServiceExample() {
-    return `const service = accessory.getService(this.api.hap.Service.Lightbulb);`
+    return `const service = accessory.getService(this.api.hap.Service.Lightbulb);`;
   }
 
 
   get hapGetServiceSubtypeExample() {
-    return `const service1 = accessory.getService('Light Bulb 1');`
+    return `const service1 = accessory.getService('Light Bulb 1');`;
   }
 
   get platformAccessoryExample() {
@@ -167,7 +167,7 @@ class ExamplePlatformPlugin {
     const uuid = this.api.hap.uuid.generate('SOMETHING UNIQUE');
     const accessory = new this.api.platformAccessory('DISPLAY NAME', uuid);
   }
-}`
+}`;
   }
 
   get platformAccessoryContextExample() {
@@ -181,20 +181,20 @@ class ExamplePlatformPlugin {
     // data stored on the context object will persist through restarts
     accessory.context.myData = 'anything';
   }
-}`
+}`;
   }
 
   get serviceGetCharacteristicExample() {
-    return `service.getCharacteristic(Characteristic.Brightness);`
+    return `service.getCharacteristic(Characteristic.Brightness);`;
   }
 
   get serviceSetCharacteristicExample() {
-    return `service.setCharacteristic(Characteristic.Name, 'Light Bulb 1');`
+    return `service.setCharacteristic(Characteristic.Name, 'Light Bulb 1');`;
   }
 
 
   get serviceUpdateCharacteristicExample() {
-    return `service.updateCharacteristic(Characteristic.Brightness, 60);`
+    return `service.updateCharacteristic(Characteristic.Brightness, 60);`;
   }
 
 }
