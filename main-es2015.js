@@ -719,28 +719,6 @@ class AppComponent {
                 }
             }
         });
-        /** Sidebar control - from the CoderDocs theme */
-        $(window).on('load resize', () => {
-            const w = $(window).width();
-            if (w >= 1200) {
-                // if larger
-                $('#docs-sidebar').addClass('sidebar-visible').removeClass('sidebar-hidden');
-            }
-            else {
-                // if smaller
-                $('#docs-sidebar').addClass('sidebar-hidden').removeClass('sidebar-visible');
-            }
-        });
-        $(document).ready(() => {
-            $('#docs-sidebar-toggler').on('click', () => {
-                if ($('#docs-sidebar').hasClass('sidebar-visible')) {
-                    $('#docs-sidebar').removeClass('sidebar-visible').addClass('sidebar-hidden');
-                }
-                else {
-                    $('#docs-sidebar').removeClass('sidebar-hidden').addClass('sidebar-visible');
-                }
-            });
-        });
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_hap_service__WEBPACK_IMPORTED_MODULE_2__["HapService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"])); };
@@ -1731,6 +1709,32 @@ class SidebarComponent {
         this.id = 1;
     }
     ngOnInit() {
+        /** Sidebar control - from the CoderDocs theme */
+        $('#docs-sidebar-toggler').on('click', () => {
+            if ($('#docs-sidebar').hasClass('sidebar-visible')) {
+                $('#docs-sidebar').removeClass('sidebar-visible').addClass('sidebar-hidden');
+            }
+            else {
+                $('#docs-sidebar').removeClass('sidebar-hidden').addClass('sidebar-visible');
+            }
+        });
+    }
+    ngAfterViewInit() {
+        $(window).on('resize', () => {
+            this.toggleSidebarDisplay();
+        });
+        this.toggleSidebarDisplay();
+    }
+    toggleSidebarDisplay() {
+        const w = $(window).width();
+        if (w >= 1200) {
+            // if larger
+            $('#docs-sidebar').addClass('sidebar-visible').removeClass('sidebar-hidden');
+        }
+        else {
+            // if smaller
+            $('#docs-sidebar').addClass('sidebar-hidden').removeClass('sidebar-visible');
+        }
     }
 }
 SidebarComponent.ɵfac = function SidebarComponent_Factory(t) { return new (t || SidebarComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_hap_service__WEBPACK_IMPORTED_MODULE_1__["HapService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
