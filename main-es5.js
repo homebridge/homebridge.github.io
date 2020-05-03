@@ -18,11 +18,11 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
   /***/
@@ -53,876 +53,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     module.exports = webpackEmptyAsyncContext;
     webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
     /***/
-  },
-
-  /***/
-  "./src/app/api-reference-entry/api-reference-entry.component.ts":
-  /*!**********************************************************************!*\
-    !*** ./src/app/api-reference-entry/api-reference-entry.component.ts ***!
-    \**********************************************************************/
-
-  /*! exports provided: ApiReferenceEntryComponent */
-
-  /***/
-  function srcAppApiReferenceEntryApiReferenceEntryComponentTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "ApiReferenceEntryComponent", function () {
-      return ApiReferenceEntryComponent;
-    });
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-
-    var _c0 = function _c0(a1) {
-      return ["/reference", a1];
-    };
-
-    var _c1 = ["*"];
-
-    var ApiReferenceEntryComponent = /*#__PURE__*/function () {
-      function ApiReferenceEntryComponent() {
-        _classCallCheck(this, ApiReferenceEntryComponent);
-      }
-
-      _createClass(ApiReferenceEntryComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {}
-      }]);
-
-      return ApiReferenceEntryComponent;
-    }();
-
-    ApiReferenceEntryComponent.ɵfac = function ApiReferenceEntryComponent_Factory(t) {
-      return new (t || ApiReferenceEntryComponent)();
-    };
-
-    ApiReferenceEntryComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: ApiReferenceEntryComponent,
-      selectors: [["app-api-reference-entry"]],
-      inputs: {
-        method: "method"
-      },
-      ngContentSelectors: _c1,
-      decls: 5,
-      vars: 5,
-      consts: [[3, "id"], [3, "routerLink"], [1, "fa", "fa-link"]],
-      template: function ApiReferenceEntryComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h3", 0);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "i", 2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](4);
-        }
-
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("id", ctx.method);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.method, " ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](3, _c0, ctx.method));
-        }
-      },
-      directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"]],
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwaS1yZWZlcmVuY2UtZW50cnkvYXBpLXJlZmVyZW5jZS1lbnRyeS5jb21wb25lbnQuc2NzcyJ9 */"]
-    });
-    /*@__PURE__*/
-
-    (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ApiReferenceEntryComponent, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-        args: [{
-          selector: 'app-api-reference-entry',
-          templateUrl: './api-reference-entry.component.html',
-          styleUrls: ['./api-reference-entry.component.scss']
-        }]
-      }], function () {
-        return [];
-      }, {
-        method: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }]
-      });
-    })();
-    /***/
-
-  },
-
-  /***/
-  "./src/app/api-reference/api-reference.component.ts":
-  /*!**********************************************************!*\
-    !*** ./src/app/api-reference/api-reference.component.ts ***!
-    \**********************************************************/
-
-  /*! exports provided: ApiReferenceComponent */
-
-  /***/
-  function srcAppApiReferenceApiReferenceComponentTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "ApiReferenceComponent", function () {
-      return ApiReferenceComponent;
-    });
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-    /* harmony import */
-
-
-    var _api_reference_entry_api_reference_entry_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! ../api-reference-entry/api-reference-entry.component */
-    "./src/app/api-reference-entry/api-reference-entry.component.ts");
-    /* harmony import */
-
-
-    var ngx_highlightjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ngx-highlightjs */
-    "./node_modules/ngx-highlightjs/__ivy_ngcc__/fesm2015/ngx-highlightjs.js");
-
-    var _c0 = function _c0() {
-      return ["javascript"];
-    };
-
-    var ApiReferenceComponent = /*#__PURE__*/function () {
-      function ApiReferenceComponent(currentRoute) {
-        _classCallCheck(this, ApiReferenceComponent);
-
-        this.currentRoute = currentRoute;
-      }
-
-      _createClass(ApiReferenceComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          this.currentRoute.params.subscribe(function (params) {
-            if (params.anchor) {
-              setTimeout(function () {
-                var el = document.getElementById(params.anchor);
-                window.scrollTo(0, el.offsetTop + el.offsetHeight - 40);
-              });
-            }
-          });
-        }
-      }, {
-        key: "registerAccessoryExample",
-        get: function get() {
-          return "module.exports = (api) => {\n  api.registerAccessory('ExampleAccessoryName', ExampleAccessoryPlugin);\n}\n\nclass ExampleAccessoryPlugin {\n  constructor(log, config, api) {\n    log.debug('Example Accessory Plugin Loaded');\n  }\n}";
-        }
-      }, {
-        key: "registerPlatformExample",
-        get: function get() {
-          return "module.exports = (api) => {\n  api.registerPlatform('ExamplePlatformName', ExamplePlatformPlugin);\n}\n\nclass ExamplePlatformPlugin {\n  constructor(log, config, api) {\n    log.debug('Example Platform Plugin Loaded');\n  }\n}";
-        }
-      }, {
-        key: "registerPlatformAccessoriesExample",
-        get: function get() {
-          return "class ExamplePlatformPlugin {\n  constructor(log, config, api) {\n\n    // store restored cached accessories here\n    this.accessories = [];\n\n    /**\n     * Platforms should wait until the \"didFinishLaunching\" event has fired before\n     * registering any new accessories.\n     */\n    api.on('didFinishLaunching', () => {\n      const uuid = api.hap.uuid.generate('SOMETHING UNIQUE');\n\n      // check the accessory was not restored from cache\n      if (!this.accessories.find(accessory => accessory.UUID === uuid)) {\n\n        // create a new accessory\n        const accessory = new this.api.platformAccessory('DISPLAY NAME', uuid);\n\n        // register the accessory\n        api.registerPlatformAccessories('PLUGIN_NAME', 'PLATFORM_NAME', [accessory]);\n      }\n    });\n  }\n\n  /**\n   * Homebridge will call the \"configureAccessory\" method once for every cached\n   * accessory restored\n   */\n  configureAccessory(accessory) {\n    this.accessories.push(accessory);\n  }\n}";
-        }
-      }, {
-        key: "unregisterPlatformAccessoriesExample",
-        get: function get() {
-          return "class ExamplePlatformPlugin {\n  constructor(log, config, api) {\n\n    // store restored cached accessories here\n    this.accessories = [];\n\n    /**\n     * Platforms should wait until the \"didFinishLaunching\" event has fired before\n     * registering any new accessories.\n     */\n    api.on('didFinishLaunching', () => {\n      // for the example just remove the first restored cached accessory\n      const accessory = this.accessories[0];\n\n      api.unregisterPlatformAccessories('PLUGIN_NAME', 'PLATFORM_NAME', [accessory]);\n    });\n  }\n\n  /**\n   * Homebridge will call the \"configureAccessory\" method once for every cached\n   * accessory restored\n   */\n  configureAccessory(accessory) {\n    this.accessories.push(accessory);\n  }\n}";
-        }
-      }, {
-        key: "userStoragePathExample",
-        get: function get() {
-          return "class ExamplePlatformPlugin {\n  constructor(log, config, api) {\n    const storagePath = api.user.storagePath();\n  }\n}";
-        }
-      }, {
-        key: "userConfigPathExample",
-        get: function get() {
-          return "class ExamplePlatformPlugin {\n  constructor(log, config, api) {\n    const configPath = api.user.configPath();\n  }\n}";
-        }
-      }, {
-        key: "hapServiceExample",
-        get: function get() {
-          return "class ExamplePlatformPlugin {\n  constructor(log, config, api) {\n    this.api = api;\n\n    const accessory = new this.api.platformAccessory('DISPLAY NAME', uuid);\n\n    // get the LightBulb service if it exists\n    let service = accessory.getService(this.api.hap.Service.Lightbulb);\n\n    // otherwise create a new LightBulb service\n    if (!service) {\n      service = accessory.addService(this.api.Service.Lightbulb);\n    }\n  }\n}";
-        }
-      }, {
-        key: "hapAddServiceSubtypeExample",
-        get: function get() {
-          return "const service1 = accessory.addService(Service.Lightbulb, 'Light Bulb 1', 'USER_DEFINED_SUBTYPE');";
-        }
-      }, {
-        key: "hapGetServiceExample",
-        get: function get() {
-          return "const service = accessory.getService(this.api.hap.Service.Lightbulb);";
-        }
-      }, {
-        key: "hapGetServiceSubtypeExample",
-        get: function get() {
-          return "const service1 = accessory.getService('Light Bulb 1');";
-        }
-      }, {
-        key: "platformAccessoryExample",
-        get: function get() {
-          return "class ExamplePlatformPlugin {\n  constructor(log, config, api) {\n    this.api = api;\n\n    const uuid = this.api.hap.uuid.generate('SOMETHING UNIQUE');\n    const accessory = new this.api.platformAccessory('DISPLAY NAME', uuid);\n  }\n}";
-        }
-      }, {
-        key: "platformAccessoryContextExample",
-        get: function get() {
-          return "class ExamplePlatformPlugin {\n  constructor(log, config, api) {\n    this.api = api;\n\n    const uuid = this.api.hap.uuid.generate('SOMETHING UNIQUE');\n    const accessory = new this.api.platformAccessory('DISPLAY NAME', uuid);\n\n    // data stored on the context object will persist through restarts\n    accessory.context.myData = 'anything';\n  }\n}";
-        }
-      }, {
-        key: "serviceGetCharacteristicExample",
-        get: function get() {
-          return "service.getCharacteristic(Characteristic.Brightness);";
-        }
-      }, {
-        key: "serviceSetCharacteristicExample",
-        get: function get() {
-          return "service.setCharacteristic(Characteristic.Name, 'Light Bulb 1');";
-        }
-      }, {
-        key: "serviceUpdateCharacteristicExample",
-        get: function get() {
-          return "service.updateCharacteristic(Characteristic.Brightness, 60);";
-        }
-      }]);
-
-      return ApiReferenceComponent;
-    }();
-
-    ApiReferenceComponent.ɵfac = function ApiReferenceComponent_Factory(t) {
-      return new (t || ApiReferenceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]));
-    };
-
-    ApiReferenceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: ApiReferenceComponent,
-      selectors: [["app-api-reference"]],
-      decls: 161,
-      vars: 45,
-      consts: [["id", "section-1", 1, "docs-article"], [1, "docs-header"], [1, "callout-block", "callout-block-warning"], [1, "content"], [1, "callout-title"], [1, "callout-icon-holder", "mr-1"], [1, "fas", "fa-info-circle"], ["method", "API.registerAccessory"], [1, "text-info"], [3, "languages", "highlight"], ["method", "API.registerPlatform"], ["method", "API.registerPlatformAccessories"], ["method", "API.unregisterPlatformAccessories"], ["method", "API.publishExternalAccessories"], ["method", "API.updatePlatformAccessories"], ["method", "API.on"], ["method", "API.user.storagePath"], ["method", "API.user.configPath"], ["method", "API.version"], ["method", "API.platformAccessory"], ["routerLink", "/reference/API.registerPlatformAccessories"], ["method", "PlatformAccessory.addService"], ["method", "PlatformAccessory.getService"], ["method", "PlatformAccessory.removeService"], ["method", "PlatformAccessory.context"], ["method", "PlatformAccessory.services"], ["method", "Service.getCharacteristic"], ["method", "Service.setCharacteristic"], ["role", "alert", 1, "alert", "alert-primary"], ["routerLink", "/reference/Service.setCharacteristic"], ["routerLink", "/reference/Service.updateCharacteristic"], ["method", "Service.updateCharacteristic"]],
-      template: function ApiReferenceComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "article", 0);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "header", 1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "h1");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "API Reference");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "h4", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "span", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "i", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, " Note ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, " This is a summary of the most commonly used API methods you will need when creating plugins. It is by no means comprehensive. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "section");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "app-api-reference-entry", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, " API.registerAccessory(accessoryName: string, constructor: AccessoryPluginConstructor): void ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, " Register a \"Accessory\" type plugin. Accessory style plugins only expose a single accessory, but can be configured multiple times in the Homebridge config.json (once per accessory the user wants to create). ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "app-api-reference-entry", 10);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, " API.registerPlatform(platformName: string, constructor: PlatformPluginConstructor): void ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, " Register a \"Platform\" type plugin. Platform style plugins can expose any number of accessories and can dynamically remove and add accessories at any time. Only a single instance of a given platform may be configured in the Homebridge config.json. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](26, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "app-api-reference-entry", 11);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, " API.registerPlatformAccessories(pluginIdentifier: string, platformName: string, accessories: PlatformAccessory[]): void ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "For use in Platform plugins only.");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, " Publish one or more accessories to Homebridge. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](35, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "app-api-reference-entry", 12);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, " API.unregisterPlatformAccessories(pluginIdentifier: string, platformName: string, accessories: PlatformAccessory[]): void ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](40, "For use in Platform plugins only.");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42, " Remove one or more accessories from Homebridge. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](44, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "app-api-reference-entry", 13);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, " API.publishExternalAccessories(pluginIdentifier: string, accessories: PlatformAccessory[]): void ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](49, "For use in Platform plugins only.");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, " Accessories published externally will need to be paired seperately by the user. Common uses for external accessories include Cameras and TVs. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "app-api-reference-entry", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](54, " API.updatePlatformAccessories(accessories: PlatformAccessory[]): void ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](56, "For use in Platform plugins only.");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "app-api-reference-entry", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, " API.on(event: \"didFinishLaunching\", listener: () => void): API ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](61, " When this event is fired it means Homebridge has restored all cached accessories from disk. Dynamic Platform plugins should only register new accessories after this event has fired in order to ensure they weren't already added to Homebridge. This event can also be used to start discovery of new accessories. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "app-api-reference-entry", 16);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64, " User.storagePath(): string ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66, " Returns the path to the Homebridge storage folder. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](68, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "app-api-reference-entry", 17);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, " User.configPath(): string ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, " Returns the path to the Homebridge config.json file. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](75, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "app-api-reference-entry", 18);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](78, " API.version: number ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](80, " Returns the current Homebridge API version. Note that this is different from the Homebridge package version. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "app-api-reference-entry", 19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](83, " API.platformAccessory(displayName: string, uuid: string, category?: any): PlatformAccessory ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](85, "For use in Platform plugins only.");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](87, " Creates a new platform accessory. It will not be active until you register the created accessory with ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](88, "a", 20);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](89, "API.registerPlatformAccessories");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](90, ". ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](91, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](92, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](93, "app-api-reference-entry", 21);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](94, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](95, " PlatformAccessory.addService(service: Service, ...constructorArgs: any[]): Service ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](96, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](97, " Adds a new service to a platform accessory. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](98, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](99, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](100, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](101, " If you are adding more than one service of the same type to an accessory, you will need to give the service a name and \"subtype\". ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](103, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](104, "app-api-reference-entry", 22);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](105, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](106, " PlatformAccessory.getService(name: string | T): any ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](107, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](108, " Returns an existing service from the platform accessory. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](109, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](110, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](111, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](112, " If you have added more than one service of the same type to an accessory, you will need to get the service using the name you defined when adding it. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](113, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](114, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](115, "app-api-reference-entry", 23);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](116, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](117, " PlatformAccessory.removeService(service: Service): void ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](118, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](119, " Removes the service from the platform accessory. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](120, "app-api-reference-entry", 24);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](121, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](122, " PlatformAccessory.context ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](123, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](124, " Store custom data with accessory that will persist through Homebridge restarts. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](125, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](126, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](127, "app-api-reference-entry", 25);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](128, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](129, " PlatformAccessory.services: Service[] ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](130, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](131, " An array of services currently added to the accessory. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](132, "app-api-reference-entry", 26);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](133, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](134, " Service.getCharacteristic: (name: string | T) => Characteristic ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](135, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](136, " Returns the requested Characteristic for the service. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](137, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](138, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](139, "app-api-reference-entry", 27);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](140, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](141, " Service.setCharacteristic: (name: string | T, value: CharacteristicValue) => Characteristic ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](142, "div", 28);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](143, " Calling ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](144, "a", 29);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](145, "Service.setCharacteristic");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](146, " will trigger the \"set\" handler if it exists and may lead to unexpected results, depending on your use case, you may wish to use the ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](147, "a", 30);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](148, "Service.updateCharacteristic");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](149, " method instead. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](150, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](151, " Set the characteristic value. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](152, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](153, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](154, "app-api-reference-entry", 31);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](155, "p", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](156, " Service.updateCharacteristic: (name: string | T, value: CharacteristicValue) => Characteristic ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](157, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](158, " Updates the characteristic value. This can be used to update the state of a characteristic at any time, for example, when triggering a motion sensor. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](159, "pre");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](160, "code", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](19);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](30, _c0))("highlight", ctx.registerAccessoryExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](31, _c0))("highlight", ctx.registerPlatformExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](32, _c0))("highlight", ctx.registerPlatformAccessoriesExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](33, _c0))("highlight", ctx.unregisterPlatformAccessoriesExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](24);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](34, _c0))("highlight", ctx.userStoragePathExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](35, _c0))("highlight", ctx.userConfigPathExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](17);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](36, _c0))("highlight", ctx.platformAccessoryExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](37, _c0))("highlight", ctx.hapServiceExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](38, _c0))("highlight", ctx.hapAddServiceSubtypeExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](39, _c0))("highlight", ctx.hapGetServiceExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](40, _c0))("highlight", ctx.hapGetServiceSubtypeExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](12);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](41, _c0))("highlight", ctx.platformAccessoryContextExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](12);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](42, _c0))("highlight", ctx.serviceGetCharacteristicExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](43, _c0))("highlight", ctx.serviceSetCharacteristicExample);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("languages", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](44, _c0))("highlight", ctx.serviceUpdateCharacteristicExample);
-        }
-      },
-      directives: [_api_reference_entry_api_reference_entry_component__WEBPACK_IMPORTED_MODULE_2__["ApiReferenceEntryComponent"], ngx_highlightjs__WEBPACK_IMPORTED_MODULE_3__["Highlight"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"]],
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwaS1yZWZlcmVuY2UvYXBpLXJlZmVyZW5jZS5jb21wb25lbnQuc2NzcyJ9 */"]
-    });
-    /*@__PURE__*/
-
-    (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ApiReferenceComponent, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-        args: [{
-          selector: 'app-api-reference',
-          templateUrl: './api-reference.component.html',
-          styleUrls: ['./api-reference.component.scss']
-        }]
-      }], function () {
-        return [{
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]
-        }];
-      }, null);
-    })();
-    /***/
-
   },
 
   /***/
@@ -959,49 +89,55 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _introduction_introduction_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! ./introduction/introduction.component */
-    "./src/app/introduction/introduction.component.ts");
-    /* harmony import */
-
-
-    var _service_service_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _service_service_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ./service/service.component */
     "./src/app/service/service.component.ts");
     /* harmony import */
 
 
-    var _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./characteristic/characteristic.component */
     "./src/app/characteristic/characteristic.component.ts");
     /* harmony import */
 
 
-    var _api_reference_api_reference_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! ./api-reference/api-reference.component */
-    "./src/app/api-reference/api-reference.component.ts");
+    var _docs_docs_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./docs/docs.component */
+    "./src/app/docs/docs.component.ts");
+    /* harmony import */
+
+
+    var _docs_docs_guard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./docs/docs.guard */
+    "./src/app/docs/docs.guard.ts");
 
     var routes = [{
       path: '',
-      component: _introduction_introduction_component__WEBPACK_IMPORTED_MODULE_2__["IntroductionComponent"]
+      component: _docs_docs_component__WEBPACK_IMPORTED_MODULE_4__["DocsComponent"]
     }, {
-      path: 'reference',
-      component: _api_reference_api_reference_component__WEBPACK_IMPORTED_MODULE_5__["ApiReferenceComponent"]
-    }, {
-      path: 'reference/:anchor',
-      component: _api_reference_api_reference_component__WEBPACK_IMPORTED_MODULE_5__["ApiReferenceComponent"]
+      path: 'service/:serviceName',
+      component: _service_service_component__WEBPACK_IMPORTED_MODULE_2__["ServiceComponent"]
     }, {
       path: 'service',
       redirectTo: 'service/AccessControl'
     }, {
-      path: 'service/:serviceName',
-      component: _service_service_component__WEBPACK_IMPORTED_MODULE_3__["ServiceComponent"]
+      path: 'characteristic/:characteristicName',
+      component: _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_3__["CharacteristicComponent"]
     }, {
       path: 'characteristic',
       redirectTo: 'characteristic/AccessControlLevel'
     }, {
-      path: 'characteristic/:characteristicName',
-      component: _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_4__["CharacteristicComponent"]
+      path: 'api',
+      component: _docs_docs_component__WEBPACK_IMPORTED_MODULE_4__["DocsComponent"],
+      children: [{
+        path: '**',
+        component: _docs_docs_component__WEBPACK_IMPORTED_MODULE_4__["DocsComponent"],
+        canActivate: [_docs_docs_guard__WEBPACK_IMPORTED_MODULE_5__["DocsGuard"]]
+      }]
+    }, {
+      path: '**',
+      canActivate: [_docs_docs_guard__WEBPACK_IMPORTED_MODULE_5__["DocsGuard"]],
+      component: _docs_docs_component__WEBPACK_IMPORTED_MODULE_4__["DocsComponent"]
     }];
 
     var AppRoutingModule = function AppRoutingModule() {
@@ -1017,7 +153,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       },
       imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, {
         useHash: true,
-        scrollPositionRestoration: 'top'
+        scrollPositionRestoration: 'enabled',
+        anchorScrolling: 'enabled',
+        scrollOffset: [0, 75]
       })], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
     });
 
@@ -1036,7 +174,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         args: [{
           imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, {
             useHash: true,
-            scrollPositionRestoration: 'top'
+            scrollPositionRestoration: 'enabled',
+            anchorScrolling: 'enabled',
+            scrollOffset: [0, 75]
           })],
           exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
         }]
@@ -1416,57 +556,57 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var ngx_markdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ngx-markdown */
+    "./node_modules/ngx-markdown/__ivy_ngcc__/fesm2015/ngx-markdown.js");
+    /* harmony import */
+
+
+    var _app_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! ./app-routing.module */
     "./src/app/app-routing.module.ts");
     /* harmony import */
 
 
-    var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! ./app.component */
     "./src/app/app.component.ts");
     /* harmony import */
 
 
-    var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! ./sidebar/sidebar.component */
     "./src/app/sidebar/sidebar.component.ts");
     /* harmony import */
 
 
-    var _introduction_introduction_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    var _introduction_introduction_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
     /*! ./introduction/introduction.component */
     "./src/app/introduction/introduction.component.ts");
     /* harmony import */
 
 
-    var _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    var _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
     /*! ./characteristic/characteristic.component */
     "./src/app/characteristic/characteristic.component.ts");
     /* harmony import */
 
 
-    var _service_service_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    var _service_service_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
     /*! ./service/service.component */
     "./src/app/service/service.component.ts");
     /* harmony import */
 
 
-    var _api_reference_api_reference_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
-    /*! ./api-reference/api-reference.component */
-    "./src/app/api-reference/api-reference.component.ts");
-    /* harmony import */
-
-
-    var _api_reference_entry_api_reference_entry_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
-    /*! ./api-reference-entry/api-reference-entry.component */
-    "./src/app/api-reference-entry/api-reference-entry.component.ts");
-    /* harmony import */
-
-
-    var _search_search_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+    var _search_search_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
     /*! ./search/search.component */
     "./src/app/search/search.component.ts");
+    /* harmony import */
+
+
+    var _docs_docs_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+    /*! ./docs/docs.component */
+    "./src/app/docs/docs.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -1474,19 +614,27 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
       type: AppModule,
-      bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
+      bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
     });
     AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
       factory: function AppModule_Factory(t) {
         return new (t || AppModule)();
       },
-      imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_7__["TypeaheadModule"].forRoot(), _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_highlightjs__WEBPACK_IMPORTED_MODULE_6__["HighlightModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"]]]
+      imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_7__["TypeaheadModule"].forRoot(), _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_highlightjs__WEBPACK_IMPORTED_MODULE_6__["HighlightModule"], ngx_markdown__WEBPACK_IMPORTED_MODULE_8__["MarkdownModule"].forRoot({
+        loader: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"],
+        markedOptions: {
+          provide: ngx_markdown__WEBPACK_IMPORTED_MODULE_8__["MarkedOptions"],
+          useValue: {
+            baseUrl: '/#/'
+          }
+        }
+      }), _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"]]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_10__["SidebarComponent"], _introduction_introduction_component__WEBPACK_IMPORTED_MODULE_11__["IntroductionComponent"], _service_service_component__WEBPACK_IMPORTED_MODULE_13__["ServiceComponent"], _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_12__["CharacteristicComponent"], _api_reference_api_reference_component__WEBPACK_IMPORTED_MODULE_14__["ApiReferenceComponent"], _api_reference_entry_api_reference_entry_component__WEBPACK_IMPORTED_MODULE_15__["ApiReferenceEntryComponent"], _search_search_component__WEBPACK_IMPORTED_MODULE_16__["SearchComponent"]],
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_7__["TypeaheadModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_highlightjs__WEBPACK_IMPORTED_MODULE_6__["HighlightModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"]]
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__["SidebarComponent"], _introduction_introduction_component__WEBPACK_IMPORTED_MODULE_12__["IntroductionComponent"], _service_service_component__WEBPACK_IMPORTED_MODULE_14__["ServiceComponent"], _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_13__["CharacteristicComponent"], _search_search_component__WEBPACK_IMPORTED_MODULE_15__["SearchComponent"], _docs_docs_component__WEBPACK_IMPORTED_MODULE_16__["DocsComponent"]],
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_7__["TypeaheadModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_highlightjs__WEBPACK_IMPORTED_MODULE_6__["HighlightModule"], ngx_markdown__WEBPACK_IMPORTED_MODULE_8__["MarkdownModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"]]
       });
     })();
     /*@__PURE__*/
@@ -1496,9 +644,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_10__["SidebarComponent"], _introduction_introduction_component__WEBPACK_IMPORTED_MODULE_11__["IntroductionComponent"], _service_service_component__WEBPACK_IMPORTED_MODULE_13__["ServiceComponent"], _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_12__["CharacteristicComponent"], _api_reference_api_reference_component__WEBPACK_IMPORTED_MODULE_14__["ApiReferenceComponent"], _api_reference_entry_api_reference_entry_component__WEBPACK_IMPORTED_MODULE_15__["ApiReferenceEntryComponent"], _search_search_component__WEBPACK_IMPORTED_MODULE_16__["SearchComponent"]],
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_7__["TypeaheadModule"].forRoot(), _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_highlightjs__WEBPACK_IMPORTED_MODULE_6__["HighlightModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"]],
-          bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__["SidebarComponent"], _introduction_introduction_component__WEBPACK_IMPORTED_MODULE_12__["IntroductionComponent"], _service_service_component__WEBPACK_IMPORTED_MODULE_14__["ServiceComponent"], _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_13__["CharacteristicComponent"], _search_search_component__WEBPACK_IMPORTED_MODULE_15__["SearchComponent"], _docs_docs_component__WEBPACK_IMPORTED_MODULE_16__["DocsComponent"]],
+          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_7__["TypeaheadModule"].forRoot(), _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_highlightjs__WEBPACK_IMPORTED_MODULE_6__["HighlightModule"], ngx_markdown__WEBPACK_IMPORTED_MODULE_8__["MarkdownModule"].forRoot({
+            loader: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"],
+            markedOptions: {
+              provide: ngx_markdown__WEBPACK_IMPORTED_MODULE_8__["MarkedOptions"],
+              useValue: {
+                baseUrl: '/#/'
+              }
+            }
+          }), _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"]],
+          bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
         }]
       }], null, null);
     })();
@@ -2134,6 +1290,289 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
+  "./src/app/docs/docs.component.ts":
+  /*!****************************************!*\
+    !*** ./src/app/docs/docs.component.ts ***!
+    \****************************************/
+
+  /*! exports provided: DocsComponent */
+
+  /***/
+  function srcAppDocsDocsComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DocsComponent", function () {
+      return DocsComponent;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
+
+
+    var ngx_markdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ngx-markdown */
+    "./node_modules/ngx-markdown/__ivy_ngcc__/fesm2015/ngx-markdown.js");
+
+    var _c0 = ["markdownOutput"];
+
+    var DocsComponent = /*#__PURE__*/function () {
+      function DocsComponent(router, currentRoute, viewportScroller) {
+        _classCallCheck(this, DocsComponent);
+
+        this.router = router;
+        this.currentRoute = currentRoute;
+        this.viewportScroller = viewportScroller;
+      }
+
+      _createClass(DocsComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this3 = this;
+
+          this.currentRoute.url.subscribe(function (url) {
+            _this3.url = _this3.router.url;
+            _this3.hash = _this3.router.url.substr(_this3.router.url.lastIndexOf('#'));
+
+            if (_this3.router.url === '/') {
+              _this3.page = '/home.md';
+            } else {
+              if (_this3.router.url.indexOf('#') > -1) {
+                _this3.page = _this3.router.url.substr(0, _this3.router.url.lastIndexOf('#')) + '.md';
+                _this3.url = _this3.router.url.substr(0, _this3.router.url.lastIndexOf('#'));
+              } else {
+                _this3.page = _this3.router.url + '.md';
+              }
+            }
+          });
+        }
+      }, {
+        key: "onLoad",
+        value: function onLoad(page) {
+          var headings = this.markdownOutput.nativeElement.querySelectorAll('h2,h3,h4,h5,h6');
+
+          for (var _i = 0, _Array$from = Array.from(headings); _i < _Array$from.length; _i++) {
+            var heading = _Array$from[_i];
+            var id = heading.innerText.replace(/[^a-zA-Z._-]/g, '');
+            var linkIcon = document.createElement('i');
+            linkIcon.classList.add('fa');
+            linkIcon.classList.add('fa-link');
+            var anchorLink = document.createElement('a');
+            anchorLink.setAttribute('href', '#' + this.url + '#' + id);
+            anchorLink.append(linkIcon);
+            heading.append(' ');
+            heading.append(anchorLink);
+            heading.setAttribute('id', id);
+          }
+
+          if (this.hash.length > 1) {
+            var anchor = decodeURIComponent(this.hash.slice(1));
+            this.viewportScroller.scrollToAnchor(anchor);
+          }
+        }
+      }]);
+
+      return DocsComponent;
+    }();
+
+    DocsComponent.ɵfac = function DocsComponent_Factory(t) {
+      return new (t || DocsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_2__["ViewportScroller"]));
+    };
+
+    DocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: DocsComponent,
+      selectors: [["app-docs"]],
+      viewQuery: function DocsComponent_Query(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, true);
+        }
+
+        if (rf & 2) {
+          var _t;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.markdownOutput = _t.first);
+        }
+      },
+      decls: 6,
+      vars: 2,
+      consts: [[1, "docs-article"], ["markdownOutput", ""], [3, "src", "load"], [1, "w-100", "text-center"], [3, "href"]],
+      template: function DocsComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "article", 0, 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "markdown", 2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("load", function DocsComponent_Template_markdown_load_2_listener($event) {
+            return ctx.onLoad($event);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "a", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Edit on GitHub");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", "docs" + ctx.page);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("href", "https://github.com/homebridge/homebridge.github.io/tree/source/src/docs" + ctx.page, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        }
+      },
+      directives: [ngx_markdown__WEBPACK_IMPORTED_MODULE_3__["MarkdownComponent"]],
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RvY3MvZG9jcy5jb21wb25lbnQuc2NzcyJ9 */"]
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DocsComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+          selector: 'app-docs',
+          templateUrl: './docs.component.html',
+          styleUrls: ['./docs.component.scss']
+        }]
+      }], function () {
+        return [{
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]
+        }, {
+          type: _angular_common__WEBPACK_IMPORTED_MODULE_2__["ViewportScroller"]
+        }];
+      }, {
+        markdownOutput: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+          args: ['markdownOutput']
+        }]
+      });
+    })();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/docs/docs.guard.ts":
+  /*!************************************!*\
+    !*** ./src/app/docs/docs.guard.ts ***!
+    \************************************/
+
+  /*! exports provided: DocsGuard */
+
+  /***/
+  function srcAppDocsDocsGuardTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DocsGuard", function () {
+      return DocsGuard;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+
+    var DocsGuard = /*#__PURE__*/function () {
+      function DocsGuard(router) {
+        _classCallCheck(this, DocsGuard);
+
+        this.router = router;
+      }
+
+      _createClass(DocsGuard, [{
+        key: "canActivate",
+        value: function canActivate(next) {
+          var fullPath = next.pathFromRoot.map(function (route) {
+            return route.url.map(function (x) {
+              return x.path;
+            }).join('/');
+          }).join('/');
+
+          if (fullPath.toLowerCase().endsWith('.md')) {
+            this.router.navigate([fullPath.substr(0, fullPath.lastIndexOf('.'))]);
+            return false;
+          } else if (fullPath.startsWith('/.')) {
+            this.router.navigate([fullPath.slice(1)]);
+            return false;
+          } else {
+            return true;
+          }
+        }
+      }]);
+
+      return DocsGuard;
+    }();
+
+    DocsGuard.ɵfac = function DocsGuard_Factory(t) {
+      return new (t || DocsGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]));
+    };
+
+    DocsGuard.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: DocsGuard,
+      factory: DocsGuard.ɵfac,
+      providedIn: 'root'
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DocsGuard, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+          providedIn: 'root'
+        }]
+      }], function () {
+        return [{
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
+        }];
+      }, null);
+    })();
+    /***/
+
+  },
+
+  /***/
   "./src/app/hap.service.ts":
   /*!********************************!*\
     !*** ./src/app/hap.service.ts ***!
@@ -2186,16 +1625,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(HapService, [{
         key: "load",
         value: function load() {
-          var _this3 = this;
+          var _this4 = this;
 
           Promise.all([this.httpClient.get('assets/services.json').toPromise(), this.httpClient.get('assets/characteristics.json').toPromise()]).then(function (_ref) {
             var _ref2 = _slicedToArray(_ref, 2),
                 services = _ref2[0],
                 characteristics = _ref2[1];
 
-            _this3.services = services;
-            _this3.characteristics = characteristics;
-            _this3.ready = true;
+            _this4.services = services;
+            _this4.characteristics = characteristics;
+            _this4.ready = true;
           });
         }
       }, {
@@ -2450,18 +1889,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(SearchComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this4 = this;
+          var _this5 = this;
 
           this.searchProvider = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"](function (observer) {
-            observer.next(_this4.query);
+            observer.next(_this5.query);
           }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["debounceTime"])(200), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["switchMap"])(function (query) {
             query = query.toLocaleLowerCase();
 
-            var matchingServices = _this4.hapService.services.filter(function (x) {
+            var matchingServices = _this5.hapService.services.filter(function (x) {
               return x.displayName.toLowerCase().indexOf(query) > -1 || x.name.toLowerCase().indexOf(query) > -1 || x.UUID.toLowerCase() === query;
             });
 
-            var matchingCharacteristics = _this4.hapService.characteristics.filter(function (x) {
+            var matchingCharacteristics = _this5.hapService.characteristics.filter(function (x) {
               return x.displayName.toLowerCase().indexOf(query) > -1 || x.name.toLowerCase().indexOf(query) > -1 || x.UUID.toLowerCase() === query;
             });
 
@@ -2770,21 +2209,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ServiceComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this5 = this;
+          var _this6 = this;
 
           this.currentRoute.paramMap.subscribe(function (params) {
-            _this5.serviceName = params.get('serviceName');
-            _this5.service = _this5.hapService.getServiceByName(_this5.serviceName);
-            _this5.requiredCharacteristics = _this5.service.requiredCharacteristics.map(function (x) {
-              return _this5.hapService.getCharacteristicsByUUID(x);
+            _this6.serviceName = params.get('serviceName');
+            _this6.service = _this6.hapService.getServiceByName(_this6.serviceName);
+            _this6.requiredCharacteristics = _this6.service.requiredCharacteristics.map(function (x) {
+              return _this6.hapService.getCharacteristicsByUUID(x);
             });
-            _this5.optionalCharacteristics = _this5.service.optionalCharacteristics.map(function (x) {
-              return _this5.hapService.getCharacteristicsByUUID(x);
+            _this6.optionalCharacteristics = _this6.service.optionalCharacteristics.map(function (x) {
+              return _this6.hapService.getCharacteristicsByUUID(x);
             });
 
-            _this5.generateExample();
+            _this6.generateExample();
 
-            _this5.titleService.setTitle("Homebridge API - ".concat(_this5.serviceName));
+            _this6.titleService.setTitle("Homebridge API - ".concat(_this6.serviceName));
           });
         }
       }, {
@@ -2795,12 +2234,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "generateRequiredBindings",
         value: function generateRequiredBindings(characteristics) {
-          var _this6 = this;
+          var _this7 = this;
 
           return characteristics.filter(function (x) {
             return x.props.format !== 'tlv8';
           }).map(function (x) {
-            return "      this.service.getCharacteristic(this.Characteristic.".concat(x.name, ")\n").concat(_this6.generateGetHandler(x)).concat(_this6.generateSetHandler(x));
+            return "      this.service.getCharacteristic(this.Characteristic.".concat(x.name, ")\n").concat(_this7.generateGetHandler(x)).concat(_this7.generateSetHandler(x));
           }).join('\n');
         }
       }, {
@@ -2825,12 +2264,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "generateMethods",
         value: function generateMethods(characteristics) {
-          var _this7 = this;
+          var _this8 = this;
 
           return characteristics.filter(function (x) {
             return x.props.format !== 'tlv8';
           }).map(function (x) {
-            return "".concat(_this7.generateGetMethod(x)).concat(_this7.generateSetMethod(x));
+            return "".concat(_this8.generateGetMethod(x)).concat(_this8.generateSetMethod(x));
           }).join('\n');
         }
       }, {
@@ -3055,7 +2494,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     };
 
     var _c3 = function _c3() {
-      return ["/reference"];
+      return ["/api/reference"];
     };
 
     var _c4 = function _c4() {
@@ -3092,10 +2531,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "ngAfterViewInit",
         value: function ngAfterViewInit() {
-          var _this8 = this;
+          var _this9 = this;
 
           $(window).on('resize', function () {
-            _this8.toggleSidebarDisplay();
+            _this9.toggleSidebarDisplay();
           });
           this.toggleSidebarDisplay();
         }
