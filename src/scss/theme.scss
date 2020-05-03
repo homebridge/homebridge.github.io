@@ -63,6 +63,7 @@ $theme-colors: (
 
 /*************************** Theme Styles Section ****************************/
 @import "theme/styles.scss";
+@import "markdown.scss";
 
 /************************ Import highlight.js Theme **************************/
 @import "~highlight.js/styles/atom-one-dark.css";

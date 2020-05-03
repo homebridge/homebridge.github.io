@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HighlightModule } from 'ngx-highlightjs';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,9 +14,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { CharacteristicComponent } from './characteristic/characteristic.component';
 import { ServiceComponent } from './service/service.component';
-import { ApiReferenceComponent } from './api-reference/api-reference.component';
-import { ApiReferenceEntryComponent } from './api-reference-entry/api-reference-entry.component';
 import { SearchComponent } from './search/search.component';
+import { DocsComponent } from './docs/docs.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +24,8 @@ import { SearchComponent } from './search/search.component';
     IntroductionComponent,
     ServiceComponent,
     CharacteristicComponent,
-    ApiReferenceComponent,
-    ApiReferenceEntryComponent,
     SearchComponent,
+    DocsComponent,
   ],
   imports: [
     CommonModule,
@@ -37,6 +36,15 @@ import { SearchComponent } from './search/search.component';
     TypeaheadModule.forRoot(),
     HttpClientModule,
     HighlightModule,
+    MarkdownModule.forRoot({
+      loader: HttpClient,
+      markedOptions: {
+        provide: MarkedOptions,
+        useValue: {
+          baseUrl: '/#/',
+        },
+      },
+    }),
     AppRoutingModule,
   ],
   bootstrap: [
