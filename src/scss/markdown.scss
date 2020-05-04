@@ -5,7 +5,21 @@ markdown {
       color: #5b99ea;
     }
     
-    h3 {
+    h3, h4 {
       margin-top: 25px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .callout-block {
+      h4 {
+        margin-top: 0px;
+      }
+
+      .anchor-link {
+        display: none;
+      }
     }
 }

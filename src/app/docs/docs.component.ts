@@ -40,14 +40,15 @@ export class DocsComponent implements OnInit {
   }
 
   onLoad(page: string) {
+    // add anchor links to heading elements
     const headings: HTMLHeadingElement[] = this.markdownOutput.nativeElement.querySelectorAll('h2,h3,h4,h5,h6');
-
     for (const heading of Array.from(headings)) {
-      const id = heading.innerText.replace(/[^a-zA-Z._-]/g, '');
+      const id = heading.innerText.toLowerCase().replace(/ /g, '-').replace(/[^a-zA-Z-]/g, '');
 
       const linkIcon = document.createElement('i');
       linkIcon.classList.add('fa');
       linkIcon.classList.add('fa-link');
+      linkIcon.classList.add('anchor-link');
 
       const anchorLink = document.createElement('a');
       anchorLink.setAttribute('href', '#' + this.url + '#' + id);
@@ -58,6 +59,16 @@ export class DocsComponent implements OnInit {
       heading.setAttribute('id', id);
     }
 
+    // convert relative # anchor links
+    const links: HTMLAnchorElement[] = this.markdownOutput.nativeElement.querySelectorAll('a');
+    for (const link of Array.from(links)) {
+      const currentHref = link.getAttribute('href');
+      if (currentHref.startsWith('#') && !currentHref.startsWith('#/')) {
+        link.setAttribute('href', '#' + this.url + currentHref);
+      }
+    }
+
+    // scroll the current anchor into view
     if (this.hash.length > 1) {
       const anchor = decodeURIComponent(this.hash.slice(1));
       this.viewportScroller.scrollToAnchor(anchor);

@@ -31,6 +31,11 @@ const routes: Routes = [
     component: DocsComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'reference',
+        pathMatch: 'full',
+      },
+      {
         path: '**',
         component: DocsComponent,
         canActivate: [DocsGuard],
