@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-docs',
@@ -12,29 +13,34 @@ export class DocsComponent implements OnInit {
   public hash: string;
   public url: string;
 
+  public notFound = false;
+
   @ViewChild('markdownOutput') private markdownOutput: ElementRef;
 
   constructor(
     private router: Router,
     private currentRoute: ActivatedRoute,
     private viewportScroller: ViewportScroller,
+    private titleService: Title,
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Homebridge API');
 
     this.currentRoute.url.subscribe((url) => {
+      this.notFound = false;
+
       this.url = this.router.url;
       this.hash = this.router.url.substr(this.router.url.lastIndexOf('#'));
 
-      if (this.router.url === '/') {
-        this.page = '/home.md';
+      console.log(this.url);
+
+      if (this.router.url.indexOf('#') > -1) {
+        this.url = this.router.url.substr(0, this.router.url.lastIndexOf('#'));
+        console.log(this.url);
+        this.page = this.url === '/' ? '/' + 'home.md' : this.url + '.md';
       } else {
-        if (this.router.url.indexOf('#') > -1) {
-          this.page = this.router.url.substr(0, this.router.url.lastIndexOf('#')) + '.md';
-          this.url = this.router.url.substr(0, this.router.url.lastIndexOf('#'));
-        } else {
-          this.page = this.router.url + '.md';
-        }
+        this.page = this.router.url === '/' ? '/' + 'home.md' : this.router.url + '.md';
       }
     });
   }
@@ -73,6 +79,10 @@ export class DocsComponent implements OnInit {
       const anchor = decodeURIComponent(this.hash.slice(1));
       this.viewportScroller.scrollToAnchor(anchor);
     }
+  }
+
+  onError(err) {
+    this.notFound = true;
   }
 
 }

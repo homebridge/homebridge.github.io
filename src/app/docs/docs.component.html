@@ -1,8 +1,16 @@
-<article class="docs-article" #markdownOutput>
-  <markdown [src]="'docs' + page" (load)="onLoad($event)"></markdown>
-</article>
+<div *ngIf="!notFound">
+  <article class="docs-article" #markdownOutput>
+    <markdown [src]="'docs' + page" (load)="onLoad($event)" (error)="onError($event)"></markdown>
+  </article>
 
-<div class="w-100 text-center">
-  <a [href]="'https://github.com/homebridge/homebridge.github.io/tree/source/src/docs' + page">Edit on GitHub</a>
+  <div class="w-100 text-center">
+    <a [href]="'https://github.com/homebridge/homebridge.github.io/tree/source/src/docs' + page">Edit on GitHub</a>
+  </div>
 </div>
 
+<div *ngIf="notFound" class="text-center">
+  <article class="docs-article mt-5" #markdownOutput>
+    <h3>Page Not Found</h3>
+  </article>
+
+</div>

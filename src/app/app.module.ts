@@ -11,7 +11,6 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { IntroductionComponent } from './introduction/introduction.component';
 import { CharacteristicComponent } from './characteristic/characteristic.component';
 import { ServiceComponent } from './service/service.component';
 import { SearchComponent } from './search/search.component';
@@ -21,7 +20,6 @@ import { DocsComponent } from './docs/docs.component';
   declarations: [
     AppComponent,
     SidebarComponent,
-    IntroductionComponent,
     ServiceComponent,
     CharacteristicComponent,
     SearchComponent,
