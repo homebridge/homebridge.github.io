@@ -1432,11 +1432,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this3.notFound = false;
             _this3.url = _this3.router.url;
             _this3.hash = _this3.router.url.substr(_this3.router.url.lastIndexOf('#'));
-            console.log(_this3.url);
 
             if (_this3.router.url.indexOf('#') > -1) {
               _this3.url = _this3.router.url.substr(0, _this3.router.url.lastIndexOf('#'));
-              console.log(_this3.url);
               _this3.page = _this3.url === '/' ? '/' + 'home.md' : _this3.url + '.md';
             } else {
               _this3.page = _this3.router.url === '/' ? '/' + 'home.md' : _this3.router.url + '.md';
