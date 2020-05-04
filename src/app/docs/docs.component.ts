@@ -33,11 +33,8 @@ export class DocsComponent implements OnInit {
       this.url = this.router.url;
       this.hash = this.router.url.substr(this.router.url.lastIndexOf('#'));
 
-      console.log(this.url);
-
       if (this.router.url.indexOf('#') > -1) {
         this.url = this.router.url.substr(0, this.router.url.lastIndexOf('#'));
-        console.log(this.url);
         this.page = this.url === '/' ? '/' + 'home.md' : this.url + '.md';
       } else {
         this.page = this.router.url === '/' ? '/' + 'home.md' : this.router.url + '.md';
