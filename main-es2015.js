@@ -189,6 +189,11 @@ class AppComponent {
         this.hapService = hapService;
         router.events.subscribe((event) => {
             if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"]) {
+                // Google Analytics Event Trigger
+                gtag('config', 'UA-165871119-1', {
+                    'page_path': event.urlAfterRedirects,
+                });
+                // Close sidebar after navigation on mobile
                 if (window.innerWidth >= 1200) {
                     return;
                 }
