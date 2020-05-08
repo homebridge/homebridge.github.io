@@ -23,7 +23,6 @@
     "@types/node": "^13.13.4",
     "@types/uuid": "^7.0.3",
     "bootstrap": "^4.4.1",
-    "highlight.js": "^10.0.1",
     "jquery": "^3.4.1",
     "ngx-bootstrap": "^5.6.1",
     "ngx-highlightjs": "^4.1.0-beta",

@@ -30,6 +30,10 @@
     
     </section>
 
+    <section *ngIf="markdown">
+      <markdown [data]="markdown"></markdown>
+    </section>
+
     <section *ngIf="exampleCode">
       <h3>Example</h3>
 
@@ -46,10 +50,9 @@
     </div>
 
       <div class="docs-code-block">
-        <pre class="shadow-lg rounded"><code [highlight]="exampleCode"></code></pre>
+        <pre class="language-js" [prism]="exampleCode"></pre>
       </div>
           
-    
     </section>
 
 

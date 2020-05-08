@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 import { HapService, Service, Characteristic } from '../hap.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-service',
@@ -17,11 +18,13 @@ export class ServiceComponent implements OnInit {
   public optionalCharacteristics: Characteristic[];
 
   public exampleCode: string;
+  public markdown: string;
 
   constructor(
     private currentRoute: ActivatedRoute,
     private hapService: HapService,
     private titleService: Title,
+    private httpClient: HttpClient,
   ) { }
 
   ngOnInit(): void {
@@ -32,10 +35,23 @@ export class ServiceComponent implements OnInit {
       this.requiredCharacteristics = this.service.requiredCharacteristics.map(x => this.hapService.getCharacteristicsByUUID(x));
       this.optionalCharacteristics = this.service.optionalCharacteristics.map(x => this.hapService.getCharacteristicsByUUID(x));
 
-      this.generateExample();
+      this.getMarkdown();
 
       this.titleService.setTitle(`Homebridge API - ${this.serviceName}`);
     });
+  }
+
+  getMarkdown() {
+    this.markdown = null;
+    this.exampleCode = null;
+    this.httpClient.get('/docs/service/' + this.serviceName + '.md', {responseType: 'text'}).subscribe(
+      (res) => {
+        this.markdown = res;
+      },
+      (err) => {
+        this.generateExample();
+      },
+    );
   }
 
   generateExample() {

@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HighlightModule } from 'ngx-highlightjs';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
@@ -15,6 +14,7 @@ import { CharacteristicComponent } from './characteristic/characteristic.compone
 import { ServiceComponent } from './service/service.component';
 import { SearchComponent } from './search/search.component';
 import { DocsComponent } from './docs/docs.component';
+import { PrismDirective } from './prism.directive';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { DocsComponent } from './docs/docs.component';
     CharacteristicComponent,
     SearchComponent,
     DocsComponent,
+    PrismDirective,
   ],
   imports: [
     CommonModule,
@@ -33,7 +34,6 @@ import { DocsComponent } from './docs/docs.component';
     ReactiveFormsModule,
     TypeaheadModule.forRoot(),
     HttpClientModule,
-    HighlightModule,
     MarkdownModule.forRoot({
       loader: HttpClient,
       markedOptions: {
