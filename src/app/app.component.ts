@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { HapService } from './hap.service';
 import { Router, NavigationEnd } from '@angular/router';
 
+declare let gtag: Function;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,6 +18,15 @@ export class AppComponent {
 
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+
+        // Google Analytics Event Trigger
+        gtag('config', 'UA-165871119-1',
+          {
+            'page_path': event.urlAfterRedirects,
+          },
+        );
+
+        // Close sidebar after navigation on mobile
         if (window.innerWidth >= 1200) {
           return;
         }
