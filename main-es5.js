@@ -553,63 +553,63 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var ngx_highlightjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! ngx-highlightjs */
-    "./node_modules/ngx-highlightjs/__ivy_ngcc__/fesm2015/ngx-highlightjs.js");
-    /* harmony import */
-
-
-    var ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ngx-bootstrap/typeahead */
     "./node_modules/ngx-bootstrap/__ivy_ngcc__/typeahead/fesm2015/ngx-bootstrap-typeahead.js");
     /* harmony import */
 
 
-    var ngx_markdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var ngx_markdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ngx-markdown */
     "./node_modules/ngx-markdown/__ivy_ngcc__/fesm2015/ngx-markdown.js");
     /* harmony import */
 
 
-    var _app_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ./app-routing.module */
     "./src/app/app-routing.module.ts");
     /* harmony import */
 
 
-    var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! ./app.component */
     "./src/app/app.component.ts");
     /* harmony import */
 
 
-    var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! ./sidebar/sidebar.component */
     "./src/app/sidebar/sidebar.component.ts");
     /* harmony import */
 
 
-    var _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    var _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! ./characteristic/characteristic.component */
     "./src/app/characteristic/characteristic.component.ts");
     /* harmony import */
 
 
-    var _service_service_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    var _service_service_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
     /*! ./service/service.component */
     "./src/app/service/service.component.ts");
     /* harmony import */
 
 
-    var _search_search_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    var _search_search_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
     /*! ./search/search.component */
     "./src/app/search/search.component.ts");
     /* harmony import */
 
 
-    var _docs_docs_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+    var _docs_docs_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
     /*! ./docs/docs.component */
     "./src/app/docs/docs.component.ts");
+    /* harmony import */
+
+
+    var _prism_directive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+    /*! ./prism.directive */
+    "./src/app/prism.directive.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -617,27 +617,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
       type: AppModule,
-      bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
+      bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
     });
     AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
       factory: function AppModule_Factory(t) {
         return new (t || AppModule)();
       },
-      imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_7__["TypeaheadModule"].forRoot(), _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_highlightjs__WEBPACK_IMPORTED_MODULE_6__["HighlightModule"], ngx_markdown__WEBPACK_IMPORTED_MODULE_8__["MarkdownModule"].forRoot({
+      imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_6__["TypeaheadModule"].forRoot(), _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_markdown__WEBPACK_IMPORTED_MODULE_7__["MarkdownModule"].forRoot({
         loader: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"],
         markedOptions: {
-          provide: ngx_markdown__WEBPACK_IMPORTED_MODULE_8__["MarkedOptions"],
+          provide: ngx_markdown__WEBPACK_IMPORTED_MODULE_7__["MarkedOptions"],
           useValue: {
             baseUrl: '/#/'
           }
         }
-      }), _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"]]]
+      }), _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"]]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__["SidebarComponent"], _service_service_component__WEBPACK_IMPORTED_MODULE_13__["ServiceComponent"], _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_12__["CharacteristicComponent"], _search_search_component__WEBPACK_IMPORTED_MODULE_14__["SearchComponent"], _docs_docs_component__WEBPACK_IMPORTED_MODULE_15__["DocsComponent"]],
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_7__["TypeaheadModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_highlightjs__WEBPACK_IMPORTED_MODULE_6__["HighlightModule"], ngx_markdown__WEBPACK_IMPORTED_MODULE_8__["MarkdownModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"]]
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_10__["SidebarComponent"], _service_service_component__WEBPACK_IMPORTED_MODULE_12__["ServiceComponent"], _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_11__["CharacteristicComponent"], _search_search_component__WEBPACK_IMPORTED_MODULE_13__["SearchComponent"], _docs_docs_component__WEBPACK_IMPORTED_MODULE_14__["DocsComponent"], _prism_directive__WEBPACK_IMPORTED_MODULE_15__["PrismDirective"]],
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_6__["TypeaheadModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_markdown__WEBPACK_IMPORTED_MODULE_7__["MarkdownModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"]]
       });
     })();
     /*@__PURE__*/
@@ -647,17 +647,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__["SidebarComponent"], _service_service_component__WEBPACK_IMPORTED_MODULE_13__["ServiceComponent"], _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_12__["CharacteristicComponent"], _search_search_component__WEBPACK_IMPORTED_MODULE_14__["SearchComponent"], _docs_docs_component__WEBPACK_IMPORTED_MODULE_15__["DocsComponent"]],
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_7__["TypeaheadModule"].forRoot(), _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_highlightjs__WEBPACK_IMPORTED_MODULE_6__["HighlightModule"], ngx_markdown__WEBPACK_IMPORTED_MODULE_8__["MarkdownModule"].forRoot({
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_10__["SidebarComponent"], _service_service_component__WEBPACK_IMPORTED_MODULE_12__["ServiceComponent"], _characteristic_characteristic_component__WEBPACK_IMPORTED_MODULE_11__["CharacteristicComponent"], _search_search_component__WEBPACK_IMPORTED_MODULE_13__["SearchComponent"], _docs_docs_component__WEBPACK_IMPORTED_MODULE_14__["DocsComponent"], _prism_directive__WEBPACK_IMPORTED_MODULE_15__["PrismDirective"]],
+          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_6__["TypeaheadModule"].forRoot(), _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_markdown__WEBPACK_IMPORTED_MODULE_7__["MarkdownModule"].forRoot({
             loader: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"],
             markedOptions: {
-              provide: ngx_markdown__WEBPACK_IMPORTED_MODULE_8__["MarkedOptions"],
+              provide: ngx_markdown__WEBPACK_IMPORTED_MODULE_7__["MarkedOptions"],
               useValue: {
                 baseUrl: '/#/'
               }
             }
-          }), _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"]],
-          bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
+          }), _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"]],
+          bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
         }]
       }], null, null);
     })();
@@ -1792,6 +1792,85 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/prism.directive.ts":
+  /*!************************************!*\
+    !*** ./src/app/prism.directive.ts ***!
+    \************************************/
+
+  /*! exports provided: PrismDirective */
+
+  /***/
+  function srcAppPrismDirectiveTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PrismDirective", function () {
+      return PrismDirective;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+    var PrismDirective = /*#__PURE__*/function () {
+      function PrismDirective(el) {
+        _classCallCheck(this, PrismDirective);
+
+        this.el = el;
+      }
+
+      _createClass(PrismDirective, [{
+        key: "prism",
+        set: function set(val) {
+          var codeElement = document.createElement('code');
+          codeElement.innerHTML = val;
+          this.el.nativeElement.innerHTML = codeElement.outerHTML;
+          Prism.highlightElement(this.el.nativeElement);
+        }
+      }]);
+
+      return PrismDirective;
+    }();
+
+    PrismDirective.ɵfac = function PrismDirective_Factory(t) {
+      return new (t || PrismDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]));
+    };
+
+    PrismDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+      type: PrismDirective,
+      selectors: [["", "prism", ""]],
+      inputs: {
+        prism: "prism"
+      }
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](PrismDirective, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+        args: [{
+          selector: '[prism]'
+        }]
+      }], function () {
+        return [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+        }];
+      }, {
+        prism: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }]
+      });
+    })();
+    /***/
+
+  },
+
+  /***/
   "./src/app/search/search.component.ts":
   /*!********************************************!*\
     !*** ./src/app/search/search.component.ts ***!
@@ -2016,15 +2095,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
     /* harmony import */
 
 
-    var ngx_highlightjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! ngx-highlightjs */
-    "./node_modules/ngx-highlightjs/__ivy_ngcc__/fesm2015/ngx-highlightjs.js");
+    var ngx_markdown__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ngx-markdown */
+    "./node_modules/ngx-markdown/__ivy_ngcc__/fesm2015/ngx-markdown.js");
+    /* harmony import */
+
+
+    var _prism_directive__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ../prism.directive */
+    "./src/app/prism.directive.ts");
 
     var _c0 = function _c0(a1) {
       return ["/characteristic", a1];
@@ -2044,15 +2135,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var characteristic_r3 = ctx.$implicit;
+        var characteristic_r4 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](2, _c0, characteristic_r3.name));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](2, _c0, characteristic_r4.name));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](characteristic_r3.displayName);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](characteristic_r4.displayName);
       }
     }
 
@@ -2070,15 +2161,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var characteristic_r5 = ctx.$implicit;
+        var characteristic_r6 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](2, _c0, characteristic_r5.name));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](2, _c0, characteristic_r6.name));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](characteristic_r5.displayName);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](characteristic_r6.displayName);
       }
     }
 
@@ -2114,21 +2205,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section");
 
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "markdown", 5);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("data", ctx_r2.markdown);
+      }
+    }
+
+    function ServiceComponent_section_13_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section");
+
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h3");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Example");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 6);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 7);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "h4", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "h4", 8);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "span", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "span", 9);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "i", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "i", 10);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2142,13 +2251,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 11);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "pre", 11);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "code", 12);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "pre", 12);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2156,25 +2261,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" The example below is automatically generated and may not be a complete example of what is required to create a working \"", ctx_r2.service.displayName, "\" Homebridge plugin. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" The example below is automatically generated and may not be a complete example of what is required to create a working \"", ctx_r3.service.displayName, "\" Homebridge plugin. ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("highlight", ctx_r2.exampleCode);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("prism", ctx_r3.exampleCode);
       }
     }
 
     var ServiceComponent = /*#__PURE__*/function () {
-      function ServiceComponent(currentRoute, hapService, titleService) {
+      function ServiceComponent(currentRoute, hapService, titleService, httpClient) {
         _classCallCheck(this, ServiceComponent);
 
         this.currentRoute = currentRoute;
         this.hapService = hapService;
         this.titleService = titleService;
+        this.httpClient = httpClient;
       }
 
       _createClass(ServiceComponent, [{
@@ -2192,9 +2298,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               return _this6.hapService.getCharacteristicsByUUID(x);
             });
 
-            _this6.generateExample();
+            _this6.getMarkdown();
 
             _this6.titleService.setTitle("Homebridge API - ".concat(_this6.serviceName));
+          });
+        }
+      }, {
+        key: "getMarkdown",
+        value: function getMarkdown() {
+          var _this7 = this;
+
+          this.markdown = null;
+          this.exampleCode = null;
+          this.httpClient.get('/docs/service/' + this.serviceName + '.md', {
+            responseType: 'text'
+          }).subscribe(function (res) {
+            _this7.markdown = res;
+          }, function (err) {
+            _this7.generateExample();
           });
         }
       }, {
@@ -2205,12 +2326,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "generateRequiredBindings",
         value: function generateRequiredBindings(characteristics) {
-          var _this7 = this;
+          var _this8 = this;
 
           return characteristics.filter(function (x) {
             return x.props.format !== 'tlv8';
           }).map(function (x) {
-            return "      this.service.getCharacteristic(this.Characteristic.".concat(x.name, ")\n").concat(_this7.generateGetHandler(x)).concat(_this7.generateSetHandler(x));
+            return "      this.service.getCharacteristic(this.Characteristic.".concat(x.name, ")\n").concat(_this8.generateGetHandler(x)).concat(_this8.generateSetHandler(x));
           }).join('\n');
         }
       }, {
@@ -2235,12 +2356,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "generateMethods",
         value: function generateMethods(characteristics) {
-          var _this8 = this;
+          var _this9 = this;
 
           return characteristics.filter(function (x) {
             return x.props.format !== 'tlv8';
           }).map(function (x) {
-            return "".concat(_this8.generateGetMethod(x)).concat(_this8.generateSetMethod(x));
+            return "".concat(_this9.generateGetMethod(x)).concat(_this9.generateSetMethod(x));
           }).join('\n');
         }
       }, {
@@ -2267,15 +2388,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     ServiceComponent.ɵfac = function ServiceComponent_Factory(t) {
-      return new (t || ServiceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_hap_service__WEBPACK_IMPORTED_MODULE_2__["HapService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["Title"]));
+      return new (t || ServiceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_hap_service__WEBPACK_IMPORTED_MODULE_2__["HapService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["Title"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]));
     };
 
     ServiceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: ServiceComponent,
       selectors: [["app-service"]],
-      decls: 13,
-      vars: 5,
-      consts: [[1, "docs-article"], [1, "docs-header"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [3, "routerLink"], [1, "callout-block", "callout-block-warning"], [1, "content"], [1, "callout-title"], [1, "callout-icon-holder", "mr-1"], [1, "fas", "fa-info-circle"], [1, "docs-code-block"], [1, "shadow-lg", "rounded"], [3, "highlight"]],
+      decls: 14,
+      vars: 6,
+      consts: [[1, "docs-article"], [1, "docs-header"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [3, "routerLink"], [3, "data"], [1, "callout-block", "callout-block-warning"], [1, "content"], [1, "callout-title"], [1, "callout-icon-holder", "mr-1"], [1, "fas", "fa-info-circle"], [1, "docs-code-block"], [1, "language-js", 3, "prism"]],
       template: function ServiceComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "article", 0);
@@ -2314,7 +2435,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, ServiceComponent_section_11_Template, 5, 1, "section", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, ServiceComponent_section_12_Template, 13, 2, "section", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, ServiceComponent_section_12_Template, 2, 1, "section", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, ServiceComponent_section_13_Template, 12, 2, "section", 3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -2338,10 +2461,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.markdown);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.exampleCode);
         }
       },
-      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"], ngx_highlightjs__WEBPACK_IMPORTED_MODULE_5__["Highlight"]],
+      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"], ngx_markdown__WEBPACK_IMPORTED_MODULE_6__["MarkdownComponent"], _prism_directive__WEBPACK_IMPORTED_MODULE_7__["PrismDirective"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NlcnZpY2Uvc2VydmljZS5jb21wb25lbnQuc2NzcyJ9 */"]
     });
     /*@__PURE__*/
@@ -2361,6 +2488,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           type: _hap_service__WEBPACK_IMPORTED_MODULE_2__["HapService"]
         }, {
           type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["Title"]
+        }, {
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]
         }];
       }, null);
     })();
@@ -2526,10 +2655,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngAfterViewInit",
         value: function ngAfterViewInit() {
-          var _this9 = this;
+          var _this10 = this;
 
           $(window).on('resize', function () {
-            _this9.toggleSidebarDisplay();
+            _this10.toggleSidebarDisplay();
           });
           this.toggleSidebarDisplay();
         }
