@@ -36,10 +36,6 @@
           <th scope="row">Min Step</th>
           <td>{{ characteristic.props.minStep }}</td>
         </tr>
-        <tr *ngIf="characteristic.props.minStep !== null">
-          <th scope="row">Min Step</th>
-          <td>{{ characteristic.props.minStep }}</td>
-        </tr>
         <tr *ngIf="characteristic.props.perms">
           <th scope="row">Permissions</th>
           <td>{{ characteristicPermissions }}</td>
