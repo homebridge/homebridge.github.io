@@ -46,6 +46,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+              "src/CNAME",
               "src/favicon.ico",
               "src/assets",
               "src/docs"
