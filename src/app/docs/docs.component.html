@@ -1,6 +1,6 @@
 <div *ngIf="!notFound">
   <article class="docs-article" #markdownOutput>
-    <markdown [src]="'docs' + page" (load)="onLoad($event)" (error)="onError($event)"></markdown>
+    <markdown emoji [src]="'docs' + page" (load)="onLoad($event)" (error)="onError($event)"></markdown>
   </article>
 
   <div class="w-100 text-center">
