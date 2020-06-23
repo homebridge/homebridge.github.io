@@ -100,6 +100,23 @@
         "constValues": []
     },
     {
+        "name": "ActivityInterval",
+        "displayName": "Activity Interval",
+        "UUID": "0000021E-0000-1000-8000-0000023B",
+        "props": {
+            "format": "uint32",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": null,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "AdministratorOnlyAccess",
         "displayName": "Administrator Only Access",
         "UUID": "00000001-0000-1000-8000-0026BB765291",
@@ -304,6 +321,38 @@
         "constValues": []
     },
     {
+        "name": "CCAEnergyDetectThreshold",
+        "displayName": "CCA Energy Detect Threshold",
+        "UUID": "0000021E-0000-1000-8000-00000246",
+        "props": {
+            "format": "int",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CCASignalDetectThreshold",
+        "displayName": "CCA Signal Detect Threshold",
+        "UUID": "0000021E-0000-1000-8000-00000245",
+        "props": {
+            "format": "int",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "CameraOperatingModeIndicator",
         "displayName": "Camera Operating Mode Indicator",
         "UUID": "0000021D-0000-1000-8000-0026BB765291",
@@ -471,6 +520,24 @@
             "minStep": 1,
             "perms": [
                 "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "CharacteristicValueTransitionControl",
+        "displayName": "Characteristic Value Transition Control",
+        "UUID": "0000021E-0000-1000-8000-00000143",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
                 "ev"
             ]
         },
@@ -1090,6 +1157,22 @@
         "constValues": []
     },
     {
+        "name": "CurrentTransport",
+        "displayName": "Current Transport",
+        "UUID": "0000021E-0000-1000-8000-0000022B",
+        "props": {
+            "format": "bool",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "CurrentVerticalTiltAngle",
         "displayName": "Current Vertical Tilt Angle",
         "UUID": "0000006E-0000-1000-8000-0026BB765291",
@@ -1137,6 +1220,41 @@
                 "value": 1
             }
         ]
+    },
+    {
+        "name": "DataStreamHAPTransport",
+        "displayName": "Data Stream HAP Transport",
+        "UUID": "0000021E-0000-1000-8000-00000138",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "wr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "DataStreamHAPTransportInterrupt",
+        "displayName": "Data Stream HAP Transport Interrupt",
+        "UUID": "0000021E-0000-1000-8000-00000139",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
     },
     {
         "name": "DayoftheWeek",
@@ -1253,6 +1371,22 @@
         "constValues": []
     },
     {
+        "name": "EventRetransmissionMaximum",
+        "displayName": "Event Retransmission Maximum",
+        "UUID": "0000021E-0000-1000-8000-0000023D",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "EventSnapshotsActive",
         "displayName": "Event Snapshots Active",
         "UUID": "00000223-0000-1000-8000-0026BB765291",
@@ -1278,6 +1412,22 @@
                 "value": 1
             }
         ]
+    },
+    {
+        "name": "EventTransmissionCounters",
+        "displayName": "Event Transmission Counters",
+        "UUID": "0000021E-0000-1000-8000-0000023E",
+        "props": {
+            "format": "uint32",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
     },
     {
         "name": "FilterChangeIndication",
@@ -1544,7 +1694,7 @@
             "format": "uint8",
             "unit": null,
             "minValue": 0,
-            "maxValue": 5,
+            "maxValue": 6,
             "minStep": null,
             "perms": [
                 "pr",
@@ -1583,6 +1733,10 @@
             {
                 "key": "AUDIO_SYSTEM",
                 "value": 5
+            },
+            {
+                "key": "UNKNOWN_6",
+                "value": 6
             }
         ]
     },
@@ -1958,6 +2112,38 @@
         "constValues": []
     },
     {
+        "name": "MACRetransmissionMaximum",
+        "displayName": "MAC Retransmission Maximum",
+        "UUID": "0000021E-0000-1000-8000-00000247",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "MACTransmissionCounters",
+        "displayName": "MAC Transmission Counters",
+        "UUID": "0000021E-0000-1000-8000-00000248",
+        "props": {
+            "format": "data",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "ManagedNetworkEnable",
         "displayName": "Managed Network Enable",
         "UUID": "00000215-0000-1000-8000-0026BB765291",
@@ -2262,6 +2448,23 @@
         "constValues": []
     },
     {
+        "name": "OperatingStateResponse",
+        "displayName": "Operating State Response",
+        "UUID": "0000021E-0000-1000-8000-00000232",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "OpticalZoom",
         "displayName": "Optical Zoom",
         "UUID": "0000011C-0000-1000-8000-0026BB765291",
@@ -2527,6 +2730,22 @@
         ]
     },
     {
+        "name": "Ping",
+        "displayName": "Ping",
+        "UUID": "0000021E-0000-1000-8000-0000023C",
+        "props": {
+            "format": "data",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "PositionState",
         "displayName": "Position State",
         "UUID": "00000072-0000-1000-8000-0026BB765291",
@@ -2707,6 +2926,38 @@
             "perms": [
                 "pr",
                 "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ReceivedSignalStrengthIndication",
+        "displayName": "Received Signal Strength Indication",
+        "UUID": "0000021E-0000-1000-8000-0000023F",
+        "props": {
+            "format": "int",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "ReceiverSensitivity",
+        "displayName": "Receiver Sensitivity",
+        "UUID": "0000021E-0000-1000-8000-00000244",
+        "props": {
+            "format": "int",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
             ]
         },
         "constValues": []
@@ -3332,6 +3583,22 @@
         "constValues": []
     },
     {
+        "name": "SignalToNoiseRation",
+        "displayName": "Signal-to-noise Ration",
+        "UUID": "0000021E-0000-1000-8000-00000241",
+        "props": {
+            "format": "int",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "SiriInputType",
         "displayName": "Siri Input Type",
         "UUID": "00000132-0000-1000-8000-0026BB765291",
@@ -3413,6 +3680,23 @@
                 "value": 1
             }
         ]
+    },
+    {
+        "name": "SleepInterval",
+        "displayName": "Sleep Interval",
+        "UUID": "0000021E-0000-1000-8000-0000023A",
+        "props": {
+            "format": "uint32",
+            "unit": null,
+            "minValue": 0,
+            "maxValue": null,
+            "minStep": 1,
+            "perms": [
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
     },
     {
         "name": "SmokeDetected",
@@ -3682,9 +3966,41 @@
         "constValues": []
     },
     {
+        "name": "SupportedCharacteristicValueTransitionConfiguration",
+        "displayName": "Supported Characteristic Value Transition Configuration",
+        "UUID": "0000021E-0000-1000-8000-00000144",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "SupportedDataStreamTransportConfiguration",
         "displayName": "Supported Data Stream Transport Configuration",
         "UUID": "00000130-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SupportedDiagnosticsSnapshot",
+        "displayName": "Supported Diagnostics Snapshot",
+        "UUID": "0000021E-0000-1000-8000-00000238",
         "props": {
             "format": "tlv8",
             "unit": null,
@@ -4375,6 +4691,38 @@
         "constValues": []
     },
     {
+        "name": "TransmitPower",
+        "displayName": "Transmit Power",
+        "UUID": "0000021E-0000-1000-8000-00000242",
+        "props": {
+            "format": "int",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TransmitPowerMaximum",
+        "displayName": "Transmit Power Maximum",
+        "UUID": "0000021E-0000-1000-8000-00000243",
+        "props": {
+            "format": "int",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "TunnelConnectionTimeout",
         "displayName": "Tunnel Connection Timeout ",
         "UUID": "00000061-0000-1000-8000-0026BB765291",
@@ -4513,7 +4861,26 @@
             "maxValue": null,
             "minStep": null,
             "perms": [
-                "pr"
+                "pr",
+                "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "VideoAnalysisActive",
+        "displayName": "Video Analysis Active",
+        "UUID": "0000021E-0000-1000-8000-00000229",
+        "props": {
+            "format": "uint8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev"
             ]
         },
         "constValues": []
@@ -4668,6 +5035,42 @@
             "perms": [
                 "pr",
                 "ev"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "WiFiCapabilities",
+        "displayName": "Wi-Fi Capabilities",
+        "UUID": "0000021E-0000-1000-8000-0000022C",
+        "props": {
+            "format": "uint32",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "WiFiConfigurationControl",
+        "displayName": "Wi-Fi Configuration Control",
+        "UUID": "0000021E-0000-1000-8000-0000022D",
+        "props": {
+            "format": "tlv8",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "pr",
+                "pw",
+                "ev",
+                "tw",
+                "wr"
             ]
         },
         "constValues": []
