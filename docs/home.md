@@ -10,7 +10,7 @@ We have created the [homebridge-plugin-template](https://github.com/homebridge/h
 
 The plugin template offers the following features:
 
-* A base [dynamic platform](/#/api/platform-plugins) plugin that can easily be expanded
+* A base [dynamic platform](/api/platform-plugins) plugin that can easily be expanded
 * [TypeScript](https://www.typescriptlang.org/) with ESLint rules and Homebridge typings pre-configured
 * Automatic code compiling and Homebridge restart on code change with `npm run watch`
 
@@ -20,14 +20,14 @@ These example plugins are written in [TypeScript](https://www.typescriptlang.org
 
 ##### Accessory Plugins
 
-[Accessory plugins](/#/api/accessory-plugins) are the most basic and simplest plugins for homebridge. They should be used if you only want to 
+[Accessory plugins](/api/accessory-plugins) are the most basic and simplest plugins for homebridge. They should be used if you only want to 
 expose a single accessory and don't require any special functionality.
 
 * [Accessory Plugin](https://github.com/homebridge/homebridge-examples/blob/master/accessory-example-typescript): A simple Switch accessory.
 
 ##### Platform Plugins
 
-[Platform plugins](/#/api/platform-plugins) are able to expose multiple accessories. Additionally, they are required if you want to use the 
+[Platform plugins](/api/platform-plugins) are able to expose multiple accessories. Additionally, they are required if you want to use the 
 Controller API. 
 
 * [Dynamic Platform Plugin](https://github.com/homebridge/homebridge-examples/blob/master/dynamic-platform-example-typescript): Dynamic platforms can dynamically add or remove 
