@@ -1,11 +1,11 @@
 ### Related Services
 
-* [Input Source](/service/InputSource)
-* [Television Speaker](/service/TelevisionSpeaker)
+* [Input Source](#/service/InputSource)
+* [Television Speaker](#/service/TelevisionSpeaker)
 
 ### Example
 
-HomeKit only allows one television per bridge, to Television service types should be published as [external accessories](/api/platform-plugins#apipublishexternalaccessories).
+HomeKit only allows one television per bridge, to Television service types should be published as [external accessories](/#/api/platform-plugins#apipublishexternalaccessories).
 
 ```js
 // Example Television Plugin
