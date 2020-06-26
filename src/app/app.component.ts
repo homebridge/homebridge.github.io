@@ -22,7 +22,7 @@ export class AppComponent {
         // Google Analytics Event Trigger
         gtag('config', 'UA-165871119-1',
           {
-            'page_path': event.urlAfterRedirects,
+            'page_path': '/#' + event.urlAfterRedirects,
           },
         );
 
