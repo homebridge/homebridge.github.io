@@ -1509,6 +1509,23 @@
         "constValues": []
     },
     {
+        "name": "HeartBeat",
+        "displayName": "Heart Beat",
+        "UUID": "0000021E-0000-1000-8000-0000024A",
+        "props": {
+            "format": "uint32",
+            "unit": null,
+            "minValue": null,
+            "maxValue": null,
+            "minStep": null,
+            "perms": [
+                "ev",
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "HeatingThresholdTemperature",
         "displayName": "Heating Threshold Temperature",
         "UUID": "00000012-0000-1000-8000-0026BB765291",
@@ -3583,7 +3600,7 @@
         "constValues": []
     },
     {
-        "name": "SignalToNoiseRation",
+        "name": "SignalToNoiseRatio",
         "displayName": "Signal-to-noise Ration",
         "UUID": "0000021E-0000-1000-8000-00000241",
         "props": {
