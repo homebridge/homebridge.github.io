@@ -1,0 +1,154 @@
+[
+    {
+        "name": "OTHER",
+        "id": 1
+    },
+    {
+        "name": "BRIDGE",
+        "id": 2
+    },
+    {
+        "name": "FAN",
+        "id": 3
+    },
+    {
+        "name": "GARAGE_DOOR_OPENER",
+        "id": 4
+    },
+    {
+        "name": "LIGHTBULB",
+        "id": 5
+    },
+    {
+        "name": "DOOR_LOCK",
+        "id": 6
+    },
+    {
+        "name": "OUTLET",
+        "id": 7
+    },
+    {
+        "name": "SWITCH",
+        "id": 8
+    },
+    {
+        "name": "THERMOSTAT",
+        "id": 9
+    },
+    {
+        "name": "SENSOR",
+        "id": 10
+    },
+    {
+        "name": "SECURITY_SYSTEM",
+        "id": 11
+    },
+    {
+        "name": "ALARM_SYSTEM",
+        "id": 11
+    },
+    {
+        "name": "DOOR",
+        "id": 12
+    },
+    {
+        "name": "WINDOW",
+        "id": 13
+    },
+    {
+        "name": "WINDOW_COVERING",
+        "id": 14
+    },
+    {
+        "name": "PROGRAMMABLE_SWITCH",
+        "id": 15
+    },
+    {
+        "name": "RANGE_EXTENDER",
+        "id": 16
+    },
+    {
+        "name": "IP_CAMERA",
+        "id": 17
+    },
+    {
+        "name": "CAMERA",
+        "id": 17
+    },
+    {
+        "name": "VIDEO_DOORBELL",
+        "id": 18
+    },
+    {
+        "name": "AIR_PURIFIER",
+        "id": 19
+    },
+    {
+        "name": "AIR_HEATER",
+        "id": 20
+    },
+    {
+        "name": "AIR_CONDITIONER",
+        "id": 21
+    },
+    {
+        "name": "AIR_HUMIDIFIER",
+        "id": 22
+    },
+    {
+        "name": "AIR_DEHUMIDIFIER",
+        "id": 23
+    },
+    {
+        "name": "APPLE_TV",
+        "id": 24
+    },
+    {
+        "name": "HOMEPOD",
+        "id": 25
+    },
+    {
+        "name": "SPEAKER",
+        "id": 26
+    },
+    {
+        "name": "AIRPORT",
+        "id": 27
+    },
+    {
+        "name": "SPRINKLER",
+        "id": 28
+    },
+    {
+        "name": "FAUCET",
+        "id": 29
+    },
+    {
+        "name": "SHOWER_HEAD",
+        "id": 30
+    },
+    {
+        "name": "TELEVISION",
+        "id": 31
+    },
+    {
+        "name": "TARGET_CONTROLLER",
+        "id": 32
+    },
+    {
+        "name": "ROUTER",
+        "id": 33
+    },
+    {
+        "name": "AUDIO_RECEIVER",
+        "id": 34
+    },
+    {
+        "name": "TV_SET_TOP_BOX",
+        "id": 35
+    },
+    {
+        "name": "TV_STREAMING_STICK",
+        "id": 36
+    }
+]

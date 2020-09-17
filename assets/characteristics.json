@@ -4878,8 +4878,7 @@
             "maxValue": null,
             "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "pr"
             ]
         },
         "constValues": []
