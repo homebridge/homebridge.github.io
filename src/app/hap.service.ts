@@ -29,6 +29,11 @@ export interface Characteristic {
   validValues?: number[];
 }
 
+export interface Categories {
+  id: number;
+  name: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -36,6 +41,7 @@ export class HapService {
   public ready = false;
   public services: Service[];
   public characteristics: Characteristic[];
+  public categories: Categories[];
 
   public perms = {
     pr: 'Paired Read',
@@ -61,9 +67,11 @@ export class HapService {
     Promise.all([
       this.httpClient.get('assets/services.json').toPromise(),
       this.httpClient.get('assets/characteristics.json').toPromise(),
-    ]).then(([services, characteristics]) => {
+      this.httpClient.get('assets/categories.json').toPromise(),
+    ]).then(([services, characteristics, categories]) => {
       this.services = services as Service[];
       this.characteristics = characteristics as Characteristic[];
+      this.categories = categories as Categories[];
       this.ready = true;
     });
   }

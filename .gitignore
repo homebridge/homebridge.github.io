@@ -2,6 +2,7 @@
 
 /src/assets/characteristics.json
 /src/assets/services.json
+/src/assets/categories.json
 
 # compiled output
 /dist

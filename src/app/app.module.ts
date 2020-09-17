@@ -15,6 +15,7 @@ import { ServiceComponent } from './service/service.component';
 import { SearchComponent } from './search/search.component';
 import { DocsComponent } from './docs/docs.component';
 import { PrismDirective } from './prism.directive';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PrismDirective } from './prism.directive';
     SearchComponent,
     DocsComponent,
     PrismDirective,
+    CategoriesComponent,
   ],
   imports: [
     CommonModule,

@@ -4,11 +4,16 @@ import { ServiceComponent } from './service/service.component';
 import { CharacteristicComponent } from './characteristic/characteristic.component';
 import { DocsComponent } from './docs/docs.component';
 import { DocsGuard } from './docs/docs.guard';
+import { CategoriesComponent } from './categories/categories.component';
 
 const routes: Routes = [
   {
     path: '',
     component: DocsComponent,
+  },
+  {
+    path: 'categories',
+    component: CategoriesComponent,
   },
   {
     path: 'service/:serviceName',
