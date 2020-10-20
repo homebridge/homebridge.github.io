@@ -20,6 +20,7 @@ Plugin authors should publish a `config.schema.json` file which defines the conf
   * [Number Range](#number-range)
   * [Pattern](#pattern)
   * [Format](#format)
+- [Conditional Display](#conditional-display)
 - [Header and Footer Display](#header-and-footer-display)
 - [Simple Example](#simple-example)
 - [Complex Example](#complex-example)
@@ -378,6 +379,52 @@ Example:
 }
 ```
 
+### Conditional Display
+
+You can set rules for when a field should be displayed or hidden. For example, you might only show some fields, based on the value of another.
+
+```json
+"condition": {
+  "functionBody": "return model.blah === 'foo';"
+}
+```
+
+`functionBody` is called with `model` and `arrayIndices` as arguments and should return a `boolean` value.
+
+* `model` - the current object representation of the current plugin config.
+* `arrayIndices` - if the condition is being called inside an array, this is the array index of the current item.
+
+Full Example:
+
+```json
+{
+  "pluginAlias": "BelkinWeMo",
+  "pluginType": "platform",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "default": "WeMo Platform",
+        "required": true
+      },
+      "showOption": {
+        "title": "Should Show Other Option",
+        "type": "boolean"
+      },
+      "thatOtherOption": {
+        "title": "This option is hidden unless `showOption` is true",
+        "type": "string",
+        "condition": {
+            "functionBody": "return model.showOption === true;"
+        }
+      }
+    }
+  }
+}
+```
+
 ### Header and Footer Display
 
 Plugin authors can display additional content in the user interface above and below the config form using the `headerDisplay` and `footerDisplay` attributes. These displays support markdown and plain text.
@@ -414,7 +461,7 @@ This example shows the simplest `config.schema.json` example.
 
 ### Complex Example
 
-This example shows the config schema for [KhaosT/homebridge-camera-ffmpeg](https://github.com/KhaosT/homebridge-camera-ffmpeg). The user interface will allow users to add to the array of cameras, and includes a custom layout:
+This example shows the config schema for [Sunoo/homebridge-camera-ffmpeg](https://github.com/Sunoo/homebridge-camera-ffmpeg). The user interface will allow users to add to the array of cameras, and includes a custom layout:
 
 ```json
 {
