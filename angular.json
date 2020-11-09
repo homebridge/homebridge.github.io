@@ -46,6 +46,8 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+              "src/sitemap.txt",
+              "src/robots.txt",
               "src/CNAME",
               "src/favicon.ico",
               "src/assets",

@@ -8,7 +8,7 @@
     "build": "ng build --prod --output-path dist",
     "test": "ng test",
     "lint": "ng lint",
-    "gen": "ts-node -P tsconfig.gen.json scripts/gen.ts"
+    "gen": "ts-node -P tsconfig.gen.json scripts/gen.ts && ts-node -P tsconfig.gen.json scripts/sitemap.ts"
   },
   "dependencies": {
     "@angular/animations": "^10.1.6",
