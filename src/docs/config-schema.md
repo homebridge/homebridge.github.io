@@ -154,18 +154,19 @@ Checkboxes can also build a string of arrays from a pre-defined list. The below 
     "type": "object",
     "properties": {
       "disabled_modes": {
-      "title": "Disabled Modes",
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "title": "Mode",
-        "type": "string",
-        "enum": [
-          "Off",
-          "Home",
-          "Night",
-          "Away"
-        ]
+        "title": "Disabled Modes",
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "title": "Mode",
+          "type": "string",
+          "enum": [
+            "Off",
+            "Home",
+            "Night",
+            "Away"
+          ]
+        }
       }
     }
   }
