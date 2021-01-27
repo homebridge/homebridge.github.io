@@ -37,6 +37,8 @@ switchService.getCharacteristic(this.api.hap.Characteristic.On)
   });
 ```
 
+Implementation of the get event handler is not the recommended method of updating a characteristics current value where the function is time or resource intensive; in such cases the [service.updateCharacteristic](#/api/service#serviceupdatecharacteristic) method should be used instead. Using the [service.updateCharacteristic](#/api/service#serviceupdatecharacteristic) method will provide a robust user experience with the real time updating of the characteristic in the Home app when viewing the accessory.
+
 ### Characteristic.setProps
 > Characteristic.setProps: (props: Partial<CharacteristicProps>) => Characteristic
 
