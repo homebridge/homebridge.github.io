@@ -31,3 +31,9 @@ Updates the characteristic value. This can be used to update the state of a char
 ```js
 service.updateCharacteristic(Characteristic.Brightness, 60);
 ```
+
+Can also be used to mark a service/accessory as 'Not Responding' in the Home App by returning an error object instead of a valid value.  Only needs to be set on a single/primary charactertic, and needs to be updated with a valid value when the accessory is available again.
+
+```js
+service.updateCharacteristic(Characteristic.Brightness, new Error('Not Responding'));
+```
