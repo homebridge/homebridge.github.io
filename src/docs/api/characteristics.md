@@ -37,7 +37,7 @@ switchService.getCharacteristic(this.api.hap.Characteristic.On)
   });
 ```
 
-Implementation of get event handler is not the recommended method of updating as accessories status and the use of [service.updateCharacteristic](https://github.com/homebridge/homebridge.github.io/blob/source/src/docs/api/service.md#serviceupdatecharacteristic) is recommended to provide a robust user experience.
+Implementation of the get event handler is not the recommended method of updating a characteristics current value where the function is time or resource intensive and the use of [service.updateCharacteristic](https://github.com/homebridge/homebridge.github.io/blob/source/src/docs/api/service.md#serviceupdatecharacteristic) is recommended method.  The usage of [service.updateCharacteristic](https://github.com/homebridge/homebridge.github.io/blob/source/src/docs/api/service.md#serviceupdatecharacteristic) will provide a robust user experience with the real time updating of the characteristic in the Home app when viewing the accessory.
 
 ### Characteristic.setProps
 > Characteristic.setProps: (props: Partial<CharacteristicProps>) => Characteristic
