@@ -5,15 +5,14 @@
         "UUID": "000000E5-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint16",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": 2,
-            "minStep": 1,
             "perms": [
                 "ev",
                 "pr",
                 "pw"
-            ]
+            ],
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": 1
         },
         "constValues": []
     },
@@ -23,16 +22,17 @@
         "UUID": "000000A6-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint32",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
-        "constValues": []
+        "constValues": [
+            {
+                "key": "REQUIRES_ADDITIONAL_SETUP_BIT_MASK",
+                "value": 1
+            }
+        ]
     },
     {
         "name": "AccessoryIdentifier",
@@ -40,10 +40,6 @@
         "UUID": "00000057-0000-1000-8000-0026BB765291",
         "props": {
             "format": "string",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -56,15 +52,14 @@
         "UUID": "000000B0-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -87,14 +82,10 @@
         "UUID": "000000E7-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint32",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -102,17 +93,15 @@
     {
         "name": "ActivityInterval",
         "displayName": "Activity Interval",
-        "UUID": "0000021E-0000-1000-8000-0000023B",
+        "UUID": "0000023B-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint32",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": null,
-            "minStep": 1,
             "perms": [
-                "pr",
-                "ev"
-            ]
+                "ev",
+                "pr"
+            ],
+            "minValue": 0,
+            "minStep": 1
         },
         "constValues": []
     },
@@ -122,14 +111,10 @@
         "UUID": "00000001-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -140,14 +125,12 @@
         "UUID": "00000064-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": 1000,
-            "minStep": 1,
             "perms": [
-                "pr",
-                "ev"
-            ]
+                "ev",
+                "pr"
+            ],
+            "minValue": 0,
+            "maxValue": 1000
         },
         "constValues": []
     },
@@ -157,14 +140,13 @@
         "UUID": "00000065-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -187,14 +169,13 @@
         "UUID": "00000095-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 5,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -237,10 +218,6 @@
         "UUID": "000000A4-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -253,14 +230,10 @@
         "UUID": "00000005-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -271,14 +244,14 @@
         "UUID": "00000068-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "unit": "percentage",
             "minValue": 0,
             "maxValue": 100,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -288,15 +261,15 @@
         "UUID": "00000008-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "percentage",
             "minValue": 0,
             "maxValue": 100,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -306,13 +279,9 @@
         "UUID": "00000126-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ],
             "adminOnlyAccess": [
                 2
@@ -323,13 +292,9 @@
     {
         "name": "CCAEnergyDetectThreshold",
         "displayName": "CCA Energy Detect Threshold",
-        "UUID": "0000021E-0000-1000-8000-00000246",
+        "UUID": "00000246-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -339,13 +304,9 @@
     {
         "name": "CCASignalDetectThreshold",
         "displayName": "CCA Signal Detect Threshold",
-        "UUID": "0000021E-0000-1000-8000-00000245",
+        "UUID": "00000245-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -357,15 +318,11 @@
         "displayName": "Camera Operating Mode Indicator",
         "UUID": "0000021D-0000-1000-8000-0026BB765291",
         "props": {
-            "format": "uint8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
+            "format": "bool",
             "perms": [
+                "ev",
                 "pr",
                 "pw",
-                "ev",
                 "tw"
             ]
         },
@@ -386,14 +343,13 @@
         "UUID": "00000092-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -416,14 +372,13 @@
         "UUID": "00000093-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 100000,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -433,14 +388,13 @@
         "UUID": "00000094-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 100000,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -450,14 +404,13 @@
         "UUID": "00000069-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -480,14 +433,13 @@
         "UUID": "00000090-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 100,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -497,14 +449,13 @@
         "UUID": "00000091-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 100,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -514,13 +465,24 @@
         "UUID": "000000A3-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint16",
-            "unit": null,
-            "minValue": 1,
-            "maxValue": 16,
-            "minStep": 1,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
+            ],
+            "minValue": 1,
+            "maxValue": 16
+        },
+        "constValues": []
+    },
+    {
+        "name": "CharacteristicValueActiveTransitionCount",
+        "displayName": "Characteristic Value Active Transition Count",
+        "UUID": "0000024B-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "perms": [
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -528,17 +490,13 @@
     {
         "name": "CharacteristicValueTransitionControl",
         "displayName": "Characteristic Value Transition Control",
-        "UUID": "0000021E-0000-1000-8000-00000143",
+        "UUID": "00000143-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr",
                 "pw",
-                "ev"
+                "wr"
             ]
         },
         "constValues": []
@@ -549,14 +507,13 @@
         "UUID": "0000008F-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 2,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -584,15 +541,14 @@
         "UUID": "000000DD-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -614,16 +570,15 @@
         "displayName": "Color Temperature",
         "UUID": "000000CE-0000-1000-8000-0026BB765291",
         "props": {
-            "format": "uint32",
-            "unit": null,
+            "format": "int",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 140,
             "maxValue": 500,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -633,10 +588,6 @@
         "UUID": "000000A0-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pw"
             ]
@@ -649,13 +600,9 @@
         "UUID": "0000009D-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -666,14 +613,10 @@
         "UUID": "000000E3-0000-1000-8000-0026BB765291",
         "props": {
             "format": "string",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -684,14 +627,13 @@
         "UUID": "0000006A-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -714,15 +656,15 @@
         "UUID": "0000000D-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "celsius",
             "minValue": 10,
             "maxValue": 35,
-            "minStep": 0.1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 0.1
         },
         "constValues": []
     },
@@ -732,14 +674,13 @@
         "UUID": "000000A9-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 2,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -767,14 +708,13 @@
         "UUID": "0000006B-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "unit": "lux",
             "minValue": 0.0001,
-            "maxValue": 100000,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "maxValue": 100000
         },
         "constValues": []
     },
@@ -784,14 +724,13 @@
         "UUID": "0000000E-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 4,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -829,14 +768,13 @@
         "UUID": "000000AF-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 2,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -860,18 +798,17 @@
     },
     {
         "name": "CurrentHeaterCoolerState",
-        "displayName": "Current Heater Cooler State",
+        "displayName": "Current Heater-Cooler State",
         "UUID": "000000B1-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 3,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -904,14 +841,13 @@
         "UUID": "0000000F-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 2,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -939,31 +875,30 @@
         "UUID": "0000006C-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "unit": "arcdegrees",
             "minValue": -90,
             "maxValue": 90,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
     {
         "name": "CurrentHumidifierDehumidifierState",
-        "displayName": "Current Humidifier Dehumidifier State",
+        "displayName": "Current Humidifier-Dehumidifier State",
         "UUID": "000000B3-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 3,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -996,19 +931,17 @@
         "UUID": "000000E0-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 5,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
                 2,
-                3,
                 4,
                 5
             ]
@@ -1042,14 +975,14 @@
         "UUID": "0000006D-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "unit": "percentage",
             "minValue": 0,
             "maxValue": 100,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -1059,14 +992,14 @@
         "UUID": "00000010-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "unit": "percentage",
             "minValue": 0,
             "maxValue": 100,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -1076,14 +1009,13 @@
         "UUID": "000000AA-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 2,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -1111,14 +1043,14 @@
         "UUID": "00000011-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "unit": "celsius",
             "minValue": 0,
             "maxValue": 100,
-            "minStep": 0.1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 0.1
         },
         "constValues": []
     },
@@ -1128,14 +1060,14 @@
         "UUID": "000000C1-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "unit": "arcdegrees",
             "minValue": -90,
             "maxValue": 90,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -1145,10 +1077,6 @@
         "UUID": "0000009B-0000-1000-8000-0026BB765291",
         "props": {
             "format": "string",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr",
                 "pw"
@@ -1159,13 +1087,9 @@
     {
         "name": "CurrentTransport",
         "displayName": "Current Transport",
-        "UUID": "0000021E-0000-1000-8000-0000022B",
+        "UUID": "0000022B-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -1178,14 +1102,14 @@
         "UUID": "0000006E-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "unit": "arcdegrees",
             "minValue": -90,
             "maxValue": 90,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -1195,19 +1119,16 @@
         "UUID": "00000135-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": 3,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ],
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": 1,
             "validValues": [
                 0,
-                1,
-                2,
-                3
+                1
             ]
         },
         "constValues": [
@@ -1224,13 +1145,9 @@
     {
         "name": "DataStreamHAPTransport",
         "displayName": "Data Stream HAP Transport",
-        "UUID": "0000021E-0000-1000-8000-00000138",
+        "UUID": "00000138-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr",
                 "pw",
@@ -1242,16 +1159,12 @@
     {
         "name": "DataStreamHAPTransportInterrupt",
         "displayName": "Data Stream HAP Transport Interrupt",
-        "UUID": "0000021E-0000-1000-8000-00000139",
+        "UUID": "00000139-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -1262,14 +1175,12 @@
         "UUID": "00000098-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": 1,
-            "maxValue": 7,
-            "minStep": 1,
             "perms": [
                 "pr",
                 "pw"
-            ]
+            ],
+            "minValue": 1,
+            "maxValue": 7
         },
         "constValues": []
     },
@@ -1279,14 +1190,13 @@
         "UUID": "00000224-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "unit": "arcdegrees",
             "minValue": 0,
-            "maxValue": 360,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "maxValue": 360
         },
         "constValues": []
     },
@@ -1296,15 +1206,12 @@
         "UUID": "0000011D-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
-            ]
+                "pw"
+            ],
+            "minStep": 0.1
         },
         "constValues": []
     },
@@ -1314,26 +1221,13 @@
         "UUID": "0000009E-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
             ]
         },
-        "constValues": [
-            {
-                "key": "START_DISCOVERY",
-                "value": 0
-            },
-            {
-                "key": "STOP_DISCOVERY",
-                "value": 1
-            }
-        ]
+        "constValues": []
     },
     {
         "name": "DiscoveredBridgedAccessories",
@@ -1341,13 +1235,9 @@
         "UUID": "0000009F-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint16",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -1358,14 +1248,10 @@
         "UUID": "00000136-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -1373,13 +1259,9 @@
     {
         "name": "EventRetransmissionMaximum",
         "displayName": "Event Retransmission Maximum",
-        "UUID": "0000021E-0000-1000-8000-0000023D",
+        "UUID": "0000023D-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -1392,14 +1274,16 @@
         "UUID": "00000223-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
+            ],
+            "minValue": 0,
+            "maxValue": 1,
+            "validValues": [
+                0,
+                1
             ]
         },
         "constValues": [
@@ -1416,13 +1300,9 @@
     {
         "name": "EventTransmissionCounters",
         "displayName": "Event Transmission Counters",
-        "UUID": "0000021E-0000-1000-8000-0000023E",
+        "UUID": "0000023E-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint32",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -1435,14 +1315,13 @@
         "UUID": "000000AC-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -1465,14 +1344,13 @@
         "UUID": "000000AB-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 100,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -1482,11 +1360,33 @@
         "UUID": "00000052-0000-1000-8000-0026BB765291",
         "props": {
             "format": "string",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "FirmwareUpdateReadiness",
+        "displayName": "Firmware Update Readiness",
+        "UUID": "00000234-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "perms": [
+                "ev",
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "FirmwareUpdateStatus",
+        "displayName": "Firmware Update Status",
+        "UUID": "00000235-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "perms": [
+                "ev",
                 "pr"
             ]
         },
@@ -1498,10 +1398,6 @@
         "UUID": "00000053-0000-1000-8000-0026BB765291",
         "props": {
             "format": "string",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -1511,13 +1407,9 @@
     {
         "name": "HeartBeat",
         "displayName": "Heart Beat",
-        "UUID": "0000021E-0000-1000-8000-0000024A",
+        "UUID": "0000024A-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint32",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "ev",
                 "pr"
@@ -1531,15 +1423,15 @@
         "UUID": "00000012-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "celsius",
             "minValue": 0,
             "maxValue": 25,
-            "minStep": 0.1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 0.1
         },
         "constValues": []
     },
@@ -1549,10 +1441,6 @@
         "UUID": "0000006F-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pw"
             ]
@@ -1565,15 +1453,16 @@
         "UUID": "0000021B-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "pw",
                 "ev",
-                "tw"
+                "pr",
+                "pw"
+            ],
+            "minValue": 0,
+            "maxValue": 1,
+            "validValues": [
+                0,
+                1
             ]
         },
         "constValues": [
@@ -1593,15 +1482,15 @@
         "UUID": "00000013-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "arcdegrees",
             "minValue": 0,
             "maxValue": 360,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -1611,10 +1500,6 @@
         "UUID": "000000E6-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint32",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": null,
-            "minStep": 1,
             "perms": [
                 "pr"
             ]
@@ -1627,10 +1512,6 @@
         "UUID": "00000014-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pw"
             ]
@@ -1643,14 +1524,10 @@
         "UUID": "0000011F-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -1660,16 +1537,16 @@
         "displayName": "Image Rotation",
         "UUID": "0000011E-0000-1000-8000-0026BB765291",
         "props": {
-            "format": "float",
+            "format": "int",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "arcdegrees",
             "minValue": 0,
-            "maxValue": 270,
-            "minStep": 90,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "maxValue": 360,
+            "minStep": 1
         },
         "constValues": []
     },
@@ -1679,14 +1556,13 @@
         "UUID": "000000D2-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -1709,21 +1585,21 @@
         "UUID": "000000DC-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 6,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
                 2,
                 3,
                 4,
-                5
+                5,
+                6
             ]
         },
         "constValues": [
@@ -1750,10 +1626,6 @@
             {
                 "key": "AUDIO_SYSTEM",
                 "value": 5
-            },
-            {
-                "key": "UNKNOWN_6",
-                "value": 6
             }
         ]
     },
@@ -1763,14 +1635,13 @@
         "UUID": "000000DB-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 10,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -1838,15 +1709,14 @@
         "UUID": "000000D6-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -1869,14 +1739,13 @@
         "UUID": "00000070-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -1899,13 +1768,24 @@
         "UUID": "0000009C-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 1,
-            "maxValue": 4,
-            "minStep": 1,
+            "maxValue": 4
+        },
+        "constValues": []
+    },
+    {
+        "name": "ListPairings",
+        "displayName": "List Pairings",
+        "UUID": "00000050-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
             "perms": [
                 "pr",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -1916,10 +1796,6 @@
         "UUID": "00000019-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pw"
             ]
@@ -1932,14 +1808,13 @@
         "UUID": "0000001D-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 3,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -1972,14 +1847,13 @@
         "UUID": "0000001C-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": 8,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ],
+            "minValue": 0,
+            "maxValue": 10,
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -1989,7 +1863,9 @@
                 5,
                 6,
                 7,
-                8
+                8,
+                9,
+                10
             ]
         },
         "constValues": [
@@ -2028,6 +1904,14 @@
             {
                 "key": "SECURED_BY_AUTO_SECURE_TIMEOUT",
                 "value": 8
+            },
+            {
+                "key": "SECURED_PHYSICALLY",
+                "value": 9
+            },
+            {
+                "key": "UNSECURED_PHYSICALLY",
+                "value": 10
             }
         ]
     },
@@ -2037,15 +1921,12 @@
         "UUID": "0000001A-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint32",
-            "unit": "seconds",
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
-            ]
+                "pw"
+            ],
+            "unit": "seconds"
         },
         "constValues": []
     },
@@ -2055,15 +1936,14 @@
         "UUID": "000000A7-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -2086,15 +1966,14 @@
         "UUID": "0000001E-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -2117,13 +1996,9 @@
         "UUID": "0000001F-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -2131,13 +2006,9 @@
     {
         "name": "MACRetransmissionMaximum",
         "displayName": "MAC Retransmission Maximum",
-        "UUID": "0000021E-0000-1000-8000-00000247",
+        "UUID": "00000247-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -2147,13 +2018,9 @@
     {
         "name": "MACTransmissionCounters",
         "displayName": "MAC Transmission Counters",
-        "UUID": "0000021E-0000-1000-8000-00000248",
+        "UUID": "00000248-0000-1000-8000-0026BB765291",
         "props": {
             "format": "data",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -2166,16 +2033,14 @@
         "UUID": "00000215-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": 1,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
                 "pw",
-                "ev",
                 "tw"
             ],
+            "minValue": 0,
+            "maxValue": 1,
             "validValues": [
                 0,
                 1
@@ -2189,26 +2054,18 @@
             {
                 "key": "ENABLED",
                 "value": 1
-            },
-            {
-                "key": "UNKNOWN",
-                "value": 2
             }
         ]
     },
     {
         "name": "ManuallyDisabled",
-        "displayName": "Manually disabled",
+        "displayName": "Manually Disabled",
         "UUID": "00000227-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": [
@@ -2228,10 +2085,19 @@
         "UUID": "00000020-0000-1000-8000-0026BB765291",
         "props": {
             "format": "string",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
+            "perms": [
+                "pr"
+            ],
+            "maxLen": 64
+        },
+        "constValues": []
+    },
+    {
+        "name": "MaximumTransmitPower",
+        "displayName": "Maximum Transmit Power",
+        "UUID": "00000243-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "int",
             "perms": [
                 "pr"
             ]
@@ -2244,13 +2110,10 @@
         "UUID": "00000021-0000-1000-8000-0026BB765291",
         "props": {
             "format": "string",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
-            ]
+            ],
+            "maxLen": 64
         },
         "constValues": []
     },
@@ -2260,13 +2123,9 @@
         "UUID": "00000022-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -2277,14 +2136,10 @@
         "UUID": "0000011A-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -2295,13 +2150,10 @@
         "UUID": "00000023-0000-1000-8000-0026BB765291",
         "props": {
             "format": "string",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
-            ]
+            ],
+            "maxLen": 64
         },
         "constValues": []
     },
@@ -2311,14 +2163,10 @@
         "UUID": "0000021F-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
                 "pw",
-                "ev",
                 "tw",
                 "wr"
             ]
@@ -2331,14 +2179,10 @@
         "UUID": "0000020C-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
                 "pw",
-                "ev",
                 "tw",
                 "wr"
             ]
@@ -2351,10 +2195,6 @@
         "UUID": "0000020D-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr",
                 "pw",
@@ -2369,14 +2209,10 @@
         "UUID": "0000011B-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
                 "pw",
-                "ev",
                 "tw"
             ]
         },
@@ -2388,14 +2224,13 @@
         "UUID": "000000C4-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1000,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -2405,13 +2240,9 @@
         "UUID": "00000024-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -2422,14 +2253,13 @@
         "UUID": "00000071-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -2452,14 +2282,10 @@
         "UUID": "00000025-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -2467,16 +2293,12 @@
     {
         "name": "OperatingStateResponse",
         "displayName": "Operating State Response",
-        "UUID": "0000021E-0000-1000-8000-00000232",
+        "UUID": "00000232-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -2487,15 +2309,12 @@
         "UUID": "0000011C-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
-            ]
+                "pw"
+            ],
+            "minStep": 0.1
         },
         "constValues": []
     },
@@ -2505,13 +2324,9 @@
         "UUID": "00000026-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -2522,14 +2337,13 @@
         "UUID": "000000C3-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1000,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -2539,14 +2353,13 @@
         "UUID": "000000C7-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1000,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -2556,14 +2369,13 @@
         "UUID": "000000C6-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1000,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -2573,10 +2385,6 @@
         "UUID": "0000004C-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr",
                 "pw"
@@ -2590,10 +2398,6 @@
         "UUID": "0000004E-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr",
                 "pw"
@@ -2607,29 +2411,8 @@
         "UUID": "0000004F-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
-            ]
-        },
-        "constValues": []
-    },
-    {
-        "name": "PairingPairings",
-        "displayName": "Pairing Pairings",
-        "UUID": "00000050-0000-1000-8000-0026BB765291",
-        "props": {
-            "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw"
             ]
         },
         "constValues": []
@@ -2640,10 +2423,6 @@
         "UUID": "000000E4-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "ev",
                 "pr",
@@ -2658,14 +2437,14 @@
         "UUID": "00000225-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
+            ],
+            "validValues": [
+                0,
+                1
             ]
         },
         "constValues": [
@@ -2685,15 +2464,14 @@
         "UUID": "000000E2-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 13,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -2749,13 +2527,9 @@
     {
         "name": "Ping",
         "displayName": "Ping",
-        "UUID": "0000021E-0000-1000-8000-0000023C",
+        "UUID": "0000023C-0000-1000-8000-0026BB765291",
         "props": {
             "format": "data",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -2768,14 +2542,13 @@
         "UUID": "00000072-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 2,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -2803,13 +2576,12 @@
         "UUID": "000000DF-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": 1,
-            "minStep": null,
             "perms": [
                 "pw"
             ],
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -2832,10 +2604,6 @@
         "UUID": "00000220-0000-1000-8000-0026BB765291",
         "props": {
             "format": "data",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -2848,14 +2616,13 @@
         "UUID": "000000D1-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 2,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -2883,14 +2650,13 @@
         "UUID": "00000073-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 2,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -2918,15 +2684,14 @@
         "UUID": "00000074-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -2936,13 +2701,9 @@
         "UUID": "00000063-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -2950,13 +2711,9 @@
     {
         "name": "ReceivedSignalStrengthIndication",
         "displayName": "Received Signal Strength Indication",
-        "UUID": "0000021E-0000-1000-8000-0000023F",
+        "UUID": "0000023F-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -2966,13 +2723,9 @@
     {
         "name": "ReceiverSensitivity",
         "displayName": "Receiver Sensitivity",
-        "UUID": "0000021E-0000-1000-8000-00000244",
+        "UUID": "00000244-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -2985,14 +2738,15 @@
         "UUID": "00000226-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
                 "pw",
-                "ev"
+                "tw"
+            ],
+            "validValues": [
+                0,
+                1
             ]
         },
         "constValues": [
@@ -3012,15 +2766,15 @@
         "UUID": "000000C9-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
+            "unit": "percentage",
             "minValue": 0,
             "maxValue": 100,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -3030,15 +2784,15 @@
         "UUID": "000000CA-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "percentage",
             "minValue": 0,
             "maxValue": 100,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -3048,14 +2802,10 @@
         "UUID": "0000005E-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -3066,14 +2816,10 @@
         "UUID": "0000005B-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -3084,14 +2830,13 @@
         "UUID": "0000005C-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
-            ]
+                "ev",
+                "pr"
+            ],
+            "minValue": 0,
+            "maxValue": 5,
+            "minStep": 1
         },
         "constValues": []
     },
@@ -3101,14 +2846,14 @@
         "UUID": "000000D4-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint32",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
+            "unit": "seconds",
             "minValue": 0,
             "maxValue": 3600,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -3118,13 +2863,12 @@
         "UUID": "000000E1-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": 16,
-            "minStep": null,
             "perms": [
                 "pw"
             ],
+            "minValue": 0,
+            "maxValue": 16,
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -3206,13 +2950,12 @@
         "UUID": "000000AD-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": 1,
-            "maxValue": 1,
-            "minStep": 1,
             "perms": [
                 "pw"
-            ]
+            ],
+            "minValue": 1,
+            "maxValue": 1,
+            "minStep": 1
         },
         "constValues": []
     },
@@ -3222,15 +2965,14 @@
         "UUID": "00000028-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -3253,15 +2995,15 @@
         "UUID": "00000029-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "percentage",
             "minValue": 0,
             "maxValue": 100,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -3271,14 +3013,12 @@
         "UUID": "0000020E-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
             "validValues": [
                 0,
                 1
@@ -3301,15 +3041,15 @@
         "UUID": "0000002F-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "percentage",
             "minValue": 0,
             "maxValue": 100,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -3319,14 +3059,13 @@
         "UUID": "0000008E-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -3336,14 +3075,13 @@
         "UUID": "00000066-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 4,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -3381,15 +3119,14 @@
         "UUID": "00000067-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 3,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -3422,10 +3159,6 @@
         "UUID": "00000128-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr",
                 "pw"
@@ -3439,14 +3172,10 @@
         "UUID": "00000209-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -3457,10 +3186,6 @@
         "UUID": "00000117-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr",
                 "pw"
@@ -3474,13 +3199,10 @@
         "UUID": "00000030-0000-1000-8000-0026BB765291",
         "props": {
             "format": "string",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
-            ]
+            ],
+            "maxLen": 64
         },
         "constValues": []
     },
@@ -3490,13 +3212,12 @@
         "UUID": "000000CB-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": 1,
-            "maxValue": 255,
-            "minStep": 1,
             "perms": [
                 "pr"
-            ]
+            ],
+            "minValue": 1,
+            "maxValue": 255,
+            "minStep": 1
         },
         "constValues": []
     },
@@ -3506,13 +3227,12 @@
         "UUID": "000000CD-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": 1,
-            "minStep": null,
             "perms": [
                 "pr"
             ],
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -3535,15 +3255,15 @@
         "UUID": "000000D3-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint32",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
+            "unit": "seconds",
             "minValue": 0,
             "maxValue": 3600,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -3553,10 +3273,6 @@
         "UUID": "00000131-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr",
                 "pw",
@@ -3571,10 +3287,6 @@
         "UUID": "00000118-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr",
                 "pw"
@@ -3588,10 +3300,6 @@
         "UUID": "00000201-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pw",
                 "wr"
@@ -3601,14 +3309,10 @@
     },
     {
         "name": "SignalToNoiseRatio",
-        "displayName": "Signal-to-noise Ration",
-        "UUID": "0000021E-0000-1000-8000-00000241",
+        "displayName": "Signal To Noise Ratio",
+        "UUID": "00000241-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -3621,13 +3325,11 @@
         "UUID": "00000132-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": 0,
-            "minStep": null,
             "perms": [
                 "pr"
             ],
+            "minValue": 0,
+            "maxValue": 0,
             "validValues": [
                 0
             ]
@@ -3645,13 +3347,12 @@
         "UUID": "000000C0-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": 1,
-            "minStep": null,
             "perms": [
                 "pr"
             ],
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -3674,14 +3375,13 @@
         "UUID": "000000E8-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -3701,17 +3401,15 @@
     {
         "name": "SleepInterval",
         "displayName": "Sleep Interval",
-        "UUID": "0000021E-0000-1000-8000-0000023A",
+        "UUID": "0000023A-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint32",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": null,
-            "minStep": 1,
             "perms": [
-                "pr",
-                "ev"
-            ]
+                "ev",
+                "pr"
+            ],
+            "minValue": 0,
+            "minStep": 1
         },
         "constValues": []
     },
@@ -3721,14 +3419,13 @@
         "UUID": "00000076-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -3751,11 +3448,20 @@
         "UUID": "00000054-0000-1000-8000-0026BB765291",
         "props": {
             "format": "string",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "StagedFirmwareVersion",
+        "displayName": "Staged Firmware Version",
+        "UUID": "00000249-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "string",
+            "perms": [
+                "ev",
                 "pr"
             ]
         },
@@ -3767,13 +3473,9 @@
         "UUID": "00000075-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -3784,14 +3486,13 @@
         "UUID": "00000077-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -3814,14 +3515,13 @@
         "UUID": "00000078-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -3844,14 +3544,13 @@
         "UUID": "00000079-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -3874,14 +3573,13 @@
         "UUID": "0000007A-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -3904,13 +3602,9 @@
         "UUID": "00000120-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -3921,14 +3615,13 @@
         "UUID": "000000C5-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1000,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -3938,13 +3631,9 @@
         "UUID": "00000207-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -3955,10 +3644,6 @@
         "UUID": "00000115-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -3971,13 +3656,9 @@
         "UUID": "00000205-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -3985,13 +3666,9 @@
     {
         "name": "SupportedCharacteristicValueTransitionConfiguration",
         "displayName": "Supported Characteristic Value Transition Configuration",
-        "UUID": "0000021E-0000-1000-8000-00000144",
+        "UUID": "00000144-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -4004,10 +3681,6 @@
         "UUID": "00000130-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -4017,13 +3690,21 @@
     {
         "name": "SupportedDiagnosticsSnapshot",
         "displayName": "Supported Diagnostics Snapshot",
-        "UUID": "0000021E-0000-1000-8000-00000238",
+        "UUID": "00000238-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SupportedFirmwareUpdateConfiguration",
+        "displayName": "Supported Firmware Update Configuration",
+        "UUID": "00000233-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
             "perms": [
                 "pr"
             ]
@@ -4036,10 +3717,6 @@
         "UUID": "00000116-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -4052,10 +3729,6 @@
         "UUID": "00000210-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -4068,10 +3741,6 @@
         "UUID": "00000202-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -4084,13 +3753,9 @@
         "UUID": "00000206-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -4101,10 +3766,6 @@
         "UUID": "00000114-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -4117,15 +3778,14 @@
         "UUID": "000000B6-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -4148,15 +3808,14 @@
         "UUID": "000000A8-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -4179,15 +3838,13 @@
         "UUID": "000000AE-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 2,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
             "validValues": [
                 0,
                 1,
@@ -4215,13 +3872,9 @@
         "UUID": "00000124-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pw",
                 "pr",
+                "pw",
                 "wr"
             ],
             "adminOnlyAccess": [
@@ -4237,10 +3890,6 @@
         "UUID": "00000123-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -4253,15 +3902,14 @@
         "UUID": "00000032-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -4284,15 +3932,14 @@
         "UUID": "000000BF-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -4311,19 +3958,18 @@
     },
     {
         "name": "TargetHeaterCoolerState",
-        "displayName": "Target Heater Cooler State",
+        "displayName": "Target Heater-Cooler State",
         "UUID": "000000B2-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 2,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -4351,15 +3997,14 @@
         "UUID": "00000033-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 3,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -4392,33 +4037,32 @@
         "UUID": "0000007B-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "arcdegrees",
             "minValue": -90,
             "maxValue": 90,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
     {
         "name": "TargetHumidifierDehumidifierState",
-        "displayName": "Target Humidifier Dehumidifier State",
+        "displayName": "Target Humidifier-Dehumidifier State",
         "UUID": "000000B4-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 2,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -4450,20 +4094,18 @@
         "UUID": "00000137-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 2,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
-                2,
-                3
+                2
             ]
         },
         "constValues": [
@@ -4487,15 +4129,15 @@
         "UUID": "0000007C-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "percentage",
             "minValue": 0,
             "maxValue": 100,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -4505,15 +4147,15 @@
         "UUID": "00000034-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "percentage",
             "minValue": 0,
             "maxValue": 100,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -4523,15 +4165,13 @@
         "UUID": "000000BE-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
             "validValues": [
                 0,
                 1
@@ -4554,15 +4194,15 @@
         "UUID": "00000035-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "celsius",
             "minValue": 10,
             "maxValue": 38,
-            "minStep": 0.1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 0.1
         },
         "constValues": []
     },
@@ -4572,15 +4212,15 @@
         "UUID": "000000C2-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "arcdegrees",
             "minValue": -90,
             "maxValue": 90,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -4590,15 +4230,15 @@
         "UUID": "0000007D-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "arcdegrees",
             "minValue": -90,
             "maxValue": 90,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -4608,15 +4248,14 @@
         "UUID": "00000134-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -4639,15 +4278,14 @@
         "UUID": "00000036-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -4670,13 +4308,13 @@
         "UUID": "0000021C-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
+            ],
+            "validValues": [
+                0,
+                1
             ]
         },
         "constValues": [
@@ -4691,32 +4329,38 @@
         ]
     },
     {
-        "name": "TimeUpdate",
-        "displayName": "Time Update",
-        "UUID": "0000009A-0000-1000-8000-0026BB765291",
+        "name": "ThreadControlPoint",
+        "displayName": "Thread Control Point",
+        "UUID": "00000704-0000-1000-8000-0026BB765291",
         "props": {
-            "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
+            "format": "tlv8",
             "perms": [
-                "pr",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
     },
     {
-        "name": "TransmitPower",
-        "displayName": "Transmit Power",
-        "UUID": "0000021E-0000-1000-8000-00000242",
+        "name": "ThreadNodeCapabilities",
+        "displayName": "Thread Node Capabilities",
+        "UUID": "00000702-0000-1000-8000-0026BB765291",
         "props": {
-            "format": "int",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
+            "format": "uint16",
+            "perms": [
+                "pr"
+            ],
+            "minValue": 0,
+            "maxValue": 31,
+            "minStep": 1
+        },
+        "constValues": []
+    },
+    {
+        "name": "ThreadOpenThreadVersion",
+        "displayName": "Thread OpenThread Version",
+        "UUID": "00000706-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "string",
             "perms": [
                 "pr"
             ]
@@ -4724,15 +4368,40 @@
         "constValues": []
     },
     {
-        "name": "TransmitPowerMaximum",
-        "displayName": "Transmit Power Maximum",
-        "UUID": "0000021E-0000-1000-8000-00000243",
+        "name": "ThreadStatus",
+        "displayName": "Thread Status",
+        "UUID": "00000703-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint16",
+            "perms": [
+                "ev",
+                "pr"
+            ],
+            "minValue": 0,
+            "maxValue": 6,
+            "minStep": 1
+        },
+        "constValues": []
+    },
+    {
+        "name": "TimeUpdate",
+        "displayName": "Time Update",
+        "UUID": "0000009A-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "perms": [
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "TransmitPower",
+        "displayName": "Transmit Power",
+        "UUID": "00000242-0000-1000-8000-0026BB765291",
         "props": {
             "format": "int",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -4741,18 +4410,14 @@
     },
     {
         "name": "TunnelConnectionTimeout",
-        "displayName": "Tunnel Connection Timeout ",
+        "displayName": "Tunnel Connection Timeout",
         "UUID": "00000061-0000-1000-8000-0026BB765291",
         "props": {
-            "format": "uint32",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
+            "format": "int",
             "perms": [
-                "pw",
+                "ev",
                 "pr",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -4763,14 +4428,10 @@
         "UUID": "00000060-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pw",
+                "ev",
                 "pr",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -4781,14 +4442,10 @@
         "UUID": "00000059-0000-1000-8000-0026BB765291",
         "props": {
             "format": "bool",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pw",
+                "ev",
                 "pr",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -4798,14 +4455,10 @@
         "displayName": "Tunneled Accessory State Number",
         "UUID": "00000058-0000-1000-8000-0026BB765291",
         "props": {
-            "format": "float",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
+            "format": "int",
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -4816,14 +4469,13 @@
         "UUID": "000000C8-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 1000,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -4833,14 +4485,13 @@
         "UUID": "000000D5-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 3,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -4873,30 +4524,23 @@
         "UUID": "00000037-0000-1000-8000-0026BB765291",
         "props": {
             "format": "string",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
-            ]
+            ],
+            "maxLen": 64
         },
         "constValues": []
     },
     {
         "name": "VideoAnalysisActive",
         "displayName": "Video Analysis Active",
-        "UUID": "0000021E-0000-1000-8000-00000229",
+        "UUID": "00000229-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
-                "pw",
-                "ev"
+                "pw"
             ]
         },
         "constValues": []
@@ -4907,15 +4551,15 @@
         "UUID": "00000119-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
             "unit": "percentage",
             "minValue": 0,
             "maxValue": 100,
-            "minStep": 1,
-            "perms": [
-                "pr",
-                "pw",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
@@ -4925,14 +4569,13 @@
         "UUID": "000000E9-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 3,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
+            "minStep": 1,
             "validValues": [
                 0,
                 1,
@@ -4965,13 +4608,12 @@
         "UUID": "000000EA-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
-            "minValue": 0,
-            "maxValue": 1,
-            "minStep": null,
             "perms": [
                 "pw"
             ],
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -4994,13 +4636,9 @@
         "UUID": "00000211-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -5011,13 +4649,9 @@
         "UUID": "00000212-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
-                "pr",
-                "ev"
+                "ev",
+                "pr"
             ]
         },
         "constValues": []
@@ -5028,10 +4662,6 @@
         "UUID": "00000222-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -5044,27 +4674,23 @@
         "UUID": "000000B5-0000-1000-8000-0026BB765291",
         "props": {
             "format": "float",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
+            "unit": "percentage",
             "minValue": 0,
             "maxValue": 100,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ]
+            "minStep": 1
         },
         "constValues": []
     },
     {
         "name": "WiFiCapabilities",
         "displayName": "Wi-Fi Capabilities",
-        "UUID": "0000021E-0000-1000-8000-0000022C",
+        "UUID": "0000022C-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint32",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
                 "pr"
             ]
@@ -5074,17 +4700,13 @@
     {
         "name": "WiFiConfigurationControl",
         "displayName": "Wi-Fi Configuration Control",
-        "UUID": "0000021E-0000-1000-8000-0000022D",
+        "UUID": "0000022D-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "unit": null,
-            "minValue": null,
-            "maxValue": null,
-            "minStep": null,
             "perms": [
+                "ev",
                 "pr",
                 "pw",
-                "ev",
                 "tw",
                 "wr"
             ]
@@ -5097,14 +4719,12 @@
         "UUID": "0000021E-0000-1000-8000-0026BB765291",
         "props": {
             "format": "uint8",
-            "unit": null,
+            "perms": [
+                "ev",
+                "pr"
+            ],
             "minValue": 0,
             "maxValue": 2,
-            "minStep": null,
-            "perms": [
-                "pr",
-                "ev"
-            ],
             "validValues": [
                 0,
                 1,
