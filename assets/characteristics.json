@@ -1048,7 +1048,7 @@
                 "pr"
             ],
             "unit": "celsius",
-            "minValue": 0,
+            "minValue": -273.15,
             "maxValue": 100,
             "minStep": 0.1
         },
