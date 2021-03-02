@@ -56,7 +56,7 @@ Set the characteristic value, also triggers the "set" event handler.
 
 ```js
 switchService.getCharacteristic(this.api.hap.Characteristic.On)
-  .updateValue(60);
+  .setValue(60);
 ```
 
 ### Characteristic.on
