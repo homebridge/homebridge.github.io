@@ -32,8 +32,8 @@ class ExampleAccessoryPlugin {
 
     // link methods used when getting or setting the state of the service 
     this.switchService.getCharacteristic(this.api.hap.Characteristic.On)
-      .on('get', this.getOnHandler.bind(this))   // bind to getOnHandler method below
-      .on('set', this.setOnHandler.bind(this));  // bind to setOnHandler method below
+      .onGet(this.getOnHandler.bind(this))   // bind to getOnHandler method below
+      .onSet(this.setOnHandler.bind(this));  // bind to setOnHandler method below
   }
 
   /**
@@ -47,22 +47,17 @@ class ExampleAccessoryPlugin {
     ];
   }
 
-  getOnHandler(callback) {
+  async getOnHandler() {
     this.log.info('Getting switch state');
 
     // get the current value of the switch in your own code
     const value = false;
-
-    // the first argument of the callback should be null if there are no errors
-    // the second argument contains the current status of the device to return.
-    callback(null, value);
+  
+    return value;
   }
   
-  setOnHandler(value, callback) {
+  async setOnHandler(value) {
     this.log.info('Setting switch state to:', value);
-
-    // the first argument of the callback should be null if there are no errors
-    callback(null);
   }
 }
 ```

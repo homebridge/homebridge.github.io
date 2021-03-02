@@ -44,7 +44,9 @@ for (const [name, value] of Object.entries(Service)) {
         optionalCharacteristics: service.optionalCharacteristics.map(x => x.UUID),
       };
 
-      services.push(payload);
+      if (!services.find(x => x.name === payload.name)) {
+        services.push(payload);
+      }
     } catch (e) {
       console.log(e);
       console.log(`Failed to get ${name}`);
@@ -64,7 +66,9 @@ for (const [name, value] of Object.entries(Characteristic)) {
       constValues: Object.entries(Characteristic[name]).filter(([x, y]) => x !== 'UUID').map(([x, y]) => ({ key: x, value: y })),
     };
 
-    characteristics.push(payload);
+    if (!characteristics.find(x => x.name === payload.name)) {
+      characteristics.push(payload);
+    }
   }
 }
 

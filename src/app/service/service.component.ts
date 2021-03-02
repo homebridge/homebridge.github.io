@@ -94,7 +94,7 @@ ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`;
 
   generateGetHandler(characteristic: Characteristic): string {
     if (characteristic.props.perms.includes('pr')) {
-      const value =  `        .on('get', this.handle${characteristic.name}Get.bind(this))`;
+      const value =  `        .onGet(this.handle${characteristic.name}Get.bind(this))`;
       return characteristic.props.perms.includes('pw') ? value + '\n        ' : value + ';\n';
     } else {
       return `        `;
@@ -103,7 +103,7 @@ ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`;
 
   generateSetHandler(characteristic: Characteristic): string {
     if (characteristic.props.perms.includes('pw')) {
-      return `.on('set', this.handle${characteristic.name}Set.bind(this));\n`;
+      return `.onSet(this.handle${characteristic.name}Set.bind(this));\n`;
     } else {
       return ``;
     }
@@ -120,13 +120,13 @@ ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`;
       return `  /**
    * Handle requests to get the current value of the "${characteristic.displayName}" characteristic
    */
-  handle${characteristic.name}Get(callback) {
+  handle${characteristic.name}Get() {
     this.log.debug('Triggered GET ${characteristic.name}');
 
     // set this to a valid value for ${characteristic.name}
-    const currentValue = 1;
+    const currentValue = ${characteristic.constValues.length ? 'this.Characteristic.' + characteristic.name + '.' + characteristic.constValues[0].key : characteristic.props?.minValue || '1'};
 
-    callback(null, currentValue);
+    return currentValue;
   }\n\n`;
     } else {
       return ``;
@@ -138,10 +138,8 @@ ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`;
     return `  /**
    * Handle requests to set the "${characteristic.displayName}" characteristic
    */
-  handle${characteristic.name}Set(value, callback) {
+  handle${characteristic.name}Set(value) {
     this.log.debug('Triggered SET ${characteristic.name}:' value);
-
-    callback(null);
   }\n`;
     } else {
       return ``;

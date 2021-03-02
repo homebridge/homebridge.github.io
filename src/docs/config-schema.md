@@ -759,13 +759,7 @@ config.users.forEach(x => users[x.key] = x.value);
 
 ### Advanced Requirements
 
-If you have more complex requirements than what the standard `config.schema.json` syntax can support; for example, an OAUTH2 workflow, or exchanging username and password for a token, please reach out to me ([@oznu](https://github.com/oznu)) and we can work something out.
-
-Examples of advanced implementations:
-
-* [homebridge-ring](https://github.com/dgreif/ring/tree/master/homebridge) - supports exchanging Ring credentials  for a `refreshToken` directly from the user interface (with 2FA support).
-* [homebridge-honeywell-home](https://github.com/donavanbecker/homebridge-honeywell-home) - supports an OAUTH2 workflow to retrieve a token.
-* [homebridge-gsh](https://github.com/oznu/homebridge-gsh) - supports an OAUTH2 workflow to get an access token.
+If you have more complex requirements than what the standard `config.schema.json` syntax can support; for example, an OAUTH2 workflow, or exchanging username and password for a token, you can create a fully custom configuration user interface using the [@homebridge/plugin-ui-utils](https://github.com/homebridge/plugin-ui-utils) tools.
 
 ### Plugins Using This
 

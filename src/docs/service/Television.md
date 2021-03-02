@@ -49,28 +49,26 @@ class ExampleTelevisionPlugin {
 
     // handle on / off events using the Active characteristic
     tvService.getCharacteristic(this.Characteristic.Active)
-      .on('set', (newValue, callback) => {
+      .onSet((newValue) => {
         this.log.info('set Active => setNewValue: ' + newValue);
         tvService.updateCharacteristic(this.Characteristic.Active, 1);
-        callback(null);
       });
 
     tvService.setCharacteristic(this.Characteristic.ActiveIdentifier, 1);
 
     // handle input source changes
     tvService.getCharacteristic(this.Characteristic.ActiveIdentifier)
-      .on('set', (newValue, callback) => {
+      .onSet((newValue) => {
 
         // the value will be the value you set for the Identifier Characteristic
         // on the Input Source service that was selected - see input sources below.
 
         this.log.info('set Active Identifier => setNewValue: ' + newValue);
-        callback(null);
       });
 
     // handle remote control input
     tvService.getCharacteristic(this.Characteristic.RemoteKey)
-      .on('set', (newValue, callback) => {
+      .onSet((newValue) => {
         switch(newValue) {
           case this.Characteristic.RemoteKey.REWIND: {
             this.log.info('set Remote Key Pressed: REWIND');
@@ -125,9 +123,6 @@ class ExampleTelevisionPlugin {
             break;
           }
         }
-
-        // don't forget to callback!
-        callback(null);
       });
 
     /**
@@ -142,9 +137,8 @@ class ExampleTelevisionPlugin {
 
     // handle volume control
     speakerService.getCharacteristic(this.Characteristic.VolumeSelector)
-      .on('set', (newValue, callback) => {
+      .onSet((newValue) => {
         this.log.info('set VolumeSelector => setNewValue: ' + newValue);
-        callback(null);
       });
 
     /**
