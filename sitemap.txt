@@ -14,16 +14,13 @@ https://developers.homebridge.io/#/service/AirPurifier
 https://developers.homebridge.io/#/service/AirQualitySensor
 https://developers.homebridge.io/#/service/AudioStreamManagement
 https://developers.homebridge.io/#/service/Battery
-https://developers.homebridge.io/#/service/Battery
 https://developers.homebridge.io/#/service/BridgeConfiguration
 https://developers.homebridge.io/#/service/BridgingState
 https://developers.homebridge.io/#/service/CameraOperatingMode
 https://developers.homebridge.io/#/service/CameraRecordingManagement
-https://developers.homebridge.io/#/service/CameraRecordingManagement
 https://developers.homebridge.io/#/service/CameraRTPStreamManagement
 https://developers.homebridge.io/#/service/CarbonDioxideSensor
 https://developers.homebridge.io/#/service/CarbonMonoxideSensor
-https://developers.homebridge.io/#/service/CloudRelay
 https://developers.homebridge.io/#/service/CloudRelay
 https://developers.homebridge.io/#/service/ContactSensor
 https://developers.homebridge.io/#/service/DataStreamTransportManagement
@@ -56,7 +53,6 @@ https://developers.homebridge.io/#/service/SecuritySystem
 https://developers.homebridge.io/#/service/ServiceLabel
 https://developers.homebridge.io/#/service/Siri
 https://developers.homebridge.io/#/service/Slats
-https://developers.homebridge.io/#/service/Slats
 https://developers.homebridge.io/#/service/SmartSpeaker
 https://developers.homebridge.io/#/service/SmokeSensor
 https://developers.homebridge.io/#/service/Speaker
@@ -72,7 +68,6 @@ https://developers.homebridge.io/#/service/Thermostat
 https://developers.homebridge.io/#/service/ThreadTransport
 https://developers.homebridge.io/#/service/TimeInformation
 https://developers.homebridge.io/#/service/TransferTransportManagement
-https://developers.homebridge.io/#/service/Tunnel
 https://developers.homebridge.io/#/service/Tunnel
 https://developers.homebridge.io/#/service/Valve
 https://developers.homebridge.io/#/service/WiFiRouter

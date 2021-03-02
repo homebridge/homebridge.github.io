@@ -1,11 +1,74 @@
 # Characteristics
 
+### Characteristic.onSet
+> Characteristic.onSet((value) => Promise&lt;void&gt;): Characteristic
+
+The `set` event is typically called when the user changes the state of a device, for example, when turning on a switch.
+
+The handler function contains one argument:
+
+* `value`: This the value device should be changed to.
+
+The handler function may optionally return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+
+```js
+switchService.getCharacteristic(this.api.hap.Characteristic.On)
+  .onSet(async (value) => {
+    console.log('new value', value);
+  });
+```
+
+### Characteristic.onGet
+> Characteristic.onGet(() => Promise&lt;value&gt;): Characteristic
+
+The `get` event is called when HomeKit wants get retrieve the current state of a device.
+
+The handler function must return the current state of the characteristic.
+
+The handler function may optionally return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+
+```js
+switchService.getCharacteristic(this.api.hap.Characteristic.On)
+  .onGet(async () => {
+    const isLightOn: boolean = true;
+    return isLightOn;
+  });
+```
+
+### Characteristic.updateValue
+> Characteristic.updateValue(value): Characteristic
+
+Updates the characteristic value without triggering the "set" event handler. This can be used to update the state of a characteristic at any time, for example, when triggering a motion sensor.
+
+```js
+switchService.getCharacteristic(this.api.hap.Characteristic.On)
+  .updateValue(60);
+```
+
+### Characteristic.setValue
+> Characteristic.updateValue(value): Characteristic
+
+<div class="alert alert-primary" role="alert">
+In most cases you should use the <a href="/#/api/characteristics#characteristicupdatevalue">Characteristic.updateValue</a> method instead.
+</div>
+
+Set the characteristic value, also triggers the "set" event handler.
+
+```js
+switchService.getCharacteristic(this.api.hap.Characteristic.On)
+  .updateValue(60);
+```
+
 ### Characteristic.on
 > Characteristic.on(event: "set" | "get", listener: (value?, callback) => void)
 
 Subscribe to Characteristic events.
 
 #### Set Event
+
+<div class="alert alert-primary" role="alert">
+Consider using the promised-based <a href="/#/api/characteristics#characteristiconset">Characteristic.onSet</a> method instead.
+</div>
 
 The `set` event is typically called when the user changes the state of a device, for example, when turning on a switch.
 
@@ -22,6 +85,10 @@ switchService.getCharacteristic(this.api.hap.Characteristic.On)
 ```
 
 #### Get Event
+
+<div class="alert alert-primary" role="alert">
+Consider using the promised-based <a href="/#/api/characteristics#characteristiconget">Characteristic.onGet</a> method instead.
+</div>
 
 The `get` event is called when HomeKit wants get retrieve the current state of a device.
 
