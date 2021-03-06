@@ -67,7 +67,7 @@ Subscribe to Characteristic events.
 #### Set Event
 
 <div class="alert alert-primary" role="alert">
-Consider using the promised-based <a href="/#/api/characteristics#characteristiconset">Characteristic.onSet</a> method instead.
+Consider using the promise-based <a href="/#/api/characteristics#characteristiconset">Characteristic.onSet</a> method instead.
 </div>
 
 The `set` event is typically called when the user changes the state of a device, for example, when turning on a switch.
@@ -87,7 +87,7 @@ switchService.getCharacteristic(this.api.hap.Characteristic.On)
 #### Get Event
 
 <div class="alert alert-primary" role="alert">
-Consider using the promised-based <a href="/#/api/characteristics#characteristiconget">Characteristic.onGet</a> method instead.
+Consider using the promise-based <a href="/#/api/characteristics#characteristiconget">Characteristic.onGet</a> method instead.
 </div>
 
 The `get` event is called when HomeKit wants get retrieve the current state of a device.
