@@ -60,7 +60,8 @@ const routes: Routes = [
     scrollPositionRestoration: 'enabled',
     anchorScrolling: 'enabled',
     scrollOffset: [0, 75],
-  })],
+    relativeLinkResolution: 'legacy'
+})],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
