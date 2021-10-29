@@ -72,7 +72,7 @@ class ExamplePlatformPlugin {
 
     /**
      * Platforms should wait until the "didFinishLaunching" event has fired before
-     * registering any new accessories.
+     * unregistering any accessories.
      */
     api.on('didFinishLaunching', () => {
       // for the example just remove the first restored cached accessory
