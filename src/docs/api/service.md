@@ -13,7 +13,7 @@ service.getCharacteristic(Characteristic.Brightness);
 > Service.setCharacteristic: (name: string | T, value: CharacteristicValue) => Characteristic
 
 <div class="alert alert-primary" role="alert">
-  Calling <a href="/#/api/service#servicesetcharacteristic">Service.setCharacteristic</a> will trigger the "set"handler if it exists and may lead to unexpected results, depending on your use case, you may wish to use the 
+  Calling <a href="/#/api/service#servicesetcharacteristic">Service.setCharacteristic</a> will trigger the "set" handler if it exists and may lead to unexpected results, depending on your use case, you may wish to use the 
   <a href="/#/api/service#serviceupdatecharacteristic">Service.updateCharacteristic</a> method instead.
 </div>
 
