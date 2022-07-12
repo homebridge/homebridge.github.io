@@ -11,14 +11,14 @@
     "gen": "ts-node -P tsconfig.gen.json scripts/gen.ts && ts-node -P tsconfig.gen.json scripts/sitemap.ts"
   },
   "dependencies": {
-    "@angular/animations": "^12.0.4",
-    "@angular/common": "^12.0.4",
-    "@angular/compiler": "^12.0.4",
-    "@angular/core": "^12.0.4",
-    "@angular/forms": "^12.0.4",
-    "@angular/platform-browser": "^12.0.4",
-    "@angular/platform-browser-dynamic": "^12.0.4",
-    "@angular/router": "^12.0.4",
+    "@angular/animations": "^13.3.11",
+    "@angular/common": "^13.3.11",
+    "@angular/compiler": "^13.3.11",
+    "@angular/core": "^13.3.11",
+    "@angular/forms": "^13.3.11",
+    "@angular/platform-browser": "^13.3.11",
+    "@angular/platform-browser-dynamic": "^13.3.11",
+    "@angular/router": "^13.3.11",
     "@types/node": "^14.17.3",
     "@types/uuid": "^8.3.0",
     "bootstrap": "^4.6.0",
@@ -35,8 +35,8 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^12.0.4",
     "@angular/cli": "^12.0.4",
-    "@angular/compiler-cli": "^12.0.4",
-    "@angular/language-service": "^12.0.4",
+    "@angular/compiler-cli": "^13.3.11",
+    "@angular/language-service": "^13.3.11",
     "@fortawesome/fontawesome-free": "^5.15.3",
     "codelyzer": "^6.0.0",
     "decamelize": "^4.0.0",
@@ -44,7 +44,7 @@
     "inflection": "^1.13.1",
     "ts-node": "^9.1.1",
     "tslint": "~6.1.0",
-    "typescript": "4.2.4",
+    "typescript": "4.6.4",
     "uuid": "^8.3.2"
   }
 }
