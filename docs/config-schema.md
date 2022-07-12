@@ -39,7 +39,7 @@ The config schema supports both **Platform** and **Accessory** plugin types.
 
 ### Form Generator Playground
 
-The forms are generated using [Angular JSON Schema Form](https://github.com/hamzahamidi/ajsf), you can test your schema and form layout using the [demonstration playground](https://hamidihamza.com/ajsf/?framework=bootstrap-4). This [JSON Schema Tool](https://www.jsonschema.net/home) can also help you create your schema and then you can modify to your liking.
+The forms are generated using [Angular JSON Schema Form](https://github.com/hamzahamidi/ajsf), you can test your schema and form layout using the [demonstration playground](https://hamidihamza.com/ajsf/?framework=bootstrap-4).
 
 ### Basic Structure
 
