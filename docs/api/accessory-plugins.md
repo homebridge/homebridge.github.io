@@ -3,7 +3,7 @@
 ### API.registerAccessory
 > API.registerAccessory(accessoryName: string, constructor: AccessoryPluginConstructor): void
 
-Register a "Accessory" type plugin. Accessory style plugins only expose a single accessory, but can be configured multiple times in the Homebridge `config.json` (once per accessory the user wants to create).
+Register an "Accessory" type plugin. Accessory style plugins only expose a single accessory, but can be configured multiple times in the Homebridge `config.json` (once per accessory the user wants to create).
 
 ```js
 module.exports = (api) => {

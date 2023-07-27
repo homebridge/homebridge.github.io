@@ -144,7 +144,7 @@ await homebridge.updatePluginConfig(pluginConfig);
 
 Saves the plugin config changes to the Homebridge `config.json`. This is the equivalent of clicking the *Save* button.
 
-This should be used sparingly, for example, after a access token is generated.
+This should be used sparingly, for example, after an access token is generated.
 
 You must call `await homebridge.updatePluginConfig()` first.
 
@@ -170,7 +170,7 @@ const schema = await homebridge.getPluginConfigSchema();
 
 > `homebridge.getCachedAccessories(): Promise<CachedAccessory[]>;`
 
-Returns the any cached accessories for the plugin
+Returns any cached accessories for the plugin
 
 ```ts
 const cachedAccessories = await homebridge.getCachedAccessories();

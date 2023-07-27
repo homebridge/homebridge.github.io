@@ -95,7 +95,7 @@ class ExamplePlatformPlugin {
 ### API.publishExternalAccessories
 > API.publishExternalAccessories(pluginIdentifier: string, accessories: PlatformAccessory[]): void
 
-Accessories published externally will need to be paired seperately by the user. Common uses for external accessories include Cameras and TVs.
+Accessories published externally will need to be paired separately by the user. Common uses for external accessories include Cameras and TVs.
 
 ### API.updatePlatformAccessories
 > API.updatePlatformAccessories(accessories: PlatformAccessory[]): void

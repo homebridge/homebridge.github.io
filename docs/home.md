@@ -4,28 +4,40 @@
 
 This site contains resources to help Homebridge plugin developers.
 
-### Homebridge Plugin Template
+### Homebridge Plugin Templates
 
-We have created the [homebridge-plugin-template](https://github.com/homebridge/homebridge-plugin-template) which you can use as a base to help you get started developing your own plugin.
+We have created templates which you can use as a base to help you get started developing your own plugin.
 
-The plugin template offers the following features:
+These plugin templates offer the following features:
 
 * A base [dynamic platform](/#/api/platform-plugins) plugin that can easily be expanded
 * [TypeScript](https://www.typescriptlang.org/) with ESLint rules and Homebridge typings pre-configured
 * Automatic code compiling and Homebridge restart on code change with `npm run watch`
 
-### Example Plugins
+#### Dynamic Platform Template
+
+- [homebridge-plugin-template](https://github.com/homebridge/homebridge-plugin-template)
+
+#### Camera Plugin Template
+
+- [homebridge-camera-plugin-template](https://github.com/homebridge/homebridge-plugin-camera-template)
+
+### Deprecated Templates
+
+The following templates are kept here for reference, but are no longer maintained. When creating a new plugin, it is recommended to use the above `homebridge-plugin-template` instead.
+
+For existing plugins, it is recommended to update your plugin to the dynamic platform type.
 
 These example plugins are written in [TypeScript](https://www.typescriptlang.org/).
 
-##### Accessory Plugins
+#### [DEPRECATED] Accessory Plugins
 
 [Accessory plugins](/#/api/accessory-plugins) are the most basic and simplest plugins for homebridge. They should be used if you only want to 
 expose a single accessory and don't require any special functionality.
 
 * [Accessory Plugin](https://github.com/homebridge/homebridge-examples/blob/master/accessory-example-typescript): A simple Switch accessory.
 
-##### Platform Plugins
+#### [DEPRECATED] Platform Plugins
 
 [Platform plugins](/#/api/platform-plugins) are able to expose multiple accessories. Additionally, they are required if you want to use the 
 Controller API. 
