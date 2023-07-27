@@ -1,6 +1,6 @@
 # Accessory Plugins
 
-⚠️ It is recommended to create new plugins with the [Dynamic Platform Plugin](#/api/platform-plugins) template instead of the using an accessory-type plugin.
+⚠️ It is recommended to create new plugins with the [Dynamic Platform Plugin](#/api/platform-plugins) template instead of using an accessory-type plugin.
 
 ### API.registerAccessory
 > API.registerAccessory(accessoryName: string, constructor: AccessoryPluginConstructor): void

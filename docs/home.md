@@ -30,8 +30,6 @@ The following templates are kept here for reference, but are no longer maintaine
 
 For existing plugins, it is recommended to update your plugin to the dynamic platform type.
 
-These example plugins are written in [TypeScript](https://www.typescriptlang.org/).
-
 #### [DEPRECATED] Accessory Plugins
 
 [Accessory plugins](/#/api/accessory-plugins) are the most basic and simplest plugins for homebridge. They should be used if you only want to 
