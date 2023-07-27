@@ -98,7 +98,7 @@ Setting default values is a great way to ensure your users get up and running as
 
 ### Placeholder Values
 
-Placeholder values should be used for optional fields that have a default value defined in your plugins code. The place holder value will not be saved to the `config.json` unless modified by the user.
+Placeholder values should be used for optional fields that have a default value defined in your plugins code. The placeholder value will not be saved to the `config.json` unless modified by the user.
 
 ```json
 {
@@ -230,7 +230,7 @@ Dropdown select boxes can be implemented using the JSON Schema `oneOf` attribute
 
 ### Typeahead Data Lists
 
-Datalists suggest values to the user in a similar way to drop down boxes, but still allowing the user to enter their own value if they like.
+Data-lists suggest values to the user in a similar way to drop down boxes, but still allowing the user to enter their own value if they like.
 
 ```json
 {
@@ -763,7 +763,7 @@ If you have more complex requirements than what the standard `config.schema.json
 
 ### Plugins Using This
 
-Looking at example of existing schemas is a great way to learn.
+Looking at examples of existing schemas is a great way to learn.
 
 These are examples of plugins that currently implement the Plugin Settings GUI using the `config.schema.json`:
 

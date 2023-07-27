@@ -21,7 +21,7 @@ switchService.getCharacteristic(this.api.hap.Characteristic.On)
 ### Characteristic.onGet
 > Characteristic.onGet(() => Promise&lt;value&gt;): Characteristic
 
-The `get` event is called when HomeKit wants get retrieve the current state of a device.
+The `get` event is called when HomeKit wants to get retrieve the current state of a device.
 
 The handler function must return the current state of the characteristic.
 
@@ -90,7 +90,7 @@ switchService.getCharacteristic(this.api.hap.Characteristic.On)
 Consider using the promise-based <a href="/#/api/characteristics#characteristiconget">Characteristic.onGet</a> method instead.
 </div>
 
-The `get` event is called when HomeKit wants get retrieve the current state of a device.
+The `get` event is called when HomeKit wants to get retrieve the current state of a device.
 
 The handler function contains one argument:
 
