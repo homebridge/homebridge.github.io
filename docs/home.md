@@ -20,7 +20,9 @@ These plugin templates offer the following features:
 
 #### Camera Plugin Template
 
-- [homebridge-camera-plugin-template](https://github.com/homebridge/homebridge-plugin-camera-template)
+- [homebridge-plugin-camera-template](https://github.com/homebridge/homebridge-plugin-camera-template)
+
+---
 
 ### Deprecated Templates
 
@@ -42,10 +44,12 @@ expose a single accessory and don't require any special functionality.
 [Platform plugins](/#/api/platform-plugins) are able to expose multiple accessories. Additionally, they are required if you want to use the 
 Controller API. 
 
-* [Dynamic Platform Plugin](https://github.com/homebridge/homebridge-examples/blob/master/dynamic-platform-example-typescript): Dynamic platforms can dynamically add or remove 
+* [Dynamic Platform Plugin](https://github.com/homebridge/homebridge-examples/blob/master/dynamic-platform-example-typescript)
+  * Dynamic platforms can dynamically add or remove 
 accessories at runtime. Accessories are fully stored to disk by homebridge, and the exact state is reconstructed on
 a reboot. The plugin can store additional context as well. 
-* [Independent Platform Plugin](https://github.com/homebridge/homebridge-examples/blob/master/independent-platform-example-typescript): Independent platforms are typically used
+* [Independent Platform Plugin](https://github.com/homebridge/homebridge-examples/blob/master/independent-platform-example-typescript)
+  * Independent platforms are typically used
 when the platform intends to only expose external accessories or provides other functionality while not exposing
 an accessory at all.
 * [Bridged Camera Platform](https://github.com/homebridge/homebridge-examples/blob/master/bridged-camera-example-typescript)
