@@ -10,11 +10,11 @@ We have created templates which you can use as a base to help you get started de
 
 These plugin templates offer the following features:
 
-* A base [dynamic platform](/#/api/platform-plugins) plugin that can easily be expanded
+* A base [dynamic](/#/api/platform-plugins) plugin that can easily be expanded
 * [TypeScript](https://www.typescriptlang.org/) with ESLint rules and Homebridge typings pre-configured
 * Automatic code compiling and Homebridge restart on code change with `npm run watch`
 
-### Dynamic Platform Template
+### Dynamic Template
 
 - [homebridge-plugin-template](https://github.com/homebridge/homebridge-plugin-template)
 
@@ -32,15 +32,8 @@ For more information about verification and the criteria, see the [Verified By H
 
 ## Deprecated Templates
 
-⚠️ The following templates are kept here for reference but are no longer maintained.
+⚠️ The following templates are kept here for reference but are no longer maintained. For any existing plugin of one of the following types, it is recommended to update your plugin to the dynamic platform type.
 
 * [Accessory Plugin](https://github.com/homebridge/homebridge-examples/blob/master/accessory-example-typescript)
 * [Independent Platform Plugin](https://github.com/homebridge/homebridge-examples/blob/master/independent-platform-example-typescript)
 * [Bridged Camera Platform](https://github.com/homebridge/homebridge-examples/blob/master/bridged-camera-example-typescript)
-
-Note:
-
-* When creating a new plugin, it is recommended to use the above `homebridge-plugin-template` instead.
-* For existing plugins, it is recommended to update your plugin to the dynamic platform type.
-
-
