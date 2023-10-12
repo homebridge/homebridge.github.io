@@ -32,28 +32,15 @@ For more information about verification and the criteria, see the [Verified By H
 
 ## Deprecated Templates
 
-⚠️ The following templates are kept here for reference, but are no longer maintained. When creating a new plugin, it is recommended to use the above `homebridge-plugin-template` instead.
+⚠️ The following templates are kept here for reference but are no longer maintained.
 
-For existing plugins, it is recommended to update your plugin to the dynamic platform type.
-
-### Accessory Plugins
-
-[Accessory plugins](/#/api/accessory-plugins) are the most basic and simplest plugins for Homebridge. They should be used if you only want to 
-expose a single accessory and don't require any special functionality.
-
-* [Accessory Plugin](https://github.com/homebridge/homebridge-examples/blob/master/accessory-example-typescript): A simple Switch accessory.
-
-### Platform Plugins
-
-[Platform plugins](/#/api/platform-plugins) are able to expose multiple accessories. Additionally, they are required if you want to use the 
-Controller API. 
-
-* [Dynamic Platform Plugin](https://github.com/homebridge/homebridge-examples/blob/master/dynamic-platform-example-typescript)
-  * Dynamic platforms can dynamically add or remove 
-accessories at runtime. Accessories are fully stored to disk by homebridge, and the exact state is reconstructed on
-a reboot. The plugin can store additional context as well. 
+* [Accessory Plugin](https://github.com/homebridge/homebridge-examples/blob/master/accessory-example-typescript)
 * [Independent Platform Plugin](https://github.com/homebridge/homebridge-examples/blob/master/independent-platform-example-typescript)
-  * Independent platforms are typically used
-when the platform intends to only expose external accessories or provides other functionality while not exposing
-an accessory at all.
 * [Bridged Camera Platform](https://github.com/homebridge/homebridge-examples/blob/master/bridged-camera-example-typescript)
+
+Note:
+
+* When creating a new plugin, it is recommended to use the above `homebridge-plugin-template` instead.
+* For existing plugins, it is recommended to update your plugin to the dynamic platform type.
+
+
