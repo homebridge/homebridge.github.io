@@ -49,8 +49,8 @@ $gray-800: lighten($theme-text-color-secondary, 10%);
 $gray-900: $theme-text-color-primary;
 
 $theme-colors: (
-  "primary":  $theme-color-primary, 
-  "secondary": $theme-text-color-secondary, 
+  "primary":  $theme-color-primary,
+  "secondary": $theme-text-color-secondary,
   "success": $theme-success-color,
   "danger": $theme-danger-color,
   "warning": $theme-warning-color,
@@ -66,13 +66,13 @@ $theme-colors: (
 @import "markdown.scss";
 
 /************************ Import highlight.js Theme **************************/
-@import "~highlight.js/styles/atom-one-dark.css";
+@import "highlight.js/styles/atom-one-dark.css";
 
 /*************************** Import Font Awesome *****************************/
-@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "~@fortawesome/fontawesome-free/scss/solid.scss";
-@import "~@fortawesome/fontawesome-free/scss/regular.scss";
-@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+@import "@fortawesome/fontawesome-free/scss/regular.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
 
 code {
   padding: 0px 0px 0px 0px;
