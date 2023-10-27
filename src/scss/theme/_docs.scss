@@ -51,23 +51,15 @@
 			border-color: $theme-divider;
 		}
 	}
-	.search-btn {
-		color: lighten($theme-text-color-secondary, 15%);
+	.search-icon {
+		color: $theme-color-primary;
 		background: none;
 		border: none;
 		position: absolute;
 		right: 0;
 		top: 0.15rem;
 		margin-right: 0;
-		
-		
-		&:active, &:focus, &:hover {
-			outline: none !important;
-			color: $theme-color-primary;
-			@include box-shadow(none);
-			
-		}
-		
+		padding: 0.82rem 1.25rem;
 	}
 }
 
