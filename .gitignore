@@ -2,6 +2,8 @@
 
 /src/assets/characteristics.json
 /src/assets/services.json
+/src/assets/categories.json
+/src/sitemap.txt
 
 # compiled output
 /dist
@@ -35,6 +37,7 @@ speed-measure-plugin*.json
 .history/*
 
 # misc
+/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage

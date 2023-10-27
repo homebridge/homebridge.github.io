@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 import { HapService, Service, Characteristic } from '../hap.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-service',
   templateUrl: './service.component.html',
-  styleUrls: ['./service.component.scss']
+  styleUrls: ['./service.component.scss'],
 })
 export class ServiceComponent implements OnInit {
   public serviceName: string;
@@ -17,11 +18,13 @@ export class ServiceComponent implements OnInit {
   public optionalCharacteristics: Characteristic[];
 
   public exampleCode: string;
+  public markdown: string;
 
   constructor(
     private currentRoute: ActivatedRoute,
     private hapService: HapService,
     private titleService: Title,
+    private httpClient: HttpClient,
   ) { }
 
   ngOnInit(): void {
@@ -32,10 +35,23 @@ export class ServiceComponent implements OnInit {
       this.requiredCharacteristics = this.service.requiredCharacteristics.map(x => this.hapService.getCharacteristicsByUUID(x));
       this.optionalCharacteristics = this.service.optionalCharacteristics.map(x => this.hapService.getCharacteristicsByUUID(x));
 
-      this.generateExample();
+      this.getMarkdown();
 
       this.titleService.setTitle(`Homebridge API - ${this.serviceName}`);
     });
+  }
+
+  getMarkdown() {
+    this.markdown = null;
+    this.exampleCode = null;
+    this.httpClient.get('/docs/service/' + this.serviceName + '.md', {responseType: 'text'}).subscribe(
+      (res) => {
+        this.markdown = res;
+      },
+      (err) => {
+        this.generateExample();
+      },
+    );
   }
 
   generateExample() {
@@ -66,37 +82,37 @@ ${this.generateRequiredBindings(this.requiredCharacteristics)}
   }
 
 ${this.generateMethods(this.requiredCharacteristics)}
-}`
+}`;
   }
 
   generateRequiredBindings(characteristics: Characteristic[]): string {
     return characteristics.filter(x => x.props.format !== 'tlv8').map((x) => {
       return `      this.service.getCharacteristic(this.Characteristic.${x.name})
-${this.generateGetHandler(x)}${this.generateSetHandler(x)}`
-    }).join('\n')
+${this.generateGetHandler(x)}${this.generateSetHandler(x)}`;
+    }).join('\n');
   }
 
   generateGetHandler(characteristic: Characteristic): string {
     if (characteristic.props.perms.includes('pr')) {
-      const value =  `        .on('get', this.handle${characteristic.name}Get.bind(this))`;
-      return characteristic.props.perms.includes('pw') ? value + '\n        ' : value + ';\n'
+      const value =  `        .onGet(this.handle${characteristic.name}Get.bind(this))`;
+      return characteristic.props.perms.includes('pw') ? value + '\n        ' : value + ';\n';
     } else {
-      return `        `
+      return `        `;
     }
   }
 
   generateSetHandler(characteristic: Characteristic): string {
     if (characteristic.props.perms.includes('pw')) {
-      return `.on('set', this.handle${characteristic.name}Set.bind(this));\n`;
+      return `.onSet(this.handle${characteristic.name}Set.bind(this));\n`;
     } else {
-      return ``
+      return ``;
     }
   }
 
   generateMethods(characteristics: Characteristic[]) {
     return characteristics.filter(x => x.props.format !== 'tlv8').map((x) => {
-      return `${this.generateGetMethod(x)}${this.generateSetMethod(x)}`
-    }).join('\n')
+      return `${this.generateGetMethod(x)}${this.generateSetMethod(x)}`;
+    }).join('\n');
   }
 
   generateGetMethod(characteristic: Characteristic) {
@@ -104,16 +120,16 @@ ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`
       return `  /**
    * Handle requests to get the current value of the "${characteristic.displayName}" characteristic
    */
-  handle${characteristic.name}Get(callback) {
+  handle${characteristic.name}Get() {
     this.log.debug('Triggered GET ${characteristic.name}');
 
     // set this to a valid value for ${characteristic.name}
-    const currentValue = 1;
+    const currentValue = ${characteristic.constValues.length ? 'this.Characteristic.' + characteristic.name + '.' + characteristic.constValues[0].key : characteristic.props?.minValue || '1'};
 
-    callback(null, currentValue);
-  }\n\n`
+    return currentValue;
+  }\n\n`;
     } else {
-      return ``
+      return ``;
     }
   }
 
@@ -122,13 +138,11 @@ ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`
     return `  /**
    * Handle requests to set the "${characteristic.displayName}" characteristic
    */
-  handle${characteristic.name}Set(value, callback) {
+  handle${characteristic.name}Set(value) {
     this.log.debug('Triggered SET ${characteristic.name}:' value);
-
-    callback(null);
-  }\n`
+  }\n`;
     } else {
-      return ``
+      return ``;
     }
   }
 

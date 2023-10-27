@@ -1,0 +1,39 @@
+// custom markdown css
+
+markdown {
+    blockquote {
+      color: #5b99ea;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      .anchor-link {
+        opacity: 0;
+      }
+
+      &:hover,&:active {
+        .anchor-link {
+          opacity: 1;
+        }
+      }
+    }
+
+    h3, h4 {
+      margin-top: 25px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+
+
+    .callout-block {
+      h4 {
+        margin-top: 0px;
+      }
+
+      .anchor-link {
+        display: none;
+      }
+    }
+}

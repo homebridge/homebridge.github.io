@@ -30,6 +30,13 @@
     
     </section>
 
+    <section *ngIf="markdown">
+      <markdown emoji [data]="markdown"></markdown>      
+      <div class="w-100 mt-5 text-center">
+        <a [href]="'https://github.com/homebridge/homebridge.github.io/tree/source/src/docs/service/' + serviceName + '.md'">Edit on GitHub</a>
+      </div>
+    </section>
+
     <section *ngIf="exampleCode">
       <h3>Example</h3>
 
@@ -41,17 +48,14 @@
           </span>
           Note
         </h4>
-        <p>
-          The example below is automatically generated and may not be a complete example of what is required to create a working "{{ service.displayName }}" Homebridge plugin.
-        </p>
+        The example below is automatically generated and may not be a complete example of what is required to create a working "{{ service.displayName }}" Homebridge plugin.
       </div>
     </div>
 
       <div class="docs-code-block">
-        <pre class="shadow-lg rounded"><code [highlight]="exampleCode"></code></pre>
+        <pre class="language-js" [prism]="exampleCode"></pre>
       </div>
           
-    
     </section>
 
 

@@ -63,13 +63,17 @@ $theme-colors: (
 
 /*************************** Theme Styles Section ****************************/
 @import "theme/styles.scss";
+@import "markdown.scss";
 
 /************************ Import highlight.js Theme **************************/
 @import "~highlight.js/styles/atom-one-dark.css";
 
 /*************************** Import Font Awesome *****************************/
-$fa-font-path:'../../node_modules/@fortawesome/fontawesome-free/webfonts';
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/regular.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+code {
+  padding: 0px 0px 0px 0px;
+}

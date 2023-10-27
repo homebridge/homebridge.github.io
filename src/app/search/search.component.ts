@@ -8,10 +8,10 @@ import { HapService } from '../hap.service';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  public searchProvider: Observable<any>
+  public searchProvider: Observable<any>;
   public query;
 
   constructor(
@@ -46,20 +46,20 @@ export class SearchComponent implements OnInit {
         results.push(...matchingServices.map(x => {
           return {
             routerLink: ['/service', x.name],
-            label: `Service: ${x.displayName}`
-          }
+            label: `Service: ${x.displayName}`,
+          };
         }));
 
         results.push(...matchingCharacteristics.map(x => {
           return {
             routerLink: ['/characteristic', x.name],
-            label: `Characteristic: ${x.displayName}`
-          }
+            label: `Characteristic: ${x.displayName}`,
+          };
         }));
 
         return of(results);
-      })
-    )
+      }),
+    );
   }
 
   onSelect(event) {
