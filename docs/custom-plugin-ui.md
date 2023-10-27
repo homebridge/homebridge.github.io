@@ -60,7 +60,7 @@ A plugin's custom user interface is displayed inside an iframe in the settings m
 The user interface API is provided to the plugin's custom UI via the `window.homebridge` object. This is injected into the plugin's custom UI during render.
 
 <p align="center">
-<img width="700px" src="https://user-images.githubusercontent.com/3979615/97826339-73d83500-1d15-11eb-8a14-a2a8e4895959.png">
+<img width="700" src="https://user-images.githubusercontent.com/3979615/97826339-73d83500-1d15-11eb-8a14-a2a8e4895959.png">
 </p>
 
 Note:
@@ -644,7 +644,7 @@ A full list of plugins that have implemented the custom user interface can be fo
 The [homebridge-mercedesme](https://github.com/SeydX/homebridge-mercedesme) plugin by [@SeydX](https://github.com/SeydX) allows users to pair their vehicle using a custom user interface:
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/SeydX/homebridge-mercedesme/beta/images/hb_mercedesme_ui.gif" width="900px">
+<img src="https://raw.githubusercontent.com/SeydX/homebridge-mercedesme/beta/images/hb_mercedesme_ui.gif" width="900">
 </p>
 
 #### homebridge-bravia-tvos
@@ -652,7 +652,7 @@ The [homebridge-mercedesme](https://github.com/SeydX/homebridge-mercedesme) plug
 The [homebridge-bravia-tvos](https://github.com/SeydX/homebridge-bravia-tvos) plugin by [@SeydX](https://github.com/SeydX) allows users to pair and dynamically configure a user's TV using a custom user interface:
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/3979615/99958753-0a13ee00-2dde-11eb-95fb-69a896d37545.png" width="600px">
+<img src="https://user-images.githubusercontent.com/3979615/99958753-0a13ee00-2dde-11eb-95fb-69a896d37545.png" width="600">
 </p>
 
 #### homebridge-electra-smart
@@ -660,7 +660,7 @@ The [homebridge-bravia-tvos](https://github.com/SeydX/homebridge-bravia-tvos) pl
 The [homebridge-electra-smart](https://github.com/nitaybz/homebridge-electra-smart) plugin by [nitaybz](https://github.com/nitaybz) allows users to request a OTP and enter it in exchange for an authentication token:
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/3979615/99959242-be157900-2dde-11eb-8114-6394da2a2e14.png" width="600px">
+<img src="https://user-images.githubusercontent.com/3979615/99959242-be157900-2dde-11eb-8114-6394da2a2e14.png" width="600">
 </p>
 
 ## Development
