@@ -737,6 +737,19 @@
         "constValues": []
     },
     {
+        "name": "CryptoHash",
+        "displayName": "Crypto Hash",
+        "UUID": "00000250-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "perms": [
+                "pw",
+                "wr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "CurrentAirPurifierState",
         "displayName": "Current Air Purifier State",
         "UUID": "000000A9-0000-1000-8000-0026BB765291",
@@ -2185,6 +2198,19 @@
         "constValues": []
     },
     {
+        "name": "MetricsBufferFullState",
+        "displayName": "Metrics Buffer Full State",
+        "UUID": "00000272-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "perms": [
+                "ev",
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "Model",
         "displayName": "Model",
         "UUID": "00000021-0000-1000-8000-0026BB765291",
@@ -3328,6 +3354,21 @@
         "constValues": []
     },
     {
+        "name": "SelectedSleepConfiguration",
+        "displayName": "Selected Sleep Configuration",
+        "UUID": "00000252-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "perms": [
+                "ev",
+                "pr",
+                "pw",
+                "wr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "SerialNumber",
         "displayName": "Serial Number",
         "UUID": "00000030-0000-1000-8000-0026BB765291",
@@ -3959,6 +4000,19 @@
         "constValues": []
     },
     {
+        "name": "SupportedMetrics",
+        "displayName": "Supported Metrics",
+        "UUID": "00000271-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "perms": [
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "SupportedRTPConfiguration",
         "displayName": "Supported RTP Configuration",
         "UUID": "00000116-0000-1000-8000-0026BB765291",
@@ -3974,6 +4028,18 @@
         "name": "SupportedRouterConfiguration",
         "displayName": "Supported Router Configuration",
         "UUID": "00000210-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SupportedSleepConfiguration",
+        "displayName": "Supported Sleep Configuration",
+        "UUID": "00000251-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
             "perms": [
@@ -4048,6 +4114,18 @@
                 "value": 1
             }
         ]
+    },
+    {
+        "name": "TapType",
+        "displayName": "Tap Type",
+        "UUID": "0000022F-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint16",
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
     },
     {
         "name": "TargetAirPurifierState",
@@ -4638,6 +4716,18 @@
             "format": "bool",
             "perms": [
                 "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "Token",
+        "displayName": "Token",
+        "UUID": "00000231-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "data",
+            "perms": [
                 "pw"
             ]
         },
