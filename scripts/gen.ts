@@ -38,7 +38,7 @@ for (const [name, value] of Object.entries(Service)) {
 
       const payload = {
         name: service.constructor.name,
-        displayName: inflection.titleize(decamelize(service.constructor.name)).replace('Wi Fi', 'WiFi'),
+        displayName: inflection.titleize(decamelize(service.constructor.name)).replace('Wi Fi', 'Wi-Fi'),
         UUID: service.UUID,
         requiredCharacteristics: service.characteristics.map(x => x.UUID),
         optionalCharacteristics: service.optionalCharacteristics.map(x => x.UUID),
