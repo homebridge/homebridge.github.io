@@ -984,7 +984,7 @@
     },
     {
         "name": "WiFiRouter",
-        "displayName": "WiFi Router",
+        "displayName": "Wi-Fi Router",
         "UUID": "0000020A-0000-1000-8000-0026BB765291",
         "requiredCharacteristics": [
             "000000E3-0000-1000-8000-0026BB765291",
@@ -1001,7 +1001,7 @@
     },
     {
         "name": "WiFiSatellite",
-        "displayName": "WiFi Satellite",
+        "displayName": "Wi-Fi Satellite",
         "UUID": "0000020F-0000-1000-8000-0026BB765291",
         "requiredCharacteristics": [
             "0000021E-0000-1000-8000-0026BB765291"
@@ -1010,7 +1010,7 @@
     },
     {
         "name": "WiFiTransport",
-        "displayName": "WiFi Transport",
+        "displayName": "Wi-Fi Transport",
         "UUID": "0000022A-0000-1000-8000-0026BB765291",
         "requiredCharacteristics": [
             "0000022B-0000-1000-8000-0026BB765291",
