@@ -3,7 +3,7 @@
 ### Characteristic.onSet
 > Characteristic.onSet((value) => Promise&lt;void&gt;): Characteristic
 
-The `set` event is typically called when the user changes the state of a device, for example, when turning on a switch.
+The `set` event is typically called when the user changes the state of a device within the Home app or an automation runs, for example, when turning on a switch.
 
 The handler function contains one argument:
 
@@ -21,7 +21,7 @@ switchService.getCharacteristic(this.api.hap.Characteristic.On)
 ### Characteristic.onGet
 > Characteristic.onGet(() => Promise&lt;value&gt;): Characteristic
 
-The `get` event is called when HomeKit wants to get retrieve the current state of a device.
+The `get` event is called when HomeKit wants to retrieve the current state of a device.
 
 The handler function must return the current state of the characteristic.
 
@@ -38,7 +38,7 @@ switchService.getCharacteristic(this.api.hap.Characteristic.On)
 ### Characteristic.updateValue
 > Characteristic.updateValue(value): Characteristic
 
-Updates the characteristic value without triggering the "set" event handler. This can be used to update the state of a characteristic at any time, for example, when triggering a motion sensor.
+Updates the characteristic value without triggering the "set" event handler. This can be used to update the state of a characteristic at any time, for example, when triggering a motion sensor. If your plugin uses updateValue to update state, you do not need to implement the onGet handler.  Homebridge will cache the value and return the most recent value when a 'get' event is received from HomeKit.
 
 ```js
 switchService.getCharacteristic(this.api.hap.Characteristic.On)
