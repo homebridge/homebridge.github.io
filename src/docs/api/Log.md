@@ -13,6 +13,7 @@ Basic logging
 > this.log.success
 
 Messages are highlighted in green
+( Since Homebridge 1.8.0 )
 
 > this.log.warn
 
