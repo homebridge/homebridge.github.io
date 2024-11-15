@@ -5,6 +5,7 @@ https://developers.homebridge.io/#/api/accessory-plugins
 https://developers.homebridge.io/#/api/platform-plugins
 https://developers.homebridge.io/#/api/service
 https://developers.homebridge.io/#/api/characteristics
+https://developers.homebridge.io/#/api/log
 https://developers.homebridge.io/#/config-schema
 https://developers.homebridge.io/#/categories
 https://developers.homebridge.io/#/service/AccessCode
