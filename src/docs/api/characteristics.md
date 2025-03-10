@@ -38,7 +38,7 @@ switchService.getCharacteristic(this.api.hap.Characteristic.On)
 ### Characteristic.updateValue
 > Characteristic.updateValue(value): Characteristic
 
-Updates the characteristic value without triggering the "set" event handler. This can be used to update the state of a characteristic at any time, for example, when triggering a motion sensor. If your plugin uses updateValue to update state, you do not need to implement the onGet handler.  Homebridge will cache the value and return the most recent value when a 'get' event is received from HomeKit.
+Updates the characteristic value without triggering the "set" event handler. This can be used to update the state of a characteristic at any time, for example, when triggering a motion sensor. If your plugin uses updateValue to update state, implementing the onGet event handler is optional.  If the onGet event handler is not implemented Homebridge will return the most recent value when a 'get' event is received.
 
 ```js
 switchService.getCharacteristic(this.api.hap.Characteristic.On)
