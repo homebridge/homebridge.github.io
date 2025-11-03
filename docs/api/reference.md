@@ -22,6 +22,10 @@ Returns the current Homebridge API version. Note that this is different from the
 
 When this event is fired it means Homebridge has restored all cached accessories from disk. Dynamic Platform plugins should only register new accessories after this event has fired in order to ensure they weren't already added to Homebridge. This event can also be used to start discovery of new accessories.
 
+> API.on(event: "shutdown", listener: () => void): API
+
+This event is fired when homebridge gets shutdown. This could be a regular shutdown or an unexpected crash. At this stage all Accessories are already unpublished and all PlatformAccessories are already saved to disk!
+
 ### API.user.storagePath
 > User.storagePath(): string
 
