@@ -55,10 +55,10 @@ The forms are generated using [Angular JSON Schema Form](https://github.com/hamz
     "properties": {
       "name": {
         "title": "Name",
-        "type": "string",
-        "required": true
+        "type": "string"
       }
-    }
+    },
+    "required": ["name"]
   },
   "form": null,
   "display": null
@@ -88,10 +88,10 @@ Setting default values is a great way to ensure your users get up and running as
       "name": {
         "title": "Name",
         "type": "string",
-        "default": "Daikin AC",
-        "required": true
+        "default": "Daikin AC"
       }
-    }
+    },
+    "required": ["name"]
   }
 }
 ```
@@ -220,10 +220,10 @@ Dropdown select boxes can be implemented using the JSON Schema `oneOf` attribute
           { "title": "Form", "enum": ["form"] },
           { "title": "Basic Auth", "enum": ["basic"] },
           { "title": "None", "enum": ["none"] }
-        ],
-        "required": true
+        ]
       }
-    }
+    },
+    "required": ["auth"]
   }
 }
 ```
@@ -274,10 +274,10 @@ Help text can be added below each input using the `description` attribute.
       "name": {
         "title": "Name",
         "type": "string",
-        "required": true,
         "description": "The name of the plugin"
       }
-    }
+    },
+    "required": ["name"]
   }
 }
 ```
@@ -372,10 +372,10 @@ Example:
       "host": {
         "title": "IP Address / Hostname",
         "type": "string",
-        "required": true,
         "format": "hostname"
       }
-    }
+    },
+    "required": ["host"]
   }
 }
 ```
@@ -407,8 +407,7 @@ Full Example:
       "name": {
         "title": "Name",
         "type": "string",
-        "default": "WeMo Platform",
-        "required": true
+        "default": "WeMo Platform"
       },
       "showOption": {
         "title": "Should Show Other Option",
@@ -421,7 +420,8 @@ Full Example:
             "functionBody": "return model.showOption === true;"
         }
       }
-    }
+    },
+    "required": ["name"]
   }
 }
 ```
@@ -452,10 +452,10 @@ This example shows the simplest `config.schema.json` example.
       "name": {
         "title": "Name",
         "type": "string",
-        "default": "WeMo Platform",
-        "required": true
+        "default": "WeMo Platform"
       }
-    }
+    },
+    "required": ["name"]
   }
 }
 ```
@@ -493,8 +493,7 @@ This example shows the config schema for [Sunoo/homebridge-camera-ffmpeg](https:
           "name": {
             "title": "Name",
             "type": "string",
-            "placeholder": "Enter camera name...",
-            "required": true
+            "placeholder": "Enter camera name..."
           },
           "uploader": {
             "type": "boolean"
@@ -522,8 +521,7 @@ This example shows the config schema for [Sunoo/homebridge-camera-ffmpeg](https:
               "source": {
                 "title": "Source",
                 "type": "string",
-                "placeholder": "-re -i rtsp://myfancy_rtsp_stream",
-                "required": true
+                "placeholder": "-re -i rtsp://myfancy_rtsp_stream"
               },
               "stillImageSource": {
                 "title": "Still Image Source",
@@ -634,9 +632,11 @@ This example shows the config schema for [Sunoo/homebridge-camera-ffmpeg](https:
                 "title": "Enable Debug Mode",
                 "type": "boolean"
               }
-            }
+            },
+            "required": ["source"]
           }
-        }
+        },
+        "required": ["name"]
       }
     }
   },
@@ -734,15 +734,14 @@ The `config.schema.json` file would then look like this:
           "properties": {
             "key": {
               "title": "Username",
-              "type": "string",
-              "required": true
+              "type": "string"
             },
             "value": {
               "title": "Password",
-              "type": "string",
-              "required": true
+              "type": "string"
             }
-          }
+          },
+          "required": ["key", "value"]
         }
       }
     }
