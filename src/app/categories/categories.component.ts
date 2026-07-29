@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HapService } from '../hap.service';
 
 @Component({
@@ -6,13 +6,10 @@ import { HapService } from '../hap.service';
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss'],
 })
-export class CategoriesComponent implements OnInit {
+export class CategoriesComponent {
 
   constructor(
     public hapService: HapService,
   ) { }
-
-  ngOnInit(): void {
-  }
 
 }

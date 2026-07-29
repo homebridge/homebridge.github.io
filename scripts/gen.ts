@@ -1,5 +1,5 @@
-import * as hap from 'hap-nodejs';
-import { Service, Characteristic, Accessory } from 'hap-nodejs';
+import * as hap from '@homebridge/hap-nodejs';
+import { Service, Characteristic, Accessory } from '@homebridge/hap-nodejs';
 import decamelize from 'decamelize';
 import * as inflection from 'inflection';
 import * as uuid from 'uuid';
