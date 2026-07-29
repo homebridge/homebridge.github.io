@@ -19,8 +19,6 @@ https://developers.homebridge.io/#/service/AssetUpdate
 https://developers.homebridge.io/#/service/Assistant
 https://developers.homebridge.io/#/service/AudioStreamManagement
 https://developers.homebridge.io/#/service/Battery
-https://developers.homebridge.io/#/service/BridgeConfiguration
-https://developers.homebridge.io/#/service/BridgingState
 https://developers.homebridge.io/#/service/CameraOperatingMode
 https://developers.homebridge.io/#/service/CameraRecordingManagement
 https://developers.homebridge.io/#/service/CameraRTPStreamManagement
@@ -75,7 +73,6 @@ https://developers.homebridge.io/#/service/TelevisionSpeaker
 https://developers.homebridge.io/#/service/TemperatureSensor
 https://developers.homebridge.io/#/service/Thermostat
 https://developers.homebridge.io/#/service/ThreadTransport
-https://developers.homebridge.io/#/service/TimeInformation
 https://developers.homebridge.io/#/service/TransferTransportManagement
 https://developers.homebridge.io/#/service/Tunnel
 https://developers.homebridge.io/#/service/Valve
@@ -112,16 +109,14 @@ https://developers.homebridge.io/#/characteristic/CarbonDioxidePeakLevel
 https://developers.homebridge.io/#/characteristic/CarbonMonoxideDetected
 https://developers.homebridge.io/#/characteristic/CarbonMonoxideLevel
 https://developers.homebridge.io/#/characteristic/CarbonMonoxidePeakLevel
-https://developers.homebridge.io/#/characteristic/Category
 https://developers.homebridge.io/#/characteristic/CharacteristicValueActiveTransitionCount
 https://developers.homebridge.io/#/characteristic/CharacteristicValueTransitionControl
 https://developers.homebridge.io/#/characteristic/ChargingState
 https://developers.homebridge.io/#/characteristic/ClosedCaptions
 https://developers.homebridge.io/#/characteristic/ColorTemperature
 https://developers.homebridge.io/#/characteristic/ConfigurationState
-https://developers.homebridge.io/#/characteristic/ConfigureBridgedAccessory
-https://developers.homebridge.io/#/characteristic/ConfigureBridgedAccessoryStatus
 https://developers.homebridge.io/#/characteristic/ConfiguredName
+https://developers.homebridge.io/#/characteristic/ConnectionHealthMonitor
 https://developers.homebridge.io/#/characteristic/ContactSensorState
 https://developers.homebridge.io/#/characteristic/CoolingThresholdTemperature
 https://developers.homebridge.io/#/characteristic/CryptoHash
@@ -139,17 +134,13 @@ https://developers.homebridge.io/#/characteristic/CurrentRelativeHumidity
 https://developers.homebridge.io/#/characteristic/CurrentSlatState
 https://developers.homebridge.io/#/characteristic/CurrentTemperature
 https://developers.homebridge.io/#/characteristic/CurrentTiltAngle
-https://developers.homebridge.io/#/characteristic/CurrentTime
 https://developers.homebridge.io/#/characteristic/CurrentTransport
 https://developers.homebridge.io/#/characteristic/CurrentVerticalTiltAngle
 https://developers.homebridge.io/#/characteristic/CurrentVisibilityState
 https://developers.homebridge.io/#/characteristic/DataStreamHAPTransport
 https://developers.homebridge.io/#/characteristic/DataStreamHAPTransportInterrupt
-https://developers.homebridge.io/#/characteristic/DayoftheWeek
 https://developers.homebridge.io/#/characteristic/DiagonalFieldOfView
 https://developers.homebridge.io/#/characteristic/DigitalZoom
-https://developers.homebridge.io/#/characteristic/DiscoverBridgedAccessories
-https://developers.homebridge.io/#/characteristic/DiscoveredBridgedAccessories
 https://developers.homebridge.io/#/characteristic/DisplayOrder
 https://developers.homebridge.io/#/characteristic/EventRetransmissionMaximum
 https://developers.homebridge.io/#/characteristic/EventSnapshotsActive
@@ -157,6 +148,7 @@ https://developers.homebridge.io/#/characteristic/EventTransmissionCounters
 https://developers.homebridge.io/#/characteristic/FilterChangeIndication
 https://developers.homebridge.io/#/characteristic/FilterLifeLevel
 https://developers.homebridge.io/#/characteristic/FirmwareRevision
+https://developers.homebridge.io/#/characteristic/FirmwareUpdateProtocolList
 https://developers.homebridge.io/#/characteristic/FirmwareUpdateReadiness
 https://developers.homebridge.io/#/characteristic/FirmwareUpdateStatus
 https://developers.homebridge.io/#/characteristic/HardwareFinish
@@ -175,7 +167,6 @@ https://developers.homebridge.io/#/characteristic/InputDeviceType
 https://developers.homebridge.io/#/characteristic/InputSourceType
 https://developers.homebridge.io/#/characteristic/IsConfigured
 https://developers.homebridge.io/#/characteristic/LeakDetected
-https://developers.homebridge.io/#/characteristic/LinkQuality
 https://developers.homebridge.io/#/characteristic/ListPairings
 https://developers.homebridge.io/#/characteristic/LockControlPoint
 https://developers.homebridge.io/#/characteristic/LockCurrentState
@@ -189,7 +180,10 @@ https://developers.homebridge.io/#/characteristic/MACTransmissionCounters
 https://developers.homebridge.io/#/characteristic/ManagedNetworkEnable
 https://developers.homebridge.io/#/characteristic/ManuallyDisabled
 https://developers.homebridge.io/#/characteristic/Manufacturer
+https://developers.homebridge.io/#/characteristic/MatterFirmwareRevisionNumber
+https://developers.homebridge.io/#/characteristic/MatterFirmwareUpdateStatus
 https://developers.homebridge.io/#/characteristic/MaximumTransmitPower
+https://developers.homebridge.io/#/characteristic/MediaAccessControlLevel
 https://developers.homebridge.io/#/characteristic/MetricsBufferFullState
 https://developers.homebridge.io/#/characteristic/Model
 https://developers.homebridge.io/#/characteristic/MotionDetected
@@ -221,11 +215,11 @@ https://developers.homebridge.io/#/characteristic/PictureMode
 https://developers.homebridge.io/#/characteristic/Ping
 https://developers.homebridge.io/#/characteristic/PositionState
 https://developers.homebridge.io/#/characteristic/PowerModeSelection
+https://developers.homebridge.io/#/characteristic/PreferredWiFiList
 https://developers.homebridge.io/#/characteristic/ProductData
 https://developers.homebridge.io/#/characteristic/ProgramMode
 https://developers.homebridge.io/#/characteristic/ProgrammableSwitchEvent
 https://developers.homebridge.io/#/characteristic/ProgrammableSwitchOutputState
-https://developers.homebridge.io/#/characteristic/Reachable
 https://developers.homebridge.io/#/characteristic/ReceivedSignalStrengthIndication
 https://developers.homebridge.io/#/characteristic/ReceiverSensitivity
 https://developers.homebridge.io/#/characteristic/RecordingAudioActive
@@ -248,6 +242,7 @@ https://developers.homebridge.io/#/characteristic/SelectedAudioStreamConfigurati
 https://developers.homebridge.io/#/characteristic/SelectedCameraRecordingConfiguration
 https://developers.homebridge.io/#/characteristic/SelectedDiagnosticsModes
 https://developers.homebridge.io/#/characteristic/SelectedRTPStreamConfiguration
+https://developers.homebridge.io/#/characteristic/SelectedSessionKeepaliveConfigurationList
 https://developers.homebridge.io/#/characteristic/SelectedSleepConfiguration
 https://developers.homebridge.io/#/characteristic/SerialNumber
 https://developers.homebridge.io/#/characteristic/ServiceLabelIndex
@@ -289,6 +284,7 @@ https://developers.homebridge.io/#/characteristic/SupportedFirmwareUpdateConfigu
 https://developers.homebridge.io/#/characteristic/SupportedMetrics
 https://developers.homebridge.io/#/characteristic/SupportedRTPConfiguration
 https://developers.homebridge.io/#/characteristic/SupportedRouterConfiguration
+https://developers.homebridge.io/#/characteristic/SupportedSessionKeepaliveConfigurationList
 https://developers.homebridge.io/#/characteristic/SupportedSleepConfiguration
 https://developers.homebridge.io/#/characteristic/SupportedTransferTransportConfiguration
 https://developers.homebridge.io/#/characteristic/SupportedVideoRecordingConfiguration
@@ -296,7 +292,6 @@ https://developers.homebridge.io/#/characteristic/SupportedVideoStreamConfigurat
 https://developers.homebridge.io/#/characteristic/SwingMode
 https://developers.homebridge.io/#/characteristic/TapType
 https://developers.homebridge.io/#/characteristic/TargetAirPurifierState
-https://developers.homebridge.io/#/characteristic/TargetAirQuality
 https://developers.homebridge.io/#/characteristic/TargetControlList
 https://developers.homebridge.io/#/characteristic/TargetControlSupportedConfiguration
 https://developers.homebridge.io/#/characteristic/TargetDoorState
@@ -308,7 +303,6 @@ https://developers.homebridge.io/#/characteristic/TargetHumidifierDehumidifierSt
 https://developers.homebridge.io/#/characteristic/TargetMediaState
 https://developers.homebridge.io/#/characteristic/TargetPosition
 https://developers.homebridge.io/#/characteristic/TargetRelativeHumidity
-https://developers.homebridge.io/#/characteristic/TargetSlatState
 https://developers.homebridge.io/#/characteristic/TargetTemperature
 https://developers.homebridge.io/#/characteristic/TargetTiltAngle
 https://developers.homebridge.io/#/characteristic/TargetVerticalTiltAngle
@@ -319,7 +313,6 @@ https://developers.homebridge.io/#/characteristic/ThreadControlPoint
 https://developers.homebridge.io/#/characteristic/ThreadNodeCapabilities
 https://developers.homebridge.io/#/characteristic/ThreadOpenThreadVersion
 https://developers.homebridge.io/#/characteristic/ThreadStatus
-https://developers.homebridge.io/#/characteristic/TimeUpdate
 https://developers.homebridge.io/#/characteristic/Token
 https://developers.homebridge.io/#/characteristic/TransmitPower
 https://developers.homebridge.io/#/characteristic/TunnelConnectionTimeout

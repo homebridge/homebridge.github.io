@@ -515,21 +515,6 @@
         "constValues": []
     },
     {
-        "name": "Category",
-        "displayName": "Category",
-        "UUID": "000000A3-0000-1000-8000-0026BB765291",
-        "props": {
-            "format": "uint16",
-            "perms": [
-                "ev",
-                "pr"
-            ],
-            "minValue": 1,
-            "maxValue": 16
-        },
-        "constValues": []
-    },
-    {
         "name": "CharacteristicValueActiveTransitionCount",
         "displayName": "Characteristic Value Active Transition Count",
         "UUID": "0000024B-0000-1000-8000-0026BB765291",
@@ -651,36 +636,25 @@
         "constValues": []
     },
     {
-        "name": "ConfigureBridgedAccessory",
-        "displayName": "Configure Bridged Accessory",
-        "UUID": "000000A0-0000-1000-8000-0026BB765291",
+        "name": "ConfiguredName",
+        "displayName": "Configured Name",
+        "UUID": "000000E3-0000-1000-8000-0026BB765291",
         "props": {
-            "format": "tlv8",
+            "format": "string",
             "perms": [
+                "ev",
+                "pr",
                 "pw"
             ]
         },
         "constValues": []
     },
     {
-        "name": "ConfigureBridgedAccessoryStatus",
-        "displayName": "Configure Bridged Accessory Status",
-        "UUID": "0000009D-0000-1000-8000-0026BB765291",
+        "name": "ConnectionHealthMonitor",
+        "displayName": "Connection Health Monitor",
+        "UUID": "00000273-0000-1000-8000-0026BB765291",
         "props": {
             "format": "tlv8",
-            "perms": [
-                "ev",
-                "pr"
-            ]
-        },
-        "constValues": []
-    },
-    {
-        "name": "ConfiguredName",
-        "displayName": "Configured Name",
-        "UUID": "000000E3-0000-1000-8000-0026BB765291",
-        "props": {
-            "format": "string",
             "perms": [
                 "ev",
                 "pr",
@@ -1153,19 +1127,6 @@
         "constValues": []
     },
     {
-        "name": "CurrentTime",
-        "displayName": "Current Time",
-        "UUID": "0000009B-0000-1000-8000-0026BB765291",
-        "props": {
-            "format": "string",
-            "perms": [
-                "pr",
-                "pw"
-            ]
-        },
-        "constValues": []
-    },
-    {
         "name": "CurrentTransport",
         "displayName": "Current Transport",
         "UUID": "0000022B-0000-1000-8000-0026BB765291",
@@ -1251,21 +1212,6 @@
         "constValues": []
     },
     {
-        "name": "DayoftheWeek",
-        "displayName": "Day of the Week",
-        "UUID": "00000098-0000-1000-8000-0026BB765291",
-        "props": {
-            "format": "uint8",
-            "perms": [
-                "pr",
-                "pw"
-            ],
-            "minValue": 1,
-            "maxValue": 7
-        },
-        "constValues": []
-    },
-    {
         "name": "DiagonalFieldOfView",
         "displayName": "Diagonal Field Of View",
         "UUID": "00000224-0000-1000-8000-0026BB765291",
@@ -1293,33 +1239,6 @@
                 "pw"
             ],
             "minStep": 0.1
-        },
-        "constValues": []
-    },
-    {
-        "name": "DiscoverBridgedAccessories",
-        "displayName": "Discover Bridged Accessories",
-        "UUID": "0000009E-0000-1000-8000-0026BB765291",
-        "props": {
-            "format": "uint8",
-            "perms": [
-                "ev",
-                "pr",
-                "pw"
-            ]
-        },
-        "constValues": []
-    },
-    {
-        "name": "DiscoveredBridgedAccessories",
-        "displayName": "Discovered Bridged Accessories",
-        "UUID": "0000009F-0000-1000-8000-0026BB765291",
-        "props": {
-            "format": "uint16",
-            "perms": [
-                "ev",
-                "pr"
-            ]
         },
         "constValues": []
     },
@@ -1441,6 +1360,18 @@
         "UUID": "00000052-0000-1000-8000-0026BB765291",
         "props": {
             "format": "string",
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "FirmwareUpdateProtocolList",
+        "displayName": "Firmware Update Protocol List",
+        "UUID": "0000026F-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
             "perms": [
                 "pr"
             ]
@@ -1856,21 +1787,6 @@
         ]
     },
     {
-        "name": "LinkQuality",
-        "displayName": "Link Quality",
-        "UUID": "0000009C-0000-1000-8000-0026BB765291",
-        "props": {
-            "format": "uint8",
-            "perms": [
-                "ev",
-                "pr"
-            ],
-            "minValue": 1,
-            "maxValue": 4
-        },
-        "constValues": []
-    },
-    {
         "name": "ListPairings",
         "displayName": "List Pairings",
         "UUID": "00000050-0000-1000-8000-0026BB765291",
@@ -2186,6 +2102,32 @@
         "constValues": []
     },
     {
+        "name": "MatterFirmwareRevisionNumber",
+        "displayName": "Matter Firmware Revision Number",
+        "UUID": "0000026D-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint32",
+            "perms": [
+                "ev",
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "MatterFirmwareUpdateStatus",
+        "displayName": "Matter Firmware Update Status",
+        "UUID": "0000026E-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "perms": [
+                "ev",
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "MaximumTransmitPower",
         "displayName": "Maximum Transmit Power",
         "UUID": "00000243-0000-1000-8000-0026BB765291",
@@ -2194,6 +2136,23 @@
             "perms": [
                 "pr"
             ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "MediaAccessControlLevel",
+        "displayName": "Media Access Control Level",
+        "UUID": "000000EE-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "uint8",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ],
+            "minValue": 0,
+            "maxValue": 2,
+            "minStep": 1
         },
         "constValues": []
     },
@@ -2746,6 +2705,20 @@
         ]
     },
     {
+        "name": "PreferredWiFiList",
+        "displayName": "Preferred Wi-Fi List",
+        "UUID": "0000022E-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "ProductData",
         "displayName": "Product Data",
         "UUID": "00000220-0000-1000-8000-0026BB765291",
@@ -2786,7 +2759,7 @@
                 "value": 1
             },
             {
-                "key": "PROGRAM_SCHEDULED_MANUAL_MODE_",
+                "key": "PROGRAM_SCHEDULED_MANUAL_MODE",
                 "value": 2
             }
         ]
@@ -2839,19 +2812,6 @@
             "minValue": 0,
             "maxValue": 1,
             "minStep": 1
-        },
-        "constValues": []
-    },
-    {
-        "name": "Reachable",
-        "displayName": "Reachable",
-        "UUID": "00000063-0000-1000-8000-0026BB765291",
-        "props": {
-            "format": "bool",
-            "perms": [
-                "pr",
-                "pw"
-            ]
         },
         "constValues": []
     },
@@ -3212,9 +3172,22 @@
             ],
             "minValue": 0,
             "maxValue": 1,
-            "minStep": 1
+            "minStep": 1,
+            "validValues": [
+                0,
+                1
+            ]
         },
-        "constValues": []
+        "constValues": [
+            {
+                "key": "NO_ALARM",
+                "value": 0
+            },
+            {
+                "key": "UNKNOWN",
+                "value": 1
+            }
+        ]
     },
     {
         "name": "SecuritySystemCurrentState",
@@ -3347,6 +3320,20 @@
         "props": {
             "format": "tlv8",
             "perms": [
+                "pr",
+                "pw"
+            ]
+        },
+        "constValues": []
+    },
+    {
+        "name": "SelectedSessionKeepaliveConfigurationList",
+        "displayName": "Selected Session Keep-alive Configuration List",
+        "UUID": "00000275-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "perms": [
+                "ev",
                 "pr",
                 "pw"
             ]
@@ -4037,6 +4024,18 @@
         "constValues": []
     },
     {
+        "name": "SupportedSessionKeepaliveConfigurationList",
+        "displayName": "Supported Session Keep-alive Configuration List",
+        "UUID": "00000274-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "tlv8",
+            "perms": [
+                "pr"
+            ]
+        },
+        "constValues": []
+    },
+    {
         "name": "SupportedSleepConfiguration",
         "displayName": "Supported Sleep Configuration",
         "UUID": "00000251-0000-1000-8000-0026BB765291",
@@ -4154,40 +4153,6 @@
             {
                 "key": "AUTO",
                 "value": 1
-            }
-        ]
-    },
-    {
-        "name": "TargetAirQuality",
-        "displayName": "Target Air Quality",
-        "UUID": "000000AE-0000-1000-8000-0026BB765291",
-        "props": {
-            "format": "uint8",
-            "perms": [
-                "ev",
-                "pr",
-                "pw"
-            ],
-            "minValue": 0,
-            "maxValue": 2,
-            "validValues": [
-                0,
-                1,
-                2
-            ]
-        },
-        "constValues": [
-            {
-                "key": "EXCELLENT",
-                "value": 0
-            },
-            {
-                "key": "GOOD",
-                "value": 1
-            },
-            {
-                "key": "FAIR",
-                "value": 2
             }
         ]
     },
@@ -4396,10 +4361,6 @@
         },
         "constValues": [
             {
-                "key": "AUTO",
-                "value": 0
-            },
-            {
                 "key": "HUMIDIFIER_OR_DEHUMIDIFIER",
                 "value": 0
             },
@@ -4483,35 +4444,6 @@
             "minStep": 1
         },
         "constValues": []
-    },
-    {
-        "name": "TargetSlatState",
-        "displayName": "Target Slat State",
-        "UUID": "000000BE-0000-1000-8000-0026BB765291",
-        "props": {
-            "format": "uint8",
-            "perms": [
-                "ev",
-                "pr",
-                "pw"
-            ],
-            "minValue": 0,
-            "maxValue": 1,
-            "validValues": [
-                0,
-                1
-            ]
-        },
-        "constValues": [
-            {
-                "key": "MANUAL",
-                "value": 0
-            },
-            {
-                "key": "AUTO",
-                "value": 1
-            }
-        ]
     },
     {
         "name": "TargetTemperature",
@@ -4705,19 +4637,6 @@
             "minValue": 0,
             "maxValue": 6,
             "minStep": 1
-        },
-        "constValues": []
-    },
-    {
-        "name": "TimeUpdate",
-        "displayName": "Time Update",
-        "UUID": "0000009A-0000-1000-8000-0026BB765291",
-        "props": {
-            "format": "bool",
-            "perms": [
-                "pr",
-                "pw"
-            ]
         },
         "constValues": []
     },
