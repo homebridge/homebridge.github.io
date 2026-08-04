@@ -29,6 +29,7 @@ export class MatterDeviceTypeComponent implements OnInit {
   public readonly deviceTypeName = signal<string>('')
   public readonly deviceType = signal<MatterDeviceType | undefined>(undefined)
   public readonly exampleCode = signal<string | null>(null)
+  public readonly exampleIsHandWritten = signal(false)
   public readonly notes = signal<string | null>(null)
 
   ngOnInit(): void {
@@ -39,12 +40,33 @@ export class MatterDeviceTypeComponent implements OnInit {
       ))
 
       if (this.deviceType()) {
-        this.generateExample()
+        this.getExample()
         this.getNotes()
       }
 
       this.titleService.setTitle(`Homebridge API - ${this.deviceTypeName()}`)
     })
+  }
+
+  /**
+   * A device type too involved for the generated example gets a hand-written
+   * one, as a plain js file of the same name under examples/. The generated
+   * example remains the fallback for everything else.
+   */
+  getExample(): void {
+    this.exampleCode.set(null)
+    this.exampleIsHandWritten.set(false)
+    this.httpClient
+      .get(`/docs/matter-device-type/examples/${this.deviceTypeName()}.js`, {
+        responseType: 'text',
+      })
+      .subscribe({
+        next: (res) => {
+          this.exampleCode.set(res)
+          this.exampleIsHandWritten.set(true)
+        },
+        error: () => this.generateExample(),
+      })
   }
 
   /**
