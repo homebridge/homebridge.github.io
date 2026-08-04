@@ -83,6 +83,15 @@ export default antfu(
       'unused-imports/no-unused-vars': 'off',
     },
   },
+  {
+    // The hand-written device type examples are teaching material served to
+    // the browser as-is, like the md snippets above: they call placeholder
+    // device apis (myVacuumApi, ...) that are deliberately undefined.
+    files: ['src/docs/matter-device-type/examples/**'],
+    rules: {
+      'no-undef': 'off',
+    },
+  },
 )
   .override('antfu/formatter/html', config => ({
     ...config,
