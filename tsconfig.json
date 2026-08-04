@@ -10,7 +10,7 @@
     "experimentalDecorators": true,
     "baseUrl": "./",
     "module": "es2020",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "declaration": false,
     "downlevelIteration": true,
     "importHelpers": true,
