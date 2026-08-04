@@ -59,9 +59,9 @@
     "@angular/platform-browser": "^14.3.0"
   },
   "allowScripts": {
-    "esbuild@0.15.5": true,
-    "fsevents@2.3.3": true,
-    "nice-napi@1.0.2": true,
+    "esbuild": true,
+    "fsevents": true,
+    "nice-napi": true,
     "@fortawesome/fontawesome-free": false
   }
 }
