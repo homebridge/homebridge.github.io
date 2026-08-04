@@ -51,6 +51,11 @@ api.on('didFinishLaunching', async () => {
 
 A handler only needs to drive the real device. Homebridge updates the cluster state for you once the handler resolves, so there is no need to write the new value back yourself.
 
+That automatic update only applies to handlers whose command targets an attribute — `on`, `off`, `moveToLevelWithOnOff` and the like. Two cases still need a manual [`updateAccessoryState()`](api/matter-state#apimatterupdateaccessorystate):
+
+- **Action commands with no single attribute**, such as a vacuum's `pause` or `resume` — nothing can be inferred, so update the operational state yourself.
+- **Side effects on other attributes** — if turning a light on also resets its brightness to 100%, update the `levelControl` cluster too; only the attribute behind the command is updated automatically.
+
 If the handler throws, the command is reported as failed to the controller. To return a specific Matter status code instead of a generic failure, throw one of the errors on `api.matter.status` — see [Errors](api/matter-errors).
 
 ### API.matter.deviceTypes
