@@ -4,6 +4,7 @@ import { Observable, Observer, of } from 'rxjs';
 import { switchMap, debounceTime } from 'rxjs/operators';
 
 import { HapService } from '../hap.service';
+import { MatterService } from '../matter.service';
 
 @Component({
   selector: 'app-search',
@@ -16,6 +17,7 @@ export class SearchComponent implements OnInit {
 
   constructor(
     private hapService: HapService,
+    private matterService: MatterService,
     private router: Router,
   ) { }
 
@@ -54,6 +56,18 @@ export class SearchComponent implements OnInit {
           return {
             routerLink: ['/characteristic', x.name],
             label: `Characteristic: ${x.displayName}`,
+          };
+        }));
+
+        const matchingDeviceTypes = this.matterService.deviceTypes.filter((x) => {
+          return x.name.toLowerCase().indexOf(query) > -1 ||
+            x.matterName.toLowerCase().indexOf(query) > -1;
+        });
+
+        results.push(...matchingDeviceTypes.map(x => {
+          return {
+            routerLink: ['/matter-device-type', x.name],
+            label: `Matter Device Type: ${x.name}`,
           };
         }));
 
