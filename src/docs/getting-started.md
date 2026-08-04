@@ -56,11 +56,4 @@ Run Homebridge with `-D` while developing so your [debug logging](api/log#debug)
 
 ## Publishing
 
-Publish to npm as normal. The Homebridge UI finds plugins through npm's search index, so a newly published plugin appears once npm has indexed it rather than instantly.
-
-Two things to check before the first release:
-
-- **The `files` field** in `package.json`, or an `.npmignore`, so tests and source maps are not shipped to users.
-- **A [config schema](config-schema)**, so users can configure the plugin from the Homebridge UI rather than editing `config.json` by hand.
-
-When the plugin is stable, consider submitting it to the [Verified By Homebridge](https://github.com/homebridge/plugins) programme — the criteria are worth following whether or not you apply.
+Publish to npm as normal — see [Publishing Your Plugin](publishing) for what to check before the first release, how verification works, and how to add donation links.

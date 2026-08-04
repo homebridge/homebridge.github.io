@@ -16,7 +16,7 @@
         <a
           class="nav-link"
           [routerLink]="['/']"
-          [class.active]="isSectionActive('/', '/getting-started', '/hap-vs-matter', '/external-links')"
+          [class.active]="isSectionActive('/', '/getting-started', '/hap-vs-matter', '/publishing', '/external-links')"
         >
           <span class="theme-icon-holder me-2"><i class="fas fa-signs-post"></i></span>Introduction
         </a>
@@ -28,6 +28,10 @@
 
       <li class="nav-item">
         <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/hap-vs-matter']">HAP vs Matter</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/publishing']">Publishing</a>
       </li>
 
       <li class="nav-item">

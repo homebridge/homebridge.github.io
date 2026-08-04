@@ -12,6 +12,7 @@ const sitemap = [
   `${baseUrl}/`,
   `${baseUrl}/getting-started`,
   `${baseUrl}/hap-vs-matter`,
+  `${baseUrl}/publishing`,
   `${baseUrl}/external-links`,
   `${baseUrl}/api/reference`,
   `${baseUrl}/api/accessory-plugins`,
