@@ -3,6 +3,7 @@ import * as path from 'path';
 
 const services = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/assets/services.json'), 'utf-8'));
 const characteristics = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/assets/characteristics.json'), 'utf-8'));
+const matterDeviceTypes = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/assets/matter-device-types.json'), 'utf-8'));
 
 const baseUrl = 'https://developers.homebridge.io/#';
 
@@ -27,6 +28,10 @@ for (const service of services) {
 
 for (const characteristic of characteristics) {
   sitemap.push(baseUrl + '/characteristic/' + characteristic.name);
+}
+
+for (const deviceType of matterDeviceTypes) {
+  sitemap.push(baseUrl + '/matter-device-type/' + deviceType.name);
 }
 
 

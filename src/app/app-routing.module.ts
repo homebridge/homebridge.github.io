@@ -5,6 +5,7 @@ import { CharacteristicComponent } from './characteristic/characteristic.compone
 import { DocsComponent } from './docs/docs.component';
 import { DocsGuard } from './docs/docs.guard';
 import { CategoriesComponent } from './categories/categories.component';
+import { MatterDeviceTypeComponent } from './matter-device-type/matter-device-type.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,14 @@ const routes: Routes = [
   {
     path: 'characteristic',
     redirectTo: 'characteristic/AccessControlLevel',
+  },
+  {
+    path: 'matter-device-type/:deviceTypeName',
+    component: MatterDeviceTypeComponent,
+  },
+  {
+    path: 'matter-device-type',
+    redirectTo: 'matter-device-type/OnOffLight',
   },
   {
     path: 'api',

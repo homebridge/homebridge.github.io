@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HapService } from './hap.service';
+import { MatterService } from './matter.service';
 import { Router, NavigationEnd } from '@angular/router';
 
 declare let gtag: Function;
@@ -13,6 +14,7 @@ export class AppComponent {
 
   constructor(
     public hapService: HapService,
+    public matterService: MatterService,
     router: Router,
   ) {
 

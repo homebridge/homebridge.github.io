@@ -16,6 +16,7 @@ import { SearchComponent } from './search/search.component';
 import { DocsComponent } from './docs/docs.component';
 import { PrismDirective } from './prism.directive';
 import { CategoriesComponent } from './categories/categories.component';
+import { MatterDeviceTypeComponent } from './matter-device-type/matter-device-type.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CategoriesComponent } from './categories/categories.component';
     DocsComponent,
     PrismDirective,
     CategoriesComponent,
+    MatterDeviceTypeComponent,
   ],
   imports: [
     CommonModule,

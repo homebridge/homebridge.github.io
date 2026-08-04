@@ -42,7 +42,7 @@
   </header>
   <!--//header-->
 
-  <div class="docs-wrapper" *ngIf="hapService.ready">
+  <div class="docs-wrapper" *ngIf="hapService.ready && matterService.ready">
     <app-sidebar></app-sidebar>
 
     <div class="docs-content">
