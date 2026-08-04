@@ -1,192 +1,82 @@
 # Platform Plugins
 
-### API.registerPlatform
-> API.registerPlatform(platformName: string, constructor: PlatformPluginConstructor): void
+A platform plugin is registered with Homebridge once, and can expose any number of accessories. It can add and remove accessories at any time while Homebridge is running. This is the recommended plugin type for all new plugins — the [plugin template](https://github.com/homebridge/homebridge-plugin-template) is a platform plugin.
 
-Register a "Platform" type plugin. Platform style plugins can expose any number of accessories and can dynamically remove and add accessories at any time. Only a single instance of a given platform may be configured in the Homebridge `config.json`.
+The platform itself is protocol-neutral. The same platform can publish its accessories over HAP, over [Matter](api/matter), or both at the same time — the concepts on this page apply either way. Only the methods used to publish and manage the accessories differ:
+
+- [Platform Methods (HAP)](api/hap-platform-methods) — publishing accessories over HAP
+- [Platform Methods (Matter)](api/matter-platform-methods) — publishing accessories over Matter
+
+## Registering a platform
+
+A plugin's entry file exports a function that Homebridge calls when it loads the plugin. This is where the platform class is registered, using [API.registerPlatform](api/reference#apiregisterplatform):
 
 ```js
 module.exports = (api) => {
-  api.registerPlatform('ExamplePlatformName', ExamplePlatformPlugin);
-}
-
-class ExamplePlatformPlugin {
-  constructor(log, config, api) {
-    log.debug('Example Platform Plugin Loaded');
-  }
+  api.registerPlatform('ExamplePlatformName', ExamplePlatformPlugin)
 }
 ```
 
-### API.registerPlatformAccessories
-> API.registerPlatformAccessories(pluginIdentifier: string, platformName: string, accessories: PlatformAccessory[]): void
+Only a single instance of a given platform may be configured in the Homebridge `config.json`.
 
-Publish one or more accessories to Homebridge.
+## The constructor
+
+Homebridge creates an instance of the platform class for the configured platform, passing three arguments:
 
 ```js
 class ExamplePlatformPlugin {
   constructor(log, config, api) {
+    this.log = log
+    this.config = config
+    this.api = api
+  }
+}
+```
 
-    // store restored cached accessories here
-    this.accessories = [];
+- `log` — the plugin's logger, see [Log](api/log)
+- `config` — the plugin's config block from the Homebridge `config.json`
+- `api` — the Homebridge API object, see [Common](api/reference)
 
-    /**
-     * Platforms should wait until the "didFinishLaunching" event has fired before
-     * registering any new accessories.
-     */
+## The startup lifecycle
+
+Homebridge restores accessories it already knows about from its cache on disk, before your platform gets a chance to talk to any external system. The lifecycle runs in this order:
+
+1. **The constructor** runs when Homebridge loads the plugin.
+2. **`configureAccessory(accessory)`** is called once for every cached HAP accessory belonging to your platform. Store what you are given — this is how you avoid registering duplicates later. See [Platform Methods (HAP)](api/hap-platform-methods#apiregisterplatformaccessories).
+3. **`configureMatterAccessory(accessory)`** is called once for every cached Matter accessory, if your platform publishes any. This is the Matter equivalent of `configureAccessory`. See [Platform Methods (Matter)](api/matter-platform-methods#platformconfigurematteraccessory).
+4. **The `didFinishLaunching` event** fires once every cached accessory has been restored. Only register new accessories after this event, so you can tell what was already restored from the cache. This is also the right place to start discovering devices.
+5. **The `shutdown` event** fires when Homebridge is shutting down, whether cleanly or after a crash. Cached accessories have already been saved to disk by this point.
+
+```js
+class ExamplePlatformPlugin {
+  constructor(log, config, api) {
+    this.log = log
+    this.config = config
+    this.api = api
+
+    // cached accessories are collected here as homebridge restores them
+    this.accessories = []
+
     api.on('didFinishLaunching', () => {
-      const uuid = api.hap.uuid.generate('SOMETHING UNIQUE');
+      // safe to discover devices and register new accessories from here
+    })
 
-      // check the accessory was not restored from cache
-      if (!this.accessories.find(accessory => accessory.UUID === uuid)) {
-
-        // create a new accessory
-        const accessory = new this.api.platformAccessory('DISPLAY NAME', uuid);
-
-        // register the accessory
-        api.registerPlatformAccessories('PLUGIN_NAME', 'PLATFORM_NAME', [accessory]);
-      }
-    });
+    api.on('shutdown', () => {
+      // stop timers and close connections here
+    })
   }
 
-  /**
-   * REQUIRED - Homebridge will call the "configureAccessory" method once for every cached
-   * accessory restored
-   */
   configureAccessory(accessory) {
-    this.accessories.push(accessory);
+    this.accessories.push(accessory)
   }
 }
 ```
 
-### API.unregisterPlatformAccessories
-> API.unregisterPlatformAccessories(pluginIdentifier: string, platformName: string, accessories: PlatformAccessory[]): void
+## Other platform types
 
-Remove one or more accessories from Homebridge.
+Two older platform styles still exist, but the deprecated templates for them are kept only for reference:
 
-```js
-class ExamplePlatformPlugin {
-  constructor(log, config, api) {
+- **Static platforms** expose a fixed set of accessories at startup, which cannot change while Homebridge is running.
+- **Independent platforms** add no accessories to the main bridge at all — used by plugins that only publish [external accessories](api/hap-platform-methods#apipublishexternalaccessories), or that expose no accessories.
 
-    // store restored cached accessories here
-    this.accessories = [];
-
-    /**
-     * Platforms should wait until the "didFinishLaunching" event has fired before
-     * unregistering any accessories.
-     */
-    api.on('didFinishLaunching', () => {
-      // for the example just remove the first restored cached accessory
-      const accessory = this.accessories[0];
-
-      api.unregisterPlatformAccessories('PLUGIN_NAME', 'PLATFORM_NAME', [accessory]);
-    });
-  }
-
-  /**
-   * Homebridge will call the "configureAccessory" method once for every cached
-   * accessory restored
-   */
-  configureAccessory(accessory) {
-    this.accessories.push(accessory);
-  }
-}
-```
-
-### API.publishExternalAccessories
-> API.publishExternalAccessories(pluginIdentifier: string, accessories: PlatformAccessory[]): void
-
-Accessories published externally will need to be paired separately by the user. Common uses for external accessories include Cameras and TVs.
-
-### API.updatePlatformAccessories
-> API.updatePlatformAccessories(accessories: PlatformAccessory[]): void
-
-## Platform Accessory
-
-### API.platformAccessory
-> API.platformAccessory(displayName: string, uuid: string, category?: any): PlatformAccessory
-
-Creates a new platform accessory. It will not be active until you register the created accessory with `API.registerPlatformAccessories` method.
-
-```js
-class ExamplePlatformPlugin {
-  constructor(log, config, api) {
-    this.api = api;
-
-    const uuid = this.api.hap.uuid.generate('SOMETHING UNIQUE');
-    const accessory = new this.api.platformAccessory('DISPLAY NAME', uuid);
-  }
-}
-```
-
-### PlatformAccessory.addService
-> PlatformAccessory.addService(service: Service, ...constructorArgs: any[]): Service
-
-Adds a new service to a platform accessory.
-
-```js
-class ExamplePlatformPlugin {
-  constructor(log, config, api) {
-    this.api = api;
-
-    const accessory = new this.api.platformAccessory('DISPLAY NAME', uuid);
-
-    // get the LightBulb service if it exists
-    let service = accessory.getService(this.api.hap.Service.Lightbulb);
-
-    // otherwise create a new LightBulb service
-    if (!service) {
-      service = accessory.addService(this.api.Service.Lightbulb);
-    }
-  }
-}
-```
-
-If you are adding more than one service of the same type to an accessory, you will need to give the service a name and "subtype".
-
-```js
-const service2 = accessory.addService(Service.Lightbulb, 'Light Bulb 1', 'USER_DEFINED_SUBTYPE');
-```
-
-### PlatformAccessory.getService
-> PlatformAccessory.getService(name: string | T): any
-
-Returns an existing service from the platform accessory.
-
-```js
-const service = accessory.getService(this.api.hap.Service.Lightbulb);
-```
-
-If you have added more than one service of the same type to an accessory, you will need to get the service using the name you defined when adding it.
-
-```js
-const service2 = accessory.getService('Light Bulb 1');
-```
-
-### PlatformAccessory.removeService
-> PlatformAccessory.removeService(service: Service): void
-
-Removes the service from the platform accessory.
-
-### PlatformAccessory.context
-> PlatformAccessory.context
-
-Store custom data with accessory that will persist through Homebridge restarts.
-
-```js
-class ExamplePlatformPlugin {
-  constructor(log, config, api) {
-    this.api = api;
-
-    const uuid = this.api.hap.uuid.generate('SOMETHING UNIQUE');
-    const accessory = new this.api.platformAccessory('DISPLAY NAME', uuid);
-
-    // data stored on the context object will persist through restarts
-    accessory.context.myData = 'anything';
-  }
-}
-```
-
-### PlatformAccessory.services
-> PlatformAccessory.services: Service[]
-
-An array of services currently added to the accessory.
+For any existing plugin of one of these types, it is recommended to update the plugin to the dynamic platform type described on this page.
