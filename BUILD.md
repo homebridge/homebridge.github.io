@@ -32,7 +32,7 @@ Run it after bumping either of those two packages, and commit the results.
 npm run build
 ```
 
-The build artifacts are written to `dist/`.
+The build artifacts are written to `dist/hap/browser/` — the deploy workflows publish that folder.
 
 ## Linting
 

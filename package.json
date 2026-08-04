@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration production --output-path dist",
+    "build": "ng build --configuration production",
     "lint": "eslint . --max-warnings=0",
     "gen": "tsx scripts/gen.ts && tsx scripts/gen-matter.ts && tsx scripts/sitemap.ts",
     "lint:fix": "npm run lint -- --fix"
