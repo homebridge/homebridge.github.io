@@ -1,7 +1,7 @@
 @if (!notFound) {
   <div>
     <article class="docs-article" #markdownOutput>
-      <markdown emoji [src]="'docs' + page" (load)="onLoad($event)" (error)="onError($event)"></markdown>
+      <markdown [src]="'docs' + page" (load)="onLoad($event)" (error)="onError($event)"></markdown>
     </article>
     <div class="w-100 text-center">
       <a [href]="'https://github.com/homebridge/homebridge.github.io/tree/source/src/docs' + page">Edit on GitHub</a>
