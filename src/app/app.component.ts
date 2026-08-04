@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { HapService } from './hap.service';
 import { MatterService } from './matter.service';
+import { SidebarService } from './sidebar.service';
 import { Router, NavigationEnd } from '@angular/router';
 
 declare let gtag: Function;
@@ -15,6 +16,7 @@ export class AppComponent {
   constructor(
     public hapService: HapService,
     public matterService: MatterService,
+    public sidebarService: SidebarService,
     router: Router,
   ) {
 
@@ -29,16 +31,14 @@ export class AppComponent {
         );
 
         // Close sidebar after navigation on mobile
-        if (window.innerWidth >= 1200) {
-          return;
-        }
-        const sidebar = document.getElementById('docs-sidebar');
-        if (sidebar && sidebar.classList.contains('sidebar-visible')) {
-          sidebar.classList.remove('sidebar-visible');
-          sidebar.classList.add('sidebar-hidden');
-        }
+        this.sidebarService.closeOnMobile();
       }
     });
 
+  }
+
+  @HostListener('window:resize')
+  onWindowResize() {
+    this.sidebarService.matchWindowSize();
   }
 }
