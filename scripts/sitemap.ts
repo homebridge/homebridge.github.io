@@ -21,6 +21,7 @@ const sitemap = [
   `${baseUrl}/api/characteristics`,
   `${baseUrl}/api/characteristic-warnings`,
   `${baseUrl}/api/cameras`,
+  `${baseUrl}/api/controllers`,
   `${baseUrl}/api/log`,
   `${baseUrl}/api/matter`,
   `${baseUrl}/api/matter-platform-methods`,
