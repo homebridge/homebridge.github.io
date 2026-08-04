@@ -13,13 +13,25 @@
   <nav id="docs-nav" class="docs-nav navbar">
     <ul class="section-items list-unstyled nav flex-column pb-3">
       <li class="nav-item section-title">
-        <a class="nav-link" [routerLink]="['/']" [class.active]="isSectionActive('/', '/hap-vs-matter')">
+        <a
+          class="nav-link"
+          [routerLink]="['/']"
+          [class.active]="isSectionActive('/', '/getting-started', '/hap-vs-matter', '/external-links')"
+        >
           <span class="theme-icon-holder me-2"><i class="fas fa-signs-post"></i></span>Introduction
         </a>
       </li>
 
       <li class="nav-item">
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/getting-started']">Getting Started</a>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/hap-vs-matter']">HAP vs Matter</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/external-links']">External Links</a>
       </li>
 
       <li class="nav-item section-title mt-3">

@@ -10,7 +10,9 @@ const baseUrl = 'https://developers.homebridge.io/#'
 const sitemap = [
   'https://developers.homebridge.io/',
   `${baseUrl}/`,
+  `${baseUrl}/getting-started`,
   `${baseUrl}/hap-vs-matter`,
+  `${baseUrl}/external-links`,
   `${baseUrl}/api/reference`,
   `${baseUrl}/api/accessory-plugins`,
   `${baseUrl}/api/platform-plugins`,
