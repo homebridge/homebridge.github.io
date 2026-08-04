@@ -2,31 +2,14 @@
 
 [Homebridge](https://github.com/homebridge/homebridge) is a lightweight Node.js server you can run on your home network that emulates the iOS HomeKit API, and — from Homebridge 2.0 — can expose accessories over [Matter](/#/api/matter) as well. It supports Plugins, which are community-contributed modules that provide a basic bridge from HomeKit or Matter to various 3rd-party APIs provided by manufacturers of "smart home" devices.
 
-This site contains resources to help Homebridge plugin developers. For how the two protocols compare, and which your plugin should support, see [HAP vs Matter](/#/hap-vs-matter).
+This site contains resources to help Homebridge plugin developers.
 
-## Homebridge Plugin Templates
+## Where to start
 
-We have created templates which you can use as a base to help you get started developing your own plugin.
-
-These plugin templates offer the following features:
-
-- A base [dynamic](/#/api/platform-plugins) plugin that can easily be expanded
-- [TypeScript](https://www.typescriptlang.org/) with ESLint rules and Homebridge typings pre-configured
-- Automatic code compiling and Homebridge restart on code change with `npm run watch`
-
-### Dynamic Template
-
-- [homebridge-plugin-template](https://github.com/homebridge/homebridge-plugin-template)
-
-### Camera Plugin Template
-
-- [homebridge-plugin-camera-template](https://github.com/homebridge/homebridge-plugin-camera-template)
-
-#### Verified By Homebridge Program
-
-When developing a Homebridge plugin, it can be considered best practice to follow the criteria of the Verified By Homebridge Program, whether you intend to submit your plugin for verification or not. This ensures that your plugin is compatible with the widest range of Homebridge setups and provides the best possible user experience.
-
-For more information about verification and the criteria, see the [Verified By Homebridge Program](https://github.com/homebridge/plugins).
+- **[Getting Started](/#/getting-started)** — the plugin templates, how a plugin is laid out, and the discovery pattern nearly every plugin uses
+- **[HAP vs Matter](/#/hap-vs-matter)** — how the two protocols compare, and which your plugin should support
+- **[API Reference](/#/api/reference)** — the API object your plugin is handed, and the platform lifecycle
+- **[External Links](/#/external-links)** — templates, wikis, source repositories and the community
 
 ---
 
@@ -56,10 +39,8 @@ For the full table of what each combination does, see [Matter Plugins](https://g
 
 ---
 
-## Deprecated Templates
+## Verified By Homebridge
 
-⚠️ The following templates are kept here for reference but are no longer maintained. For any existing plugin of one of the following types, it is recommended to update your plugin to the dynamic platform type.
+When developing a Homebridge plugin, it can be considered best practice to follow the criteria of the Verified By Homebridge Program, whether you intend to submit your plugin for verification or not. This ensures that your plugin is compatible with the widest range of Homebridge setups and provides the best possible user experience.
 
-- [Accessory Plugin](https://github.com/homebridge/homebridge-examples/blob/master/accessory-example-typescript)
-- [Independent Platform Plugin](https://github.com/homebridge/homebridge-examples/blob/master/independent-platform-example-typescript)
-- [Bridged Camera Platform](https://github.com/homebridge/homebridge-examples/blob/master/bridged-camera-example-typescript)
+For more information about verification and the criteria, see the [Verified By Homebridge Program](https://github.com/homebridge/plugins).
