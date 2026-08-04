@@ -5,7 +5,7 @@ A platform plugin is registered with Homebridge once, and can expose any number 
 The platform itself is protocol-neutral. The same platform can publish its accessories over HAP, over [Matter](api/matter), or both at the same time — the concepts on this page apply either way. Only the methods used to publish and manage the accessories differ:
 
 - [Platform Methods (HAP)](api/hap-platform-methods) — publishing accessories over HAP
-- [Matter](api/matter) — publishing accessories over Matter
+- [Platform Methods (Matter)](api/matter-platform-methods) — publishing accessories over Matter
 
 ## Registering a platform
 
@@ -43,7 +43,7 @@ Homebridge restores accessories it already knows about from its cache on disk, b
 
 1. **The constructor** runs when Homebridge loads the plugin.
 2. **`configureAccessory(accessory)`** is called once for every cached HAP accessory belonging to your platform. Store what you are given — this is how you avoid registering duplicates later. See [Platform Methods (HAP)](api/hap-platform-methods#apiregisterplatformaccessories).
-3. **`configureMatterAccessory(accessory)`** is called once for every cached Matter accessory, if your platform publishes any. This is the Matter equivalent of `configureAccessory`. See [Matter](api/matter#platformconfigurematteraccessory).
+3. **`configureMatterAccessory(accessory)`** is called once for every cached Matter accessory, if your platform publishes any. This is the Matter equivalent of `configureAccessory`. See [Platform Methods (Matter)](api/matter-platform-methods#platformconfigurematteraccessory).
 4. **The `didFinishLaunching` event** fires once every cached accessory has been restored. Only register new accessories after this event, so you can tell what was already restored from the cache. This is also the right place to start discovering devices.
 5. **The `shutdown` event** fires when Homebridge is shutting down, whether cleanly or after a crash. Cached accessories have already been saved to disk by this point.
 

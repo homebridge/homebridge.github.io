@@ -2,7 +2,7 @@
 
 # Matter Clusters
 
-The clusters Homebridge exposes, for use with [`updateAccessoryState()`](api/matter#apimatterupdateaccessorystate) and [`getAccessoryState()`](api/matter#apimattergetaccessorystate):
+The clusters Homebridge exposes, for use with [`updateAccessoryState()`](api/matter-state#apimatterupdateaccessorystate) and [`getAccessoryState()`](api/matter-state#apimattergetaccessorystate):
 
 ```js
 await api.matter.updateAccessoryState(uuid, api.matter.clusterNames.OnOff, { onOff: true });
@@ -10,7 +10,7 @@ await api.matter.updateAccessoryState(uuid, api.matter.clusterNames.OnOff, { onO
 
 Prefer `api.matter.clusterNames.OnOff` to the string `'onOff'` — the constant is what gives you autocomplete on the cluster and type checking on its attribute names.
 
-For the attributes and commands each cluster carries, see the device type that uses it under **Matter Device Types**. A cluster with no device types listed is available for [custom device types](api/matter#apimatterclusters), but is not part of any of the built-in ones.
+For the attributes and commands each cluster carries, see the device type that uses it under **Matter Device Types**. A cluster with no device types listed is available for [custom device types](api/matter-state#apimatterclusters), but is not part of any of the built-in ones.
 
 | Name | Value | Used by |
 | --- | --- | --- |

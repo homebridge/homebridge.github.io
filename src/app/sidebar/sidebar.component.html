@@ -95,7 +95,15 @@
         <a
           class="nav-link"
           [routerLink]="['/api/matter']"
-          [class.active]="isSectionActive('/api/matter', '/api/matter-clusters')"
+          [class.active]="
+            isSectionActive(
+              '/api/matter',
+              '/api/matter-platform-methods',
+              '/api/matter-state',
+              '/api/matter-errors',
+              '/api/matter-clusters'
+            )
+          "
         >
           <span class="theme-icon-holder me-2"><i class="fas fa-matter"></i></span>Matter
         </a>
@@ -103,6 +111,20 @@
 
       <li class="nav-item">
         <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/matter']">Overview</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/matter-platform-methods']"
+          >Platform Methods</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/matter-state']">State</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/matter-errors']">Errors</a>
       </li>
 
       <li class="nav-item">

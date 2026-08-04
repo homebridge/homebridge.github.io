@@ -60,7 +60,7 @@ const accessory = new this.api.platformAccessory('DISPLAY NAME', uuid, this.api.
 
 ### API.hap.HapStatusError
 
-Throwing this from an `onGet` or `onSet` handler reports a specific HAP status code back to HomeKit, rather than a generic failure — the HAP counterpart to [Matter's status errors](api/matter#handling-errors):
+Throwing this from an `onGet` or `onSet` handler reports a specific HAP status code back to HomeKit, rather than a generic failure — the HAP counterpart to [Matter's status errors](api/matter-errors):
 
 ```js
 service.getCharacteristic(this.api.hap.Characteristic.On)
