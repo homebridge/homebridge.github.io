@@ -1,21 +1,6 @@
 # Platform Plugins
 
-### API.registerPlatform
-> API.registerPlatform(platformName: string, constructor: PlatformPluginConstructor): void
-
-Register a "Platform" type plugin. Platform style plugins can expose any number of accessories and can dynamically remove and add accessories at any time. Only a single instance of a given platform may be configured in the Homebridge `config.json`.
-
-```js
-module.exports = (api) => {
-  api.registerPlatform('ExamplePlatformName', ExamplePlatformPlugin);
-}
-
-class ExamplePlatformPlugin {
-  constructor(log, config, api) {
-    log.debug('Example Platform Plugin Loaded');
-  }
-}
-```
+Publishing and managing accessories over HAP. Registering the platform itself is protocol-neutral and covered under [Common](api/reference#apiregisterplatform); for the Matter equivalents of the methods below, see [Matter](api/matter).
 
 ### API.registerPlatformAccessories
 > API.registerPlatformAccessories(pluginIdentifier: string, platformName: string, accessories: PlatformAccessory[]): void

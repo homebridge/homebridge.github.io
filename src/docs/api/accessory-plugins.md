@@ -2,6 +2,8 @@
 
 ⚠️ It is recommended to create new plugins with the [Dynamic Platform Plugin](#/api/platform-plugins) template instead of using an accessory-type plugin.
 
+Accessory plugins are HAP-only. There is no accessory-style path for Matter — a plugin exposing [Matter accessories](api/matter) always registers them through a platform.
+
 ### API.registerAccessory
 > API.registerAccessory(accessoryName: string, constructor: AccessoryPluginConstructor): void
 
