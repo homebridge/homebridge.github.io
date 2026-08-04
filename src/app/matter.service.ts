@@ -5,6 +5,9 @@ export interface MatterCluster {
   name: string
   id: string
   attributes: string[]
+  // The attribute the generated example uses as the cluster's main state -
+  // picked by gen-matter.ts, since attributes[0] is often a capability list
+  exampleAttribute: string
   commands: string[]
 }
 

@@ -73,7 +73,7 @@ export class MatterDeviceTypeComponent implements OnInit {
 
     const initialState = clusters
       .map((cluster) => {
-        return `      ${cluster.id}: { ${cluster.attributes[0]}: undefined }, // set a starting value`
+        return `      ${cluster.id}: { ${cluster.exampleAttribute}: undefined }, // set a starting value`
       })
       .join('\n')
 
@@ -155,7 +155,7 @@ ${
     await this.api.matter.updateAccessoryState(
       this.uuid,
       this.api.matter.clusterNames.${firstCluster.name},
-      { ${firstCluster.attributes[0]}: value },
+      { ${firstCluster.exampleAttribute}: value },
     );
   }
 `

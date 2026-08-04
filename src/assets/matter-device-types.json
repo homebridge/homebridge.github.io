@@ -12,6 +12,7 @@
                 "attributes": [
                     "airQuality"
                 ],
+                "exampleAttribute": "airQuality",
                 "commands": []
             }
         ]
@@ -46,6 +47,7 @@
                     "productAppearance",
                     "configurationVersion"
                 ],
+                "exampleAttribute": "nodeLabel",
                 "commands": [
                     "keepActive"
                 ]
@@ -69,6 +71,7 @@
                     "offWaitTime",
                     "startUpOnOff"
                 ],
+                "exampleAttribute": "onOff",
                 "commands": [
                     "off",
                     "on",
@@ -97,6 +100,7 @@
                     "options",
                     "startUpCurrentLevel"
                 ],
+                "exampleAttribute": "currentLevel",
                 "commands": [
                     "moveToLevel",
                     "move",
@@ -166,6 +170,7 @@
                     "coupleColorTempToLevelMinMireds",
                     "startUpColorTemperatureMireds"
                 ],
+                "exampleAttribute": "colorTemperatureMireds",
                 "commands": [
                     "moveToHue",
                     "moveHue",
@@ -203,6 +208,7 @@
                 "attributes": [
                     "stateValue"
                 ],
+                "exampleAttribute": "stateValue",
                 "commands": []
             }
         ]
@@ -224,6 +230,7 @@
                     "offWaitTime",
                     "startUpOnOff"
                 ],
+                "exampleAttribute": "onOff",
                 "commands": [
                     "off",
                     "on",
@@ -252,6 +259,7 @@
                     "options",
                     "startUpCurrentLevel"
                 ],
+                "exampleAttribute": "currentLevel",
                 "commands": [
                     "moveToLevel",
                     "move",
@@ -283,6 +291,7 @@
                     "offWaitTime",
                     "startUpOnOff"
                 ],
+                "exampleAttribute": "onOff",
                 "commands": [
                     "off",
                     "on",
@@ -311,6 +320,7 @@
                     "options",
                     "startUpCurrentLevel"
                 ],
+                "exampleAttribute": "currentLevel",
                 "commands": [
                     "moveToLevel",
                     "move",
@@ -382,6 +392,7 @@
                     "numberOfAliroCredentialIssuerKeysSupported",
                     "numberOfAliroEndpointKeysSupported"
                 ],
+                "exampleAttribute": "lockState",
                 "commands": [
                     "lockDoor",
                     "unlockDoor",
@@ -433,6 +444,7 @@
                     "offWaitTime",
                     "startUpOnOff"
                 ],
+                "exampleAttribute": "onOff",
                 "commands": [
                     "off",
                     "on",
@@ -461,6 +473,7 @@
                     "options",
                     "startUpCurrentLevel"
                 ],
+                "exampleAttribute": "currentLevel",
                 "commands": [
                     "moveToLevel",
                     "move",
@@ -530,6 +543,7 @@
                     "coupleColorTempToLevelMinMireds",
                     "startUpColorTemperatureMireds"
                 ],
+                "exampleAttribute": "colorTemperatureMireds",
                 "commands": [
                     "moveToHue",
                     "moveHue",
@@ -578,6 +592,7 @@
                     "windSetting",
                     "airflowDirection"
                 ],
+                "exampleAttribute": "percentSetting",
                 "commands": [
                     "step"
                 ]
@@ -599,6 +614,7 @@
                     "currentPosition",
                     "multiPressMax"
                 ],
+                "exampleAttribute": "currentPosition",
                 "commands": []
             }
         ]
@@ -619,6 +635,7 @@
                     "maxMeasuredValue",
                     "tolerance"
                 ],
+                "exampleAttribute": "measuredValue",
                 "commands": []
             }
         ]
@@ -636,6 +653,7 @@
                 "attributes": [
                     "stateValue"
                 ],
+                "exampleAttribute": "stateValue",
                 "commands": []
             }
         ]
@@ -657,6 +675,7 @@
                     "tolerance",
                     "lightSensorType"
                 ],
+                "exampleAttribute": "measuredValue",
                 "commands": []
             }
         ]
@@ -687,6 +706,7 @@
                     "physicalContactUnoccupiedToOccupiedDelay",
                     "physicalContactUnoccupiedToOccupiedThreshold"
                 ],
+                "exampleAttribute": "occupancy",
                 "commands": []
             }
         ]
@@ -708,6 +728,7 @@
                     "offWaitTime",
                     "startUpOnOff"
                 ],
+                "exampleAttribute": "onOff",
                 "commands": [
                     "off",
                     "on",
@@ -736,6 +757,7 @@
                     "offWaitTime",
                     "startUpOnOff"
                 ],
+                "exampleAttribute": "onOff",
                 "commands": [
                     "off",
                     "on",
@@ -772,6 +794,7 @@
                     "offWaitTime",
                     "startUpOnOff"
                 ],
+                "exampleAttribute": "onOff",
                 "commands": [
                     "off",
                     "on",
@@ -810,6 +833,7 @@
                     "controlMode",
                     "alarmMask"
                 ],
+                "exampleAttribute": "pumpStatus",
                 "commands": []
             }
         ]
@@ -828,6 +852,7 @@
                     "supportedModes",
                     "currentMode"
                 ],
+                "exampleAttribute": "currentMode",
                 "commands": [
                     "changeToMode"
                 ]
@@ -843,6 +868,7 @@
                     "operationalState",
                     "operationalError"
                 ],
+                "exampleAttribute": "operationalState",
                 "commands": [
                     "pause",
                     "resume",
@@ -868,6 +894,7 @@
                     "offWaitTime",
                     "startUpOnOff"
                 ],
+                "exampleAttribute": "onOff",
                 "commands": [
                     "off",
                     "on",
@@ -933,6 +960,7 @@
                     "currentThermostatSuggestion",
                     "thermostatSuggestionNotFollowingReason"
                 ],
+                "exampleAttribute": "occupiedHeatingSetpoint",
                 "commands": [
                     "setpointRaiseLower",
                     "setActiveScheduleRequest",
@@ -968,6 +996,7 @@
                     "maxMeasuredValue",
                     "tolerance"
                 ],
+                "exampleAttribute": "measuredValue",
                 "commands": []
             }
         ]
@@ -1035,6 +1064,7 @@
                     "currentThermostatSuggestion",
                     "thermostatSuggestionNotFollowingReason"
                 ],
+                "exampleAttribute": "occupiedHeatingSetpoint",
                 "commands": [
                     "setpointRaiseLower",
                     "setActiveScheduleRequest",
@@ -1069,6 +1099,7 @@
                     "valveFault",
                     "levelStep"
                 ],
+                "exampleAttribute": "currentState",
                 "commands": [
                     "open",
                     "close"
