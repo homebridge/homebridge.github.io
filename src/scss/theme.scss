@@ -48,14 +48,20 @@ $gray-700: lighten($theme-text-color-secondary, 20%);
 $gray-800: lighten($theme-text-color-secondary, 10%);
 $gray-900: $theme-text-color-primary;
 
-$theme-colors: (
-  "primary":  $theme-color-primary,
-  "secondary": $theme-text-color-secondary,
-  "success": $theme-success-color,
-  "danger": $theme-danger-color,
-  "warning": $theme-warning-color,
-  "info": $theme-info-color,
-);
+// Bootstrap 5 derives its $theme-colors map (and things like the active state
+// of dropdown items) from these individual variables, so they are the ones to
+// override — setting the map alone is not enough any more.
+$primary: $theme-color-primary;
+$secondary: $theme-text-color-secondary;
+$success: $theme-success-color;
+$danger: $theme-danger-color;
+$warning: $theme-warning-color;
+$info: $theme-info-color;
+
+// Bootstrap 5 underlines links by default; keep the Bootstrap 4 behaviour the
+// theme was designed around (plain links, underline on hover).
+$link-decoration: none;
+$link-hover-decoration: underline;
 
 /*************************** Import Bootstrap  *****************************/
 @import "bootstrap/scss/bootstrap.scss";
