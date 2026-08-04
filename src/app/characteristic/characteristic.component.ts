@@ -1,8 +1,10 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   inject,
   OnInit,
+  signal,
 } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { ActivatedRoute, RouterLink } from '@angular/router'
@@ -21,42 +23,40 @@ export class CharacteristicComponent implements OnInit {
   private hapService = inject(HapService)
   private titleService = inject(Title)
 
-  public characteristicName: string
-  public characteristic: Characteristic
+  public readonly characteristicName = signal<string>('')
+  public readonly characteristic = signal<Characteristic>(undefined)
 
-  public usedBy: Service[]
+  public readonly usedBy = signal<Service[]>([])
 
   ngOnInit(): void {
     this.currentRoute.paramMap.subscribe((params) => {
-      this.characteristicName = params.get('characteristicName')
-      this.characteristic = this.hapService.getCharacteristicsByName(
-        this.characteristicName,
-      )
-      this.usedBy = this.hapService.getServiceTypesUsedByCharacteristic(
-        this.characteristic.UUID,
-      )
+      this.characteristicName.set(params.get('characteristicName'))
+      this.characteristic.set(this.hapService.getCharacteristicsByName(
+        this.characteristicName(),
+      ))
+      this.usedBy.set(this.hapService.getServiceTypesUsedByCharacteristic(
+        this.characteristic().UUID,
+      ))
 
-      this.titleService.setTitle(`Homebridge API - ${this.characteristicName}`)
+      this.titleService.setTitle(`Homebridge API - ${this.characteristicName()}`)
     })
   }
 
-  get characteristicPermissions() {
-    return this.characteristic.props.perms
-      .map(x => this.hapService.perms[x])
-      .join(', ')
-  }
+  public readonly characteristicPermissions = computed(() => {
+    return this.characteristic().props.perms.map(x => this.hapService.perms[x]).join(', ')
+  })
 
-  get characteristicEvents() {
+  public readonly characteristicEvents = computed(() => {
     const events: string[] = []
 
-    if (this.characteristic.props.perms.includes('pr')) {
+    if (this.characteristic().props.perms.includes('pr')) {
       events.push('get')
     }
 
-    if (this.characteristic.props.perms.includes('pw')) {
+    if (this.characteristic().props.perms.includes('pw')) {
       events.push('set')
     }
 
     return events.join(', ')
-  }
+  })
 }

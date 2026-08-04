@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { inject, Injectable } from '@angular/core'
-import { Observable } from 'rxjs'
+import { inject, Injectable, signal } from '@angular/core'
 
 export interface Service {
   name: string
@@ -40,10 +39,10 @@ export interface Categories {
 export class HapService {
   private httpClient = inject(HttpClient)
 
-  public ready = false
-  public services: Service[]
-  public characteristics: Characteristic[]
-  public categories: Categories[]
+  public readonly ready = signal(false)
+  public readonly services = signal<Service[]>([])
+  public readonly characteristics = signal<Characteristic[]>([])
+  public readonly categories = signal<Categories[]>([])
 
   public perms = {
     pr: 'Paired Read',
@@ -55,8 +54,6 @@ export class HapService {
     wr: 'Write Response',
   }
 
-  searchProvider: Observable<any>
-
   constructor() {
     this.load()
   }
@@ -67,32 +64,32 @@ export class HapService {
       this.httpClient.get('assets/characteristics.json').toPromise(),
       this.httpClient.get('assets/categories.json').toPromise(),
     ]).then(([services, characteristics, categories]) => {
-      this.services = services as Service[]
-      this.characteristics = characteristics as Characteristic[]
-      this.categories = categories as Categories[]
-      this.ready = true
+      this.services.set(services as Service[])
+      this.characteristics.set(characteristics as Characteristic[])
+      this.categories.set(categories as Categories[])
+      this.ready.set(true)
     })
   }
 
   getServiceByName(serviceName: string) {
-    return this.services.find(x => x.name === serviceName)
+    return this.services().find(x => x.name === serviceName)
   }
 
   getServiceByUUID(uuid: string) {
-    return this.services.find(x => x.UUID === uuid)
+    return this.services().find(x => x.UUID === uuid)
   }
 
   getCharacteristicsByName(characteristicName: string) {
-    return this.characteristics.find(x => x.name === characteristicName)
+    return this.characteristics().find(x => x.name === characteristicName)
   }
 
   getCharacteristicsByUUID(uuid: string) {
-    return this.characteristics.find(x => x.UUID === uuid)
+    return this.characteristics().find(x => x.UUID === uuid)
   }
 
   getServiceTypesUsedByCharacteristic(uuid: string) {
-    const required = this.services.filter(x => x.requiredCharacteristics.includes(uuid))
-    const optional = this.services.filter(x => x.optionalCharacteristics.includes(uuid))
+    const required = this.services().filter(x => x.requiredCharacteristics.includes(uuid))
+    const optional = this.services().filter(x => x.optionalCharacteristics.includes(uuid))
     return required.concat(optional)
   }
 }

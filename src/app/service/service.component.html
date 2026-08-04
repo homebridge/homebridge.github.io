@@ -1,16 +1,16 @@
 <article class="docs-article">
   <header class="docs-header">
     <h1>
-      {{ service.displayName }}
+      {{ service().displayName }}
     </h1>
-    <p>UUID: {{ service.UUID }}</p>
+    <p>UUID: {{ service().UUID }}</p>
   </header>
 
   <section>
     <h3>Required Characteristics</h3>
 
     <ul>
-      @for (characteristic of requiredCharacteristics; track characteristic) {
+      @for (characteristic of requiredCharacteristics(); track characteristic) {
         <li>
           <a [routerLink]="['/characteristic', characteristic.name]">{{ characteristic.displayName }}</a>
         </li>
@@ -18,11 +18,11 @@
     </ul>
   </section>
 
-  @if (optionalCharacteristics.length) {
+  @if (optionalCharacteristics().length) {
     <section>
       <h3>Optional Characteristics</h3>
       <ul>
-        @for (characteristic of optionalCharacteristics; track characteristic) {
+        @for (characteristic of optionalCharacteristics(); track characteristic) {
           <li>
             <a [routerLink]="['/characteristic', characteristic.name]">{{ characteristic.displayName }}</a>
           </li>
@@ -31,18 +31,19 @@
     </section>
   }
 
-  @if (markdown) {
+  @if (markdown()) {
     <section>
-      <markdown [data]="markdown" />
+      <markdown [data]="markdown()" />
       <div class="w-100 mt-5 text-center">
-        <a [href]="`https://github.com/homebridge/homebridge.github.io/tree/source/src/docs/service/${serviceName}.md`"
+        <a
+          [href]="`https://github.com/homebridge/homebridge.github.io/tree/source/src/docs/service/${serviceName()}.md`"
           >Edit on GitHub</a
         >
       </div>
     </section>
   }
 
-  @if (exampleCode) {
+  @if (exampleCode()) {
     <section>
       <h3>Example</h3>
       <div class="callout-block callout-block-warning">
@@ -54,11 +55,11 @@
             Note
           </h4>
           The example below is automatically generated and may not be a complete example of what is required to create a
-          working "{{ service.displayName }}" Homebridge plugin.
+          working "{{ service().displayName }}" Homebridge plugin.
         </div>
       </div>
       <div class="docs-code-block">
-        <pre class="language-js" [appPrism]="exampleCode"></pre>
+        <pre class="language-js" [appPrism]="exampleCode()"></pre>
       </div>
     </section>
   }

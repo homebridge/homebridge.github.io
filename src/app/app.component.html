@@ -52,7 +52,7 @@
 </header>
 <!--//header-->
 
-@if (hapService.ready && matterService.ready) {
+@if (hapService.ready() && matterService.ready()) {
   <div class="docs-wrapper">
     <app-sidebar />
     <div class="docs-content">

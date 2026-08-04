@@ -1,22 +1,22 @@
-@if (deviceType) {
+@if (deviceType()) {
   <article class="docs-article">
     <header class="docs-header">
       <h1>
-        {{ deviceType.name }}
+        {{ deviceType().name }}
       </h1>
       <p>
-        Matter device type: {{ deviceType.matterName }} ({{ deviceType.deviceTypeHex }}) &middot; revision
-        {{ deviceType.deviceRevision }}
+        Matter device type: {{ deviceType().matterName }} ({{ deviceType().deviceTypeHex }}) &middot; revision
+        {{ deviceType().deviceRevision }}
       </p>
     </header>
     <section>
       <h3>Usage</h3>
       <p>Pass this device type when registering the accessory:</p>
       <div class="docs-code-block">
-        <pre class="language-js" [appPrism]="`deviceType: api.matter.deviceTypes.${deviceType.name},`"></pre>
+        <pre class="language-js" [appPrism]="`deviceType: api.matter.deviceTypes.${deviceType().name},`"></pre>
       </div>
     </section>
-    @if (deviceType.clusters.length) {
+    @if (deviceType().clusters.length) {
       <section>
         <h3>Clusters</h3>
         <p>
@@ -24,7 +24,7 @@
           <a fragment="apimatterupdateaccessorystate" [routerLink]="['/api/matter']">updateAccessoryState()</a>, and
           <strong>commands</strong> are what a controller sends you, which you answer with a handler.
         </p>
-        @for (cluster of deviceType.clusters; track cluster) {
+        @for (cluster of deviceType().clusters; track cluster) {
           <div class="mb-4">
             <h4>
               <code>api.matter.clusterNames.{{ cluster.name }}</code>
@@ -74,7 +74,7 @@
         </div>
       </section>
     }
-    @if (exampleCode) {
+    @if (exampleCode()) {
       <section>
         <h3>Example</h3>
         <div class="callout-block callout-block-warning">
@@ -86,11 +86,11 @@
               Note
             </h4>
             The example below is automatically generated and may not be a complete example of what is required to create
-            a working "{{ deviceType.name }}" Homebridge plugin.
+            a working "{{ deviceType().name }}" Homebridge plugin.
           </div>
         </div>
         <div class="docs-code-block">
-          <pre class="language-js" [appPrism]="exampleCode"></pre>
+          <pre class="language-js" [appPrism]="exampleCode()"></pre>
         </div>
       </section>
     }

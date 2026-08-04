@@ -3,6 +3,7 @@ import {
   Component,
   inject,
   OnInit,
+  signal,
 } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { ActivatedRoute, RouterLink } from '@angular/router'
@@ -22,22 +23,22 @@ export class MatterDeviceTypeComponent implements OnInit {
   private matterService = inject(MatterService)
   private titleService = inject(Title)
 
-  public deviceTypeName: string
-  public deviceType: MatterDeviceType
-  public exampleCode: string
+  public readonly deviceTypeName = signal<string>('')
+  public readonly deviceType = signal<MatterDeviceType>(undefined)
+  public readonly exampleCode = signal<string>(null)
 
   ngOnInit(): void {
     this.currentRoute.paramMap.subscribe((params) => {
-      this.deviceTypeName = params.get('deviceTypeName')
-      this.deviceType = this.matterService.getDeviceTypeByName(
-        this.deviceTypeName,
-      )
+      this.deviceTypeName.set(params.get('deviceTypeName'))
+      this.deviceType.set(this.matterService.getDeviceTypeByName(
+        this.deviceTypeName(),
+      ))
 
-      if (this.deviceType) {
+      if (this.deviceType()) {
         this.generateExample()
       }
 
-      this.titleService.setTitle(`Homebridge API - ${this.deviceTypeName}`)
+      this.titleService.setTitle(`Homebridge API - ${this.deviceTypeName()}`)
     })
   }
 
@@ -46,11 +47,12 @@ export class MatterDeviceTypeComponent implements OnInit {
    * and so on), which is what an example wants to show.
    */
   primaryAttribute(clusterIndex: number): string {
-    return this.deviceType.clusters[clusterIndex]?.attributes[0]
+    return this.deviceType().clusters[clusterIndex]?.attributes[0]
   }
 
   generateExample() {
-    const clusters = this.deviceType.clusters
+    const deviceType = this.deviceType()
+    const clusters = deviceType.clusters
 
     const initialState = clusters
       .map((cluster) => {
@@ -79,13 +81,13 @@ ${commands}
 
     const firstCluster = clusters[0]
 
-    this.exampleCode = `// Example ${this.deviceType.name} Matter plugin
+    this.exampleCode.set(`// Example ${deviceType.name} Matter plugin
 
 module.exports = (api) => {
-  api.registerPlatform('Example${this.deviceType.name}Plugin', Example${this.deviceType.name}Platform);
+  api.registerPlatform('Example${deviceType.name}Plugin', Example${deviceType.name}Platform);
 };
 
-class Example${this.deviceType.name}Platform {
+class Example${deviceType.name}Platform {
 
   constructor(log, config, api) {
     this.log = log;
@@ -97,15 +99,15 @@ class Example${this.deviceType.name}Platform {
         return;
       }
 
-      const uuid = api.matter.uuid.generate('example-${this.deviceType.name.toLowerCase()}');
+      const uuid = api.matter.uuid.generate('example-${deviceType.name.toLowerCase()}');
 
-      await api.matter.registerPlatformAccessories('homebridge-example', 'Example${this.deviceType.name}Platform', [{
+      await api.matter.registerPlatformAccessories('homebridge-example', 'Example${deviceType.name}Platform', [{
         UUID: uuid,
-        displayName: 'Example ${this.deviceType.name}',
-        deviceType: api.matter.deviceTypes.${this.deviceType.name},
-        serialNumber: 'example-${this.deviceType.name.toLowerCase()}',
+        displayName: 'Example ${deviceType.name}',
+        deviceType: api.matter.deviceTypes.${deviceType.name},
+        serialNumber: 'example-${deviceType.name.toLowerCase()}',
         manufacturer: 'Example Co',
-        model: '${this.deviceType.name}',
+        model: '${deviceType.name}',
 
         // the state a controller sees when the accessory first appears
         clusters: {
@@ -148,6 +150,6 @@ ${
   configureMatterAccessory(accessory) {
     this.log.info('Restoring cached accessory:', accessory.displayName);
   }
-}`
+}`)
   }
 }

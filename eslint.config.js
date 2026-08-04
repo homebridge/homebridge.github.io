@@ -121,12 +121,12 @@ export default antfu(
       'angular/pipe-prefix': 'error',
       'angular/prefer-host-metadata-property': 'error',
       'angular/prefer-inject': 'error',
-      // The next four need the signals + OnPush architecture the ui already
-      // has; enable them when this app makes that move.
+      // OnPush needs a verification pass of its own; enable it when the app
+      // makes that move.
       'angular/prefer-on-push-component-change-detection': 'off',
-      'angular/prefer-output-emitter-ref': 'off',
-      'angular/prefer-signal-model': 'off',
-      'angular/prefer-signals': 'off',
+      'angular/prefer-output-emitter-ref': 'error',
+      'angular/prefer-signal-model': 'error',
+      'angular/prefer-signals': 'error',
       'angular/prefer-standalone': 'error',
       'angular/relative-url-prefix': 'error',
       'angular/require-lifecycle-on-prototype': 'error',

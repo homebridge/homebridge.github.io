@@ -1,10 +1,10 @@
-@if (!notFound) {
+@if (!notFound()) {
   <div>
     <article #markdownOutput class="docs-article">
-      <markdown [src]="`docs${page}`" (load)="onLoad($event)" (error)="onError()" />
+      <markdown [src]="`docs${page()}`" (load)="onLoad($event)" (error)="onError()" />
     </article>
     <div class="w-100 text-center">
-      <a [href]="`https://github.com/homebridge/homebridge.github.io/tree/source/src/docs${page}`">Edit on GitHub</a>
+      <a [href]="`https://github.com/homebridge/homebridge.github.io/tree/source/src/docs${page()}`">Edit on GitHub</a>
     </div>
   </div>
 } @else {

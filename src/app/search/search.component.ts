@@ -3,6 +3,7 @@ import {
   Component,
   inject,
   OnInit,
+  signal,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { Router } from '@angular/router'
@@ -26,17 +27,17 @@ export class SearchComponent implements OnInit {
   private router = inject(Router)
 
   public searchProvider: Observable<any>
-  public query
+  public readonly query = signal<string>(null)
 
   ngOnInit(): void {
     this.searchProvider = new Observable((observer: Observer<string>) => {
-      observer.next(this.query)
+      observer.next(this.query())
     }).pipe(
       debounceTime(200),
       switchMap((query: string) => {
         query = query.toLocaleLowerCase()
 
-        const matchingServices = this.hapService.services.filter((x) => {
+        const matchingServices = this.hapService.services().filter((x) => {
           return (
             x.displayName.toLowerCase().includes(query)
             || x.name.toLowerCase().includes(query)
@@ -44,7 +45,7 @@ export class SearchComponent implements OnInit {
           )
         })
 
-        const matchingCharacteristics = this.hapService.characteristics.filter(
+        const matchingCharacteristics = this.hapService.characteristics().filter(
           (x) => {
             return (
               x.displayName.toLowerCase().includes(query)
@@ -74,7 +75,7 @@ export class SearchComponent implements OnInit {
           }),
         )
 
-        const matchingDeviceTypes = this.matterService.deviceTypes.filter(
+        const matchingDeviceTypes = this.matterService.deviceTypes().filter(
           (x) => {
             return (
               x.name.toLowerCase().includes(query)
@@ -99,6 +100,6 @@ export class SearchComponent implements OnInit {
 
   onSelect(event) {
     this.router.navigate(event.item.routerLink)
-    this.query = null
+    this.query.set(null)
   }
 }

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { inject, Injectable } from '@angular/core'
+import { inject, Injectable, signal } from '@angular/core'
 
 export interface MatterCluster {
   name: string
@@ -28,8 +28,8 @@ export interface MatterDeviceType {
 export class MatterService {
   private httpClient = inject(HttpClient)
 
-  public ready = false
-  public deviceTypes: MatterDeviceType[] = []
+  public readonly ready = signal(false)
+  public readonly deviceTypes = signal<MatterDeviceType[]>([])
 
   constructor() {
     this.load()
@@ -37,12 +37,12 @@ export class MatterService {
 
   load() {
     this.httpClient.get('assets/matter-device-types.json').toPromise().then((deviceTypes) => {
-      this.deviceTypes = deviceTypes as MatterDeviceType[]
-      this.ready = true
+      this.deviceTypes.set(deviceTypes as MatterDeviceType[])
+      this.ready.set(true)
     })
   }
 
   getDeviceTypeByName(name: string) {
-    return this.deviceTypes.find(x => x.name === name)
+    return this.deviceTypes().find(x => x.name === name)
   }
 }

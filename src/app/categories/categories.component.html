@@ -28,7 +28,7 @@
           <th>Name</th>
         </thead>
         <tbody>
-          @for (category of hapService.categories; track category) {
+          @for (category of hapService.categories(); track category) {
             <tr>
               <th class="theme-bg-light">{{ category.id }}</th>
               <td>{{ category.name }}</td>

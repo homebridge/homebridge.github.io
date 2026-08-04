@@ -6,6 +6,7 @@ import {
   inject,
   OnDestroy,
   OnInit,
+  signal,
   viewChild,
 } from '@angular/core'
 import { Title } from '@angular/platform-browser'
@@ -25,11 +26,11 @@ export class DocsComponent implements OnInit, OnDestroy {
   private viewportScroller = inject(ViewportScroller)
   private titleService = inject(Title)
 
-  public page: string
-  public hash: string
-  public url: string
+  public readonly page = signal<string>('')
+  public readonly notFound = signal(false)
 
-  public notFound = false
+  private hash: string
+  private url: string
 
   private navigationSubscription: Subscription
 
@@ -55,7 +56,7 @@ export class DocsComponent implements OnInit, OnDestroy {
   }
 
   private loadPageFromUrl(): void {
-    this.notFound = false
+    this.notFound.set(false)
 
     this.url = this.router.url.replace('%23', '#')
     this.hash = this.url.substr(this.url.lastIndexOf('#'))
@@ -63,7 +64,7 @@ export class DocsComponent implements OnInit, OnDestroy {
     if (this.url.includes('#')) {
       this.url = this.url.substr(0, this.url.lastIndexOf('#'))
     }
-    this.page = this.url === '/' ? '/' + 'home.md' : `${this.url}.md`
+    this.page.set(this.url === '/' ? '/' + 'home.md' : `${this.url}.md`)
   }
 
   onLoad(page: string) {
@@ -108,6 +109,6 @@ export class DocsComponent implements OnInit, OnDestroy {
   }
 
   onError() {
-    this.notFound = true
+    this.notFound.set(true)
   }
 }

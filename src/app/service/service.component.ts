@@ -4,6 +4,7 @@ import {
   Component,
   inject,
   OnInit,
+  signal,
 } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { ActivatedRoute, RouterLink } from '@angular/router'
@@ -25,41 +26,41 @@ export class ServiceComponent implements OnInit {
   private titleService = inject(Title)
   private httpClient = inject(HttpClient)
 
-  public serviceName: string
-  public service: Service
+  public readonly serviceName = signal<string>('')
+  public readonly service = signal<Service>(undefined)
 
-  public requiredCharacteristics: Characteristic[]
-  public optionalCharacteristics: Characteristic[]
+  public readonly requiredCharacteristics = signal<Characteristic[]>([])
+  public readonly optionalCharacteristics = signal<Characteristic[]>([])
 
-  public exampleCode: string
-  public markdown: string
+  public readonly exampleCode = signal<string>(null)
+  public readonly markdown = signal<string>(null)
 
   ngOnInit(): void {
     this.currentRoute.paramMap.subscribe((params) => {
-      this.serviceName = params.get('serviceName')
-      this.service = this.hapService.getServiceByName(this.serviceName)
+      this.serviceName.set(params.get('serviceName'))
+      this.service.set(this.hapService.getServiceByName(this.serviceName()))
 
-      this.requiredCharacteristics = this.service.requiredCharacteristics.map(
+      this.requiredCharacteristics.set(this.service().requiredCharacteristics.map(
         x => this.hapService.getCharacteristicsByUUID(x),
-      )
-      this.optionalCharacteristics = this.service.optionalCharacteristics.map(
+      ))
+      this.optionalCharacteristics.set(this.service().optionalCharacteristics.map(
         x => this.hapService.getCharacteristicsByUUID(x),
-      )
+      ))
 
       this.getMarkdown()
 
-      this.titleService.setTitle(`Homebridge API - ${this.serviceName}`)
+      this.titleService.setTitle(`Homebridge API - ${this.serviceName()}`)
     })
   }
 
   getMarkdown() {
-    this.markdown = null
-    this.exampleCode = null
+    this.markdown.set(null)
+    this.exampleCode.set(null)
     this.httpClient
-      .get(`/docs/service/${this.serviceName}.md`, { responseType: 'text' })
+      .get(`/docs/service/${this.serviceName()}.md`, { responseType: 'text' })
       .subscribe(
         (res) => {
-          this.markdown = res
+          this.markdown.set(res)
         },
         () => {
           this.generateExample()
@@ -68,13 +69,13 @@ export class ServiceComponent implements OnInit {
   }
 
   generateExample() {
-    this.exampleCode = `// Example ${this.service.displayName} Plugin
+    this.exampleCode.set(`// Example ${this.service().displayName} Plugin
 
 module.exports = (api) => {
-  api.registerAccessory('Example${this.serviceName}Plugin', Example${this.serviceName}Accessory);
+  api.registerAccessory('Example${this.serviceName()}Plugin', Example${this.serviceName()}Accessory);
 };
 
-class Example${this.serviceName}Accessory {
+class Example${this.serviceName()}Accessory {
 
   constructor(log, config, api) {
       this.log = log;
@@ -87,15 +88,15 @@ class Example${this.serviceName}Accessory {
       // extract name from config
       this.name = config.name;
 
-      // create a new ${this.service.displayName} service
-      this.service = new this.Service(this.Service.${this.serviceName});
+      // create a new ${this.service().displayName} service
+      this.service = new this.Service(this.Service.${this.serviceName()});
 
       // create handlers for required characteristics
-${this.generateRequiredBindings(this.requiredCharacteristics)}
+${this.generateRequiredBindings(this.requiredCharacteristics())}
   }
 
-${this.generateMethods(this.requiredCharacteristics)}
-}`
+${this.generateMethods(this.requiredCharacteristics())}
+}`)
   }
 
   generateRequiredBindings(characteristics: Characteristic[]): string {
