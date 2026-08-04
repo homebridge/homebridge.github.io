@@ -1,6 +1,6 @@
 import { ViewportScroller } from '@angular/common'
 import { HttpClient, provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http'
-import { enableProdMode, inject, provideEnvironmentInitializer, provideZoneChangeDetection } from '@angular/core'
+import { inject, provideEnvironmentInitializer, provideZoneChangeDetection } from '@angular/core'
 import { bootstrapApplication } from '@angular/platform-browser'
 import { provideAnimations } from '@angular/platform-browser/animations'
 import { provideRouter, withHashLocation, withInMemoryScrolling } from '@angular/router'
@@ -9,11 +9,6 @@ import { MARKED_OPTIONS, MarkedRenderer, provideMarkdown } from 'ngx-markdown'
 
 import { AppComponent } from './app/app.component'
 import { routes } from './app/app.routes'
-import { environment } from './environments/environment'
-
-if (environment.production) {
-  enableProdMode()
-}
 
 bootstrapApplication(AppComponent, {
   providers: [
