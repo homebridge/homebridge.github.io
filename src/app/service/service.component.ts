@@ -6,13 +6,15 @@ import {
   OnInit,
 } from '@angular/core'
 import { Title } from '@angular/platform-browser'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, RouterLink } from '@angular/router'
+import { MarkdownComponent } from 'ngx-markdown'
 
 import { Characteristic, HapService, Service } from '../hap.service'
+import { PrismDirective } from '../prism.directive'
 
 @Component({
   selector: 'app-service',
-  standalone: false,
+  imports: [RouterLink, MarkdownComponent, PrismDirective],
   templateUrl: './service.component.html',
   styleUrl: './service.component.scss',
   changeDetection: ChangeDetectionStrategy.Eager,

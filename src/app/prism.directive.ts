@@ -2,10 +2,7 @@ import { Directive, ElementRef, inject, Input, OnChanges } from '@angular/core'
 
 declare let Prism
 
-@Directive({
-  selector: '[appPrism]',
-  standalone: false,
-})
+@Directive({ selector: '[appPrism]' })
 export class PrismDirective implements OnChanges {
   private el = inject(ElementRef)
 

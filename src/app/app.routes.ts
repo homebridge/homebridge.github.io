@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core'
-import { RouterModule, Routes } from '@angular/router'
+import { Routes } from '@angular/router'
 
 import { CategoriesComponent } from './categories/categories.component'
 import { CharacteristicComponent } from './characteristic/characteristic.component'
@@ -8,7 +7,7 @@ import { DocsGuard } from './docs/docs.guard'
 import { MatterDeviceTypeComponent } from './matter-device-type/matter-device-type.component'
 import { ServiceComponent } from './service/service.component'
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: DocsComponent,
@@ -63,14 +62,3 @@ const routes: Routes = [
     component: DocsComponent,
   },
 ]
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    useHash: true,
-    scrollPositionRestoration: 'enabled',
-    anchorScrolling: 'enabled',
-    scrollOffset: [0, 75],
-  })],
-  exports: [RouterModule],
-})
-export class AppRoutingModule { }

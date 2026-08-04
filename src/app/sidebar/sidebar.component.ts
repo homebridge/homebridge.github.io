@@ -1,13 +1,15 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
-import { Router } from '@angular/router'
+import { FormsModule } from '@angular/forms'
+import { Router, RouterLink, RouterLinkActive } from '@angular/router'
 
 import { HapService } from '../hap.service'
 import { MatterService } from '../matter.service'
+import { SearchComponent } from '../search/search.component'
 import { SidebarService } from '../sidebar.service'
 
 @Component({
   selector: 'app-sidebar',
-  standalone: false,
+  imports: [FormsModule, SearchComponent, RouterLinkActive, RouterLink],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   changeDetection: ChangeDetectionStrategy.Eager,
@@ -30,6 +32,11 @@ export class SidebarComponent {
    */
   isSectionActive(...paths: string[]): boolean {
     const url = this.router.url
-    return paths.some(path => url === path || url.startsWith(`${path}/`) || url.startsWith(`${path}#`))
+    return paths.some(
+      path =>
+        url === path
+        || url.startsWith(`${path}/`)
+        || url.startsWith(`${path}#`),
+    )
   }
 }

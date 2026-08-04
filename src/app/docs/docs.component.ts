@@ -10,11 +10,12 @@ import {
 } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { NavigationEnd, Router } from '@angular/router'
+import { MarkdownComponent } from 'ngx-markdown'
 import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-docs',
-  standalone: false,
+  imports: [MarkdownComponent],
   templateUrl: './docs.component.html',
   styleUrl: './docs.component.scss',
   changeDetection: ChangeDetectionStrategy.Eager,

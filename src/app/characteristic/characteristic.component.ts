@@ -5,13 +5,13 @@ import {
   OnInit,
 } from '@angular/core'
 import { Title } from '@angular/platform-browser'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, RouterLink } from '@angular/router'
 
 import { Characteristic, HapService, Service } from '../hap.service'
 
 @Component({
   selector: 'app-characteristic',
-  standalone: false,
+  imports: [RouterLink],
   templateUrl: './characteristic.component.html',
   styleUrl: './characteristic.component.scss',
   changeDetection: ChangeDetectionStrategy.Eager,

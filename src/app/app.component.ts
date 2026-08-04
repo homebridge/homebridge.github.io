@@ -1,13 +1,27 @@
+import { NgOptimizedImage } from '@angular/common'
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
-import { NavigationEnd, Router } from '@angular/router'
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterOutlet,
+} from '@angular/router'
 
 import { HapService } from './hap.service'
 import { MatterService } from './matter.service'
+import { SearchComponent } from './search/search.component'
 import { SidebarService } from './sidebar.service'
+import { SidebarComponent } from './sidebar/sidebar.component'
 
 @Component({
   selector: 'app-root',
-  standalone: false,
+  imports: [
+    RouterLink,
+    NgOptimizedImage,
+    SearchComponent,
+    SidebarComponent,
+    RouterOutlet,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.Eager,

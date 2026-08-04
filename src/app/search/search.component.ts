@@ -4,7 +4,9 @@ import {
   inject,
   OnInit,
 } from '@angular/core'
+import { FormsModule } from '@angular/forms'
 import { Router } from '@angular/router'
+import { TypeaheadDirective } from 'ngx-bootstrap/typeahead'
 import { Observable, Observer, of } from 'rxjs'
 import { debounceTime, switchMap } from 'rxjs/operators'
 
@@ -13,7 +15,7 @@ import { MatterService } from '../matter.service'
 
 @Component({
   selector: 'app-search',
-  standalone: false,
+  imports: [FormsModule, TypeaheadDirective],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
   changeDetection: ChangeDetectionStrategy.Eager,

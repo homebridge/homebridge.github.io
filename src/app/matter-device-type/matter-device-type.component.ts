@@ -5,13 +5,14 @@ import {
   OnInit,
 } from '@angular/core'
 import { Title } from '@angular/platform-browser'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, RouterLink } from '@angular/router'
 
 import { MatterDeviceType, MatterService } from '../matter.service'
+import { PrismDirective } from '../prism.directive'
 
 @Component({
   selector: 'app-matter-device-type',
-  standalone: false,
+  imports: [PrismDirective, RouterLink],
   templateUrl: './matter-device-type.component.html',
   styleUrl: './matter-device-type.component.scss',
   changeDetection: ChangeDetectionStrategy.Eager,
