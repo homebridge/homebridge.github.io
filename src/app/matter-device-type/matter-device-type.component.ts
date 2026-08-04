@@ -1,4 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core'
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { ActivatedRoute } from '@angular/router'
 
@@ -9,6 +14,7 @@ import { MatterDeviceType, MatterService } from '../matter.service'
   standalone: false,
   templateUrl: './matter-device-type.component.html',
   styleUrl: './matter-device-type.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class MatterDeviceTypeComponent implements OnInit {
   private currentRoute = inject(ActivatedRoute)
@@ -22,7 +28,9 @@ export class MatterDeviceTypeComponent implements OnInit {
   ngOnInit(): void {
     this.currentRoute.paramMap.subscribe((params) => {
       this.deviceTypeName = params.get('deviceTypeName')
-      this.deviceType = this.matterService.getDeviceTypeByName(this.deviceTypeName)
+      this.deviceType = this.matterService.getDeviceTypeByName(
+        this.deviceTypeName,
+      )
 
       if (this.deviceType) {
         this.generateExample()
@@ -43,22 +51,30 @@ export class MatterDeviceTypeComponent implements OnInit {
   generateExample() {
     const clusters = this.deviceType.clusters
 
-    const initialState = clusters.map((cluster) => {
-      return `      ${cluster.id}: { ${cluster.attributes[0]}: undefined }, // set a starting value`
-    }).join('\n')
+    const initialState = clusters
+      .map((cluster) => {
+        return `      ${cluster.id}: { ${cluster.attributes[0]}: undefined }, // set a starting value`
+      })
+      .join('\n')
 
     // Only clusters that actually take commands get a handler block
-    const handlers = clusters.filter(c => c.commands.length).map((cluster) => {
-      const commands = cluster.commands.slice(0, 2).map((command) => {
-        return `        ${command}: async () => {
+    const handlers = clusters
+      .filter(c => c.commands.length)
+      .map((cluster) => {
+        const commands = cluster.commands
+          .slice(0, 2)
+          .map((command) => {
+            return `        ${command}: async () => {
           // tell your device to ${command}
         },`
-      }).join('\n')
+          })
+          .join('\n')
 
-      return `      ${cluster.id}: {
+        return `      ${cluster.id}: {
 ${commands}
       },`
-    }).join('\n')
+      })
+      .join('\n')
 
     const firstCluster = clusters[0]
 
@@ -94,20 +110,23 @@ class Example${this.deviceType.name}Platform {
         clusters: {
 ${initialState}
         },
-${handlers
-  ? `
+${
+  handlers
+    ? `
         // called when a controller sends a command
         handlers: {
 ${handlers}
         },
 `
-  : ''}      }]);
+    : ''
+}      }]);
 
       this.uuid = uuid;
     });
   }
-${firstCluster
-  ? `
+${
+  firstCluster
+    ? `
   /**
    * Call this when the device changes outside of Matter - from its own app,
    * a physical button, or a webhook
@@ -120,7 +139,8 @@ ${firstCluster
     );
   }
 `
-  : ''}
+    : ''
+}
   /**
    * REQUIRED - called once for every cached Matter accessory at startup
    */

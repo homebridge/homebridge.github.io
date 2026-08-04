@@ -1,4 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core'
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core'
 import { Router } from '@angular/router'
 import { Observable, Observer, of } from 'rxjs'
 import { debounceTime, switchMap } from 'rxjs/operators'
@@ -11,6 +16,7 @@ import { MatterService } from '../matter.service'
   standalone: false,
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class SearchComponent implements OnInit {
   private hapService = inject(HapService)
@@ -29,44 +35,60 @@ export class SearchComponent implements OnInit {
         query = query.toLocaleLowerCase()
 
         const matchingServices = this.hapService.services.filter((x) => {
-          return x.displayName.toLowerCase().includes(query)
+          return (
+            x.displayName.toLowerCase().includes(query)
             || x.name.toLowerCase().includes(query)
             || x.UUID.toLowerCase() === query
+          )
         })
 
-        const matchingCharacteristics = this.hapService.characteristics.filter((x) => {
-          return x.displayName.toLowerCase().includes(query)
-            || x.name.toLowerCase().includes(query)
-            || x.UUID.toLowerCase() === query
-        })
+        const matchingCharacteristics = this.hapService.characteristics.filter(
+          (x) => {
+            return (
+              x.displayName.toLowerCase().includes(query)
+              || x.name.toLowerCase().includes(query)
+              || x.UUID.toLowerCase() === query
+            )
+          },
+        )
 
         const results = []
 
-        results.push(...matchingServices.map((x) => {
-          return {
-            routerLink: ['/service', x.name],
-            label: `Service: ${x.displayName}`,
-          }
-        }))
+        results.push(
+          ...matchingServices.map((x) => {
+            return {
+              routerLink: ['/service', x.name],
+              label: `Service: ${x.displayName}`,
+            }
+          }),
+        )
 
-        results.push(...matchingCharacteristics.map((x) => {
-          return {
-            routerLink: ['/characteristic', x.name],
-            label: `Characteristic: ${x.displayName}`,
-          }
-        }))
+        results.push(
+          ...matchingCharacteristics.map((x) => {
+            return {
+              routerLink: ['/characteristic', x.name],
+              label: `Characteristic: ${x.displayName}`,
+            }
+          }),
+        )
 
-        const matchingDeviceTypes = this.matterService.deviceTypes.filter((x) => {
-          return x.name.toLowerCase().includes(query)
-            || x.matterName.toLowerCase().includes(query)
-        })
+        const matchingDeviceTypes = this.matterService.deviceTypes.filter(
+          (x) => {
+            return (
+              x.name.toLowerCase().includes(query)
+              || x.matterName.toLowerCase().includes(query)
+            )
+          },
+        )
 
-        results.push(...matchingDeviceTypes.map((x) => {
-          return {
-            routerLink: ['/matter-device-type', x.name],
-            label: `Matter Device Type: ${x.name}`,
-          }
-        }))
+        results.push(
+          ...matchingDeviceTypes.map((x) => {
+            return {
+              routerLink: ['/matter-device-type', x.name],
+              label: `Matter Device Type: ${x.name}`,
+            }
+          }),
+        )
 
         return of(results)
       }),

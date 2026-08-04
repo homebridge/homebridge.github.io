@@ -1,5 +1,10 @@
 import { HttpClient } from '@angular/common/http'
-import { Component, inject, OnInit } from '@angular/core'
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { ActivatedRoute } from '@angular/router'
 
@@ -10,6 +15,7 @@ import { Characteristic, HapService, Service } from '../hap.service'
   standalone: false,
   templateUrl: './service.component.html',
   styleUrl: './service.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class ServiceComponent implements OnInit {
   private currentRoute = inject(ActivatedRoute)
@@ -31,8 +37,12 @@ export class ServiceComponent implements OnInit {
       this.serviceName = params.get('serviceName')
       this.service = this.hapService.getServiceByName(this.serviceName)
 
-      this.requiredCharacteristics = this.service.requiredCharacteristics.map(x => this.hapService.getCharacteristicsByUUID(x))
-      this.optionalCharacteristics = this.service.optionalCharacteristics.map(x => this.hapService.getCharacteristicsByUUID(x))
+      this.requiredCharacteristics = this.service.requiredCharacteristics.map(
+        x => this.hapService.getCharacteristicsByUUID(x),
+      )
+      this.optionalCharacteristics = this.service.optionalCharacteristics.map(
+        x => this.hapService.getCharacteristicsByUUID(x),
+      )
 
       this.getMarkdown()
 
@@ -43,14 +53,16 @@ export class ServiceComponent implements OnInit {
   getMarkdown() {
     this.markdown = null
     this.exampleCode = null
-    this.httpClient.get(`/docs/service/${this.serviceName}.md`, { responseType: 'text' }).subscribe(
-      (res) => {
-        this.markdown = res
-      },
-      () => {
-        this.generateExample()
-      },
-    )
+    this.httpClient
+      .get(`/docs/service/${this.serviceName}.md`, { responseType: 'text' })
+      .subscribe(
+        (res) => {
+          this.markdown = res
+        },
+        () => {
+          this.generateExample()
+        },
+      )
   }
 
   generateExample() {
@@ -85,16 +97,21 @@ ${this.generateMethods(this.requiredCharacteristics)}
   }
 
   generateRequiredBindings(characteristics: Characteristic[]): string {
-    return characteristics.filter(x => x.props.format !== 'tlv8').map((x) => {
-      return `      this.service.getCharacteristic(this.Characteristic.${x.name})
+    return characteristics
+      .filter(x => x.props.format !== 'tlv8')
+      .map((x) => {
+        return `      this.service.getCharacteristic(this.Characteristic.${x.name})
 ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`
-    }).join('\n')
+      })
+      .join('\n')
   }
 
   generateGetHandler(characteristic: Characteristic): string {
     if (characteristic.props.perms.includes('pr')) {
       const value = `        .onGet(this.handle${characteristic.name}Get.bind(this))`
-      return characteristic.props.perms.includes('pw') ? `${value}\n        ` : `${value};\n`
+      return characteristic.props.perms.includes('pw')
+        ? `${value}\n        `
+        : `${value};\n`
     } else {
       return `        `
     }
@@ -109,9 +126,12 @@ ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`
   }
 
   generateMethods(characteristics: Characteristic[]) {
-    return characteristics.filter(x => x.props.format !== 'tlv8').map((x) => {
-      return `${this.generateGetMethod(x)}${this.generateSetMethod(x)}`
-    }).join('\n')
+    return characteristics
+      .filter(x => x.props.format !== 'tlv8')
+      .map((x) => {
+        return `${this.generateGetMethod(x)}${this.generateSetMethod(x)}`
+      })
+      .join('\n')
   }
 
   generateGetMethod(characteristic: Characteristic) {

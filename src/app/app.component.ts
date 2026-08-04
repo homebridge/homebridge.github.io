@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core'
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
 
 import { HapService } from './hap.service'
@@ -10,6 +10,7 @@ import { SidebarService } from './sidebar.service'
   standalone: false,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     '(window:resize)': 'onWindowResize()',
   },

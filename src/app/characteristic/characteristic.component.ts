@@ -1,4 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core'
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { ActivatedRoute } from '@angular/router'
 
@@ -9,6 +14,7 @@ import { Characteristic, HapService, Service } from '../hap.service'
   standalone: false,
   templateUrl: './characteristic.component.html',
   styleUrl: './characteristic.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class CharacteristicComponent implements OnInit {
   private currentRoute = inject(ActivatedRoute)
@@ -23,15 +29,21 @@ export class CharacteristicComponent implements OnInit {
   ngOnInit(): void {
     this.currentRoute.paramMap.subscribe((params) => {
       this.characteristicName = params.get('characteristicName')
-      this.characteristic = this.hapService.getCharacteristicsByName(this.characteristicName)
-      this.usedBy = this.hapService.getServiceTypesUsedByCharacteristic(this.characteristic.UUID)
+      this.characteristic = this.hapService.getCharacteristicsByName(
+        this.characteristicName,
+      )
+      this.usedBy = this.hapService.getServiceTypesUsedByCharacteristic(
+        this.characteristic.UUID,
+      )
 
       this.titleService.setTitle(`Homebridge API - ${this.characteristicName}`)
     })
   }
 
   get characteristicPermissions() {
-    return this.characteristic.props.perms.map(x => this.hapService.perms[x]).join(', ')
+    return this.characteristic.props.perms
+      .map(x => this.hapService.perms[x])
+      .join(', ')
   }
 
   get characteristicEvents() {

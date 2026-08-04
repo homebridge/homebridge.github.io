@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core'
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
 import { Router } from '@angular/router'
 
 import { HapService } from '../hap.service'
@@ -10,6 +10,7 @@ import { SidebarService } from '../sidebar.service'
   standalone: false,
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class SidebarComponent {
   hapService = inject(HapService)

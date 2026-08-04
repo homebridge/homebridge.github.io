@@ -1,5 +1,13 @@
 import { ViewportScroller } from '@angular/common'
-import { Component, ElementRef, inject, OnDestroy, OnInit, ViewChild } from '@angular/core'
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  inject,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { NavigationEnd, Router } from '@angular/router'
 import { Subscription } from 'rxjs'
@@ -9,6 +17,7 @@ import { Subscription } from 'rxjs'
   standalone: false,
   templateUrl: './docs.component.html',
   styleUrl: './docs.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class DocsComponent implements OnInit, OnDestroy {
   private router = inject(Router)
@@ -58,9 +67,13 @@ export class DocsComponent implements OnInit, OnDestroy {
 
   onLoad(page: string) {
     // add anchor links to heading elements
-    const headings: HTMLHeadingElement[] = this.markdownOutput.nativeElement.querySelectorAll('h2,h3,h4,h5,h6')
+    const headings: HTMLHeadingElement[]
+      = this.markdownOutput.nativeElement.querySelectorAll('h2,h3,h4,h5,h6')
     for (const heading of Array.from(headings)) {
-      const id = heading.textContent.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/gi, '')
+      const id = heading.textContent
+        .toLowerCase()
+        .replace(/ /g, '-')
+        .replace(/[^a-z-]/gi, '')
 
       const linkIcon = document.createElement('i')
       linkIcon.classList.add('fa')
@@ -77,7 +90,8 @@ export class DocsComponent implements OnInit, OnDestroy {
     }
 
     // convert relative # anchor links
-    const links: HTMLAnchorElement[] = this.markdownOutput.nativeElement.querySelectorAll('a')
+    const links: HTMLAnchorElement[]
+      = this.markdownOutput.nativeElement.querySelectorAll('a')
     for (const link of Array.from(links)) {
       const currentHref = link.getAttribute('href')
       if (currentHref.startsWith('#') && !currentHref.startsWith('#/')) {
