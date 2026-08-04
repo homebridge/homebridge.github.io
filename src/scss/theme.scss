@@ -61,6 +61,12 @@ $info: $theme-info-color;
 $link-decoration: none;
 $link-hover-decoration: underline;
 
+// Bootstrap 5 also turns on css smooth scrolling by default, which changes
+// how the anchor scrolling behaves (the router scroll and the anchor scroll
+// can interrupt each other mid-animation). Keep the instant scrolling the
+// site has always had.
+$enable-smooth-scroll: false;
+
 /*************************** Import Bootstrap  *****************************/
 @import 'bootstrap/scss/bootstrap.scss';
 
