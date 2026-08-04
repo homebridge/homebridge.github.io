@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
-import { HapService } from '../hap.service';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
+import { RouterLink } from '@angular/router'
+
+import { HapService } from '../hap.service'
 
 @Component({
   selector: 'app-categories',
+  imports: [RouterLink],
   templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.scss'],
+  styleUrl: './categories.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CategoriesComponent {
-
-  constructor(
-    public hapService: HapService,
-  ) { }
-
+  hapService = inject(HapService)
 }

@@ -1,51 +1,52 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { HapService } from '../hap.service';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
+import { toSignal } from '@angular/core/rxjs-interop'
+import { FormsModule } from '@angular/forms'
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router'
+import { filter, map } from 'rxjs/operators'
 
-declare var $: any;
+import { HapService } from '../hap.service'
+import { MatterService } from '../matter.service'
+import { SearchComponent } from '../search/search.component'
+import { SidebarService } from '../sidebar.service'
 
 @Component({
   selector: 'app-sidebar',
+  imports: [FormsModule, SearchComponent, RouterLinkActive, RouterLink],
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss'],
+  styleUrl: './sidebar.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SidebarComponent implements OnInit, AfterViewInit {
-  public services;
-  public id = 1;
+export class SidebarComponent {
+  hapService = inject(HapService)
+  matterService = inject(MatterService)
+  sidebarService = inject(SidebarService)
+  router = inject(Router)
 
-  constructor(
-    public hapService: HapService,
-    public router: Router,
-  ) { }
+  // The current url as a signal, so the section highlighting below re-runs
+  // on every navigation - a plain read of router.url would go stale under
+  // OnPush change detection.
+  private readonly currentUrl = toSignal(
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map(() => this.router.url),
+    ),
+    { initialValue: this.router.url },
+  )
 
-  ngOnInit(): void {
-    /** Sidebar control - from the CoderDocs theme */
-    $('#docs-sidebar-toggler').on('click', () => {
-      if ($('#docs-sidebar').hasClass('sidebar-visible')) {
-        $('#docs-sidebar').removeClass('sidebar-visible').addClass('sidebar-hidden');
-      } else {
-        $('#docs-sidebar').removeClass('sidebar-hidden').addClass('sidebar-visible');
-      }
-    });
+  /**
+   * Whether the open page belongs to the given paths, for lighting up a
+   * section title. routerLinkActive cannot do this: a section's pages are not
+   * all under the title's own link (Categories lives at /categories but
+   * belongs to the HAP section), and prefix matching on /api would light
+   * API Reference up for every /api page.
+   */
+  isSectionActive(...paths: string[]): boolean {
+    const url = this.currentUrl()
+    return paths.some(
+      path =>
+        url === path
+        || url.startsWith(`${path}/`)
+        || url.startsWith(`${path}#`),
+    )
   }
-
-  ngAfterViewInit() {
-    $(window).on('resize', () => {
-      this.toggleSidebarDisplay();
-    });
-
-    this.toggleSidebarDisplay();
-  }
-
-  toggleSidebarDisplay() {
-    const w = $(window).width();
-    if (w >= 1200) {
-      // if larger
-      $('#docs-sidebar').addClass('sidebar-visible').removeClass('sidebar-hidden');
-    } else {
-      // if smaller
-      $('#docs-sidebar').addClass('sidebar-hidden').removeClass('sidebar-visible');
-    }
-  }
-
 }

@@ -1,25 +1,41 @@
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
+# Building the site locally
+
+This is an [Angular](https://angular.dev) application. The markdown pages live in `src/docs`, and the reference data (HAP services, characteristics and categories; Matter device types) is generated from Homebridge's own packages.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+npm start
+```
 
-## Code scaffolding
+Then open http://localhost:4200/. The app reloads automatically when a source file changes.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Note that the markdown pages are fetched over HTTP, so after editing a `.md` file you may need a hard reload in the browser to get past its cache.
 
-## Build
+## Regenerating the reference data
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+npm run gen
+```
 
-## Running unit tests
+This rebuilds:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- `src/assets/services.json`, `characteristics.json` and `categories.json` from `@homebridge/hap-nodejs`
+- `src/assets/matter-device-types.json` and `src/docs/api/matter-clusters.md` from `homebridge`
+- `src/sitemap.txt`
 
-## Running end-to-end tests
+Run it after bumping either of those two packages, and commit the results.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Production build
 
-## Further help
+```
+npm run build
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The build artifacts are written to `dist/`.
+
+## Linting
+
+```
+npm run lint
+```

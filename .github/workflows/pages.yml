@@ -14,9 +14,15 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install and Build 
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install and Build
         run: |
-          npm install
+          npm ci
           npm run gen
           npm run build
 
@@ -29,6 +35,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: master # The branch the action should deploy to.
-          folder: dist # The folder the action should deploy.
+          folder: dist/hap/browser # The application builder nests the site in a browser subfolder.
           clean: true
           ssh-key: true
