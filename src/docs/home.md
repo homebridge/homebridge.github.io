@@ -10,7 +10,7 @@ We have created templates which you can use as a base to help you get started de
 
 These plugin templates offer the following features:
 
-- A base [dynamic](/#/api/platform-plugins) plugin that can easily be expanded
+- A base [dynamic](/#/api/hap-platform-methods) plugin that can easily be expanded
 - [TypeScript](https://www.typescriptlang.org/) with ESLint rules and Homebridge typings pre-configured
 - Automatic code compiling and Homebridge restart on code change with `npm run watch`
 

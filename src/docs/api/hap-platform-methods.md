@@ -1,6 +1,6 @@
-# Platform Plugins
+# Platform Methods (HAP)
 
-Publishing and managing accessories over HAP. Registering the platform itself is protocol-neutral and covered under [Common](api/reference#apiregisterplatform); for the Matter equivalents of the methods below, see [Matter](api/matter).
+These are the methods a platform plugin uses to publish and manage accessories over HAP. Registering the platform itself is protocol-neutral and covered under [Common](api/reference#apiregisterplatform); for the Matter equivalents of the methods below, see [Matter](api/matter).
 
 ### API.registerPlatformAccessories
 

@@ -5,7 +5,7 @@
 
 ### Example
 
-HomeKit only allows one television per bridge, so Television service types should be published as [external accessories](/#/api/platform-plugins#apipublishexternalaccessories).
+HomeKit only allows one television per bridge, so Television service types should be published as [external accessories](/#/api/hap-platform-methods#apipublishexternalaccessories).
 
 ```js
 // Example Television Plugin
