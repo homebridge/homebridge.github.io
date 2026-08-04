@@ -7,6 +7,7 @@ import { SidebarService } from './sidebar.service'
 
 @Component({
   selector: 'app-root',
+  standalone: false,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   host: {

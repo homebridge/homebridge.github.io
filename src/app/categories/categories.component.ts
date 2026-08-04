@@ -4,6 +4,7 @@ import { HapService } from '../hap.service'
 
 @Component({
   selector: 'app-categories',
+  standalone: false,
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.scss',
 })

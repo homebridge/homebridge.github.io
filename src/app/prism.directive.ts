@@ -4,6 +4,7 @@ declare let Prism
 
 @Directive({
   selector: '[appPrism]',
+  standalone: false,
 })
 export class PrismDirective implements OnChanges {
   private el = inject(ElementRef)

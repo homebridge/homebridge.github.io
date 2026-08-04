@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { Tokens } from 'marked'
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead'
 import { MarkdownModule, MARKED_OPTIONS, MarkedRenderer } from 'ngx-markdown'
 
@@ -28,10 +29,13 @@ import { SidebarComponent } from './sidebar/sidebar.component'
       // markdown resolves under the hash router rather than escaping it and
       // 404ing on GitHub Pages. Absolute links, fragments and full URLs pass
       // through untouched. Images are unaffected - every image in the docs
-      // uses a full URL.
+      // uses a full URL. Written against marked 13+'s renderer API, where the
+      // renderer receives the whole link token and renders the inner text
+      // itself (a plain function, because `this.parser` is set by marked).
       useFactory: () => {
         const renderer = new MarkedRenderer()
-        renderer.link = (href: string, title: string | null | undefined, text: string) => {
+        renderer.link = function ({ href, title, tokens }: Tokens.Link) {
+          const text = this.parser.parseInline(tokens)
           const target = /^(?:[a-z][a-z0-9+.-]*:|\/|#)/i.test(href) ? href : `/#/${href}`
           const titleAttr = title ? ` title="${title}"` : ''
           return `<a href="${target}"${titleAttr}>${text}</a>`

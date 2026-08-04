@@ -6,6 +6,7 @@ import { Characteristic, HapService, Service } from '../hap.service'
 
 @Component({
   selector: 'app-characteristic',
+  standalone: false,
   templateUrl: './characteristic.component.html',
   styleUrl: './characteristic.component.scss',
 })

@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-docs',
+  standalone: false,
   templateUrl: './docs.component.html',
   styleUrl: './docs.component.scss',
 })

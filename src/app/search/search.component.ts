@@ -8,6 +8,7 @@ import { MatterService } from '../matter.service'
 
 @Component({
   selector: 'app-search',
+  standalone: false,
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
 })

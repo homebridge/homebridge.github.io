@@ -6,6 +6,7 @@ import { MatterDeviceType, MatterService } from '../matter.service'
 
 @Component({
   selector: 'app-matter-device-type',
+  standalone: false,
   templateUrl: './matter-device-type.component.html',
   styleUrl: './matter-device-type.component.scss',
 })
