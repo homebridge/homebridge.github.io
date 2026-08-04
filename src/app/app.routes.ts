@@ -1,24 +1,24 @@
 import { Routes } from '@angular/router'
 
-import { CategoriesComponent } from './categories/categories.component'
-import { CharacteristicComponent } from './characteristic/characteristic.component'
-import { DocsComponent } from './docs/docs.component'
 import { DocsGuard } from './docs/docs.guard'
-import { MatterDeviceTypeComponent } from './matter-device-type/matter-device-type.component'
-import { ServiceComponent } from './service/service.component'
 
 export const routes: Routes = [
   {
     path: '',
-    component: DocsComponent,
+    loadComponent: () =>
+      import('./docs/docs.component').then(m => m.DocsComponent),
   },
   {
     path: 'categories',
-    component: CategoriesComponent,
+    loadComponent: () =>
+      import('./categories/categories.component').then(
+        m => m.CategoriesComponent,
+      ),
   },
   {
     path: 'service/:serviceName',
-    component: ServiceComponent,
+    loadComponent: () =>
+      import('./service/service.component').then(m => m.ServiceComponent),
   },
   // The bare list urls land on the first entry of the matching generated
   // list. The sidebar links carry the live first entry themselves, so these
@@ -29,7 +29,10 @@ export const routes: Routes = [
   },
   {
     path: 'characteristic/:characteristicName',
-    component: CharacteristicComponent,
+    loadComponent: () =>
+      import('./characteristic/characteristic.component').then(
+        m => m.CharacteristicComponent,
+      ),
   },
   {
     path: 'characteristic',
@@ -37,7 +40,10 @@ export const routes: Routes = [
   },
   {
     path: 'matter-device-type/:deviceTypeName',
-    component: MatterDeviceTypeComponent,
+    loadComponent: () =>
+      import('./matter-device-type/matter-device-type.component').then(
+        m => m.MatterDeviceTypeComponent,
+      ),
   },
   {
     path: 'matter-device-type',
@@ -45,7 +51,8 @@ export const routes: Routes = [
   },
   {
     path: 'api',
-    component: DocsComponent,
+    loadComponent: () =>
+      import('./docs/docs.component').then(m => m.DocsComponent),
     children: [
       {
         path: '',
@@ -54,7 +61,8 @@ export const routes: Routes = [
       },
       {
         path: '**',
-        component: DocsComponent,
+        loadComponent: () =>
+          import('./docs/docs.component').then(m => m.DocsComponent),
         canActivate: [DocsGuard],
       },
     ],
@@ -62,6 +70,7 @@ export const routes: Routes = [
   {
     path: '**',
     canActivate: [DocsGuard],
-    component: DocsComponent,
+    loadComponent: () =>
+      import('./docs/docs.component').then(m => m.DocsComponent),
   },
 ]
