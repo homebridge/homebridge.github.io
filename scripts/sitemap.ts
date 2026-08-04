@@ -13,6 +13,7 @@ const sitemap = [
   `${baseUrl}/api/reference`,
   `${baseUrl}/api/accessory-plugins`,
   `${baseUrl}/api/platform-plugins`,
+  `${baseUrl}/api/hap`,
   `${baseUrl}/api/hap-platform-methods`,
   `${baseUrl}/api/service`,
   `${baseUrl}/api/characteristics`,

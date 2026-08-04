@@ -45,9 +45,10 @@
       <li class="nav-item section-title mt-3">
         <a
           class="nav-link"
-          [routerLink]="['/api/hap-platform-methods']"
+          [routerLink]="['/api/hap']"
           [class.active]="
             isSectionActive(
+              '/api/hap',
               '/api/hap-platform-methods',
               '/api/accessory-plugins',
               '/api/service',
@@ -58,6 +59,10 @@
         >
           <span class="theme-icon-holder me-2"><i class="fas fa-hap"></i></span>HAP (Apple Home)
         </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/hap']">Overview</a>
       </li>
 
       <li class="nav-item">
