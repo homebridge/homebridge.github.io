@@ -1,0 +1,1087 @@
+[
+    {
+        "name": "AirQualitySensor",
+        "matterName": "AirQualitySensor",
+        "deviceTypeId": 44,
+        "deviceTypeHex": "0x002C",
+        "deviceRevision": 1,
+        "clusters": [
+            {
+                "name": "AirQuality",
+                "id": "airQuality",
+                "attributes": [
+                    "airQuality"
+                ],
+                "commands": []
+            }
+        ]
+    },
+    {
+        "name": "BridgedNode",
+        "matterName": "BridgedNode",
+        "deviceTypeId": 19,
+        "deviceTypeHex": "0x0013",
+        "deviceRevision": 3,
+        "clusters": [
+            {
+                "name": "BridgedDeviceBasicInformation",
+                "id": "bridgedDeviceBasicInformation",
+                "attributes": [
+                    "vendorName",
+                    "vendorId",
+                    "productName",
+                    "productId",
+                    "nodeLabel",
+                    "hardwareVersion",
+                    "hardwareVersionString",
+                    "softwareVersion",
+                    "softwareVersionString",
+                    "manufacturingDate",
+                    "partNumber",
+                    "productUrl",
+                    "productLabel",
+                    "serialNumber",
+                    "reachable",
+                    "uniqueId",
+                    "productAppearance",
+                    "configurationVersion"
+                ],
+                "commands": [
+                    "keepActive"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "ColorTemperatureLight",
+        "matterName": "ColorTemperatureLight",
+        "deviceTypeId": 268,
+        "deviceTypeHex": "0x010C",
+        "deviceRevision": 4,
+        "clusters": [
+            {
+                "name": "OnOff",
+                "id": "onOff",
+                "attributes": [
+                    "onOff",
+                    "globalSceneControl",
+                    "onTime",
+                    "offWaitTime",
+                    "startUpOnOff"
+                ],
+                "commands": [
+                    "off",
+                    "on",
+                    "toggle",
+                    "offWithEffect",
+                    "onWithRecallGlobalScene",
+                    "onWithTimedOff"
+                ]
+            },
+            {
+                "name": "LevelControl",
+                "id": "levelControl",
+                "attributes": [
+                    "currentLevel",
+                    "remainingTime",
+                    "minLevel",
+                    "maxLevel",
+                    "currentFrequency",
+                    "minFrequency",
+                    "maxFrequency",
+                    "onOffTransitionTime",
+                    "onLevel",
+                    "onTransitionTime",
+                    "offTransitionTime",
+                    "defaultMoveRate",
+                    "options",
+                    "startUpCurrentLevel"
+                ],
+                "commands": [
+                    "moveToLevel",
+                    "move",
+                    "step",
+                    "stop",
+                    "moveToLevelWithOnOff",
+                    "moveWithOnOff",
+                    "stepWithOnOff",
+                    "stopWithOnOff",
+                    "moveToClosestFrequency"
+                ]
+            },
+            {
+                "name": "ColorControl",
+                "id": "colorControl",
+                "attributes": [
+                    "currentHue",
+                    "currentSaturation",
+                    "remainingTime",
+                    "currentX",
+                    "currentY",
+                    "driftCompensation",
+                    "compensationText",
+                    "colorTemperatureMireds",
+                    "colorMode",
+                    "options",
+                    "numberOfPrimaries",
+                    "primary1X",
+                    "primary1Y",
+                    "primary1Intensity",
+                    "primary2X",
+                    "primary2Y",
+                    "primary2Intensity",
+                    "primary3X",
+                    "primary3Y",
+                    "primary3Intensity",
+                    "primary4X",
+                    "primary4Y",
+                    "primary4Intensity",
+                    "primary5X",
+                    "primary5Y",
+                    "primary5Intensity",
+                    "primary6X",
+                    "primary6Y",
+                    "primary6Intensity",
+                    "whitePointX",
+                    "whitePointY",
+                    "colorPointRx",
+                    "colorPointRy",
+                    "colorPointRIntensity",
+                    "colorPointGx",
+                    "colorPointGy",
+                    "colorPointGIntensity",
+                    "colorPointBx",
+                    "colorPointBy",
+                    "colorPointBIntensity",
+                    "enhancedCurrentHue",
+                    "enhancedColorMode",
+                    "colorLoopActive",
+                    "colorLoopDirection",
+                    "colorLoopTime",
+                    "colorLoopStartEnhancedHue",
+                    "colorLoopStoredEnhancedHue",
+                    "colorCapabilities",
+                    "colorTempPhysicalMinMireds",
+                    "colorTempPhysicalMaxMireds",
+                    "coupleColorTempToLevelMinMireds",
+                    "startUpColorTemperatureMireds"
+                ],
+                "commands": [
+                    "moveToHue",
+                    "moveHue",
+                    "stepHue",
+                    "moveToSaturation",
+                    "moveSaturation",
+                    "stepSaturation",
+                    "moveToHueAndSaturation",
+                    "moveToColor",
+                    "moveColor",
+                    "stepColor",
+                    "moveToColorTemperature",
+                    "enhancedMoveToHue",
+                    "enhancedMoveHue",
+                    "enhancedStepHue",
+                    "enhancedMoveToHueAndSaturation",
+                    "colorLoopSet",
+                    "stopMoveStep",
+                    "moveColorTemperature",
+                    "stepColorTemperature"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "ContactSensor",
+        "matterName": "ContactSensor",
+        "deviceTypeId": 21,
+        "deviceTypeHex": "0x0015",
+        "deviceRevision": 2,
+        "clusters": [
+            {
+                "name": "BooleanState",
+                "id": "booleanState",
+                "attributes": [
+                    "stateValue"
+                ],
+                "commands": []
+            }
+        ]
+    },
+    {
+        "name": "DimmableLight",
+        "matterName": "DimmableLight",
+        "deviceTypeId": 257,
+        "deviceTypeHex": "0x0101",
+        "deviceRevision": 3,
+        "clusters": [
+            {
+                "name": "OnOff",
+                "id": "onOff",
+                "attributes": [
+                    "onOff",
+                    "globalSceneControl",
+                    "onTime",
+                    "offWaitTime",
+                    "startUpOnOff"
+                ],
+                "commands": [
+                    "off",
+                    "on",
+                    "toggle",
+                    "offWithEffect",
+                    "onWithRecallGlobalScene",
+                    "onWithTimedOff"
+                ]
+            },
+            {
+                "name": "LevelControl",
+                "id": "levelControl",
+                "attributes": [
+                    "currentLevel",
+                    "remainingTime",
+                    "minLevel",
+                    "maxLevel",
+                    "currentFrequency",
+                    "minFrequency",
+                    "maxFrequency",
+                    "onOffTransitionTime",
+                    "onLevel",
+                    "onTransitionTime",
+                    "offTransitionTime",
+                    "defaultMoveRate",
+                    "options",
+                    "startUpCurrentLevel"
+                ],
+                "commands": [
+                    "moveToLevel",
+                    "move",
+                    "step",
+                    "stop",
+                    "moveToLevelWithOnOff",
+                    "moveWithOnOff",
+                    "stepWithOnOff",
+                    "stopWithOnOff",
+                    "moveToClosestFrequency"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "DimmableOutlet",
+        "matterName": "DimmablePlugInUnit",
+        "deviceTypeId": 267,
+        "deviceTypeHex": "0x010B",
+        "deviceRevision": 5,
+        "clusters": [
+            {
+                "name": "OnOff",
+                "id": "onOff",
+                "attributes": [
+                    "onOff",
+                    "globalSceneControl",
+                    "onTime",
+                    "offWaitTime",
+                    "startUpOnOff"
+                ],
+                "commands": [
+                    "off",
+                    "on",
+                    "toggle",
+                    "offWithEffect",
+                    "onWithRecallGlobalScene",
+                    "onWithTimedOff"
+                ]
+            },
+            {
+                "name": "LevelControl",
+                "id": "levelControl",
+                "attributes": [
+                    "currentLevel",
+                    "remainingTime",
+                    "minLevel",
+                    "maxLevel",
+                    "currentFrequency",
+                    "minFrequency",
+                    "maxFrequency",
+                    "onOffTransitionTime",
+                    "onLevel",
+                    "onTransitionTime",
+                    "offTransitionTime",
+                    "defaultMoveRate",
+                    "options",
+                    "startUpCurrentLevel"
+                ],
+                "commands": [
+                    "moveToLevel",
+                    "move",
+                    "step",
+                    "stop",
+                    "moveToLevelWithOnOff",
+                    "moveWithOnOff",
+                    "stepWithOnOff",
+                    "stopWithOnOff",
+                    "moveToClosestFrequency"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "DoorLock",
+        "matterName": "DoorLock",
+        "deviceTypeId": 10,
+        "deviceTypeHex": "0x000A",
+        "deviceRevision": 4,
+        "clusters": [
+            {
+                "name": "DoorLock",
+                "id": "doorLock",
+                "attributes": [
+                    "lockState",
+                    "lockType",
+                    "actuatorEnabled",
+                    "doorState",
+                    "doorOpenEvents",
+                    "doorClosedEvents",
+                    "openPeriod",
+                    "numberOfTotalUsersSupported",
+                    "numberOfPinUsersSupported",
+                    "numberOfRfidUsersSupported",
+                    "numberOfWeekDaySchedulesSupportedPerUser",
+                    "numberOfYearDaySchedulesSupportedPerUser",
+                    "numberOfHolidaySchedulesSupported",
+                    "maxPinCodeLength",
+                    "minPinCodeLength",
+                    "maxRfidCodeLength",
+                    "minRfidCodeLength",
+                    "credentialRulesSupport",
+                    "numberOfCredentialsSupportedPerUser",
+                    "language",
+                    "ledSettings",
+                    "autoRelockTime",
+                    "soundVolume",
+                    "operatingMode",
+                    "supportedOperatingModes",
+                    "defaultConfigurationRegister",
+                    "enableLocalProgramming",
+                    "enableOneTouchLocking",
+                    "enableInsideStatusLed",
+                    "enablePrivacyModeButton",
+                    "localProgrammingFeatures",
+                    "wrongCodeEntryLimit",
+                    "userCodeTemporaryDisableTime",
+                    "sendPinOverTheAir",
+                    "requirePinForRemoteOperation",
+                    "expiringUserTimeout",
+                    "aliroReaderVerificationKey",
+                    "aliroReaderGroupIdentifier",
+                    "aliroReaderGroupSubIdentifier",
+                    "aliroExpeditedTransactionSupportedProtocolVersions",
+                    "aliroGroupResolvingKey",
+                    "aliroSupportedBleuwbProtocolVersions",
+                    "aliroBleAdvertisingVersion",
+                    "numberOfAliroCredentialIssuerKeysSupported",
+                    "numberOfAliroEndpointKeysSupported"
+                ],
+                "commands": [
+                    "lockDoor",
+                    "unlockDoor",
+                    "unlockWithTimeout",
+                    "setWeekDaySchedule",
+                    "getWeekDaySchedule",
+                    "clearWeekDaySchedule",
+                    "setYearDaySchedule",
+                    "getYearDaySchedule",
+                    "clearYearDaySchedule",
+                    "setHolidaySchedule",
+                    "getHolidaySchedule",
+                    "clearHolidaySchedule",
+                    "setUser",
+                    "getUser",
+                    "clearUser",
+                    "setCredential",
+                    "getCredentialStatus",
+                    "clearCredential",
+                    "unboltDoor",
+                    "setAliroReaderConfig",
+                    "clearAliroReaderConfig"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "ElectricalSensor",
+        "matterName": "ElectricalSensor",
+        "deviceTypeId": 1296,
+        "deviceTypeHex": "0x0510",
+        "deviceRevision": 1,
+        "clusters": []
+    },
+    {
+        "name": "ExtendedColorLight",
+        "matterName": "ExtendedColorLight",
+        "deviceTypeId": 269,
+        "deviceTypeHex": "0x010D",
+        "deviceRevision": 4,
+        "clusters": [
+            {
+                "name": "OnOff",
+                "id": "onOff",
+                "attributes": [
+                    "onOff",
+                    "globalSceneControl",
+                    "onTime",
+                    "offWaitTime",
+                    "startUpOnOff"
+                ],
+                "commands": [
+                    "off",
+                    "on",
+                    "toggle",
+                    "offWithEffect",
+                    "onWithRecallGlobalScene",
+                    "onWithTimedOff"
+                ]
+            },
+            {
+                "name": "LevelControl",
+                "id": "levelControl",
+                "attributes": [
+                    "currentLevel",
+                    "remainingTime",
+                    "minLevel",
+                    "maxLevel",
+                    "currentFrequency",
+                    "minFrequency",
+                    "maxFrequency",
+                    "onOffTransitionTime",
+                    "onLevel",
+                    "onTransitionTime",
+                    "offTransitionTime",
+                    "defaultMoveRate",
+                    "options",
+                    "startUpCurrentLevel"
+                ],
+                "commands": [
+                    "moveToLevel",
+                    "move",
+                    "step",
+                    "stop",
+                    "moveToLevelWithOnOff",
+                    "moveWithOnOff",
+                    "stepWithOnOff",
+                    "stopWithOnOff",
+                    "moveToClosestFrequency"
+                ]
+            },
+            {
+                "name": "ColorControl",
+                "id": "colorControl",
+                "attributes": [
+                    "currentHue",
+                    "currentSaturation",
+                    "remainingTime",
+                    "currentX",
+                    "currentY",
+                    "driftCompensation",
+                    "compensationText",
+                    "colorTemperatureMireds",
+                    "colorMode",
+                    "options",
+                    "numberOfPrimaries",
+                    "primary1X",
+                    "primary1Y",
+                    "primary1Intensity",
+                    "primary2X",
+                    "primary2Y",
+                    "primary2Intensity",
+                    "primary3X",
+                    "primary3Y",
+                    "primary3Intensity",
+                    "primary4X",
+                    "primary4Y",
+                    "primary4Intensity",
+                    "primary5X",
+                    "primary5Y",
+                    "primary5Intensity",
+                    "primary6X",
+                    "primary6Y",
+                    "primary6Intensity",
+                    "whitePointX",
+                    "whitePointY",
+                    "colorPointRx",
+                    "colorPointRy",
+                    "colorPointRIntensity",
+                    "colorPointGx",
+                    "colorPointGy",
+                    "colorPointGIntensity",
+                    "colorPointBx",
+                    "colorPointBy",
+                    "colorPointBIntensity",
+                    "enhancedCurrentHue",
+                    "enhancedColorMode",
+                    "colorLoopActive",
+                    "colorLoopDirection",
+                    "colorLoopTime",
+                    "colorLoopStartEnhancedHue",
+                    "colorLoopStoredEnhancedHue",
+                    "colorCapabilities",
+                    "colorTempPhysicalMinMireds",
+                    "colorTempPhysicalMaxMireds",
+                    "coupleColorTempToLevelMinMireds",
+                    "startUpColorTemperatureMireds"
+                ],
+                "commands": [
+                    "moveToHue",
+                    "moveHue",
+                    "stepHue",
+                    "moveToSaturation",
+                    "moveSaturation",
+                    "stepSaturation",
+                    "moveToHueAndSaturation",
+                    "moveToColor",
+                    "moveColor",
+                    "stepColor",
+                    "moveToColorTemperature",
+                    "enhancedMoveToHue",
+                    "enhancedMoveHue",
+                    "enhancedStepHue",
+                    "enhancedMoveToHueAndSaturation",
+                    "colorLoopSet",
+                    "stopMoveStep",
+                    "moveColorTemperature",
+                    "stepColorTemperature"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Fan",
+        "matterName": "Fan",
+        "deviceTypeId": 43,
+        "deviceTypeHex": "0x002B",
+        "deviceRevision": 4,
+        "clusters": [
+            {
+                "name": "FanControl",
+                "id": "fanControl",
+                "attributes": [
+                    "fanMode",
+                    "fanModeSequence",
+                    "percentSetting",
+                    "percentCurrent",
+                    "speedMax",
+                    "speedSetting",
+                    "speedCurrent",
+                    "rockSupport",
+                    "rockSetting",
+                    "windSupport",
+                    "windSetting",
+                    "airflowDirection"
+                ],
+                "commands": [
+                    "step"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "GenericSwitch",
+        "matterName": "GenericSwitch",
+        "deviceTypeId": 15,
+        "deviceTypeHex": "0x000F",
+        "deviceRevision": 3,
+        "clusters": [
+            {
+                "name": "Switch",
+                "id": "switch",
+                "attributes": [
+                    "numberOfPositions",
+                    "currentPosition",
+                    "multiPressMax"
+                ],
+                "commands": []
+            }
+        ]
+    },
+    {
+        "name": "HumiditySensor",
+        "matterName": "HumiditySensor",
+        "deviceTypeId": 775,
+        "deviceTypeHex": "0x0307",
+        "deviceRevision": 3,
+        "clusters": [
+            {
+                "name": "RelativeHumidityMeasurement",
+                "id": "relativeHumidityMeasurement",
+                "attributes": [
+                    "measuredValue",
+                    "minMeasuredValue",
+                    "maxMeasuredValue",
+                    "tolerance"
+                ],
+                "commands": []
+            }
+        ]
+    },
+    {
+        "name": "LeakSensor",
+        "matterName": "WaterLeakDetector",
+        "deviceTypeId": 67,
+        "deviceTypeHex": "0x0043",
+        "deviceRevision": 2,
+        "clusters": [
+            {
+                "name": "BooleanState",
+                "id": "booleanState",
+                "attributes": [
+                    "stateValue"
+                ],
+                "commands": []
+            }
+        ]
+    },
+    {
+        "name": "LightSensor",
+        "matterName": "LightSensor",
+        "deviceTypeId": 262,
+        "deviceTypeHex": "0x0106",
+        "deviceRevision": 4,
+        "clusters": [
+            {
+                "name": "IlluminanceMeasurement",
+                "id": "illuminanceMeasurement",
+                "attributes": [
+                    "measuredValue",
+                    "minMeasuredValue",
+                    "maxMeasuredValue",
+                    "tolerance",
+                    "lightSensorType"
+                ],
+                "commands": []
+            }
+        ]
+    },
+    {
+        "name": "MotionSensor",
+        "matterName": "OccupancySensor",
+        "deviceTypeId": 263,
+        "deviceTypeHex": "0x0107",
+        "deviceRevision": 4,
+        "clusters": [
+            {
+                "name": "OccupancySensing",
+                "id": "occupancySensing",
+                "attributes": [
+                    "occupancy",
+                    "occupancySensorType",
+                    "occupancySensorTypeBitmap",
+                    "holdTime",
+                    "holdTimeLimits",
+                    "pirOccupiedToUnoccupiedDelay",
+                    "pirUnoccupiedToOccupiedDelay",
+                    "pirUnoccupiedToOccupiedThreshold",
+                    "ultrasonicOccupiedToUnoccupiedDelay",
+                    "ultrasonicUnoccupiedToOccupiedDelay",
+                    "ultrasonicUnoccupiedToOccupiedThreshold",
+                    "physicalContactOccupiedToUnoccupiedDelay",
+                    "physicalContactUnoccupiedToOccupiedDelay",
+                    "physicalContactUnoccupiedToOccupiedThreshold"
+                ],
+                "commands": []
+            }
+        ]
+    },
+    {
+        "name": "OnOffLight",
+        "matterName": "OnOffLight",
+        "deviceTypeId": 256,
+        "deviceTypeHex": "0x0100",
+        "deviceRevision": 3,
+        "clusters": [
+            {
+                "name": "OnOff",
+                "id": "onOff",
+                "attributes": [
+                    "onOff",
+                    "globalSceneControl",
+                    "onTime",
+                    "offWaitTime",
+                    "startUpOnOff"
+                ],
+                "commands": [
+                    "off",
+                    "on",
+                    "toggle",
+                    "offWithEffect",
+                    "onWithRecallGlobalScene",
+                    "onWithTimedOff"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "OnOffOutlet",
+        "matterName": "OnOffPlugInUnit",
+        "deviceTypeId": 266,
+        "deviceTypeHex": "0x010A",
+        "deviceRevision": 4,
+        "clusters": [
+            {
+                "name": "OnOff",
+                "id": "onOff",
+                "attributes": [
+                    "onOff",
+                    "globalSceneControl",
+                    "onTime",
+                    "offWaitTime",
+                    "startUpOnOff"
+                ],
+                "commands": [
+                    "off",
+                    "on",
+                    "toggle",
+                    "offWithEffect",
+                    "onWithRecallGlobalScene",
+                    "onWithTimedOff"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "OnOffSwitch",
+        "matterName": "OnOffLightSwitch",
+        "deviceTypeId": 259,
+        "deviceTypeHex": "0x0103",
+        "deviceRevision": 3,
+        "clusters": []
+    },
+    {
+        "name": "Pump",
+        "matterName": "Pump",
+        "deviceTypeId": 771,
+        "deviceTypeHex": "0x0303",
+        "deviceRevision": 3,
+        "clusters": [
+            {
+                "name": "OnOff",
+                "id": "onOff",
+                "attributes": [
+                    "onOff",
+                    "globalSceneControl",
+                    "onTime",
+                    "offWaitTime",
+                    "startUpOnOff"
+                ],
+                "commands": [
+                    "off",
+                    "on",
+                    "toggle",
+                    "offWithEffect",
+                    "onWithRecallGlobalScene",
+                    "onWithTimedOff"
+                ]
+            },
+            {
+                "name": "PumpConfigurationAndControl",
+                "id": "pumpConfigurationAndControl",
+                "attributes": [
+                    "maxPressure",
+                    "maxSpeed",
+                    "maxFlow",
+                    "minConstPressure",
+                    "maxConstPressure",
+                    "minCompPressure",
+                    "maxCompPressure",
+                    "minConstSpeed",
+                    "maxConstSpeed",
+                    "minConstFlow",
+                    "maxConstFlow",
+                    "minConstTemp",
+                    "maxConstTemp",
+                    "pumpStatus",
+                    "effectiveOperationMode",
+                    "effectiveControlMode",
+                    "capacity",
+                    "speed",
+                    "lifetimeRunningHours",
+                    "power",
+                    "lifetimeEnergyConsumed",
+                    "operationMode",
+                    "controlMode",
+                    "alarmMask"
+                ],
+                "commands": []
+            }
+        ]
+    },
+    {
+        "name": "RoboticVacuumCleaner",
+        "matterName": "RoboticVacuumCleaner",
+        "deviceTypeId": 116,
+        "deviceTypeHex": "0x0074",
+        "deviceRevision": 4,
+        "clusters": [
+            {
+                "name": "RvcRunMode",
+                "id": "rvcRunMode",
+                "attributes": [
+                    "supportedModes",
+                    "currentMode"
+                ],
+                "commands": [
+                    "changeToMode"
+                ]
+            },
+            {
+                "name": "RvcOperationalState",
+                "id": "rvcOperationalState",
+                "attributes": [
+                    "phaseList",
+                    "currentPhase",
+                    "countdownTime",
+                    "operationalStateList",
+                    "operationalState",
+                    "operationalError"
+                ],
+                "commands": [
+                    "pause",
+                    "resume",
+                    "goHome"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RoomAirConditioner",
+        "matterName": "RoomAirConditioner",
+        "deviceTypeId": 114,
+        "deviceTypeHex": "0x0072",
+        "deviceRevision": 3,
+        "clusters": [
+            {
+                "name": "OnOff",
+                "id": "onOff",
+                "attributes": [
+                    "onOff",
+                    "globalSceneControl",
+                    "onTime",
+                    "offWaitTime",
+                    "startUpOnOff"
+                ],
+                "commands": [
+                    "off",
+                    "on",
+                    "toggle",
+                    "offWithEffect",
+                    "onWithRecallGlobalScene",
+                    "onWithTimedOff"
+                ]
+            },
+            {
+                "name": "Thermostat",
+                "id": "thermostat",
+                "attributes": [
+                    "localTemperature",
+                    "outdoorTemperature",
+                    "occupancy",
+                    "absMinHeatSetpointLimit",
+                    "absMaxHeatSetpointLimit",
+                    "absMinCoolSetpointLimit",
+                    "absMaxCoolSetpointLimit",
+                    "localTemperatureCalibration",
+                    "occupiedCoolingSetpoint",
+                    "occupiedHeatingSetpoint",
+                    "unoccupiedCoolingSetpoint",
+                    "unoccupiedHeatingSetpoint",
+                    "minHeatSetpointLimit",
+                    "maxHeatSetpointLimit",
+                    "minCoolSetpointLimit",
+                    "maxCoolSetpointLimit",
+                    "minSetpointDeadBand",
+                    "remoteSensing",
+                    "controlSequenceOfOperation",
+                    "systemMode",
+                    "thermostatRunningMode",
+                    "temperatureSetpointHold",
+                    "temperatureSetpointHoldDuration",
+                    "thermostatRunningState",
+                    "setpointChangeSource",
+                    "setpointChangeAmount",
+                    "setpointChangeSourceTimestamp",
+                    "emergencyHeatDelta",
+                    "acType",
+                    "acCapacity",
+                    "acRefrigerantType",
+                    "acCompressorType",
+                    "acErrorCode",
+                    "acLouverPosition",
+                    "acCoilTemperature",
+                    "acCapacityFormat",
+                    "presetTypes",
+                    "scheduleTypes",
+                    "numberOfPresets",
+                    "numberOfSchedules",
+                    "numberOfScheduleTransitions",
+                    "numberOfScheduleTransitionPerDay",
+                    "activePresetHandle",
+                    "activeScheduleHandle",
+                    "presets",
+                    "schedules",
+                    "setpointHoldExpiryTimestamp",
+                    "maxThermostatSuggestions",
+                    "thermostatSuggestions",
+                    "currentThermostatSuggestion",
+                    "thermostatSuggestionNotFollowingReason"
+                ],
+                "commands": [
+                    "setpointRaiseLower",
+                    "setActiveScheduleRequest",
+                    "setActivePresetRequest",
+                    "addThermostatSuggestion",
+                    "removeThermostatSuggestion",
+                    "atomicRequest"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "SmokeSensor",
+        "matterName": "SmokeCoAlarm",
+        "deviceTypeId": 118,
+        "deviceTypeHex": "0x0076",
+        "deviceRevision": 1,
+        "clusters": []
+    },
+    {
+        "name": "TemperatureSensor",
+        "matterName": "TemperatureSensor",
+        "deviceTypeId": 770,
+        "deviceTypeHex": "0x0302",
+        "deviceRevision": 3,
+        "clusters": [
+            {
+                "name": "TemperatureMeasurement",
+                "id": "temperatureMeasurement",
+                "attributes": [
+                    "measuredValue",
+                    "minMeasuredValue",
+                    "maxMeasuredValue",
+                    "tolerance"
+                ],
+                "commands": []
+            }
+        ]
+    },
+    {
+        "name": "Thermostat",
+        "matterName": "Thermostat",
+        "deviceTypeId": 769,
+        "deviceTypeHex": "0x0301",
+        "deviceRevision": 6,
+        "clusters": [
+            {
+                "name": "Thermostat",
+                "id": "thermostat",
+                "attributes": [
+                    "localTemperature",
+                    "outdoorTemperature",
+                    "occupancy",
+                    "absMinHeatSetpointLimit",
+                    "absMaxHeatSetpointLimit",
+                    "absMinCoolSetpointLimit",
+                    "absMaxCoolSetpointLimit",
+                    "localTemperatureCalibration",
+                    "occupiedCoolingSetpoint",
+                    "occupiedHeatingSetpoint",
+                    "unoccupiedCoolingSetpoint",
+                    "unoccupiedHeatingSetpoint",
+                    "minHeatSetpointLimit",
+                    "maxHeatSetpointLimit",
+                    "minCoolSetpointLimit",
+                    "maxCoolSetpointLimit",
+                    "minSetpointDeadBand",
+                    "remoteSensing",
+                    "controlSequenceOfOperation",
+                    "systemMode",
+                    "thermostatRunningMode",
+                    "temperatureSetpointHold",
+                    "temperatureSetpointHoldDuration",
+                    "thermostatRunningState",
+                    "setpointChangeSource",
+                    "setpointChangeAmount",
+                    "setpointChangeSourceTimestamp",
+                    "emergencyHeatDelta",
+                    "acType",
+                    "acCapacity",
+                    "acRefrigerantType",
+                    "acCompressorType",
+                    "acErrorCode",
+                    "acLouverPosition",
+                    "acCoilTemperature",
+                    "acCapacityFormat",
+                    "presetTypes",
+                    "scheduleTypes",
+                    "numberOfPresets",
+                    "numberOfSchedules",
+                    "numberOfScheduleTransitions",
+                    "numberOfScheduleTransitionPerDay",
+                    "activePresetHandle",
+                    "activeScheduleHandle",
+                    "presets",
+                    "schedules",
+                    "setpointHoldExpiryTimestamp",
+                    "maxThermostatSuggestions",
+                    "thermostatSuggestions",
+                    "currentThermostatSuggestion",
+                    "thermostatSuggestionNotFollowingReason"
+                ],
+                "commands": [
+                    "setpointRaiseLower",
+                    "setActiveScheduleRequest",
+                    "setActivePresetRequest",
+                    "addThermostatSuggestion",
+                    "removeThermostatSuggestion",
+                    "atomicRequest"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "WaterValve",
+        "matterName": "WaterValve",
+        "deviceTypeId": 66,
+        "deviceTypeHex": "0x0042",
+        "deviceRevision": 1,
+        "clusters": [
+            {
+                "name": "ValveConfigurationAndControl",
+                "id": "valveConfigurationAndControl",
+                "attributes": [
+                    "openDuration",
+                    "defaultOpenDuration",
+                    "autoCloseTime",
+                    "remainingDuration",
+                    "currentState",
+                    "targetState",
+                    "currentLevel",
+                    "targetLevel",
+                    "defaultOpenLevel",
+                    "valveFault",
+                    "levelStep"
+                ],
+                "commands": [
+                    "open",
+                    "close"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "WindowCovering",
+        "matterName": "WindowCovering",
+        "deviceTypeId": 514,
+        "deviceTypeHex": "0x0202",
+        "deviceRevision": 6,
+        "clusters": []
+    }
+]

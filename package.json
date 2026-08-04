@@ -7,7 +7,7 @@
     "start": "ng serve",
     "build": "ng build --configuration production --output-path dist",
     "lint": "ng lint",
-    "gen": "ts-node -P tsconfig.gen.json scripts/gen.ts && ts-node -P tsconfig.gen.json scripts/sitemap.ts"
+    "gen": "ts-node -P tsconfig.gen.json scripts/gen.ts && ts-node -P tsconfig.gen.json scripts/gen-matter.ts && ts-node -P tsconfig.gen.json scripts/sitemap.ts"
   },
   "dependencies": {
     "@angular/animations": "^14.3.0",
@@ -47,6 +47,7 @@
     "@typescript-eslint/parser": "^5.62.0",
     "decamelize": "^4.0.0",
     "eslint": "^8.57.1",
+    "homebridge": "^2.2.1",
     "inflection": "^1.13.4",
     "ts-node": "^10.9.2",
     "typescript": "~4.8.4",

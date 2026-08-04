@@ -15,6 +15,8 @@ const sitemap = [
   baseUrl + '/api/service',
   baseUrl + '/api/characteristics',
   baseUrl + '/api/log',
+  baseUrl + '/api/matter',
+  baseUrl + '/api/matter-clusters',
   baseUrl + '/config-schema',
   baseUrl + '/categories',
 ];
