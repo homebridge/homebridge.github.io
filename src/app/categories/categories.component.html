@@ -8,7 +8,7 @@
   <section>
     <p>
       Don’t confuse these values with the <a routerLink="/service">Accessory Service Types</a>. Despite the
-      similarities, they describe different things. 
+      similarities, they describe different things.
     </p>
     <p>
       See
@@ -28,10 +28,12 @@
           <th>Name</th>
         </thead>
         <tbody>
-          <tr *ngFor="let category of hapService.categories">
-            <th class="theme-bg-light">{{ category.id }}</th>
-            <td>{{ category.name }}</td>
-          </tr>
+          @for (category of hapService.categories; track category) {
+            <tr>
+              <th class="theme-bg-light">{{ category.id }}</th>
+              <td>{{ category.name }}</td>
+            </tr>
+          }
         </tbody>
       </table>
     </div>

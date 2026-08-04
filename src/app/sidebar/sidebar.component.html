@@ -83,9 +83,11 @@
         </a>
       </li>
 
-      <li class="nav-item" *ngFor="let service of hapService.services">
-        <a class="nav-link" [routerLink]="['/service', service.name]" routerLinkActive="active">{{ service.displayName }}</a>
-      </li>
+      @for (service of hapService.services; track service) {
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/service', service.name]" routerLinkActive="active">{{ service.displayName }}</a>
+        </li>
+      }
 
       <li class="nav-item section-title mt-3">
         <a class="nav-link" [routerLink]="['/matter-device-type']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
@@ -93,9 +95,11 @@
         </a>
       </li>
 
-      <li class="nav-item" *ngFor="let deviceType of matterService.deviceTypes">
-        <a class="nav-link" [routerLink]="['/matter-device-type', deviceType.name]" routerLinkActive="active">{{ deviceType.name }}</a>
-      </li>
+      @for (deviceType of matterService.deviceTypes; track deviceType) {
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/matter-device-type', deviceType.name]" routerLinkActive="active">{{ deviceType.name }}</a>
+        </li>
+      }
     </ul>
   </nav>
 </div>

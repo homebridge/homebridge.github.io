@@ -1,56 +1,62 @@
-<article class="docs-article" *ngIf="deviceType">
-  <header class="docs-header">
-    <h1>
-      {{ deviceType.name }}
-    </h1>
-    <p>
-      Matter device type: {{ deviceType.matterName }} ({{ deviceType.deviceTypeHex }}) &middot; revision {{ deviceType.deviceRevision }}
-    </p>
-  </header>
-
-  <section>
-    <h3>Usage</h3>
-
-    <p>
-      Pass this device type when registering the accessory:
-    </p>
-
-    <div class="docs-code-block">
-      <pre class="language-js" [appPrism]="'deviceType: api.matter.deviceTypes.' + deviceType.name + ','"></pre>
-    </div>
-  </section>
-
-  <section *ngIf="deviceType.clusters.length">
-    <h3>Clusters</h3>
-
-    <p>
-      The clusters this device type carries. <strong>Attributes</strong> are the values you push with
-      <a [routerLink]="['/api/matter']" fragment="apimatterupdateaccessorystate">updateAccessoryState()</a>,
-      and <strong>commands</strong> are what a controller sends you, which you answer with a handler.
-    </p>
-
-    <div *ngFor="let cluster of deviceType.clusters" class="mb-4">
-      <h4><code>api.matter.clusterNames.{{ cluster.name }}</code></h4>
-
-      <p class="mb-2">
-        <strong>Attributes:</strong>&nbsp;
-        <span *ngFor="let attribute of cluster.attributes; let last = last">
-          <code>{{ attribute }}</code><span *ngIf="!last">, </span>
-        </span>
+@if (deviceType) {
+  <article class="docs-article">
+    <header class="docs-header">
+      <h1>
+        {{ deviceType.name }}
+      </h1>
+      <p>
+        Matter device type: {{ deviceType.matterName }} ({{ deviceType.deviceTypeHex }}) &middot; revision {{ deviceType.deviceRevision }}
       </p>
-
-      <p *ngIf="cluster.commands.length" class="mb-2">
-        <strong>Commands:</strong>&nbsp;
-        <span *ngFor="let command of cluster.commands; let last = last">
-          <code>{{ command }}</code><span *ngIf="!last">, </span>
-        </span>
+    </header>
+    <section>
+      <h3>Usage</h3>
+      <p>
+        Pass this device type when registering the accessory:
       </p>
-
-      <p *ngIf="!cluster.commands.length" class="mb-2">
-        <em>This cluster takes no commands — it only reports state.</em>
-      </p>
-    </div>
-
+      <div class="docs-code-block">
+        <pre class="language-js" [appPrism]="'deviceType: api.matter.deviceTypes.' + deviceType.name + ','"></pre>
+      </div>
+    </section>
+    @if (deviceType.clusters.length) {
+      <section>
+        <h3>Clusters</h3>
+        <p>
+          The clusters this device type carries. <strong>Attributes</strong> are the values you push with
+          <a [routerLink]="['/api/matter']" fragment="apimatterupdateaccessorystate">updateAccessoryState()</a>,
+          and <strong>commands</strong> are what a controller sends you, which you answer with a handler.
+        </p>
+        @for (cluster of deviceType.clusters; track cluster) {
+          <div class="mb-4">
+            <h4><code>api.matter.clusterNames.{{ cluster.name }}</code></h4>
+            <p class="mb-2">
+              <strong>Attributes:</strong>&nbsp;
+              @for (attribute of cluster.attributes; track attribute; let last = $last) {
+                <span>
+                  <code>{{ attribute }}</code>@if (!last) {
+                  <span>, </span>
+                }
+              </span>
+            }
+          </p>
+          @if (cluster.commands.length) {
+            <p class="mb-2">
+              <strong>Commands:</strong>&nbsp;
+              @for (command of cluster.commands; track command; let last = $last) {
+                <span>
+                  <code>{{ command }}</code>@if (!last) {
+                  <span>, </span>
+                }
+              </span>
+            }
+          </p>
+        }
+        @if (!cluster.commands.length) {
+          <p class="mb-2">
+            <em>This cluster takes no commands — it only reports state.</em>
+          </p>
+        }
+      </div>
+    }
     <div class="callout-block callout-block-info">
       <div class="content">
         <h4 class="callout-title">
@@ -65,10 +71,10 @@
       </div>
     </div>
   </section>
-
-  <section *ngIf="exampleCode">
+}
+@if (exampleCode) {
+  <section>
     <h3>Example</h3>
-
     <div class="callout-block callout-block-warning">
       <div class="content">
         <h4 class="callout-title">
@@ -81,9 +87,10 @@
         working "{{ deviceType.name }}" Homebridge plugin.
       </div>
     </div>
-
     <div class="docs-code-block">
       <pre class="language-js" [appPrism]="exampleCode"></pre>
     </div>
   </section>
+}
 </article>
+}
