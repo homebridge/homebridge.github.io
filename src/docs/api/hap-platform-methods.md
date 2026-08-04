@@ -76,15 +76,38 @@ class ExamplePlatformPlugin {
 }
 ```
 
+### API.updatePlatformAccessories
+
+> API.updatePlatformAccessories(accessories: PlatformAccessory[]): void
+
+Saves changes made to already-registered accessories back to the cache — a new display name, or anything you have put on `accessory.context`. Without this, the changes are lost when Homebridge restarts.
+
+```js
+accessory.context.firmware = device.firmwareVersion
+api.updatePlatformAccessories([accessory])
+```
+
 ### API.publishExternalAccessories
 
 > API.publishExternalAccessories(pluginIdentifier: string, accessories: PlatformAccessory[]): void
 
-Accessories published externally will need to be paired separately by the user. Common uses for external accessories include Cameras and TVs.
+Publishes an accessory as a standalone HAP accessory rather than through the Homebridge bridge. Common uses are cameras and TVs — HomeKit only allows one television per bridge, so a plugin exposing several must publish them externally.
 
-### API.updatePlatformAccessories
+An external accessory behaves differently in three ways that all reach the user:
 
-> API.updatePlatformAccessories(accessories: PlatformAccessory[]): void
+- **It is paired separately.** Adding the Homebridge bridge to a home does not add it. Each one gets its own port, and the Homebridge log prints its name and setup code at startup, telling the user to add it manually in the Home app. The setup code is the same as the bridge's.
+- **It is not cached.** `configureAccessory` is never called for external accessories, so there is nothing to restore and nothing to check against — publish them again on every startup.
+- **Its category matters.** The category passed to [API.platformAccessory](api/hap-platform-methods#apiplatformaccessory) sets the icon shown while pairing, so give an external accessory the right one.
+
+The first argument must be your **plugin identifier** — the npm package name, such as `homebridge-example` — not the platform name. Passing the platform name is a common mistake, and Homebridge logs a complaint asking the user to report it to you.
+
+```js
+api.publishExternalAccessories('homebridge-example', [accessory])
+```
+
+Do not also register an external accessory with `registerPlatformAccessories()`; it is published one way or the other.
+
+This is the HAP counterpart to Matter's [accessories that get their own bridge](api/matter-platform-methods#accessories-that-get-their-own-bridge), except that Matter decides for you which device types need it.
 
 ## Platform Accessory
 
