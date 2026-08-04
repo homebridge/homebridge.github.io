@@ -14,7 +14,7 @@ const hiddenServices = [
   'CameraControl',
 ];
 
-// tslint:disable-next-line: forin
+// eslint-disable-next-line guard-for-in
 for (const prop in (hap as any)['Categories']) {
   if (typeof (hap as any)['Categories'][prop] === 'number') {
     categories.push({
