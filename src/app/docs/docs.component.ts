@@ -6,7 +6,7 @@ import {
   inject,
   OnDestroy,
   OnInit,
-  ViewChild,
+  viewChild,
 } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { NavigationEnd, Router } from '@angular/router'
@@ -33,7 +33,7 @@ export class DocsComponent implements OnInit, OnDestroy {
 
   private navigationSubscription: Subscription
 
-  @ViewChild('markdownOutput') private markdownOutput: ElementRef
+  private readonly markdownOutput = viewChild<ElementRef>('markdownOutput')
 
   ngOnInit(): void {
     this.titleService.setTitle('Homebridge API')
@@ -69,7 +69,7 @@ export class DocsComponent implements OnInit, OnDestroy {
   onLoad(page: string) {
     // add anchor links to heading elements
     const headings: HTMLHeadingElement[]
-      = this.markdownOutput.nativeElement.querySelectorAll('h2,h3,h4,h5,h6')
+      = this.markdownOutput().nativeElement.querySelectorAll('h2,h3,h4,h5,h6')
     for (const heading of Array.from(headings)) {
       const id = heading.textContent
         .toLowerCase()
@@ -92,7 +92,7 @@ export class DocsComponent implements OnInit, OnDestroy {
 
     // convert relative # anchor links
     const links: HTMLAnchorElement[]
-      = this.markdownOutput.nativeElement.querySelectorAll('a')
+      = this.markdownOutput().nativeElement.querySelectorAll('a')
     for (const link of Array.from(links)) {
       const currentHref = link.getAttribute('href')
       if (currentHref.startsWith('#') && !currentHref.startsWith('#/')) {
