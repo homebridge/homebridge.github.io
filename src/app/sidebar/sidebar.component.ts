@@ -20,4 +20,16 @@ export class SidebarComponent {
 
   public services
   public id = 1
+
+  /**
+   * Whether the open page belongs to the given paths, for lighting up a
+   * section title. routerLinkActive cannot do this: a section's pages are not
+   * all under the title's own link (Categories lives at /categories but
+   * belongs to the HAP section), and prefix matching on /api would light
+   * API Reference up for every /api page.
+   */
+  isSectionActive(...paths: string[]): boolean {
+    const url = this.router.url
+    return paths.some(path => url === path || url.startsWith(`${path}/`) || url.startsWith(`${path}#`))
+  }
 }
