@@ -20,9 +20,12 @@ export const routes: Routes = [
     path: 'service/:serviceName',
     component: ServiceComponent,
   },
+  // The bare list urls land on the first entry of the matching generated
+  // list. The sidebar links carry the live first entry themselves, so these
+  // only serve direct urls - update them if a new first entry appears.
   {
     path: 'service',
-    redirectTo: 'service/AccessControl',
+    redirectTo: 'service/AccessCode',
   },
   {
     path: 'characteristic/:characteristicName',
@@ -30,7 +33,7 @@ export const routes: Routes = [
   },
   {
     path: 'characteristic',
-    redirectTo: 'characteristic/AccessControlLevel',
+    redirectTo: 'characteristic/AccessCodeControlPoint',
   },
   {
     path: 'matter-device-type/:deviceTypeName',
@@ -38,7 +41,7 @@ export const routes: Routes = [
   },
   {
     path: 'matter-device-type',
-    redirectTo: 'matter-device-type/OnOffLight',
+    redirectTo: 'matter-device-type/AirQualitySensor',
   },
   {
     path: 'api',

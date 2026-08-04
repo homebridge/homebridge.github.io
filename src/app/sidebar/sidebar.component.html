@@ -111,7 +111,11 @@
       </li>
 
       <li class="nav-item section-title mt-3">
-        <a class="nav-link" [routerLink]="['/service']" [class.active]="isSectionActive('/service')">
+        <a
+          class="nav-link"
+          [routerLink]="['/service', hapService.services[0].name]"
+          [class.active]="isSectionActive('/service')"
+        >
           <span class="theme-icon-holder me-2"><i class="fas fa-hap"></i></span>Service Types
         </a>
       </li>
@@ -127,7 +131,7 @@
       <li class="nav-item section-title mt-3">
         <a
           class="nav-link"
-          [routerLink]="['/matter-device-type']"
+          [routerLink]="['/matter-device-type', matterService.deviceTypes[0].name]"
           [class.active]="isSectionActive('/matter-device-type')"
         >
           <span class="theme-icon-holder me-2"><i class="fas fa-matter"></i></span>Device Types
