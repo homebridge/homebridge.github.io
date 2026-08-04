@@ -1,52 +1,49 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Title } from '@angular/platform-browser';
+import { Component, inject, OnInit } from '@angular/core'
+import { Title } from '@angular/platform-browser'
+import { ActivatedRoute } from '@angular/router'
 
-import { HapService, Characteristic, Service } from '../hap.service';
+import { Characteristic, HapService, Service } from '../hap.service'
 
 @Component({
   selector: 'app-characteristic',
   templateUrl: './characteristic.component.html',
-  styleUrls: ['./characteristic.component.scss'],
+  styleUrl: './characteristic.component.scss',
 })
 export class CharacteristicComponent implements OnInit {
-  public characteristicName: string;
-  public characteristic: Characteristic;
+  private currentRoute = inject(ActivatedRoute)
+  private hapService = inject(HapService)
+  private titleService = inject(Title)
 
-  public usedBy: Service[];
+  public characteristicName: string
+  public characteristic: Characteristic
 
-  constructor(
-    private currentRoute: ActivatedRoute,
-    private hapService: HapService,
-    private titleService: Title,
-  ) { }
+  public usedBy: Service[]
 
   ngOnInit(): void {
-    this.currentRoute.paramMap.subscribe(params => {
-      this.characteristicName = params.get('characteristicName');
-      this.characteristic = this.hapService.getCharacteristicsByName(this.characteristicName);
-      this.usedBy = this.hapService.getServiceTypesUsedByCharacteristic(this.characteristic.UUID);
+    this.currentRoute.paramMap.subscribe((params) => {
+      this.characteristicName = params.get('characteristicName')
+      this.characteristic = this.hapService.getCharacteristicsByName(this.characteristicName)
+      this.usedBy = this.hapService.getServiceTypesUsedByCharacteristic(this.characteristic.UUID)
 
-      this.titleService.setTitle(`Homebridge API - ${this.characteristicName}`);
-    });
+      this.titleService.setTitle(`Homebridge API - ${this.characteristicName}`)
+    })
   }
 
   get characteristicPermissions() {
-    return this.characteristic.props.perms.map(x => this.hapService.perms[x]).join(', ');
+    return this.characteristic.props.perms.map(x => this.hapService.perms[x]).join(', ')
   }
 
   get characteristicEvents() {
-    const events: string[] = [];
+    const events: string[] = []
 
     if (this.characteristic.props.perms.includes('pr')) {
-      events.push('get');
+      events.push('get')
     }
 
     if (this.characteristic.props.perms.includes('pw')) {
-      events.push('set');
+      events.push('set')
     }
 
-    return events.join(', ');
+    return events.join(', ')
   }
-
 }

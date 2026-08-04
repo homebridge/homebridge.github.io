@@ -1,20 +1,20 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http'
+import { inject, Injectable } from '@angular/core'
 
 export interface MatterCluster {
-  name: string;
-  id: string;
-  attributes: string[];
-  commands: string[];
+  name: string
+  id: string
+  attributes: string[]
+  commands: string[]
 }
 
 export interface MatterDeviceType {
-  name: string;
-  matterName: string;
-  deviceTypeId: number;
-  deviceTypeHex: string;
-  deviceRevision: number;
-  clusters: MatterCluster[];
+  name: string
+  matterName: string
+  deviceTypeId: number
+  deviceTypeHex: string
+  deviceRevision: number
+  clusters: MatterCluster[]
 }
 
 /**
@@ -26,23 +26,23 @@ export interface MatterDeviceType {
   providedIn: 'root',
 })
 export class MatterService {
-  public ready = false;
-  public deviceTypes: MatterDeviceType[] = [];
+  private httpClient = inject(HttpClient)
 
-  constructor(
-    private httpClient: HttpClient,
-  ) {
-    this.load();
+  public ready = false
+  public deviceTypes: MatterDeviceType[] = []
+
+  constructor() {
+    this.load()
   }
 
   load() {
     this.httpClient.get('assets/matter-device-types.json').toPromise().then((deviceTypes) => {
-      this.deviceTypes = deviceTypes as MatterDeviceType[];
-      this.ready = true;
-    });
+      this.deviceTypes = deviceTypes as MatterDeviceType[]
+      this.ready = true
+    })
   }
 
   getDeviceTypeByName(name: string) {
-    return this.deviceTypes.find(x => x.name === name);
+    return this.deviceTypes.find(x => x.name === name)
   }
 }

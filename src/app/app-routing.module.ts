@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ServiceComponent } from './service/service.component';
-import { CharacteristicComponent } from './characteristic/characteristic.component';
-import { DocsComponent } from './docs/docs.component';
-import { DocsGuard } from './docs/docs.guard';
-import { CategoriesComponent } from './categories/categories.component';
-import { MatterDeviceTypeComponent } from './matter-device-type/matter-device-type.component';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
+
+import { CategoriesComponent } from './categories/categories.component'
+import { CharacteristicComponent } from './characteristic/characteristic.component'
+import { DocsComponent } from './docs/docs.component'
+import { DocsGuard } from './docs/docs.guard'
+import { MatterDeviceTypeComponent } from './matter-device-type/matter-device-type.component'
+import { ServiceComponent } from './service/service.component'
 
 const routes: Routes = [
   {
@@ -61,15 +62,15 @@ const routes: Routes = [
     canActivate: [DocsGuard],
     component: DocsComponent,
   },
-];
+]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,  {
+  imports: [RouterModule.forRoot(routes, {
     useHash: true,
     scrollPositionRestoration: 'enabled',
     anchorScrolling: 'enabled',
-    scrollOffset: [0, 75]
-})],
+    scrollOffset: [0, 75],
+  })],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }

@@ -1,6 +1,6 @@
 /*************************** Theme Colours****************************/
 // Define theme colour scheme
-$theme-color-primary:#612094;
+$theme-color-primary: #612094;
 
 $theme-text-color-primary: #252930;
 $theme-text-color-secondary: lighten($theme-text-color-primary, 25%);
@@ -10,30 +10,28 @@ $theme-bg-light: #fbf5ff;
 $theme-bg-dark: $theme-color-primary;
 $theme-bg-color: $theme-color-primary;
 
-$theme-border-color:  #efefef;
+$theme-border-color: #efefef;
 $theme-divider-color: #efefef;
 
 $theme-divider: lighten($theme-text-color-primary, 75%);
 
 $theme-color-new: #5ab66e;
-$theme-error: #EC575B;
+$theme-error: #ec575b;
 
 $smoky-white: #f5f5f5;
 $google-color: #d73d32;
 $facebook-color: #3b5998;
-$twitter-color: #1DA1F2;
-$github-color: #24282D;
+$twitter-color: #1da1f2;
+$github-color: #24282d;
 $producthunt-color: #da552f;
 $wordpress-color: #028cb0;
 
 $single-col-max: 800px;
 
 $theme-success-color: #5cb377;
-$theme-warning-color: #EEBF41;
+$theme-warning-color: #eebf41;
 $theme-info-color: #5b99ea;
 $theme-danger-color: #d26d69;
-
-
 
 /*************************** Variables Section. *****************************/
 // Create variables to override the default value for variables used in the Bootstrap SCSS files.
@@ -64,19 +62,18 @@ $link-decoration: none;
 $link-hover-decoration: underline;
 
 /*************************** Import Bootstrap  *****************************/
-@import "bootstrap/scss/bootstrap.scss";
-
+@import 'bootstrap/scss/bootstrap.scss';
 
 /*************************** Theme Styles Section ****************************/
-@import "theme/styles.scss";
-@import "markdown.scss";
+@import 'theme/styles.scss';
+@import 'markdown.scss';
 
 /*************************** Custom Icons ************************************/
 // Font Awesome itself is loaded as prebuilt CSS via the angular.json styles
 // array (Font Awesome 7's Sass needs the module system, which this @import
 // based sheet cannot load). This entry is ordered after it there, so the
 // width override in custom-icons lands on top of .fas.
-@import "custom-icons.scss";
+@import 'custom-icons.scss';
 
 code {
   padding: 0px 0px 0px 0px;

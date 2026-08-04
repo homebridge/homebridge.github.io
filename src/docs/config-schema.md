@@ -1,6 +1,6 @@
 # Plugin Config Schema
 
-By adding a config schema to your plugin, users will be able to configure your plugin in the Homebridge UI without having to manually edit the Homebridge `config.json` file. 
+By adding a config schema to your plugin, users will be able to configure your plugin in the Homebridge UI without having to manually edit the Homebridge `config.json` file.
 
 Plugin authors should publish a `config.schema.json` file which defines the config their plugin requires in the JSON Schema format (v6, v4 or v3).
 
@@ -10,22 +10,22 @@ Plugin authors should publish a `config.schema.json` file which defines the conf
 - [Default Values](#default-values)
 - [Placeholder Values](#placeholder-values)
 - [Element Types](#element-types)
-  * [Checkboxes](#checkboxes)
-  * [Arrays](#arrays)
-  * [Dropdown Select Boxes](#dropdown-select-boxes)
-  * [Typeahead Data Lists](#typeahead-data-lists)
+  - [Checkboxes](#checkboxes)
+  - [Arrays](#arrays)
+  - [Dropdown Select Boxes](#dropdown-select-boxes)
+  - [Typeahead Data Lists](#typeahead-data-lists)
 - [Help Text](#help-text)
 - [Validators](#validators)
-  * [String Length](#string-length)
-  * [Number Range](#number-range)
-  * [Pattern](#pattern)
-  * [Format](#format)
+  - [String Length](#string-length)
+  - [Number Range](#number-range)
+  - [Pattern](#pattern)
+  - [Format](#format)
 - [Conditional Display](#conditional-display)
 - [Header and Footer Display](#header-and-footer-display)
 - [Simple Example](#simple-example)
 - [Complex Example](#complex-example)
 - [Limitations and Workarounds](#limitations-and-workarounds)
-  * [User-Defined Keys](#user-defined-keys)
+  - [User-Defined Keys](#user-defined-keys)
 - [Advanced Requirements](#advanced-requirements)
 - [Plugins Using This](#plugins-using-this)
 
@@ -65,13 +65,13 @@ The forms are generated using [Angular JSON Schema Form](https://github.com/hamz
 }
 ```
 
-* `pluginAlias`: The plugin identifier.
-* `pluginType`: The type of plugin, valid values are `platform` or `accessory`.
-* `singular`: If set to `true` the UI will not allow the user to add more than one config block. This is usually used for platform plugins where only a single config block should be present.
-* `headerDisplay` and `footerDisplay`: [See Below](#header-and-footer-display) for details.
-* `form` and `display`: These attributes are optional and can be used to further customise how the interface is presented to the user, see the playground for more examples.
+- `pluginAlias`: The plugin identifier.
+- `pluginType`: The type of plugin, valid values are `platform` or `accessory`.
+- `singular`: If set to `true` the UI will not allow the user to add more than one config block. This is usually used for platform plugins where only a single config block should be present.
+- `headerDisplay` and `footerDisplay`: [See Below](#header-and-footer-display) for details.
+- `form` and `display`: These attributes are optional and can be used to further customise how the interface is presented to the user, see the playground for more examples.
 
-*You do not need to include the `platform` or `accessory` attribute in your `schema` object. This will be automatically added based on the `pluginType`.*
+_You do not need to include the `platform` or `accessory` attribute in your `schema` object. This will be automatically added based on the `pluginType`._
 
 ### Default Values
 
@@ -141,7 +141,9 @@ Checkboxes return `true` or `false` and can be implemented using the JSON Schema
 ```
 
 ```json
-"sudo": true
+{
+  "sudo": true
+}
 ```
 
 Checkboxes can also build a string of arrays from a pre-defined list. The below example will generate an array named `disabled_modes` with the values `Off`, `Home`, `Night`, or `Away` depending on which checkboxes are selected.
@@ -170,11 +172,13 @@ Checkboxes can also build a string of arrays from a pre-defined list. The below 
       }
     }
   }
-}  
+}
 ```
 
 ```json
-"disabled_modes": ["Off", "Night"]
+{
+  "disabled_modes": ["Off", "Night"]
+}
 ```
 
 ### Arrays
@@ -239,7 +243,7 @@ Data-lists suggest values to the user in a similar way to drop down boxes, but s
   "schema": {
     "type": "object",
     "properties": {
-        "vcodec": {
+      "vcodec": {
         "title": "Video Codec",
         "type": "string",
         "placeholder": "libx264",
@@ -258,7 +262,6 @@ Data-lists suggest values to the user in a similar way to drop down boxes, but s
   }
 }
 ```
-
 
 ### Help Text
 
@@ -353,12 +356,12 @@ You can validate the user's input using a regex in the JSON Schema `pattern` att
 
 You can also use the built-in `format` types to validate the data:
 
-* `date-time`: Date representation, as defined by RFC 3339, section 5.6.
-* `email`: Internet email address, see RFC 5322, section 3.4.1.
-* `hostname`: Internet hostname, see RFC 1034, section 3.1.
-* `ipv4`: IPv4 address, according to dotted-quad ABNF syntax as defined in RFC 2673, section 3.2.
-* `ipv6`: IPv6 address, as defined in RFC 2373, section 2.2.
-* `uri`: A universal resource identifier (URI), according to RFC3986.
+- `date-time`: Date representation, as defined by RFC 3339, section 5.6.
+- `email`: Internet email address, see RFC 5322, section 3.4.1.
+- `hostname`: Internet hostname, see RFC 1034, section 3.1.
+- `ipv4`: IPv4 address, according to dotted-quad ABNF syntax as defined in RFC 2673, section 3.2.
+- `ipv6`: IPv6 address, as defined in RFC 2373, section 2.2.
+- `uri`: A universal resource identifier (URI), according to RFC3986.
 
 Example:
 
@@ -385,15 +388,17 @@ Example:
 You can set rules for when a field should be displayed or hidden. For example, you might only show some fields, based on the value of another.
 
 ```json
-"condition": {
-  "functionBody": "return model.blah === 'foo';"
+{
+  "condition": {
+    "functionBody": "return model.blah === 'foo';"
+  }
 }
 ```
 
 `functionBody` is called with `model` and `arrayIndices` as arguments and should return a `boolean` value.
 
-* `model` - the current object representation of the current plugin config.
-* `arrayIndices` - if the condition is being called inside an array, this is the array index of the current item.
+- `model` - the current object representation of the current plugin config.
+- `arrayIndices` - if the condition is being called inside an array, this is the array index of the current item.
 
 Full Example:
 
@@ -418,7 +423,7 @@ Full Example:
         "title": "This option is hidden unless `showOption` is true",
         "type": "string",
         "condition": {
-            "functionBody": "return model.showOption === true;"
+          "functionBody": "return model.showOption === true;"
         }
       }
     }
@@ -432,11 +437,11 @@ Plugin authors can display additional content in the user interface above and be
 
 Things to keep in mind when creating displays:
 
-* Keep it short. Screen real estate is limited, rather than displaying your entire setup guide it might be better to provide a link to your wiki instead.
-* Remote images are supported when using the full image URI.
-  * Images may only be loaded from `https://raw.githubusercontent.com`.
-* Absolutely no HTML tags. GitHub flavoured markdown supports some HTML tags such as `a` and `img`. We do not, these tags will not be rendered in the interface.
-* Custom JavaScript is not supported anywhere.
+- Keep it short. Screen real estate is limited, rather than displaying your entire setup guide it might be better to provide a link to your wiki instead.
+- Remote images are supported when using the full image URI.
+  - Images may only be loaded from `https://raw.githubusercontent.com`.
+- Absolutely no HTML tags. GitHub flavoured markdown supports some HTML tags such as `a` and `img`. We do not, these tags will not be rendered in the interface.
+- Custom JavaScript is not supported anywhere.
 
 ### Simple Example
 
@@ -691,29 +696,33 @@ A small number of existing plugin configs may not work with the automatically ge
 Here is an example Homebridge config block that we can't generate a form for because it depends on user-defined key names:
 
 ```json
-"platforms": [
-  {
-    "platform": "Some Platform",
-    "users": {
-      "user-one": "password",
-      "user-two": "password"
+{
+  "platforms": [
+    {
+      "platform": "Some Platform",
+      "users": {
+        "user-one": "password",
+        "user-two": "password"
+      }
     }
-  }
-]
+  ]
+}
 ```
 
 This can be fixed by changing the config to use an `array` instead of an `object`:
 
 ```json
-"platforms": [
-  {
-    "platform": "Some Platform",
-    "users": [
-      { "key": "user-one", "value": "password" },
-      { "key": "user-two", "value": "password" }
-    ]
-  }
-]
+{
+  "platforms": [
+    {
+      "platform": "Some Platform",
+      "users": [
+        { "key": "user-one", "value": "password" },
+        { "key": "user-two", "value": "password" }
+      ]
+    }
+  ]
+}
 ```
 
 The `config.schema.json` file would then look like this:
@@ -753,8 +762,8 @@ The `config.schema.json` file would then look like this:
 If the plugin requires the config block to be put back into the original `object` format they can easily transform the `array` at runtime:
 
 ```js
-const users = {};
-config.users.forEach(x => users[x.key] = x.value);
+const users = {}
+config.users.forEach(x => users[x.key] = x.value)
 ```
 
 ### Advanced Requirements
@@ -767,78 +776,78 @@ Looking at examples of existing schemas is a great way to learn.
 
 These are examples of plugins that currently implement the Plugin Settings GUI using the `config.schema.json`:
 
-* [homebridge-433-arduino](https://github.com/normen/homebridge-433-arduino/blob/master/config.schema.json)
-* [homebridge-aladdin-connect-garage-door](https://github.com/iAnatoly/homebridge-aladdin-connect-garage-door/blob/master/config.schema.json)
-* [homebridge-alexa](https://github.com/NorthernMan54/homebridge-alexa/blob/master/config.schema.json)
-* [homebridge-apple-tv-remote](https://github.com/lukasroegner/homebridge-apple-tv-remote/blob/master/config.schema.json)
-* [homebridge-automation-chromecast](https://github.com/paolotremadio/homebridge-automation-chromecast/blob/master/config.schema.json)
-* [homebridge-automower](https://github.com/nicoduj/homebridge-automower/blob/master/config.schema.json)
-* [homebridge-blink](https://github.com/jonathandann/homebridge-blink/blob/master/config.schema.json)
-* [homebridge-bravia](https://github.com/normen/homebridge-bravia/blob/master/config.schema.json)
-* [homebridge-button-platform](https://github.com/Djelibeybi/homebridge-button-platform/blob/master/config.schema.json)
-* [homebridge-camera-ffmpeg](https://github.com/KhaosT/homebridge-camera-ffmpeg/blob/master/config.schema.json)
-* [homebridge-canary](https://github.com/reinierlakhan/homebridge-canary/blob/master/config.schema.json)
-* [homebridge-comelit-hub](https://github.com/madchicken/homebridge-comelit-hub/blob/master/config.schema.json)
-* [homebridge-config-ui-x](https://github.com/oznu/homebridge-config-ui-x/blob/master/config.schema.json)
-* [homebridge-connex](https://github.com/NorthernMan54/homebridge-connex/blob/master/config.schema.json)
-* [homebridge-chamberlain](https://github.com/caseywebdev/homebridge-chamberlain/blob/master/config.schema.json)
-* [homebridge-daikin-esp8266](https://github.com/oznu/homebridge-daikin-esp8266/blob/master/config.schema.json)
-* [homebridge-denon-tv](https://github.com/grzegorz914/homebridge-denon-tv/blob/master/config.schema.json)
-* [homebridge-dummy](https://github.com/nfarina/homebridge-dummy/blob/master/config.schema.json)
-* [homebridge-dummy-lock](https://github.com/karlg100/homebridge-dummy-lock/blob/master/config.schema.json)
-* [homebridge-dummy-thermostat](https://github.com/X1ZOR/homebridge-dummy-thermostat/blob/master/config.schema.json)
-* [homebridge-dyson-pure-cool](https://github.com/lukasroegner/homebridge-dyson-pure-cool/blob/master/config.schema.json)
-* [homebridge-esp-irrigation-controller](https://github.com/oznu/esp-irrigation-controller/blob/master/homebridge/config.schema.json)
-* [homebridge-esp-pir](https://github.com/oznu/homebridge-esp-pir/blob/master/config.schema.json)
-* [homebridge-esp8266-fan](https://github.com/oznu/homebridge-esp8266-fan/blob/master/config.schema.json)
-* [homebridge-ecoplug](https://github.com/Danimal4326/homebridge-ecoplug/blob/master/config.schema.json)
-* [homebridge-eveatmo](https://github.com/skrollme/homebridge-eveatmo/blob/master/config.schema.json)
-* [homebridge-g-on-alice](https://github.com/G-On-dev/homebridge-g-on-alice/blob/master/config.schema.json)
-* [homebridge-gogogate2](https://github.com/nicoduj/homebridge-gogogate2/blob/DynamicPlatform/config.schema.json)
-* [homebridge-gsh](https://github.com/oznu/homebridge-gsh/blob/master/config.schema.json)
-* [homebridge-harmony](https://github.com/nicoduj/homebridge-harmony/blob/Dynamic-Platform/config.schema.json)
-* [homebridge-homeconnect](https://github.com/thoukydides/homebridge-homeconnect/blob/master/config.schema.json)
-* [homebridge-homeqtt-alarm](https://github.com/nzbullet/homebridge-homeqtt-alarm/blob/master/config.schema.json)
-* [homebridge-honeywell-home](https://github.com/donavanbecker/homebridge-honeywell-home/blob/master/config.schema.json)
-* [homebridge-honeywell-leak](https://github.com/sunoo/homebridge-honeywell-leak/blob/master/config.schema.json)
-* [homebridge-hue](https://github.com/ebaauw/homebridge-hue/blob/master/config.schema.json)
-* [homebridge-landroid](https://github.com/normen/homebridge-landroid/blob/master/config.schema.json)
-* [homebridge-lgwebos-tv](https://github.com/grzegorz914/homebridge-lgwebos-tv/blob/master/config.schema.json)
-* [homebridge-luxtronik2](https://github.com/cbrandlehner/homebridge-luxtronik2/blob/master/config.schema.json)
-* [homebridge-meross](https://github.com/donavanbecker/homebridge-meross/blob/master/config.schema.json)
-* [homebridge-mi-hygrothermograph](https://github.com/hannseman/homebridge-mi-hygrothermograph/blob/master/config.schema.json)
-* [homebridge-mqttthing](https://github.com/arachnetech/homebridge-mqttthing/blob/master/config.schema.json)
-* [homebridge-music](https://github.com/ebaauw/homebridge-music/blob/master/config.schema.json)
-* [homebridge-mysmartblinds-bridge](https://github.com/apexad/homebridge-mysmartblinds-bridge/blob/master/config.schema.json)
-* [homebridge-neato](https://github.com/naofireblade/homebridge-neato/blob/master/config.schema.json)
-* [homebridge-nest](https://github.com/chrisjshull/homebridge-nest/blob/master/config.schema.json)
-* [homebridge-onkyo](https://github.com/ToddGreenfield/homebridge-onkyo/blob/master/config.schema.json)
-* [homebridge-openwebif-tv](https://github.com/grzegorz914/homebridge-openwebif-tv/blob/master/config.schema.json)
-* [homebridge-otgw](https://github.com/ebaauw/homebridge-otgw/blob/master/config.schema.json)
-* [homebridge-p1](https://github.com/ebaauw/homebridge-p1/blob/master/config.schema.json)
-* [homebridge-pihole](https://github.com/arendruni/homebridge-pihole/blob/master/config.schema.json)
-* [homebridge-platform-maxcube](https://github.com/normen/homebridge-platform-maxcube/blob/master/config.schema.json)
-* [homebridge-platform-wemo](https://github.com/rudders/homebridge-platform-wemo/blob/master/config.schema.json)
-* [homebridge-ring](https://github.com/dgreif/ring/blob/master/homebridge/config.schema.json)
-* [homebridge-rpi](https://github.com/ebaauw/homebridge-rpi/blob/master/config.schema.json)
-* [homebridge-sengled](https://github.com/j796160836/homebridge-sengled/blob/master/config.schema.json)
-* [homebridge-smartglass](https://github.com/unknownskl/homebridge-smartglass/blob/master/config.schema.json)
-* [homebridge-smartthings-v2](https://github.com/tonesto7/homebridge-smartthings-v2/blob/master/config.schema.json)
-* [homebridge-sonos](https://github.com/nfarina/homebridge-sonos/blob/master/config.schema.json)
-* [homebridge-sunricher-wifi](https://github.com/break-pointer/homebridge-sunricher-wifi/blob/master/config.schema.json)
-* [homebridge-tesla](https://github.com/nfarina/homebridge-tesla/blob/master/config.schema.json)
-* [homebridge-tion](https://github.com/break-pointer/homebridge-tion/blob/master/config.schema.json)
-* [homebridge-tydom](https://github.com/mgcrea/homebridge-tydom/blob/master/config.schema.json)
-* [homebridge-ueboom](https://github.com/alessandroaime/homebridge-ueboom/blob/master/config.schema.json)
-* [homebridge-unifi-occupancy-sensor](https://github.com/oznu/homebridge-unifi-occupancy-sensor/blob/master/config.schema.json)
-* [homebridge-videodoorbell](https://github.com/Samfox2/homebridge-videodoorbell/blob/master/config.schema.json)
-* [homebridge-webos-tv](https://github.com/merdok/homebridge-webos-tv/blob/master/config.schema.json)
-* [homebridge-weather-plus](https://github.com/naofireblade/homebridge-weather-plus/blob/master/config.schema.json)
-* [homebridge-ws](https://github.com/ebaauw/homebridge-ws/blob/master/config.schema.json)
-* [homebridge-xbox-tv](https://github.com/grzegorz914/homebridge-xbox-tv/blob/master/config.schema.json)
-* [homebridge-yalesmarthomealarm](https://github.com/jak1502/homebridge-yalesmarthomealarm/blob/master/config.schema.json)
-* [homebridge-zigbee](https://github.com/itsmepetrov/homebridge-zigbee/blob/master/config.schema.json)
-* [homebridge-zp](https://github.com/ebaauw/homebridge-zp/blob/master/config.schema.json)
+- [homebridge-433-arduino](https://github.com/normen/homebridge-433-arduino/blob/master/config.schema.json)
+- [homebridge-aladdin-connect-garage-door](https://github.com/iAnatoly/homebridge-aladdin-connect-garage-door/blob/master/config.schema.json)
+- [homebridge-alexa](https://github.com/NorthernMan54/homebridge-alexa/blob/master/config.schema.json)
+- [homebridge-apple-tv-remote](https://github.com/lukasroegner/homebridge-apple-tv-remote/blob/master/config.schema.json)
+- [homebridge-automation-chromecast](https://github.com/paolotremadio/homebridge-automation-chromecast/blob/master/config.schema.json)
+- [homebridge-automower](https://github.com/nicoduj/homebridge-automower/blob/master/config.schema.json)
+- [homebridge-blink](https://github.com/jonathandann/homebridge-blink/blob/master/config.schema.json)
+- [homebridge-bravia](https://github.com/normen/homebridge-bravia/blob/master/config.schema.json)
+- [homebridge-button-platform](https://github.com/Djelibeybi/homebridge-button-platform/blob/master/config.schema.json)
+- [homebridge-camera-ffmpeg](https://github.com/KhaosT/homebridge-camera-ffmpeg/blob/master/config.schema.json)
+- [homebridge-canary](https://github.com/reinierlakhan/homebridge-canary/blob/master/config.schema.json)
+- [homebridge-comelit-hub](https://github.com/madchicken/homebridge-comelit-hub/blob/master/config.schema.json)
+- [homebridge-config-ui-x](https://github.com/oznu/homebridge-config-ui-x/blob/master/config.schema.json)
+- [homebridge-connex](https://github.com/NorthernMan54/homebridge-connex/blob/master/config.schema.json)
+- [homebridge-chamberlain](https://github.com/caseywebdev/homebridge-chamberlain/blob/master/config.schema.json)
+- [homebridge-daikin-esp8266](https://github.com/oznu/homebridge-daikin-esp8266/blob/master/config.schema.json)
+- [homebridge-denon-tv](https://github.com/grzegorz914/homebridge-denon-tv/blob/master/config.schema.json)
+- [homebridge-dummy](https://github.com/nfarina/homebridge-dummy/blob/master/config.schema.json)
+- [homebridge-dummy-lock](https://github.com/karlg100/homebridge-dummy-lock/blob/master/config.schema.json)
+- [homebridge-dummy-thermostat](https://github.com/X1ZOR/homebridge-dummy-thermostat/blob/master/config.schema.json)
+- [homebridge-dyson-pure-cool](https://github.com/lukasroegner/homebridge-dyson-pure-cool/blob/master/config.schema.json)
+- [homebridge-esp-irrigation-controller](https://github.com/oznu/esp-irrigation-controller/blob/master/homebridge/config.schema.json)
+- [homebridge-esp-pir](https://github.com/oznu/homebridge-esp-pir/blob/master/config.schema.json)
+- [homebridge-esp8266-fan](https://github.com/oznu/homebridge-esp8266-fan/blob/master/config.schema.json)
+- [homebridge-ecoplug](https://github.com/Danimal4326/homebridge-ecoplug/blob/master/config.schema.json)
+- [homebridge-eveatmo](https://github.com/skrollme/homebridge-eveatmo/blob/master/config.schema.json)
+- [homebridge-g-on-alice](https://github.com/G-On-dev/homebridge-g-on-alice/blob/master/config.schema.json)
+- [homebridge-gogogate2](https://github.com/nicoduj/homebridge-gogogate2/blob/DynamicPlatform/config.schema.json)
+- [homebridge-gsh](https://github.com/oznu/homebridge-gsh/blob/master/config.schema.json)
+- [homebridge-harmony](https://github.com/nicoduj/homebridge-harmony/blob/Dynamic-Platform/config.schema.json)
+- [homebridge-homeconnect](https://github.com/thoukydides/homebridge-homeconnect/blob/master/config.schema.json)
+- [homebridge-homeqtt-alarm](https://github.com/nzbullet/homebridge-homeqtt-alarm/blob/master/config.schema.json)
+- [homebridge-honeywell-home](https://github.com/donavanbecker/homebridge-honeywell-home/blob/master/config.schema.json)
+- [homebridge-honeywell-leak](https://github.com/sunoo/homebridge-honeywell-leak/blob/master/config.schema.json)
+- [homebridge-hue](https://github.com/ebaauw/homebridge-hue/blob/master/config.schema.json)
+- [homebridge-landroid](https://github.com/normen/homebridge-landroid/blob/master/config.schema.json)
+- [homebridge-lgwebos-tv](https://github.com/grzegorz914/homebridge-lgwebos-tv/blob/master/config.schema.json)
+- [homebridge-luxtronik2](https://github.com/cbrandlehner/homebridge-luxtronik2/blob/master/config.schema.json)
+- [homebridge-meross](https://github.com/donavanbecker/homebridge-meross/blob/master/config.schema.json)
+- [homebridge-mi-hygrothermograph](https://github.com/hannseman/homebridge-mi-hygrothermograph/blob/master/config.schema.json)
+- [homebridge-mqttthing](https://github.com/arachnetech/homebridge-mqttthing/blob/master/config.schema.json)
+- [homebridge-music](https://github.com/ebaauw/homebridge-music/blob/master/config.schema.json)
+- [homebridge-mysmartblinds-bridge](https://github.com/apexad/homebridge-mysmartblinds-bridge/blob/master/config.schema.json)
+- [homebridge-neato](https://github.com/naofireblade/homebridge-neato/blob/master/config.schema.json)
+- [homebridge-nest](https://github.com/chrisjshull/homebridge-nest/blob/master/config.schema.json)
+- [homebridge-onkyo](https://github.com/ToddGreenfield/homebridge-onkyo/blob/master/config.schema.json)
+- [homebridge-openwebif-tv](https://github.com/grzegorz914/homebridge-openwebif-tv/blob/master/config.schema.json)
+- [homebridge-otgw](https://github.com/ebaauw/homebridge-otgw/blob/master/config.schema.json)
+- [homebridge-p1](https://github.com/ebaauw/homebridge-p1/blob/master/config.schema.json)
+- [homebridge-pihole](https://github.com/arendruni/homebridge-pihole/blob/master/config.schema.json)
+- [homebridge-platform-maxcube](https://github.com/normen/homebridge-platform-maxcube/blob/master/config.schema.json)
+- [homebridge-platform-wemo](https://github.com/rudders/homebridge-platform-wemo/blob/master/config.schema.json)
+- [homebridge-ring](https://github.com/dgreif/ring/blob/master/homebridge/config.schema.json)
+- [homebridge-rpi](https://github.com/ebaauw/homebridge-rpi/blob/master/config.schema.json)
+- [homebridge-sengled](https://github.com/j796160836/homebridge-sengled/blob/master/config.schema.json)
+- [homebridge-smartglass](https://github.com/unknownskl/homebridge-smartglass/blob/master/config.schema.json)
+- [homebridge-smartthings-v2](https://github.com/tonesto7/homebridge-smartthings-v2/blob/master/config.schema.json)
+- [homebridge-sonos](https://github.com/nfarina/homebridge-sonos/blob/master/config.schema.json)
+- [homebridge-sunricher-wifi](https://github.com/break-pointer/homebridge-sunricher-wifi/blob/master/config.schema.json)
+- [homebridge-tesla](https://github.com/nfarina/homebridge-tesla/blob/master/config.schema.json)
+- [homebridge-tion](https://github.com/break-pointer/homebridge-tion/blob/master/config.schema.json)
+- [homebridge-tydom](https://github.com/mgcrea/homebridge-tydom/blob/master/config.schema.json)
+- [homebridge-ueboom](https://github.com/alessandroaime/homebridge-ueboom/blob/master/config.schema.json)
+- [homebridge-unifi-occupancy-sensor](https://github.com/oznu/homebridge-unifi-occupancy-sensor/blob/master/config.schema.json)
+- [homebridge-videodoorbell](https://github.com/Samfox2/homebridge-videodoorbell/blob/master/config.schema.json)
+- [homebridge-webos-tv](https://github.com/merdok/homebridge-webos-tv/blob/master/config.schema.json)
+- [homebridge-weather-plus](https://github.com/naofireblade/homebridge-weather-plus/blob/master/config.schema.json)
+- [homebridge-ws](https://github.com/ebaauw/homebridge-ws/blob/master/config.schema.json)
+- [homebridge-xbox-tv](https://github.com/grzegorz914/homebridge-xbox-tv/blob/master/config.schema.json)
+- [homebridge-yalesmarthomealarm](https://github.com/jak1502/homebridge-yalesmarthomealarm/blob/master/config.schema.json)
+- [homebridge-zigbee](https://github.com/itsmepetrov/homebridge-zigbee/blob/master/config.schema.json)
+- [homebridge-zp](https://github.com/ebaauw/homebridge-zp/blob/master/config.schema.json)
 
 [homebridge-zp](https://github.com/ebaauw/homebridge-zp/blob/master/config.schema.json) screenshot (dark mode theme):
 

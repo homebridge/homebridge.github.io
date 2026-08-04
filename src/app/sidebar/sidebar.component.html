@@ -1,104 +1,145 @@
-<div id="docs-sidebar" class="docs-sidebar" [class.sidebar-visible]="sidebarService.visible"
-  [class.sidebar-hidden]="!sidebarService.visible">
+<div
+  id="docs-sidebar"
+  class="docs-sidebar"
+  [class.sidebar-visible]="sidebarService.visible"
+  [class.sidebar-hidden]="!sidebarService.visible"
+>
   <div class="top-search-box d-lg-none p-3">
     <form class="search-form">
-      <app-search class="w-100"></app-search>
+      <app-search class="w-100" />
       <i class="fas fa-magnifying-glass search-icon"></i>
     </form>
   </div>
   <nav id="docs-nav" class="docs-nav navbar">
     <ul class="section-items list-unstyled nav flex-column pb-3">
       <li class="nav-item section-title">
-        <a class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <span class="theme-icon-holder me-2"><i class="fas fa-signs-post" ></i></span>Introduction
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/']" [routerLinkActiveOptions]="{ exact: true }">
+          <span class="theme-icon-holder me-2"><i class="fas fa-signs-post"></i></span>Introduction
         </a>
       </li>
 
       <li class="nav-item section-title mt-3">
-        <a class="nav-link" [routerLink]="['/api']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/api']"
+          [routerLinkActiveOptions]="{ exact: false }"
+        >
           <span class="theme-icon-holder me-2"><i class="fas fa-gear"></i></span>API Reference
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link pointer" [routerLink]="['/api/reference']" routerLinkActive="active">Common</a>
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/reference']">Common</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link pointer" [routerLink]="['/api/log']" routerLinkActive="active">Log</a>
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/log']">Log</a>
       </li>
 
       <li class="nav-item section-title mt-3">
-        <a class="nav-link" [routerLink]="['/api/platform-plugins']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/api/platform-plugins']"
+          [routerLinkActiveOptions]="{ exact: false }"
+        >
           <span class="theme-icon-holder me-2"><i class="fas fa-hap"></i></span>HAP (Apple Home)
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link pointer" [routerLink]="['/api/platform-plugins']" routerLinkActive="active">Platform Plugins</a>
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/platform-plugins']"
+          >Platform Plugins</a
+        >
       </li>
 
       <li class="nav-item">
-        <a class="nav-link pointer" [routerLink]="['/api/accessory-plugins']" routerLinkActive="active">Accessory Plugins</a>
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/accessory-plugins']"
+          >Accessory Plugins</a
+        >
       </li>
 
       <li class="nav-item">
-        <a class="nav-link pointer" [routerLink]="['/api/service']" routerLinkActive="active">Service</a>
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/service']">Service</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link pointer" [routerLink]="['/api/characteristics']" routerLinkActive="active">Characteristics</a>
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/characteristics']"
+          >Characteristics</a
+        >
       </li>
 
       <li class="nav-item">
-        <a class="nav-link pointer" [routerLink]="['/categories']" routerLinkActive="active">Categories</a>
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/categories']">Categories</a>
       </li>
 
       <li class="nav-item section-title mt-3">
-        <a class="nav-link" [routerLink]="['/api/matter']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/api/matter']"
+          [routerLinkActiveOptions]="{ exact: false }"
+        >
           <span class="theme-icon-holder me-2"><i class="fas fa-matter"></i></span>Matter
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link pointer" [routerLink]="['/api/matter']" routerLinkActive="active">Overview</a>
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/matter']">Overview</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link pointer" [routerLink]="['/api/matter-clusters']" routerLinkActive="active">Clusters</a>
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/matter-clusters']">Clusters</a>
       </li>
 
       <li class="nav-item section-title mt-3">
-        <a class="nav-link" [routerLink]="['/config-schema']" routerLinkActive="active">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/config-schema']">
           <span class="theme-icon-holder me-2"><i class="fas fa-code"></i></span>Plugin Config Schema
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link pointer" [routerLink]="['/custom-plugin-ui']" routerLinkActive="active">Custom User Interfaces</a>
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/custom-plugin-ui']"
+          >Custom User Interfaces</a
+        >
       </li>
 
       <li class="nav-item section-title mt-3">
-        <a class="nav-link" [routerLink]="['/service']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/service']"
+          [routerLinkActiveOptions]="{ exact: false }"
+        >
           <span class="theme-icon-holder me-2"><i class="fas fa-hap"></i></span>Service Types
         </a>
       </li>
 
       @for (service of hapService.services; track service) {
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/service', service.name]" routerLinkActive="active">{{ service.displayName }}</a>
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/service', service.name]">{{
+            service.displayName
+          }}</a>
         </li>
       }
 
       <li class="nav-item section-title mt-3">
-        <a class="nav-link" [routerLink]="['/matter-device-type']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/matter-device-type']"
+          [routerLinkActiveOptions]="{ exact: false }"
+        >
           <span class="theme-icon-holder me-2"><i class="fas fa-matter"></i></span>Device Types
         </a>
       </li>
 
       @for (deviceType of matterService.deviceTypes; track deviceType) {
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/matter-device-type', deviceType.name]" routerLinkActive="active">{{ deviceType.name }}</a>
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/matter-device-type', deviceType.name]">{{
+            deviceType.name
+          }}</a>
         </li>
       }
     </ul>

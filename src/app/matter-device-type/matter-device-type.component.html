@@ -5,14 +5,13 @@
         {{ deviceType.name }}
       </h1>
       <p>
-        Matter device type: {{ deviceType.matterName }} ({{ deviceType.deviceTypeHex }}) &middot; revision {{ deviceType.deviceRevision }}
+        Matter device type: {{ deviceType.matterName }} ({{ deviceType.deviceTypeHex }}) &middot; revision
+        {{ deviceType.deviceRevision }}
       </p>
     </header>
     <section>
       <h3>Usage</h3>
-      <p>
-        Pass this device type when registering the accessory:
-      </p>
+      <p>Pass this device type when registering the accessory:</p>
       <div class="docs-code-block">
         <pre class="language-js" [appPrism]="'deviceType: api.matter.deviceTypes.' + deviceType.name + ','"></pre>
       </div>
@@ -22,75 +21,78 @@
         <h3>Clusters</h3>
         <p>
           The clusters this device type carries. <strong>Attributes</strong> are the values you push with
-          <a [routerLink]="['/api/matter']" fragment="apimatterupdateaccessorystate">updateAccessoryState()</a>,
-          and <strong>commands</strong> are what a controller sends you, which you answer with a handler.
+          <a fragment="apimatterupdateaccessorystate" [routerLink]="['/api/matter']">updateAccessoryState()</a>, and
+          <strong>commands</strong> are what a controller sends you, which you answer with a handler.
         </p>
         @for (cluster of deviceType.clusters; track cluster) {
           <div class="mb-4">
-            <h4><code>api.matter.clusterNames.{{ cluster.name }}</code></h4>
+            <h4>
+              <code>api.matter.clusterNames.{{ cluster.name }}</code>
+            </h4>
             <p class="mb-2">
               <strong>Attributes:</strong>&nbsp;
               @for (attribute of cluster.attributes; track attribute; let last = $last) {
                 <span>
-                  <code>{{ attribute }}</code>@if (!last) {
-                  <span>, </span>
+                  <code>{{ attribute }}</code>
+                  @if (!last) {
+                    <span>, </span>
+                  }
+                </span>
+              }
+            </p>
+            @if (cluster.commands.length) {
+              <p class="mb-2">
+                <strong>Commands:</strong>&nbsp;
+                @for (command of cluster.commands; track command; let last = $last) {
+                  <span>
+                    <code>{{ command }}</code>
+                    @if (!last) {
+                      <span>, </span>
+                    }
+                  </span>
                 }
-              </span>
+              </p>
+            } @else {
+              <p class="mb-2">
+                <em>This cluster takes no commands — it only reports state.</em>
+              </p>
             }
-          </p>
-          @if (cluster.commands.length) {
-            <p class="mb-2">
-              <strong>Commands:</strong>&nbsp;
-              @for (command of cluster.commands; track command; let last = $last) {
-                <span>
-                  <code>{{ command }}</code>@if (!last) {
-                  <span>, </span>
-                }
+          </div>
+        }
+        <div class="callout-block callout-block-info">
+          <div class="content">
+            <h4 class="callout-title">
+              <span class="callout-icon-holder me-1">
+                <i class="fas fa-circle-info"></i>
               </span>
-            }
-          </p>
-        }
-        @if (!cluster.commands.length) {
-          <p class="mb-2">
-            <em>This cluster takes no commands — it only reports state.</em>
-          </p>
-        }
-      </div>
+              Note
+            </h4>
+            Every endpoint also carries the <code>Identify</code>, <code>Groups</code>, <code>Descriptor</code> and
+            <code>ScenesManagement</code> clusters. They are handled by Homebridge and are not usually set by a plugin,
+            so they are not listed here.
+          </div>
+        </div>
+      </section>
     }
-    <div class="callout-block callout-block-info">
-      <div class="content">
-        <h4 class="callout-title">
-          <span class="callout-icon-holder me-1">
-            <i class="fas fa-circle-info"></i>
-          </span>
-          Note
-        </h4>
-        Every endpoint also carries the <code>Identify</code>, <code>Groups</code>, <code>Descriptor</code> and
-        <code>ScenesManagement</code> clusters. They are handled by Homebridge and are not usually set by a plugin,
-        so they are not listed here.
-      </div>
-    </div>
-  </section>
-}
-@if (exampleCode) {
-  <section>
-    <h3>Example</h3>
-    <div class="callout-block callout-block-warning">
-      <div class="content">
-        <h4 class="callout-title">
-          <span class="callout-icon-holder me-1">
-            <i class="fas fa-circle-info"></i>
-          </span>
-          Note
-        </h4>
-        The example below is automatically generated and may not be a complete example of what is required to create a
-        working "{{ deviceType.name }}" Homebridge plugin.
-      </div>
-    </div>
-    <div class="docs-code-block">
-      <pre class="language-js" [appPrism]="exampleCode"></pre>
-    </div>
-  </section>
-}
-</article>
+    @if (exampleCode) {
+      <section>
+        <h3>Example</h3>
+        <div class="callout-block callout-block-warning">
+          <div class="content">
+            <h4 class="callout-title">
+              <span class="callout-icon-holder me-1">
+                <i class="fas fa-circle-info"></i>
+              </span>
+              Note
+            </h4>
+            The example below is automatically generated and may not be a complete example of what is required to create
+            a working "{{ deviceType.name }}" Homebridge plugin.
+          </div>
+        </div>
+        <div class="docs-code-block">
+          <pre class="language-js" [appPrism]="exampleCode"></pre>
+        </div>
+      </section>
+    }
+  </article>
 }

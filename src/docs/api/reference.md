@@ -13,11 +13,13 @@
 </div>
 
 ### API.version
+
 > API.version: number
 
 Returns the current Homebridge API version. Note that this is different from the Homebridge package version.
 
 ### API.on
+
 > API.on(event: "didFinishLaunching", listener: () => void): API
 
 When this event is fired it means Homebridge has restored all cached accessories from disk. Dynamic Platform plugins should only register new accessories after this event has fired in order to ensure they weren't already added to Homebridge. This event can also be used to start discovery of new accessories.
@@ -27,6 +29,7 @@ When this event is fired it means Homebridge has restored all cached accessories
 This event is fired when homebridge gets shutdown. This could be a regular shutdown or an unexpected crash. At this stage all Accessories are already unpublished and all PlatformAccessories are already saved to disk!
 
 ### API.user.storagePath
+
 > User.storagePath(): string
 
 Returns the path to the Homebridge storage folder.
@@ -34,12 +37,13 @@ Returns the path to the Homebridge storage folder.
 ```js
 class ExamplePlatformPlugin {
   constructor(log, config, api) {
-    const storagePath = api.user.storagePath();
+    const storagePath = api.user.storagePath()
   }
 }
 ```
 
 ### API.user.configPath
+
 > User.configPath(): string
 
 Returns the path to the Homebridge config.json file.
@@ -47,24 +51,25 @@ Returns the path to the Homebridge config.json file.
 ```js
 class ExamplePlatformPlugin {
   constructor(log, config, api) {
-    const configPath = api.user.configPath();
+    const configPath = api.user.configPath()
   }
 }
 ```
 
 ### API.registerPlatform
+
 > API.registerPlatform(platformName: string, constructor: PlatformPluginConstructor): void
 
 Register a "Platform" type plugin. Platform style plugins can expose any number of accessories and can dynamically remove and add accessories at any time. Only a single instance of a given platform may be configured in the Homebridge `config.json`.
 
 ```js
 module.exports = (api) => {
-  api.registerPlatform('ExamplePlatformName', ExamplePlatformPlugin);
+  api.registerPlatform('ExamplePlatformName', ExamplePlatformPlugin)
 }
 
 class ExamplePlatformPlugin {
   constructor(log, config, api) {
-    log.debug('Example Platform Plugin Loaded');
+    log.debug('Example Platform Plugin Loaded')
   }
 }
 ```

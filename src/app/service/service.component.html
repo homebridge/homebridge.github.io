@@ -3,9 +3,7 @@
     <h1>
       {{ service.displayName }}
     </h1>
-    <p>
-      UUID: {{ service.UUID }}
-    </p>
+    <p>UUID: {{ service.UUID }}</p>
   </header>
 
   <section>
@@ -14,11 +12,10 @@
     <ul>
       @for (characteristic of requiredCharacteristics; track characteristic) {
         <li>
-          <a [routerLink]="['/characteristic', characteristic.name]">{{ characteristic.displayName}}</a>
+          <a [routerLink]="['/characteristic', characteristic.name]">{{ characteristic.displayName }}</a>
         </li>
       }
     </ul>
-
   </section>
 
   @if (optionalCharacteristics.length) {
@@ -36,9 +33,14 @@
 
   @if (markdown) {
     <section>
-      <markdown [data]="markdown"></markdown>
+      <markdown [data]="markdown" />
       <div class="w-100 mt-5 text-center">
-        <a [href]="'https://github.com/homebridge/homebridge.github.io/tree/source/src/docs/service/' + serviceName + '.md'">Edit on GitHub</a>
+        <a
+          [href]="
+            'https://github.com/homebridge/homebridge.github.io/tree/source/src/docs/service/' + serviceName + '.md'
+          "
+          >Edit on GitHub</a
+        >
       </div>
     </section>
   }
@@ -54,7 +56,8 @@
             </span>
             Note
           </h4>
-          The example below is automatically generated and may not be a complete example of what is required to create a working "{{ service.displayName }}" Homebridge plugin.
+          The example below is automatically generated and may not be a complete example of what is required to create a
+          working "{{ service.displayName }}" Homebridge plugin.
         </div>
       </div>
       <div class="docs-code-block">
@@ -62,6 +65,4 @@
       </div>
     </section>
   }
-
-
 </article>

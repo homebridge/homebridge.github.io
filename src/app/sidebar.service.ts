@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 
 /**
  * Holds the open/closed state of the sidebar. The toggler button in the header
@@ -7,21 +7,21 @@ import { Injectable } from '@angular/core';
  */
 @Injectable({ providedIn: 'root' })
 export class SidebarService {
-  private static readonly XL_BREAKPOINT = 1200;
+  private static readonly XL_BREAKPOINT = 1200
 
-  public visible = window.innerWidth >= SidebarService.XL_BREAKPOINT;
+  public visible = window.innerWidth >= SidebarService.XL_BREAKPOINT
 
   toggle() {
-    this.visible = !this.visible;
+    this.visible = !this.visible
   }
 
   matchWindowSize() {
-    this.visible = window.innerWidth >= SidebarService.XL_BREAKPOINT;
+    this.visible = window.innerWidth >= SidebarService.XL_BREAKPOINT
   }
 
   closeOnMobile() {
     if (window.innerWidth < SidebarService.XL_BREAKPOINT) {
-      this.visible = false;
+      this.visible = false
     }
   }
 }

@@ -10,9 +10,9 @@ We have created templates which you can use as a base to help you get started de
 
 These plugin templates offer the following features:
 
-* A base [dynamic](/#/api/platform-plugins) plugin that can easily be expanded
-* [TypeScript](https://www.typescriptlang.org/) with ESLint rules and Homebridge typings pre-configured
-* Automatic code compiling and Homebridge restart on code change with `npm run watch`
+- A base [dynamic](/#/api/platform-plugins) plugin that can easily be expanded
+- [TypeScript](https://www.typescriptlang.org/) with ESLint rules and Homebridge typings pre-configured
+- Automatic code compiling and Homebridge restart on code change with `npm run watch`
 
 ### Dynamic Template
 
@@ -34,8 +34,8 @@ For more information about verification and the criteria, see the [Verified By H
 
 Your plugin should say which transports it publishes accessories over, using `package.json` keywords alongside the `homebridge-plugin` keyword you already have:
 
-* `supports-hap` — the plugin publishes accessories over HAP (HomeKit)
-* `supports-matter` — the plugin registers Matter accessories itself
+- `supports-hap` — the plugin publishes accessories over HAP (HomeKit)
+- `supports-matter` — the plugin registers Matter accessories itself
 
 ```json
 {
@@ -60,6 +60,6 @@ For the full table of what each combination does, see [Matter Plugins](https://g
 
 ⚠️ The following templates are kept here for reference but are no longer maintained. For any existing plugin of one of the following types, it is recommended to update your plugin to the dynamic platform type.
 
-* [Accessory Plugin](https://github.com/homebridge/homebridge-examples/blob/master/accessory-example-typescript)
-* [Independent Platform Plugin](https://github.com/homebridge/homebridge-examples/blob/master/independent-platform-example-typescript)
-* [Bridged Camera Platform](https://github.com/homebridge/homebridge-examples/blob/master/bridged-camera-example-typescript)
+- [Accessory Plugin](https://github.com/homebridge/homebridge-examples/blob/master/accessory-example-typescript)
+- [Independent Platform Plugin](https://github.com/homebridge/homebridge-examples/blob/master/independent-platform-example-typescript)
+- [Bridged Camera Platform](https://github.com/homebridge/homebridge-examples/blob/master/bridged-camera-example-typescript)

@@ -1,17 +1,15 @@
 @if (!notFound) {
   <div>
-    <article class="docs-article" #markdownOutput>
-      <markdown [src]="'docs' + page" (load)="onLoad($event)" (error)="onError($event)"></markdown>
+    <article #markdownOutput class="docs-article">
+      <markdown [src]="'docs' + page" (load)="onLoad($event)" (error)="onError()" />
     </article>
     <div class="w-100 text-center">
       <a [href]="'https://github.com/homebridge/homebridge.github.io/tree/source/src/docs' + page">Edit on GitHub</a>
     </div>
   </div>
-}
-
-@if (notFound) {
+} @else {
   <div class="text-center">
-    <article class="docs-article mt-5" #markdownOutput>
+    <article #markdownOutput class="docs-article mt-5">
       <h3>Page Not Found</h3>
     </article>
   </div>

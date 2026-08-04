@@ -1,13 +1,15 @@
 {
-  "private": true,
   "name": "homebridge.github.io",
+  "type": "module",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration production --output-path dist",
-    "lint": "ng lint",
-    "gen": "tsx scripts/gen.ts && tsx scripts/gen-matter.ts && tsx scripts/sitemap.ts"
+    "lint": "eslint . --max-warnings=0",
+    "gen": "tsx scripts/gen.ts && tsx scripts/gen-matter.ts && tsx scripts/sitemap.ts",
+    "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
     "@angular/animations": "^18.2.14",
@@ -28,21 +30,19 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.2.21",
-    "@angular-eslint/builder": "^18.4.3",
-    "@angular-eslint/eslint-plugin": "^18.4.3",
-    "@angular-eslint/eslint-plugin-template": "^18.4.3",
-    "@angular-eslint/schematics": "^18.4.3",
-    "@angular-eslint/template-parser": "^18.4.3",
+    "@angular-eslint/eslint-plugin": "^22.1.0",
+    "@angular-eslint/eslint-plugin-template": "^22.1.0",
+    "@angular-eslint/template-parser": "^22.1.0",
     "@angular/cli": "^18.2.21",
     "@angular/compiler-cli": "^18.2.14",
     "@angular/language-service": "^18.2.14",
+    "@antfu/eslint-config": "^9.2.0",
     "@fortawesome/fontawesome-free": "^7.3.1",
     "@homebridge/hap-nodejs": "^2.1.9",
+    "@prettier/plugin-xml": "^3.4.2",
     "@types/node": "^26.1.2",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
     "decamelize": "^6.0.1",
-    "eslint": "^8.57.1",
+    "eslint-plugin-format": "^2.0.1",
     "homebridge": "^2.2.1",
     "inflection": "^3.0.2",
     "tsx": "^4.23.1",
@@ -55,5 +55,11 @@
     "nice-napi": true,
     "@fortawesome/fontawesome-free": false
   },
-  "type": "module"
+  "overrides": {
+    "@antfu/eslint-config": {
+      "@angular-eslint/eslint-plugin": "^22.1.0",
+      "@angular-eslint/eslint-plugin-template": "^22.1.0",
+      "@angular-eslint/template-parser": "^22.1.0"
+    }
+  }
 }

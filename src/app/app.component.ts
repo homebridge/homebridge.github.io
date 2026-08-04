@@ -1,34 +1,35 @@
-import { Component, HostListener } from '@angular/core';
-import { HapService } from './hap.service';
-import { MatterService } from './matter.service';
-import { SidebarService } from './sidebar.service';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, inject } from '@angular/core'
+import { NavigationEnd, Router } from '@angular/router'
+
+import { HapService } from './hap.service'
+import { MatterService } from './matter.service'
+import { SidebarService } from './sidebar.service'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrl: './app.component.scss',
+  host: {
+    '(window:resize)': 'onWindowResize()',
+  },
 })
 export class AppComponent {
+  hapService = inject(HapService)
+  matterService = inject(MatterService)
+  sidebarService = inject(SidebarService)
 
-  constructor(
-    public hapService: HapService,
-    public matterService: MatterService,
-    public sidebarService: SidebarService,
-    router: Router,
-  ) {
+  constructor() {
+    const router = inject(Router)
 
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         // Close sidebar after navigation on mobile
-        this.sidebarService.closeOnMobile();
+        this.sidebarService.closeOnMobile()
       }
-    });
-
+    })
   }
 
-  @HostListener('window:resize')
   onWindowResize() {
-    this.sidebarService.matchWindowSize();
+    this.sidebarService.matchWindowSize()
   }
 }

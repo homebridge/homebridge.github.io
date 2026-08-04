@@ -1,0 +1,205 @@
+import antfu from '@antfu/eslint-config'
+
+// Kept in step with the eslint setup in homebridge-config-ui-x — the same
+// packages, structure and rule set, with the paths adapted to this repo and
+// the generated files (which `npm run gen` rewrites unformatted) ignored.
+export default antfu(
+  {
+    ignores: ['dist', 'src/assets', 'src/docs/api/matter-clusters.md'],
+    typescript: true,
+    angular: true,
+    formatters: {
+      css: true,
+      html: true,
+      markdown: true,
+      svg: true,
+    },
+    rules: {
+      'markdown/require-alt-text': 'off',
+    },
+  },
+  {
+    // JS/TS-specific rules (these crash on non-JS SourceCode objects like markdown)
+    files: ['**/*.?([cm])[jt]s?(x)'],
+    rules: {
+      'curly': ['error', 'all'],
+      'jsdoc/check-alignment': 'error',
+      'jsdoc/check-line-alignment': 'error',
+      'jsdoc/no-bad-blocks': 'error',
+      'jsdoc/no-blank-block-descriptions': 'error',
+      'jsdoc/require-asterisk-prefix': 'error',
+      'jsdoc/require-description-complete-sentence': 'off',
+      'jsdoc/require-hyphen-before-param-description': 'error',
+      'no-undef': 'error',
+      'perfectionist/sort-exports': 'error',
+      'perfectionist/sort-imports': [
+        'error',
+        {
+          groups: [
+            ['type-builtin', 'type-external', 'type-internal'],
+            ['type-parent', 'type-sibling', 'type-index'],
+            'builtin',
+            'external',
+            'internal',
+            ['parent', 'sibling', 'index'],
+            'side-effect',
+            'unknown',
+          ],
+          internalPattern: ['^@/.*'],
+          order: 'asc',
+          type: 'natural',
+          newlinesBetween: 1,
+        },
+      ],
+      'perfectionist/sort-named-exports': 'error',
+      'perfectionist/sort-named-imports': 'error',
+      'style/brace-style': ['error', '1tbs'],
+      'style/quote-props': ['error', 'consistent-as-needed'],
+      'ts/consistent-type-imports': 'off',
+      'unicorn/no-useless-spread': 'error',
+      'unused-imports/no-unused-vars': ['error', { caughtErrors: 'none', args: 'none' }],
+    },
+  },
+  {
+    // The fenced code snippets inside the docs are teaching material: they
+    // reference ambient homebridge names (api, accessory, Service, ...) and
+    // deliberately show fragments, so the real-code correctness rules and the
+    // fragment link checker (which mistakes /#/ router urls for in-document
+    // anchors) do not apply to them.
+    files: ['**/*.md', '**/*.md/**'],
+    rules: {
+      // The docs deliberately head their method-level sections with h3/h4
+      // under an h1 page title (and one long page uses several h1s) — the
+      // visual hierarchy comes from the theme.
+      'markdown/heading-increment': 'off',
+      'markdown/no-multiple-h1': 'off',
+      'markdown/no-missing-link-fragments': 'off',
+      'markdown/require-alt-text': 'off',
+      'new-cap': 'off',
+      'no-undef': 'off',
+      'no-use-before-define': 'off',
+      'node/handle-callback-err': 'off',
+      'node/prefer-global/process': 'off',
+      'unused-imports/no-unused-vars': 'off',
+    },
+  },
+)
+  .override('antfu/formatter/html', config => ({
+    ...config,
+    files: config.files,
+    ignores: ['src/app/**/*.html'],
+  }))
+  .override('antfu/angular/rules/ts', config => ({
+    ...config,
+    files: ['src/app/**/*.ts'],
+    rules: {
+      ...config.rules,
+      'angular/component-class-suffix': 'error',
+      'angular/component-max-inline-declarations': 'error',
+      'angular/component-selector': 'error',
+      'angular/consistent-component-styles': 'error',
+      'angular/contextual-decorator': 'error',
+      'angular/contextual-lifecycle': 'error',
+      'angular/directive-class-suffix': 'error',
+      'angular/directive-selector': 'error',
+      'angular/no-async-lifecycle-method': 'error',
+      'angular/no-attribute-decorator': 'error',
+      'angular/no-duplicates-in-metadata-arrays': 'error',
+      'angular/no-empty-lifecycle-method': 'error',
+      'angular/no-forward-ref': 'error',
+      'angular/no-implicit-take-until-destroyed': 'error',
+      'angular/no-input-prefix': 'error',
+      'angular/no-input-rename': 'error',
+      'angular/no-inputs-metadata-property': 'error',
+      'angular/no-lifecycle-call': 'error',
+      'angular/no-output-native': 'error',
+      'angular/no-output-on-prefix': 'error',
+      'angular/no-output-rename': 'error',
+      'angular/no-outputs-metadata-property': 'error',
+      'angular/no-pipe-impure': 'error',
+      'angular/no-queries-metadata-property': 'error',
+      'angular/pipe-prefix': 'error',
+      'angular/prefer-host-metadata-property': 'error',
+      'angular/prefer-inject': 'error',
+      // The next four need the standalone + signals + OnPush architecture the
+      // ui already has; enable them when this app makes that move.
+      'angular/prefer-on-push-component-change-detection': 'off',
+      'angular/prefer-output-emitter-ref': 'off',
+      'angular/prefer-signal-model': 'off',
+      'angular/prefer-signals': 'off',
+      'angular/prefer-standalone': 'off',
+      'angular/relative-url-prefix': 'error',
+      'angular/require-lifecycle-on-prototype': 'error',
+      'angular/require-localize-metadata': 'error',
+      'angular/runtime-localize': 'error',
+      'angular/sort-keys-in-type-decorator': 'error',
+      'angular/sort-lifecycle-methods': 'error',
+      'angular/use-component-selector': 'error',
+      'angular/use-component-view-encapsulation': 'error',
+      'angular/use-injectable-provided-in': 'error',
+      'angular/use-lifecycle-interface': 'error',
+      'angular/use-pipe-transform-interface': 'error',
+    },
+  }))
+  .override('antfu/angular/rules/template', config => ({
+    ...config,
+    files: ['src/app/**/*.html'],
+    rules: {
+      ...config.rules,
+      'angular-template/alt-text': 'error',
+      'angular-template/attributes-order': 'error',
+      'angular-template/banana-in-box': 'error',
+      'angular-template/button-has-type': 'error',
+      'angular-template/click-events-have-key-events': 'error',
+      'angular-template/conditional-complexity': 'error',
+      'angular-template/cyclomatic-complexity': 'off',
+      'angular-template/elements-content': 'error',
+      'angular-template/eqeqeq': 'error',
+      'angular-template/i18n': 'off',
+      'angular-template/interactive-supports-focus': 'error',
+      'angular-template/label-has-associated-control': 'error',
+      'angular-template/mouse-events-have-key-events': 'error',
+      'angular-template/no-any': 'error',
+      'angular-template/no-autofocus': 'error',
+      'angular-template/no-call-expression': 'off',
+      'angular-template/no-distracting-elements': 'error',
+      'angular-template/no-duplicate-attributes': 'error',
+      'angular-template/no-empty-control-flow': 'error',
+      'angular-template/no-inline-styles': ['error', { allowBindToStyle: true }],
+      'angular-template/no-interpolation-in-attributes': 'error',
+      'angular-template/no-negated-async': 'error',
+      'angular-template/no-nested-tags': 'error',
+      'angular-template/no-positive-tabindex': 'error',
+      'angular-template/prefer-at-else': 'error',
+      'angular-template/prefer-at-empty': 'error',
+      'angular-template/prefer-built-in-pipes': 'error',
+      'angular-template/prefer-class-binding': 'error',
+      'angular-template/prefer-contextual-for-variables': 'error',
+      'angular-template/prefer-control-flow': 'error',
+      'angular-template/prefer-ngsrc': 'off',
+      'angular-template/prefer-self-closing-tags': 'error',
+      'angular-template/prefer-static-string-properties': 'error',
+      // Template literals inside template expressions need Angular 19.2 —
+      // its fixer breaks the build on Angular 18. Enable after that upgrade.
+      'angular-template/prefer-template-literal': 'off',
+      'angular-template/role-has-required-aria': 'error',
+      'angular-template/table-scope': 'error',
+      'angular-template/use-track-by-function': 'error',
+      'angular-template/valid-aria': 'error',
+      'format/prettier': ['error', {
+        parser: 'angular',
+        endOfLine: 'auto',
+        printWidth: 120,
+        semi: false,
+        singleQuote: true,
+        tabWidth: 2,
+        trailingComma: 'all',
+        useTabs: false,
+      }],
+      'style/no-multiple-empty-lines': 'off',
+      // antfu's base config enables `style/spaced-comment` for JS comments, but
+      // it falsely matches HTML `<!-- ... -->` and demanded `<! -- ... - ->`,
+      // which renders as visible text. Turn off for templates.
+      'style/spaced-comment': 'off',
+    },
+  }))

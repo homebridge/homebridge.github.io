@@ -1,67 +1,73 @@
 // custom markdown css
 
 markdown {
-    blockquote {
-      color: #5b99ea;
+  blockquote {
+    color: #5b99ea;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    .anchor-link {
+      opacity: 0;
     }
-    
-    h1, h2, h3, h4, h5, h6 {
+
+    &:hover,
+    &:active {
       .anchor-link {
-        opacity: 0;
-      }
-
-      &:hover,&:active {
-        .anchor-link {
-          opacity: 1;
-        }
+        opacity: 1;
       }
     }
+  }
 
-    h3, h4 {
-      margin-top: 25px;
+  h3,
+  h4 {
+    margin-top: 25px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  // Reference tables (the generated Matter pages). Markdown emits a bare
+  // <table>, which Bootstrap does not style, so it needs its own rules.
+  // display: block lets a wide table scroll on its own rather than pushing
+  // the whole page sideways on a narrow screen.
+  table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #e9ecef;
+      text-align: left;
+      vertical-align: top;
     }
 
-    img {
-      max-width: 100%;
+    th {
+      border-bottom-width: 2px;
+      white-space: nowrap;
     }
 
-    // Reference tables (the generated Matter pages). Markdown emits a bare
-    // <table>, which Bootstrap does not style, so it needs its own rules.
-    // display: block lets a wide table scroll on its own rather than pushing
-    // the whole page sideways on a narrow screen.
-    table {
-      display: block;
-      overflow-x: auto;
-      max-width: 100%;
-      margin-bottom: 1rem;
-      border-collapse: collapse;
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
 
-      th, td {
-        padding: 0.5rem 0.75rem;
-        border-bottom: 1px solid #e9ecef;
-        text-align: left;
-        vertical-align: top;
-      }
-
-      th {
-        border-bottom-width: 2px;
-        white-space: nowrap;
-      }
-
-      tr:last-child td {
-        border-bottom: none;
-      }
+  .callout-block {
+    h4 {
+      margin-top: 0px;
     }
 
-
-
-    .callout-block {
-      h4 {
-        margin-top: 0px;
-      }
-
-      .anchor-link {
-        display: none;
-      }
+    .anchor-link {
+      display: none;
     }
+  }
 }

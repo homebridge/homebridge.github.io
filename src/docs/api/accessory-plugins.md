@@ -5,39 +5,39 @@
 Accessory plugins are HAP-only. There is no accessory-style path for Matter — a plugin exposing [Matter accessories](api/matter) always registers them through a platform.
 
 ### API.registerAccessory
+
 > API.registerAccessory(accessoryName: string, constructor: AccessoryPluginConstructor): void
 
 Register an "Accessory" type plugin. Accessory style plugins only expose a single accessory, but can be configured multiple times in the Homebridge `config.json` (once per accessory the user wants to create).
 
 ```js
 module.exports = (api) => {
-  api.registerAccessory('ExampleAccessoryName', ExampleAccessoryPlugin);
+  api.registerAccessory('ExampleAccessoryName', ExampleAccessoryPlugin)
 }
 
 class ExampleAccessoryPlugin {
-
   /**
    * REQUIRED - This is the entry point to your plugin
    */
   constructor(log, config, api) {
-    this.log = log;
-    this.config = config;
-    this.api = api;
+    this.log = log
+    this.config = config
+    this.api = api
 
-    this.log.debug('Example Accessory Plugin Loaded');
+    this.log.debug('Example Accessory Plugin Loaded')
 
     // your accessory must have an AccessoryInformation service
     this.informationService = new this.api.hap.Service.AccessoryInformation()
-      .setCharacteristic(this.api.hap.Characteristic.Manufacturer, "Custom Manufacturer")
-      .setCharacteristic(this.api.hap.Characteristic.Model, "Custom Model");
+      .setCharacteristic(this.api.hap.Characteristic.Manufacturer, 'Custom Manufacturer')
+      .setCharacteristic(this.api.hap.Characteristic.Model, 'Custom Model')
 
     // create a new "Switch" service
-    this.switchService = new this.api.hap.Service.Switch(this.name);
+    this.switchService = new this.api.hap.Service.Switch(this.name)
 
-    // link methods used when getting or setting the state of the service 
+    // link methods used when getting or setting the state of the service
     this.switchService.getCharacteristic(this.api.hap.Characteristic.On)
-      .onGet(this.getOnHandler.bind(this))   // bind to getOnHandler method below
-      .onSet(this.setOnHandler.bind(this));  // bind to setOnHandler method below
+      .onGet(this.getOnHandler.bind(this)) // bind to getOnHandler method below
+      .onSet(this.setOnHandler.bind(this)) // bind to setOnHandler method below
   }
 
   /**
@@ -48,20 +48,20 @@ class ExampleAccessoryPlugin {
     return [
       this.informationService,
       this.switchService,
-    ];
+    ]
   }
 
   async getOnHandler() {
-    this.log.info('Getting switch state');
+    this.log.info('Getting switch state')
 
     // get the current value of the switch in your own code
-    const value = false;
-  
-    return value;
+    const value = false
+
+    return value
   }
-  
+
   async setOnHandler(value) {
-    this.log.info('Setting switch state to:', value);
+    this.log.info('Setting switch state to:', value)
   }
 }
 ```
