@@ -19,6 +19,7 @@ const sitemap = [
   `${baseUrl}/api/hap-platform-methods`,
   `${baseUrl}/api/service`,
   `${baseUrl}/api/characteristics`,
+  `${baseUrl}/api/characteristic-warnings`,
   `${baseUrl}/api/log`,
   `${baseUrl}/api/matter`,
   `${baseUrl}/api/matter-platform-methods`,

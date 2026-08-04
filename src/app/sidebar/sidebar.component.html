@@ -61,6 +61,7 @@
               '/api/accessory-plugins',
               '/api/service',
               '/api/characteristics',
+              '/api/characteristic-warnings',
               '/categories'
             )
           "
@@ -92,6 +93,12 @@
       <li class="nav-item">
         <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/characteristics']"
           >Characteristics</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/api/characteristic-warnings']"
+          >Characteristic Warnings</a
         >
       </li>
 
