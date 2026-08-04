@@ -58,6 +58,9 @@
     top: 0.15rem;
     margin-right: 0;
     padding: 0.82rem 1.25rem;
+    // Font Awesome 7 sets an explicit width on solid icons, which collapses
+    // this box to its padding and pushes the glyph out to the right edge.
+    width: auto;
   }
 }
 
