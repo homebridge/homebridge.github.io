@@ -18,7 +18,7 @@ import { PrismDirective } from '../prism.directive'
   imports: [RouterLink, MarkdownComponent, PrismDirective],
   templateUrl: './service.component.html',
   styleUrl: './service.component.scss',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ServiceComponent implements OnInit {
   private currentRoute = inject(ActivatedRoute)

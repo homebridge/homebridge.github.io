@@ -19,7 +19,7 @@ import { Subscription } from 'rxjs'
   imports: [MarkdownComponent],
   templateUrl: './docs.component.html',
   styleUrl: './docs.component.scss',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DocsComponent implements OnInit, OnDestroy {
   private router = inject(Router)

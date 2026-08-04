@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
+import { toSignal } from '@angular/core/rxjs-interop'
 import { FormsModule } from '@angular/forms'
-import { Router, RouterLink, RouterLinkActive } from '@angular/router'
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router'
+import { filter, map } from 'rxjs/operators'
 
 import { HapService } from '../hap.service'
 import { MatterService } from '../matter.service'
@@ -12,7 +14,7 @@ import { SidebarService } from '../sidebar.service'
   imports: [FormsModule, SearchComponent, RouterLinkActive, RouterLink],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarComponent {
   hapService = inject(HapService)
@@ -20,8 +22,16 @@ export class SidebarComponent {
   sidebarService = inject(SidebarService)
   router = inject(Router)
 
-  public services
-  public id = 1
+  // The current url as a signal, so the section highlighting below re-runs
+  // on every navigation - a plain read of router.url would go stale under
+  // OnPush change detection.
+  private readonly currentUrl = toSignal(
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map(() => this.router.url),
+    ),
+    { initialValue: this.router.url },
+  )
 
   /**
    * Whether the open page belongs to the given paths, for lighting up a
@@ -31,7 +41,7 @@ export class SidebarComponent {
    * API Reference up for every /api page.
    */
   isSectionActive(...paths: string[]): boolean {
-    const url = this.router.url
+    const url = this.currentUrl()
     return paths.some(
       path =>
         url === path

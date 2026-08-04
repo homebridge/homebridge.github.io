@@ -16,7 +16,7 @@ import { Characteristic, HapService, Service } from '../hap.service'
   imports: [RouterLink],
   templateUrl: './characteristic.component.html',
   styleUrl: './characteristic.component.scss',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CharacteristicComponent implements OnInit {
   private currentRoute = inject(ActivatedRoute)

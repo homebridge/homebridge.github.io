@@ -19,7 +19,7 @@ import { MatterService } from '../matter.service'
   imports: [FormsModule, TypeaheadDirective],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent implements OnInit {
   private hapService = inject(HapService)

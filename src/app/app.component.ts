@@ -24,7 +24,7 @@ import { SidebarComponent } from './sidebar/sidebar.component'
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     '(window:resize)': 'onWindowResize()',
   },

@@ -121,9 +121,7 @@ export default antfu(
       'angular/pipe-prefix': 'error',
       'angular/prefer-host-metadata-property': 'error',
       'angular/prefer-inject': 'error',
-      // OnPush needs a verification pass of its own; enable it when the app
-      // makes that move.
-      'angular/prefer-on-push-component-change-detection': 'off',
+      'angular/prefer-on-push-component-change-detection': 'error',
       'angular/prefer-output-emitter-ref': 'error',
       'angular/prefer-signal-model': 'error',
       'angular/prefer-signals': 'error',

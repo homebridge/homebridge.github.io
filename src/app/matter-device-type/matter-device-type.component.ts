@@ -16,7 +16,7 @@ import { PrismDirective } from '../prism.directive'
   imports: [PrismDirective, RouterLink],
   templateUrl: './matter-device-type.component.html',
   styleUrl: './matter-device-type.component.scss',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MatterDeviceTypeComponent implements OnInit {
   private currentRoute = inject(ActivatedRoute)
