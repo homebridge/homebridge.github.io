@@ -21,15 +21,15 @@ For the attributes and commands each cluster carries, see the device type that u
 | `api.matter.clusterNames.CarbonMonoxideConcentrationMeasurement` | `carbonMonoxideConcentrationMeasurement` | — |
 | `api.matter.clusterNames.ColorControl` | `colorControl` | `ColorTemperatureLight`, `ExtendedColorLight` |
 | `api.matter.clusterNames.DoorLock` | `doorLock` | `DoorLock` |
-| `api.matter.clusterNames.ElectricalEnergyMeasurement` | `electricalEnergyMeasurement` | — |
-| `api.matter.clusterNames.ElectricalPowerMeasurement` | `electricalPowerMeasurement` | — |
+| `api.matter.clusterNames.ElectricalEnergyMeasurement` | `electricalEnergyMeasurement` | `ElectricalSensor` |
+| `api.matter.clusterNames.ElectricalPowerMeasurement` | `electricalPowerMeasurement` | `ElectricalSensor` |
 | `api.matter.clusterNames.FanControl` | `fanControl` | `Fan` |
 | `api.matter.clusterNames.Identify` | `identify` | — |
 | `api.matter.clusterNames.IlluminanceMeasurement` | `illuminanceMeasurement` | `LightSensor` |
 | `api.matter.clusterNames.LevelControl` | `levelControl` | `ColorTemperatureLight`, `DimmableLight`, `DimmableOutlet`, `ExtendedColorLight` |
 | `api.matter.clusterNames.NitrogenDioxideConcentrationMeasurement` | `nitrogenDioxideConcentrationMeasurement` | — |
 | `api.matter.clusterNames.OccupancySensing` | `occupancySensing` | `MotionSensor` |
-| `api.matter.clusterNames.OnOff` | `onOff` | `ColorTemperatureLight`, `DimmableLight`, `DimmableOutlet`, `ExtendedColorLight`, `OnOffLight`, `OnOffOutlet`, `Pump`, `RoomAirConditioner` |
+| `api.matter.clusterNames.OnOff` | `onOff` | `ColorTemperatureLight`, `DimmableLight`, `DimmableOutlet`, `ExtendedColorLight`, `OnOffLight`, `OnOffOutlet`, `OnOffSwitch`, `Pump`, `RoomAirConditioner` |
 | `api.matter.clusterNames.OzoneConcentrationMeasurement` | `ozoneConcentrationMeasurement` | — |
 | `api.matter.clusterNames.Pm10ConcentrationMeasurement` | `pm10ConcentrationMeasurement` | — |
 | `api.matter.clusterNames.Pm25ConcentrationMeasurement` | `pm25ConcentrationMeasurement` | — |
@@ -40,9 +40,9 @@ For the attributes and commands each cluster carries, see the device type that u
 | `api.matter.clusterNames.RvcOperationalState` | `rvcOperationalState` | `RoboticVacuumCleaner` |
 | `api.matter.clusterNames.RvcRunMode` | `rvcRunMode` | `RoboticVacuumCleaner` |
 | `api.matter.clusterNames.ServiceArea` | `serviceArea` | — |
-| `api.matter.clusterNames.SmokeCoAlarm` | `smokeCoAlarm` | — |
+| `api.matter.clusterNames.SmokeCoAlarm` | `smokeCoAlarm` | `SmokeSensor` |
 | `api.matter.clusterNames.Switch` | `switch` | `GenericSwitch` |
 | `api.matter.clusterNames.TemperatureMeasurement` | `temperatureMeasurement` | `TemperatureSensor` |
 | `api.matter.clusterNames.Thermostat` | `thermostat` | `RoomAirConditioner`, `Thermostat` |
 | `api.matter.clusterNames.ValveConfigurationAndControl` | `valveConfigurationAndControl` | `WaterValve` |
-| `api.matter.clusterNames.WindowCovering` | `windowCovering` | — |
+| `api.matter.clusterNames.WindowCovering` | `windowCovering` | `WindowCovering` |

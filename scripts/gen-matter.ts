@@ -68,14 +68,43 @@ function pickExampleAttribute(clusterId: string, attributes: string[]): string |
   return attributes.find(a => !nonStateAttribute.test(a)) ?? attributes[0]
 }
 
+/**
+ * Some device types compose no functional servers in their matter.js base
+ * definition - the cluster is feature-gated, and Homebridge attaches it at
+ * registration with features detected from the state the plugin declares
+ * (see homebridge's AccessoryManager). The behaviors walk below finds only
+ * `identify` for these, so their clusters are supplemented here: from
+ * homebridge's exported cluster definitions where available, and for
+ * SmokeCoAlarm from the matter.js requirement server with both alarm
+ * features - matching the most a plugin can declare.
+ */
+async function requirementClusters(clusterDefs: Record<string, any>): Promise<Record<string, Record<string, any>>> {
+  // @matter/main is homebridge's own dependency - the same definitions
+  // homebridge builds these endpoints from at runtime.
+  const { SmokeCoAlarmRequirements } = await import('@matter/main/devices/smoke-co-alarm')
+  const smokeCoAlarm = (SmokeCoAlarmRequirements.SmokeCoAlarmServer as any).with('SmokeAlarm', 'CoAlarm').cluster
+
+  return {
+    OnOffSwitch: { OnOff: clusterDefs.OnOff },
+    WindowCovering: { WindowCovering: clusterDefs.WindowCovering },
+    SmokeSensor: { SmokeCoAlarm: smokeCoAlarm },
+    ElectricalSensor: {
+      ElectricalPowerMeasurement: clusterDefs.ElectricalPowerMeasurement,
+      ElectricalEnergyMeasurement: clusterDefs.ElectricalEnergyMeasurement,
+    },
+  }
+}
+
 async function main() {
-  const { deviceTypes, clusterNames } = await import('homebridge')
+  const { deviceTypes, clusterNames, clusters: clusterDefs } = await import('homebridge')
 
   // cluster id (camelCase, e.g. 'onOff') -> friendly name (e.g. 'OnOff')
   const friendlyByClusterId = new Map<string, string>()
   for (const [friendly, id] of Object.entries(clusterNames)) {
     friendlyByClusterId.set(id as string, friendly)
   }
+
+  const supplements = await requirementClusters(clusterDefs as Record<string, any>)
 
   const parsed = Object.entries(deviceTypes).map(([name, deviceType]) => {
     const dt = deviceType as any
@@ -99,6 +128,21 @@ async function main() {
         }
       })
       .filter((c): c is NonNullable<typeof c> => c !== null)
+
+    for (const [friendly, def] of Object.entries(supplements[name] ?? {})) {
+      if (clusters.some(c => c.name === friendly)) {
+        continue
+      }
+      const id = (clusterNames as Record<string, string>)[friendly]
+      const attributes = Object.keys(def?.attributes ?? {})
+      clusters.push({
+        name: friendly,
+        id,
+        attributes,
+        exampleAttribute: pickExampleAttribute(id, attributes),
+        commands: Object.keys(def?.commands ?? {}),
+      })
+    }
 
     return {
       name,

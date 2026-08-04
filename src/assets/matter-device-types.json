@@ -425,7 +425,49 @@
         "deviceTypeId": 1296,
         "deviceTypeHex": "0x0510",
         "deviceRevision": 1,
-        "clusters": []
+        "clusters": [
+            {
+                "name": "ElectricalPowerMeasurement",
+                "id": "electricalPowerMeasurement",
+                "attributes": [
+                    "powerMode",
+                    "numberOfMeasurementTypes",
+                    "accuracy",
+                    "ranges",
+                    "voltage",
+                    "activeCurrent",
+                    "reactiveCurrent",
+                    "apparentCurrent",
+                    "activePower",
+                    "reactivePower",
+                    "apparentPower",
+                    "rmsVoltage",
+                    "rmsCurrent",
+                    "rmsPower",
+                    "frequency",
+                    "harmonicCurrents",
+                    "harmonicPhases",
+                    "powerFactor",
+                    "neutralCurrent"
+                ],
+                "exampleAttribute": "activePower",
+                "commands": []
+            },
+            {
+                "name": "ElectricalEnergyMeasurement",
+                "id": "electricalEnergyMeasurement",
+                "attributes": [
+                    "accuracy",
+                    "cumulativeEnergyImported",
+                    "cumulativeEnergyExported",
+                    "periodicEnergyImported",
+                    "periodicEnergyExported",
+                    "cumulativeEnergyReset"
+                ],
+                "exampleAttribute": "cumulativeEnergyImported",
+                "commands": []
+            }
+        ]
     },
     {
         "name": "ExtendedColorLight",
@@ -775,7 +817,28 @@
         "deviceTypeId": 259,
         "deviceTypeHex": "0x0103",
         "deviceRevision": 3,
-        "clusters": []
+        "clusters": [
+            {
+                "name": "OnOff",
+                "id": "onOff",
+                "attributes": [
+                    "onOff",
+                    "globalSceneControl",
+                    "onTime",
+                    "offWaitTime",
+                    "startUpOnOff"
+                ],
+                "exampleAttribute": "onOff",
+                "commands": [
+                    "off",
+                    "on",
+                    "toggle",
+                    "offWithEffect",
+                    "onWithRecallGlobalScene",
+                    "onWithTimedOff"
+                ]
+            }
+        ]
     },
     {
         "name": "Pump",
@@ -978,7 +1041,32 @@
         "deviceTypeId": 118,
         "deviceTypeHex": "0x0076",
         "deviceRevision": 1,
-        "clusters": []
+        "clusters": [
+            {
+                "name": "SmokeCoAlarm",
+                "id": "smokeCoAlarm",
+                "attributes": [
+                    "expressedState",
+                    "smokeState",
+                    "coState",
+                    "batteryAlert",
+                    "deviceMuted",
+                    "testInProgress",
+                    "hardwareFaultAlert",
+                    "endOfServiceAlert",
+                    "interconnectSmokeAlarm",
+                    "interconnectCoAlarm",
+                    "contaminationState",
+                    "smokeSensitivityLevel",
+                    "expiryDate",
+                    "unmounted"
+                ],
+                "exampleAttribute": "smokeState",
+                "commands": [
+                    "selfTestRequest"
+                ]
+            }
+        ]
     },
     {
         "name": "TemperatureSensor",
@@ -1113,6 +1201,35 @@
         "deviceTypeId": 514,
         "deviceTypeHex": "0x0202",
         "deviceRevision": 6,
-        "clusters": []
+        "clusters": [
+            {
+                "name": "WindowCovering",
+                "id": "windowCovering",
+                "attributes": [
+                    "type",
+                    "numberOfActuationsLift",
+                    "numberOfActuationsTilt",
+                    "configStatus",
+                    "currentPositionLiftPercentage",
+                    "currentPositionTiltPercentage",
+                    "operationalStatus",
+                    "targetPositionLiftPercent100ths",
+                    "targetPositionTiltPercent100ths",
+                    "endProductType",
+                    "currentPositionLiftPercent100ths",
+                    "currentPositionTiltPercent100ths",
+                    "mode",
+                    "safetyStatus"
+                ],
+                "exampleAttribute": "currentPositionLiftPercent100ths",
+                "commands": [
+                    "upOrOpen",
+                    "downOrClose",
+                    "stopMotion",
+                    "goToLiftPercentage",
+                    "goToTiltPercentage"
+                ]
+            }
+        ]
     }
 ]
