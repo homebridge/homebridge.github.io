@@ -109,18 +109,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "hap:build"
+            "buildTarget": "hap:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "hap:build:production"
+              "buildTarget": "hap:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hap:build"
+            "buildTarget": "hap:build"
           }
         },
         "lint": {

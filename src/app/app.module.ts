@@ -5,7 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
-import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { MarkdownModule, MarkedRenderer, MARKED_OPTIONS } from 'ngx-markdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,9 +41,21 @@ import { MatterDeviceTypeComponent } from './matter-device-type/matter-device-ty
     MarkdownModule.forRoot({
       loader: HttpClient,
       markedOptions: {
-        provide: MarkedOptions,
-        useValue: {
-          baseUrl: '/#/',
+        provide: MARKED_OPTIONS,
+        // marked 9 removed the baseUrl option this site relied on, so the same
+        // behaviour lives in a link renderer instead: a relative link in the
+        // markdown resolves under the hash router rather than escaping it and
+        // 404ing on GitHub Pages. Absolute links, fragments and full URLs pass
+        // through untouched. Images are unaffected - every image in the docs
+        // uses a full URL.
+        useFactory: () => {
+          const renderer = new MarkedRenderer();
+          renderer.link = (href: string, title: string | null | undefined, text: string) => {
+            const target = /^([a-z][a-z0-9+.-]*:|\/|#)/i.test(href) ? href : `/#/${href}`;
+            const titleAttr = title ? ` title="${title}"` : '';
+            return `<a href="${target}"${titleAttr}>${text}</a>`;
+          };
+          return { renderer };
         },
       },
     }),
