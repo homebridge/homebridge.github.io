@@ -35,6 +35,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: master # The branch the action should deploy to.
-          folder: dist/browser # The application builder nests the site in a browser subfolder.
+          folder: dist/hap/browser # The application builder nests the site in a browser subfolder.
           clean: true
           ssh-key: true
