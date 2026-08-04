@@ -11,7 +11,9 @@ Everything useful that lives outside this site.
 ## Reference documentation
 
 - [HAP-NodeJS API reference](https://developers.homebridge.io/HAP-NodeJS/modules.html) — the generated documentation for every type in the library behind [api.hap](api/hap), including the parts this site does not cover.
+- [Homebridge UI API reference](https://github.com/homebridge/homebridge-config-ui-x/wiki/API-Reference) — the UI's own HTTP API, with Swagger docs you can run locally.
 - [Matter specification](https://csa-iot.org/all-solutions/matter/) — the Connectivity Standards Alliance's own specification, which the [device types](matter-device-type) and clusters follow.
+- [HomeKit glossary of terms](https://github.com/homebridge/homebridge/wiki/HomeKit-Glossary-of-Terms) — worth a look if the HomeKit vocabulary is new to you.
 
 ## Source repositories
 
@@ -26,7 +28,17 @@ Everything useful that lives outside this site.
 - [Homebridge wiki](https://github.com/homebridge/homebridge/wiki) — installation, configuration and troubleshooting, mostly user-facing.
 - [Matter Plugins](https://github.com/homebridge/homebridge/wiki/Matter-Plugins) — how transports and bridges fit together, including the full transport keyword table.
 - [homebridge-matter wiki](https://github.com/homebridge-plugins/homebridge-matter/wiki) — complete worked examples for every Matter device type.
-- [Verified By Homebridge](https://github.com/homebridge/plugins) — the verification programme and its criteria.
+- [Child Bridges](https://github.com/homebridge/homebridge/wiki/Child-Bridges) — worth understanding, since running a plugin in its own child bridge is the usual advice when it is slow or crash-prone.
+- [Bluetooth Plugins](https://github.com/homebridge/homebridge/wiki/Bluetooth-Plugins) — if your plugin talks to BLE devices, it will most likely use a `noble` fork; this page covers which, and the setup users need.
+- [FFmpeg for Homebridge](https://github.com/homebridge/ffmpeg-for-homebridge#readme) — prebuilt FFmpeg binaries, useful for [camera plugins](api/cameras).
+- [Getting started video](https://www.youtube.com/watch?v=cptIm2naxs4) — a walkthrough of building a plugin.
+
+## Publishing and the plugin programmes
+
+- [Verified By Homebridge](https://github.com/homebridge/plugins) — the verification programme, its criteria and how to apply. See [Publishing](publishing).
+- [Scoped Plugins](https://github.com/homebridge/plugins/wiki/Scoped-Plugins) — the `@homebridge-plugins/` npm scope and why plugins move to it.
+- [Unmaintained Plugins](https://github.com/homebridge/plugins/wiki/Unmaintained-Plugins) — what happens to a plugin whose maintainer steps away.
+- [Donation Links](https://github.com/homebridge/homebridge/wiki/Donation-Links) — the `funding` field that puts a Donate button on your plugin tile.
 
 ## Community
 
