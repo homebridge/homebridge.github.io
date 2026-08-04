@@ -4,8 +4,6 @@ import { MatterService } from './matter.service';
 import { SidebarService } from './sidebar.service';
 import { Router, NavigationEnd } from '@angular/router';
 
-declare let gtag: Function;
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,14 +20,6 @@ export class AppComponent {
 
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-
-        // Google Analytics Event Trigger
-        gtag('config', 'UA-165871119-1',
-          {
-            'page_path': '/#' + event.urlAfterRedirects,
-          },
-        );
-
         // Close sidebar after navigation on mobile
         this.sidebarService.closeOnMobile();
       }
