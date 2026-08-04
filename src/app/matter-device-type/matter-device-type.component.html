@@ -13,7 +13,7 @@
       <h3>Usage</h3>
       <p>Pass this device type when registering the accessory:</p>
       <div class="docs-code-block">
-        <pre class="language-js" [appPrism]="'deviceType: api.matter.deviceTypes.' + deviceType.name + ','"></pre>
+        <pre class="language-js" [appPrism]="`deviceType: api.matter.deviceTypes.${deviceType.name},`"></pre>
       </div>
     </section>
     @if (deviceType.clusters.length) {

@@ -179,9 +179,7 @@ export default antfu(
       'angular-template/prefer-ngsrc': 'off',
       'angular-template/prefer-self-closing-tags': 'error',
       'angular-template/prefer-static-string-properties': 'error',
-      // Template literals inside template expressions need Angular 19.2 —
-      // its fixer breaks the build on Angular 18. Enable after that upgrade.
-      'angular-template/prefer-template-literal': 'off',
+      'angular-template/prefer-template-literal': 'error',
       'angular-template/role-has-required-aria': 'error',
       'angular-template/table-scope': 'error',
       'angular-template/use-track-by-function': 'error',
