@@ -1,9 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const services = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/assets/services.json'), 'utf-8'));
-const characteristics = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/assets/characteristics.json'), 'utf-8'));
-const matterDeviceTypes = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/assets/matter-device-types.json'), 'utf-8'));
+const services = JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, '../src/assets/services.json'), 'utf-8'));
+const characteristics = JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, '../src/assets/characteristics.json'), 'utf-8'));
+const matterDeviceTypes = JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, '../src/assets/matter-device-types.json'), 'utf-8'));
 
 const baseUrl = 'https://developers.homebridge.io/#';
 
@@ -35,4 +35,4 @@ for (const deviceType of matterDeviceTypes) {
 }
 
 
-fs.writeFileSync(path.resolve(__dirname, '../src/sitemap.txt'), sitemap.join('\n'), 'utf-8');
+fs.writeFileSync(path.resolve(import.meta.dirname, '../src/sitemap.txt'), sitemap.join('\n'), 'utf-8');
