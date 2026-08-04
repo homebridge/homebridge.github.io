@@ -1,12 +1,12 @@
 import { Directive, ElementRef, inject, input, OnChanges } from '@angular/core'
 
-declare let Prism
+declare let Prism: any
 
 @Directive({ selector: '[appPrism]' })
 export class PrismDirective implements OnChanges {
   private el = inject(ElementRef)
 
-  readonly appPrism = input(undefined)
+  readonly appPrism = input('')
 
   ngOnChanges(): void {
     const codeElement = document.createElement('code')

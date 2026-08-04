@@ -44,7 +44,7 @@ export class HapService {
   public readonly characteristics = signal<Characteristic[]>([])
   public readonly categories = signal<Categories[]>([])
 
-  public perms = {
+  public perms: Record<string, string> = {
     pr: 'Paired Read',
     pw: 'Paired Write',
     ev: 'Events',
@@ -84,7 +84,9 @@ export class HapService {
   }
 
   getCharacteristicsByUUID(uuid: string) {
-    return this.characteristics().find(x => x.UUID === uuid)
+    // The uuids come from the services' own characteristic lists, so they are
+    // always present in the generated dataset.
+    return this.characteristics().find(x => x.UUID === uuid)!
   }
 
   getServiceTypesUsedByCharacteristic(uuid: string) {

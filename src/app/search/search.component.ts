@@ -2,17 +2,21 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
-  OnInit,
   signal,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { Router } from '@angular/router'
-import { TypeaheadDirective } from 'ngx-bootstrap/typeahead'
+import { TypeaheadDirective, TypeaheadMatch } from 'ngx-bootstrap/typeahead'
 import { Observable, Observer, of } from 'rxjs'
 import { debounceTime, switchMap } from 'rxjs/operators'
 
 import { HapService } from '../hap.service'
 import { MatterService } from '../matter.service'
+
+interface SearchResult {
+  routerLink: string[]
+  label: string
+}
 
 @Component({
   selector: 'app-search',
@@ -21,21 +25,20 @@ import { MatterService } from '../matter.service'
   styleUrl: './search.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
   private hapService = inject(HapService)
   private matterService = inject(MatterService)
   private router = inject(Router)
 
-  public searchProvider: Observable<any>
-  public readonly query = signal<string>(null)
+  public readonly query = signal<string | null>(null)
 
-  ngOnInit(): void {
-    this.searchProvider = new Observable((observer: Observer<string>) => {
+  public searchProvider: Observable<SearchResult[]>
+    = new Observable((observer: Observer<string | null>) => {
       observer.next(this.query())
     }).pipe(
       debounceTime(200),
-      switchMap((query: string) => {
-        query = query.toLocaleLowerCase()
+      switchMap((rawQuery: string | null) => {
+        const query = (rawQuery ?? '').toLocaleLowerCase()
 
         const matchingServices = this.hapService.services().filter((x) => {
           return (
@@ -55,7 +58,7 @@ export class SearchComponent implements OnInit {
           },
         )
 
-        const results = []
+        const results: SearchResult[] = []
 
         results.push(
           ...matchingServices.map((x) => {
@@ -96,9 +99,8 @@ export class SearchComponent implements OnInit {
         return of(results)
       }),
     )
-  }
 
-  onSelect(event) {
+  onSelect(event: TypeaheadMatch<SearchResult>) {
     this.router.navigate(event.item.routerLink)
     this.query.set(null)
   }

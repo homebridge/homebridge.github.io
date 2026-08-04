@@ -24,12 +24,12 @@ export class MatterDeviceTypeComponent implements OnInit {
   private titleService = inject(Title)
 
   public readonly deviceTypeName = signal<string>('')
-  public readonly deviceType = signal<MatterDeviceType>(undefined)
-  public readonly exampleCode = signal<string>(null)
+  public readonly deviceType = signal<MatterDeviceType | undefined>(undefined)
+  public readonly exampleCode = signal<string | null>(null)
 
   ngOnInit(): void {
     this.currentRoute.paramMap.subscribe((params) => {
-      this.deviceTypeName.set(params.get('deviceTypeName'))
+      this.deviceTypeName.set(params.get('deviceTypeName') ?? '')
       this.deviceType.set(this.matterService.getDeviceTypeByName(
         this.deviceTypeName(),
       ))
@@ -42,16 +42,11 @@ export class MatterDeviceTypeComponent implements OnInit {
     })
   }
 
-  /**
-   * The first attribute of a cluster is its primary one (onOff, currentLevel,
-   * and so on), which is what an example wants to show.
-   */
-  primaryAttribute(clusterIndex: number): string {
-    return this.deviceType().clusters[clusterIndex]?.attributes[0]
-  }
-
   generateExample() {
     const deviceType = this.deviceType()
+    if (!deviceType) {
+      return
+    }
     const clusters = deviceType.clusters
 
     const initialState = clusters

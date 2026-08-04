@@ -29,10 +29,10 @@ export class DocsComponent implements OnInit, OnDestroy {
   public readonly page = signal<string>('')
   public readonly notFound = signal(false)
 
-  private hash: string
-  private url: string
+  private hash = ''
+  private url = ''
 
-  private navigationSubscription: Subscription
+  private navigationSubscription?: Subscription
 
   private readonly markdownOutput = viewChild<ElementRef>('markdownOutput')
 
@@ -52,7 +52,7 @@ export class DocsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.navigationSubscription.unsubscribe()
+    this.navigationSubscription?.unsubscribe()
   }
 
   private loadPageFromUrl(): void {
@@ -68,11 +68,16 @@ export class DocsComponent implements OnInit, OnDestroy {
   }
 
   onLoad(page: string) {
+    const output: HTMLElement | undefined = this.markdownOutput()?.nativeElement
+    if (!output) {
+      return
+    }
+
     // add anchor links to heading elements
     const headings: HTMLHeadingElement[]
-      = this.markdownOutput().nativeElement.querySelectorAll('h2,h3,h4,h5,h6')
+      = output.querySelectorAll('h2,h3,h4,h5,h6') as unknown as HTMLHeadingElement[]
     for (const heading of Array.from(headings)) {
-      const id = heading.textContent
+      const id = (heading.textContent ?? '')
         .toLowerCase()
         .replace(/ /g, '-')
         .replace(/[^a-z-]/gi, '')
@@ -93,10 +98,10 @@ export class DocsComponent implements OnInit, OnDestroy {
 
     // convert relative # anchor links
     const links: HTMLAnchorElement[]
-      = this.markdownOutput().nativeElement.querySelectorAll('a')
+      = output.querySelectorAll('a') as unknown as HTMLAnchorElement[]
     for (const link of Array.from(links)) {
       const currentHref = link.getAttribute('href')
-      if (currentHref.startsWith('#') && !currentHref.startsWith('#/')) {
+      if (currentHref && currentHref.startsWith('#') && !currentHref.startsWith('#/')) {
         link.setAttribute('href', `#${this.url}${currentHref}`)
       }
     }

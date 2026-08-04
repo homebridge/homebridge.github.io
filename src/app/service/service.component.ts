@@ -27,23 +27,27 @@ export class ServiceComponent implements OnInit {
   private httpClient = inject(HttpClient)
 
   public readonly serviceName = signal<string>('')
-  public readonly service = signal<Service>(undefined)
+  public readonly service = signal<Service | undefined>(undefined)
 
   public readonly requiredCharacteristics = signal<Characteristic[]>([])
   public readonly optionalCharacteristics = signal<Characteristic[]>([])
 
-  public readonly exampleCode = signal<string>(null)
-  public readonly markdown = signal<string>(null)
+  public readonly exampleCode = signal<string | null>(null)
+  public readonly markdown = signal<string | null>(null)
 
   ngOnInit(): void {
     this.currentRoute.paramMap.subscribe((params) => {
-      this.serviceName.set(params.get('serviceName'))
-      this.service.set(this.hapService.getServiceByName(this.serviceName()))
+      this.serviceName.set(params.get('serviceName') ?? '')
+      const service = this.hapService.getServiceByName(this.serviceName())
+      this.service.set(service)
+      if (!service) {
+        return
+      }
 
-      this.requiredCharacteristics.set(this.service().requiredCharacteristics.map(
+      this.requiredCharacteristics.set(service.requiredCharacteristics.map(
         x => this.hapService.getCharacteristicsByUUID(x),
       ))
-      this.optionalCharacteristics.set(this.service().optionalCharacteristics.map(
+      this.optionalCharacteristics.set(service.optionalCharacteristics.map(
         x => this.hapService.getCharacteristicsByUUID(x),
       ))
 
@@ -69,7 +73,11 @@ export class ServiceComponent implements OnInit {
   }
 
   generateExample() {
-    this.exampleCode.set(`// Example ${this.service().displayName} Plugin
+    const service = this.service()
+    if (!service) {
+      return
+    }
+    this.exampleCode.set(`// Example ${service.displayName} Plugin
 
 module.exports = (api) => {
   api.registerAccessory('Example${this.serviceName()}Plugin', Example${this.serviceName()}Accessory);
@@ -88,7 +96,7 @@ class Example${this.serviceName()}Accessory {
       // extract name from config
       this.name = config.name;
 
-      // create a new ${this.service().displayName} service
+      // create a new ${service.displayName} service
       this.service = new this.Service(this.Service.${this.serviceName()});
 
       // create handlers for required characteristics

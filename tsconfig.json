@@ -6,10 +6,7 @@
     "experimentalDecorators": true,
     "module": "es2020",
     "moduleResolution": "bundler",
-    // TypeScript 6 turns strict on when the flag is absent; this codebase
-    // predates strict mode, so keep the old behaviour explicit until the
-    // planned modernisation pass takes strictness on properly.
-    "strict": false,
+    "strict": true,
     "declaration": false,
     "importHelpers": true,
     "outDir": "./dist/out-tsc",

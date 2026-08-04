@@ -24,18 +24,22 @@ export class CharacteristicComponent implements OnInit {
   private titleService = inject(Title)
 
   public readonly characteristicName = signal<string>('')
-  public readonly characteristic = signal<Characteristic>(undefined)
+  public readonly characteristic = signal<Characteristic | undefined>(undefined)
 
   public readonly usedBy = signal<Service[]>([])
 
   ngOnInit(): void {
     this.currentRoute.paramMap.subscribe((params) => {
-      this.characteristicName.set(params.get('characteristicName'))
-      this.characteristic.set(this.hapService.getCharacteristicsByName(
+      this.characteristicName.set(params.get('characteristicName') ?? '')
+      const characteristic = this.hapService.getCharacteristicsByName(
         this.characteristicName(),
-      ))
+      )
+      this.characteristic.set(characteristic)
+      if (!characteristic) {
+        return
+      }
       this.usedBy.set(this.hapService.getServiceTypesUsedByCharacteristic(
-        this.characteristic().UUID,
+        characteristic.UUID,
       ))
 
       this.titleService.setTitle(`Homebridge API - ${this.characteristicName()}`)
@@ -43,17 +47,18 @@ export class CharacteristicComponent implements OnInit {
   }
 
   public readonly characteristicPermissions = computed(() => {
-    return this.characteristic().props.perms.map(x => this.hapService.perms[x]).join(', ')
+    return (this.characteristic()?.props.perms ?? []).map(x => this.hapService.perms[x]).join(', ')
   })
 
   public readonly characteristicEvents = computed(() => {
     const events: string[] = []
+    const perms = this.characteristic()?.props.perms ?? []
 
-    if (this.characteristic().props.perms.includes('pr')) {
+    if (perms.includes('pr')) {
       events.push('get')
     }
 
-    if (this.characteristic().props.perms.includes('pw')) {
+    if (perms.includes('pw')) {
       events.push('set')
     }
 
