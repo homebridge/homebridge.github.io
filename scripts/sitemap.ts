@@ -20,6 +20,7 @@ const sitemap = [
   `${baseUrl}/api/service`,
   `${baseUrl}/api/characteristics`,
   `${baseUrl}/api/characteristic-warnings`,
+  `${baseUrl}/api/cameras`,
   `${baseUrl}/api/log`,
   `${baseUrl}/api/matter`,
   `${baseUrl}/api/matter-platform-methods`,
