@@ -12,7 +12,7 @@ await api.matter.switch.emitGesture(uuid, 'longPress')
 
 Homebridge enables the momentary switch features that back these helpers — short release, long press and multi-press — so all three gestures work without extra configuration.
 
-## Multi-button remotes
+#### Multi-button remotes
 
 `numberOfPositions` **counts the released state**, so it is one more than the number of buttons: `2` for a single button, `4` for a three-button remote.
 

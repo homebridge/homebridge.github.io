@@ -20,6 +20,6 @@ Four handlers can be called:
 - `windowCovering.upOrOpen` and `windowCovering.downOrClose` — full open and full close
 - `windowCovering.stopMotion` — stop where it is
 
-## Tilt
+#### Tilt
 
 Venetian blinds that tilt also carry `currentPositionTiltPercent100ths` and `targetPositionTiltPercent100ths`, on the same `0`–`10000` scale, where `0` is horizontal and `10000` is fully closed. Leave the tilt attributes out entirely for a covering that does not tilt.

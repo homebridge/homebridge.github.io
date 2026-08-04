@@ -1,6 +1,6 @@
 A smart plug. It behaves exactly like [OnOffLight](matter-device-type/OnOffLight) — `onOff.on` and `onOff.off` handlers — but presents as a plug rather than a light.
 
-## Reporting power and energy
+#### Reporting power and energy
 
 From Homebridge 2.2.0, an outlet can also report live power draw and energy totals. Declare `electricalPowerMeasurement` and/or `electricalEnergyMeasurement` state and Homebridge does the rest: it detects the clusters, adds the `ElectricalSensor` device type to the endpoint, and fills in the accuracy metadata Matter requires.
 

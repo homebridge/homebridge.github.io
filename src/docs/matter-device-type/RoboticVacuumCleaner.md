@@ -1,6 +1,6 @@
 A robot vacuum, and the most involved device type Homebridge supports.
 
-## It gets its own pairing code
+#### It gets its own pairing code
 
 **A robot vacuum is published on a Matter server of its own, not inside the bridge.** Homebridge does this for you — you register it exactly like any other accessory — but the user experience is different, and it generates support questions:
 
@@ -9,7 +9,7 @@ A robot vacuum, and the most involved device type Homebridge supports.
 
 If someone reports that every accessory appeared except the vacuum, this is almost always why.
 
-## Command handlers must update state themselves
+#### Command handlers must update state themselves
 
 Most clusters update their attribute automatically once your handler resolves. The operational commands here do not, because there is no single attribute to infer — `rvcOperationalState.pause`, `resume` and `goHome` must set the state explicitly:
 
@@ -26,7 +26,7 @@ const handlers = {
 }
 ```
 
-## Run modes, clean modes and rooms
+#### Run modes, clean modes and rooms
 
 `RvcRunMode` is what the vacuum is doing — idle, cleaning, mapping. `RvcCleanMode` is how it cleans — vacuum, mop, or both. The clean mode and service area clusters are only added when your accessory declares them, so a vacuum with a single mode does not have to pretend otherwise.
 

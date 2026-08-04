@@ -2,7 +2,7 @@ A heating and/or cooling thermostat.
 
 **All temperatures are in hundredths of a degree Celsius.** `2000` is 20.00°C.
 
-## Declare only the setpoints the device really has
+#### Declare only the setpoints the device really has
 
 Homebridge works out which thermostat features to advertise from the setpoints you declare, so this is the most important decision on this device type:
 
@@ -18,11 +18,11 @@ A heat-only radiator valve should declare a heating setpoint and nothing else. A
 
 When declaring both, set `minSetpointDeadBand` — the smallest gap allowed between the heating and cooling setpoints, in **tenths** of a degree, so `25` means 2.5°C.
 
-## localTemperature is read-only
+#### localTemperature is read-only
 
 `localTemperature` is the thermostat's own sensor reading and cannot be written. To report a temperature from a separate sensor, write `externalMeasuredIndoorTemperature` instead.
 
-## Handlers
+#### Handlers
 
 Commands arrive as `thermostat.systemModeChange`, `thermostat.occupiedHeatingSetpointChange` and `thermostat.occupiedCoolingSetpointChange`. Each request carries both the new value and the old one.
 

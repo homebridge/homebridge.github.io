@@ -1,6 +1,6 @@
 A dedicated power and energy meter, for a device whose whole purpose is measuring — a clamp meter or a whole-home energy monitor.
 
-For a plug that happens to measure its own consumption, you do not need this device type: declare the electrical clusters on the outlet instead and Homebridge composes the sensor for you. See [OnOffOutlet](matter-device-type/OnOffOutlet#reporting-power-and-energy).
+For a plug that happens to measure its own consumption, you do not need this device type: declare the electrical clusters on the outlet instead and Homebridge composes the sensor for you. See [OnOffOutlet](matter-device-type/OnOffOutlet).
 
 All values use raw Matter units — millivolts, milliamps, milliwatts and milliwatt-hours:
 
