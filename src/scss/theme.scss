@@ -74,6 +74,9 @@ $theme-colors: (
 @import "@fortawesome/fontawesome-free/scss/regular.scss";
 @import "@fortawesome/fontawesome-free/scss/brands.scss";
 
+// after Font Awesome, so the width override lands on top of .fas
+@import "custom-icons.scss";
+
 code {
   padding: 0px 0px 0px 0px;
 }

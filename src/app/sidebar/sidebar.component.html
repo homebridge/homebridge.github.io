@@ -24,11 +24,21 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link pointer" [routerLink]="['/api/accessory-plugins']" routerLinkActive="active">Accessory Plugins</a>
+        <a class="nav-link pointer" [routerLink]="['/api/log']" routerLinkActive="active">Log</a>
+      </li>
+
+      <li class="nav-item section-title mt-3">
+        <a class="nav-link" [routerLink]="['/api/platform-plugins']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+          <span class="theme-icon-holder mr-2"><i class="fas fa-hap"></i></span>HAP (Apple Home)
+        </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link pointer" [routerLink]="['/api/platform-plugins']" routerLinkActive="active">Platform Plugins</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" [routerLink]="['/api/accessory-plugins']" routerLinkActive="active">Accessory Plugins</a>
       </li>
 
       <li class="nav-item">
@@ -40,7 +50,21 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link pointer" [routerLink]="['/api/log']" routerLinkActive="active">Log</a>
+        <a class="nav-link pointer" [routerLink]="['/categories']" routerLinkActive="active">Categories</a>
+      </li>
+
+      <li class="nav-item section-title mt-3">
+        <a class="nav-link" [routerLink]="['/api/matter']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+          <span class="theme-icon-holder mr-2"><i class="fas fa-matter"></i></span>Matter
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" [routerLink]="['/api/matter']" routerLinkActive="active">Overview</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" [routerLink]="['/api/matter-clusters']" routerLinkActive="active">Clusters</a>
       </li>
 
       <li class="nav-item section-title mt-3">
@@ -54,19 +78,23 @@
       </li>
 
       <li class="nav-item section-title mt-3">
-        <a class="nav-link" [routerLink]="['/categories']" routerLinkActive="active">
-          <span class="theme-icon-holder mr-2"><i class="fas fa-boxes"></i></span>Categories
-        </a>
-      </li>
-
-      <li class="nav-item section-title mt-3">
         <a class="nav-link" [routerLink]="['/service']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
-          <span class="theme-icon-holder mr-2"><i class="fas fa-lightbulb"></i></span>Service Types
+          <span class="theme-icon-holder mr-2"><i class="fas fa-hap"></i></span>Service Types
         </a>
       </li>
 
       <li class="nav-item" *ngFor="let service of hapService.services">
         <a class="nav-link" [routerLink]="['/service', service.name]" routerLinkActive="active">{{ service.displayName }}</a>
+      </li>
+
+      <li class="nav-item section-title mt-3">
+        <a class="nav-link" [routerLink]="['/matter-device-type']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+          <span class="theme-icon-holder mr-2"><i class="fas fa-matter"></i></span>Device Types
+        </a>
+      </li>
+
+      <li class="nav-item" *ngFor="let deviceType of matterService.deviceTypes">
+        <a class="nav-link" [routerLink]="['/matter-device-type', deviceType.name]" routerLinkActive="active">{{ deviceType.name }}</a>
       </li>
     </ul>
   </nav>

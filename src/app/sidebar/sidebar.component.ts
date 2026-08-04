@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HapService } from '../hap.service';
+import { MatterService } from '../matter.service';
 
 declare var $: any;
 
@@ -15,6 +16,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
 
   constructor(
     public hapService: HapService,
+    public matterService: MatterService,
     public router: Router,
   ) { }
 

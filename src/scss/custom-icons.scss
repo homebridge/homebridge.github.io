@@ -1,0 +1,35 @@
+// Custom Font Awesome style icons for the two protocols Homebridge speaks.
+// Font Awesome has no HAP or Matter glyph, so these are drawn from SVGs and
+// masked with currentColor, which means they follow the surrounding text colour
+// exactly as a real Font Awesome icon does - including the sidebar's active
+// state, where the icon holder flips to white on purple.
+//
+// Kept in step with the same icons in homebridge-config-ui-x.
+
+.fa-hap,
+.fa-matter {
+  // Font Awesome sets a fixed width on .fas, which would letterbox these
+  width: auto !important;
+}
+
+.fa-hap::before {
+  content: '';
+  display: inline-block;
+  width: 1.125em;
+  height: 1.125em;
+  background-color: currentColor;
+  mask: url('../assets/images/hap.svg') no-repeat center/contain;
+  -webkit-mask: url('../assets/images/hap.svg') no-repeat center/contain;
+  vertical-align: -0.2em;
+}
+
+.fa-matter::before {
+  content: '';
+  display: inline-block;
+  width: 1.125em;
+  height: 1.125em;
+  background-color: currentColor;
+  mask: url('../assets/images/matter.svg') no-repeat center/contain;
+  -webkit-mask: url('../assets/images/matter.svg') no-repeat center/contain;
+  vertical-align: -0.2em;
+}
