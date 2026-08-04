@@ -1,25 +1,27 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnDestroy, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { Title } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-docs',
   templateUrl: './docs.component.html',
   styleUrls: ['./docs.component.scss'],
 })
-export class DocsComponent implements OnInit {
+export class DocsComponent implements OnInit, OnDestroy {
   public page: string;
   public hash: string;
   public url: string;
 
   public notFound = false;
 
+  private navigationSubscription: Subscription;
+
   @ViewChild('markdownOutput') private markdownOutput: ElementRef;
 
   constructor(
     private router: Router,
-    private currentRoute: ActivatedRoute,
     private viewportScroller: ViewportScroller,
     private titleService: Title,
   ) { }
@@ -27,19 +29,32 @@ export class DocsComponent implements OnInit {
   ngOnInit(): void {
     this.titleService.setTitle('Homebridge API');
 
-    this.currentRoute.url.subscribe((url) => {
-      this.notFound = false;
-
-      this.url = this.router.url.replace('%23', '#');
-      this.hash = this.url.substr(this.url.lastIndexOf('#'));
-
-      if (this.url.indexOf('#') > -1) {
-        this.url = this.url.substr(0, this.url.lastIndexOf('#'));
-        this.page = this.url === '/' ? '/' + 'home.md' : this.url + '.md';
-      } else {
-        this.page = this.url === '/' ? '/' + 'home.md' : this.url + '.md';
+    // All the /api pages sit under the single 'api' route, and from Angular 16
+    // the router no longer re-emits on that route's own observables when only
+    // the part of the url below it changes. The reload is therefore driven
+    // from the router's NavigationEnd events rather than the activated route.
+    this.loadPageFromUrl();
+    this.navigationSubscription = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.loadPageFromUrl();
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.navigationSubscription.unsubscribe();
+  }
+
+  private loadPageFromUrl(): void {
+    this.notFound = false;
+
+    this.url = this.router.url.replace('%23', '#');
+    this.hash = this.url.substr(this.url.lastIndexOf('#'));
+
+    if (this.url.indexOf('#') > -1) {
+      this.url = this.url.substr(0, this.url.lastIndexOf('#'));
+    }
+    this.page = this.url === '/' ? '/' + 'home.md' : this.url + '.md';
   }
 
   onLoad(page: string) {
