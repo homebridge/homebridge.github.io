@@ -151,6 +151,22 @@ If you have added more than one service of the same type to an accessory, you wi
 const service2 = accessory.getService('Light Bulb 1')
 ```
 
+### PlatformAccessory.getServiceById
+
+> PlatformAccessory.getServiceById(uuid: string | T, subType: string): Service | undefined
+
+Returns an existing service by its type and the "subtype" it was added with — the reliable way to find one of several services of the same type, since the subtype cannot be changed by the user renaming the service.
+
+```js
+const service2 = accessory.getServiceById(this.api.hap.Service.Lightbulb, 'USER_DEFINED_SUBTYPE')
+```
+
+### PlatformAccessory.updateDisplayName
+
+> PlatformAccessory.updateDisplayName(name: string): void
+
+Change the accessory's display name after it has been created, for example when the device is renamed in the manufacturer's own app.
+
 ### PlatformAccessory.removeService
 
 > PlatformAccessory.removeService(service: Service): void
