@@ -21,7 +21,6 @@
     "bootstrap": "^5.3.8",
     "marked": "^12.0.2",
     "ngx-bootstrap": "^18.1.3",
-    "ngx-highlightjs": "^7.0.1",
     "ngx-markdown": "^18.1.0",
     "rxjs": "~7.8.2",
     "tslib": "^2.8.1",
