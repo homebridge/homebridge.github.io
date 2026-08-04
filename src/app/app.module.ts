@@ -20,7 +20,7 @@ import { ServiceComponent } from './service/service.component'
 import { SidebarComponent } from './sidebar/sidebar.component'
 
 @NgModule({
-  imports: [CommonModule, BrowserModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, TypeaheadModule.forRoot(), MarkdownModule.forRoot({
+  imports: [CommonModule, BrowserModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, TypeaheadModule, MarkdownModule.forRoot({
     loader: HttpClient,
     markedOptions: {
       provide: MARKED_OPTIONS,
