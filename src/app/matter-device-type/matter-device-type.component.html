@@ -21,8 +21,8 @@
         <h3>Clusters</h3>
         <p>
           The clusters this device type carries. <strong>Attributes</strong> are the values you push with
-          <a fragment="apimatterupdateaccessorystate" [routerLink]="['/api/matter']">updateAccessoryState()</a>, and
-          <strong>commands</strong> are what a controller sends you, which you answer with a handler.
+          <a fragment="apimatterupdateaccessorystate" [routerLink]="['/api/matter-state']">updateAccessoryState()</a>,
+          and <strong>commands</strong> are what a controller sends you, which you answer with a handler.
         </p>
         @for (cluster of deviceType.clusters; track cluster) {
           <div class="mb-4">
