@@ -58,7 +58,7 @@ export class DocsComponent implements OnInit, OnDestroy {
   private loadPageFromUrl(): void {
     this.notFound.set(false)
 
-    this.url = this.router.url.replace('%23', '#')
+    this.url = this.router.url.replace(/%23/g, '#')
     this.hash = this.url.substr(this.url.lastIndexOf('#'))
 
     if (this.url.includes('#')) {
