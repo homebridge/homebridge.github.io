@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http'
 import {
   ChangeDetectionStrategy,
   Component,
@@ -7,13 +8,14 @@ import {
 } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { ActivatedRoute, RouterLink } from '@angular/router'
+import { MarkdownComponent } from 'ngx-markdown'
 
 import { MatterDeviceType, MatterService } from '../matter.service'
 import { PrismDirective } from '../prism.directive'
 
 @Component({
   selector: 'app-matter-device-type',
-  imports: [PrismDirective, RouterLink],
+  imports: [MarkdownComponent, PrismDirective, RouterLink],
   templateUrl: './matter-device-type.component.html',
   styleUrl: './matter-device-type.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,10 +24,12 @@ export class MatterDeviceTypeComponent implements OnInit {
   private currentRoute = inject(ActivatedRoute)
   private matterService = inject(MatterService)
   private titleService = inject(Title)
+  private httpClient = inject(HttpClient)
 
   public readonly deviceTypeName = signal<string>('')
   public readonly deviceType = signal<MatterDeviceType | undefined>(undefined)
   public readonly exampleCode = signal<string | null>(null)
+  public readonly notes = signal<string | null>(null)
 
   ngOnInit(): void {
     this.currentRoute.paramMap.subscribe((params) => {
@@ -36,10 +40,28 @@ export class MatterDeviceTypeComponent implements OnInit {
 
       if (this.deviceType()) {
         this.generateExample()
+        this.getNotes()
       }
 
       this.titleService.setTitle(`Homebridge API - ${this.deviceTypeName()}`)
     })
+  }
+
+  /**
+   * Per-device-type notes are optional. A device type with nuances worth
+   * knowing gets a markdown file of the same name, which is shown alongside
+   * the generated clusters and example; the rest simply have none.
+   */
+  getNotes(): void {
+    this.notes.set(null)
+    this.httpClient
+      .get(`/docs/matter-device-type/${this.deviceTypeName()}.md`, {
+        responseType: 'text',
+      })
+      .subscribe({
+        next: res => this.notes.set(res),
+        error: () => this.notes.set(null),
+      })
   }
 
   generateExample() {

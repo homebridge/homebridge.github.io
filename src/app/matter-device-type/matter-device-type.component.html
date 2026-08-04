@@ -16,6 +16,12 @@
         <pre class="language-js" [appPrism]="`deviceType: api.matter.deviceTypes.${deviceType.name},`"></pre>
       </div>
     </section>
+    @if (notes(); as notes) {
+      <section class="device-type-notes">
+        <h3>Notes</h3>
+        <markdown [data]="notes"></markdown>
+      </section>
+    }
     @if (deviceType.clusters.length) {
       <section>
         <h3>Clusters</h3>
