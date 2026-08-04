@@ -13,6 +13,7 @@ This section covers everything Matter-specific:
 - [Platform Methods](api/matter-platform-methods) — registering and managing Matter accessories
 - [State](api/matter-state) — keeping the values a controller sees in sync with the real device
 - [Errors](api/matter-errors) — reporting failures with the right Matter status code
+- [Device Guides](api/matter-devices) — per-family handler names, value scales and quirks
 - [Device Types](matter-device-type) — every device type Homebridge supports, with its clusters
 - [Clusters](api/matter-clusters) — every cluster, and which device types use it
 

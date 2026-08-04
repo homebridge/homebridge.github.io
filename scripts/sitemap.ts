@@ -23,6 +23,7 @@ const sitemap = [
   `${baseUrl}/api/matter-platform-methods`,
   `${baseUrl}/api/matter-state`,
   `${baseUrl}/api/matter-errors`,
+  `${baseUrl}/api/matter-devices`,
   `${baseUrl}/api/matter-clusters`,
   `${baseUrl}/config-schema`,
   `${baseUrl}/categories`,
