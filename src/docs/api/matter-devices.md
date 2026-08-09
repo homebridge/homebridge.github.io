@@ -74,6 +74,8 @@ Full examples: [Closure Devices](https://github.com/homebridge-plugins/homebridg
 
 Commands arrive as `systemModeChange`, `occupiedHeatingSetpointChange` and `occupiedCoolingSetpointChange` handlers, each with the new and old value. When declaring both setpoints, also set `minSetpointDeadBand` — the minimum gap between them, in tenths of °C. ⚠️ That gap is required between the setpoint **limits** too (`maxCoolSetpointLimit - maxHeatSetpointLimit` and the matching `min` pair), which is easy to miss: get it wrong and the accessory registers fine, then every setpoint change is rejected while the system mode still changes normally.
 
+From Homebridge v2.4.0, feature combinations the detection cannot infer — a thermostat with heating and cooling but **no auto mode**, say — can be composed directly with `api.matter.deviceRequirements`, and Homebridge uses those choices as given: see [Customising features on Thermostat](matter-device-type/Thermostat) and the [Customising Features guide](https://github.com/homebridge-plugins/homebridge-matter/wiki/Customising-Features) in the homebridge-matter wiki.
+
 **`Fan`** commands arrive as `fanControl.fanModeChange` and `fanControl.percentSettingChange`. The `percentSetting` doubles as power control: `0` is off, `1`–`100` is on at that speed. The mode enum is on `api.matter.types.FanControl.FanMode`.
 
 Full examples: [HVAC Devices](https://github.com/homebridge-plugins/homebridge-matter/wiki/Section-9-HVAC) in the homebridge-matter wiki.

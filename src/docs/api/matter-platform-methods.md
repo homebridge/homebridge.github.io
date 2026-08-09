@@ -66,6 +66,20 @@ See [Device Types](matter-device-type) for the full list - every device type has
 
 Matter defines many more device types than Homebridge currently exposes. The list is deliberately limited to those the Home app understands, since a device type a controller does not recognise produces an accessory that never appears.
 
+### API.matter.deviceRequirements
+
+*Requires Homebridge v2.4.0 or later.*
+
+The matter.js "requirements" behind the feature-gated device types, keyed to match `deviceTypes`. Homebridge normally chooses a cluster's features from the state an accessory declares, which is right for almost every device. When the right combination cannot be inferred — a thermostat that heats and cools but has no auto mode is the classic case — compose the cluster yourself, and Homebridge uses your feature choices as given:
+
+```typescript
+deviceType: api.matter.deviceTypes.Thermostat.with(
+  api.matter.deviceRequirements.Thermostat.ThermostatServer.with('Heating', 'Cooling'),
+)
+```
+
+Once you compose a cluster yourself, you own all of its feature choices for that cluster — Homebridge adds none for you, so declared state must match the features you picked. The full guide, with the possibilities per device type: [Customising Features](https://github.com/homebridge-plugins/homebridge-matter/wiki/Customising-Features) in the homebridge-matter wiki.
+
 ### Platform.configureMatterAccessory
 
 > configureMatterAccessory(accessory: MatterAccessory): void
