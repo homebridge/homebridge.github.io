@@ -72,7 +72,7 @@ Full examples: [Closure Devices](https://github.com/homebridge-plugins/homebridg
 - **Declare only the setpoints the device really has.** Homebridge derives the thermostat's capabilities from them: a heating setpoint gives a heat-only thermostat, a cooling setpoint cool-only, both gives heating, cooling and auto mode. Declaring a cooling setpoint "just in case" makes the device claim a capability it does not have.
 - `localTemperature` is read-only. A plugin pushing readings from an external sensor writes `externalMeasuredIndoorTemperature` instead.
 
-Commands arrive as `systemModeChange`, `occupiedHeatingSetpointChange` and `occupiedCoolingSetpointChange` handlers, each with the new and old value. When declaring both setpoints, also set `minSetpointDeadBand` — the minimum gap between them, in tenths of °C.
+Commands arrive as `systemModeChange`, `occupiedHeatingSetpointChange` and `occupiedCoolingSetpointChange` handlers, each with the new and old value. When declaring both setpoints, also set `minSetpointDeadBand` — the minimum gap between them, in tenths of °C. ⚠️ That gap is required between the setpoint **limits** too (`maxCoolSetpointLimit - maxHeatSetpointLimit` and the matching `min` pair), which is easy to miss: get it wrong and the accessory registers fine, then every setpoint change is rejected while the system mode still changes normally.
 
 **`Fan`** commands arrive as `fanControl.fanModeChange` and `fanControl.percentSettingChange`. The `percentSetting` doubles as power control: `0` is off, `1`–`100` is on at that speed. The mode enum is on `api.matter.types.FanControl.FanMode`.
 
