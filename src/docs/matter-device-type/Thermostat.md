@@ -29,7 +29,7 @@ The accessory is created either way, and then **every** setpoint change fails wi
 
 #### Customising features
 
-*Requires Homebridge v2.4.0 or later.*
+_Requires Homebridge v2.4.0 or later._
 
 Some feature combinations cannot be inferred from the setpoints — the classic case is a device that heats **and** cools but has **no auto mode**, where declaring both setpoints would enable auto-changeover too. For those, compose the thermostat cluster yourself with `api.matter.deviceRequirements`, and Homebridge will use your feature choices as given instead of detecting its own:
 
