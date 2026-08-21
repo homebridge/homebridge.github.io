@@ -69,7 +69,7 @@ Matter defines many more device types than Homebridge currently exposes. The lis
 
 ### API.matter.deviceRequirements
 
-*Requires Homebridge v2.4.0 or later.*
+_Requires Homebridge v2.4.0 or later._
 
 The matter.js "requirements" behind the feature-gated device types, keyed to match `deviceTypes`. Homebridge normally chooses a cluster's features from the state an accessory declares, which is right for almost every device. When the right combination cannot be inferred — a thermostat that heats and cools but has no auto mode is the classic case — compose the cluster yourself, and Homebridge uses your feature choices as given:
 
