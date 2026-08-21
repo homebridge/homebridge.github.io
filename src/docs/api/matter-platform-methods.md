@@ -29,7 +29,8 @@ api.on('didFinishLaunching', async () => {
     manufacturer: 'Example Co',
     model: 'Light v1',
 
-    // the starting state the controller sees
+    // the state to start from, when nothing is stored yet
+    // (see State (Matter) - a stored value wins on later runs)
     clusters: {
       onOff: { onOff: false },
     },
