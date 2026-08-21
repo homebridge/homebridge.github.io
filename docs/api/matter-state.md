@@ -59,6 +59,29 @@ await api.matter.updateAccessoryState(uuid, api.matter.clusterNames.FanControl, 
 
 Direct access to the underlying cluster definitions, for cases the helpers above do not cover. Most plugins will not need this.
 
+## Starting values are defaults, not writes
+
+The `clusters` object you supply when registering an accessory sets the value an attribute starts with **only when there is nothing stored for it**. Matter persists many attributes, and on every start after the first the stored value wins — what you declared is ignored.
+
+```js
+const clusters = {
+  // The value on a FIRST run. On later runs, whatever was stored
+  // last is what the controller sees.
+  onOff: { onOff: false },
+}
+```
+
+So a declared value is a starting point, never a way to force a state. If your plugin needs an accessory to come up in a particular condition, ask the device and push the answer:
+
+```js
+const isOn = await myDeviceApi.getPower()
+await api.matter.updateAccessoryState(uuid, api.matter.clusterNames.OnOff, { onOff: isOn })
+```
+
+Which attributes survive a restart is decided by the Matter specification, not by Homebridge. As a rule of thumb, anything a controller can write — a name, a mode, a setpoint — is kept, while identity attributes such as the manufacturer and model are fixed and are re-applied from what your plugin supplies every time.
+
+This is worth knowing for a second reason: it is why a name a user changed in the Home app is not overwritten when your plugin restarts, and why correcting a wrong manufacturer or model in your plugin does take effect after a restart with no re-pairing.
+
 ## Value ranges
 
 Matter stores several common values in units of its own. None of these are rejected if you send the wrong scale — the controller simply shows the wrong number — so they are worth checking against before writing a conversion.
