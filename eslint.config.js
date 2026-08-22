@@ -132,6 +132,7 @@ export default antfu(
       'angular/prefer-inject': 'error',
       'angular/prefer-on-push-component-change-detection': 'error',
       'angular/prefer-output-emitter-ref': 'error',
+      'angular/prefer-output-readonly': 'error',
       'angular/prefer-signal-model': 'error',
       'angular/prefer-signals': 'error',
       'angular/prefer-standalone': 'error',
