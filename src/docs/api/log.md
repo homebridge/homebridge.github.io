@@ -4,7 +4,7 @@
 
 > log(message: string, ...parameters: any[])
 
-Basic logging 
+Basic logging
 
 > log.info(message: string, ...parameters: any[])
 

@@ -1,0 +1,57 @@
+name: Build and Deploy (Beta)
+
+# Deploys the beta branch to https://beta.developers.homebridge.io.
+#
+# GitHub Pages serves one site per repository, and this repository's site is
+# the production one - so the beta build is pushed to a second repository,
+# which hosts the beta subdomain. That repository needs:
+#   - GitHub Pages enabled, serving its master branch
+#   - this repository's public deploy key added, with write access
+#     (the private half lives here as the BETA_DEPLOY_KEY secret)
+# and the DNS zone needs a CNAME record pointing
+# beta.developers.homebridge.io at homebridge.github.io.
+
+on:
+  push:
+    branches:
+      - beta
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run gen
+          npm run build
+
+      - name: Point the build at the beta address
+        run: |
+          echo 'beta.developers.homebridge.io' > dist/hap/browser/CNAME
+          printf 'User-agent: *\nDisallow: /\n' > dist/hap/browser/robots.txt
+
+      - name: Install SSH Client 🔑
+        uses: webfactory/ssh-agent@v0.10.0
+        with:
+          ssh-private-key: ${{ secrets.BETA_DEPLOY_KEY }}
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: homebridge/beta.developers.homebridge.io
+          branch: master
+          folder: dist/hap/browser
+          clean: true
+          ssh-key: true

@@ -1,70 +1,107 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable, Observer, of } from 'rxjs';
-import { switchMap, debounceTime } from 'rxjs/operators';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+} from '@angular/core'
+import { FormsModule } from '@angular/forms'
+import { Router } from '@angular/router'
+import { TypeaheadDirective, TypeaheadMatch } from 'ngx-bootstrap/typeahead'
+import { Observable, Observer, of } from 'rxjs'
+import { debounceTime, switchMap } from 'rxjs/operators'
 
-import { HapService } from '../hap.service';
+import { HapService } from '../hap.service'
+import { MatterService } from '../matter.service'
+
+interface SearchResult {
+  routerLink: string[]
+  label: string
+}
 
 @Component({
   selector: 'app-search',
+  imports: [FormsModule, TypeaheadDirective],
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
+  styleUrl: './search.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchComponent implements OnInit {
-  public searchProvider: Observable<any>;
-  public query;
+export class SearchComponent {
+  private hapService = inject(HapService)
+  private matterService = inject(MatterService)
+  private router = inject(Router)
 
-  constructor(
-    private hapService: HapService,
-    private router: Router,
-  ) { }
+  public readonly query = signal<string | null>(null)
 
-  ngOnInit(): void {
-
-    this.searchProvider = new Observable((observer: Observer<string>) => {
-      observer.next(this.query);
+  public searchProvider: Observable<SearchResult[]>
+    = new Observable((observer: Observer<string | null>) => {
+      observer.next(this.query())
     }).pipe(
       debounceTime(200),
-      switchMap((query: string) => {
+      switchMap((rawQuery: string | null) => {
+        const query = (rawQuery ?? '').toLocaleLowerCase()
 
-        query = query.toLocaleLowerCase();
+        const matchingServices = this.hapService.services().filter((x) => {
+          return (
+            x.displayName.toLowerCase().includes(query)
+            || x.name.toLowerCase().includes(query)
+            || x.UUID.toLowerCase() === query
+          )
+        })
 
-        const matchingServices = this.hapService.services.filter((x) => {
-          return x.displayName.toLowerCase().indexOf(query) > -1 ||
-            x.name.toLowerCase().indexOf(query) > -1 ||
-            x.UUID.toLowerCase() === query;
-        });
+        const matchingCharacteristics = this.hapService.characteristics().filter(
+          (x) => {
+            return (
+              x.displayName.toLowerCase().includes(query)
+              || x.name.toLowerCase().includes(query)
+              || x.UUID.toLowerCase() === query
+            )
+          },
+        )
 
-        const matchingCharacteristics = this.hapService.characteristics.filter((x) => {
-          return x.displayName.toLowerCase().indexOf(query) > -1 ||
-            x.name.toLowerCase().indexOf(query) > -1 ||
-            x.UUID.toLowerCase() === query;
-        });
+        const results: SearchResult[] = []
 
-        const results = [];
+        results.push(
+          ...matchingServices.map((x) => {
+            return {
+              routerLink: ['/service', x.name],
+              label: `Service: ${x.displayName}`,
+            }
+          }),
+        )
 
-        results.push(...matchingServices.map(x => {
-          return {
-            routerLink: ['/service', x.name],
-            label: `Service: ${x.displayName}`,
-          };
-        }));
+        results.push(
+          ...matchingCharacteristics.map((x) => {
+            return {
+              routerLink: ['/characteristic', x.name],
+              label: `Characteristic: ${x.displayName}`,
+            }
+          }),
+        )
 
-        results.push(...matchingCharacteristics.map(x => {
-          return {
-            routerLink: ['/characteristic', x.name],
-            label: `Characteristic: ${x.displayName}`,
-          };
-        }));
+        const matchingDeviceTypes = this.matterService.deviceTypes().filter(
+          (x) => {
+            return (
+              x.name.toLowerCase().includes(query)
+              || x.matterName.toLowerCase().includes(query)
+            )
+          },
+        )
 
-        return of(results);
+        results.push(
+          ...matchingDeviceTypes.map((x) => {
+            return {
+              routerLink: ['/matter-device-type', x.name],
+              label: `Matter Device Type: ${x.name}`,
+            }
+          }),
+        )
+
+        return of(results)
       }),
-    );
-  }
+    )
 
-  onSelect(event) {
-    this.router.navigate(event.item.routerLink);
-    this.query = null;
+  onSelect(event: TypeaheadMatch<SearchResult>) {
+    this.router.navigate(event.item.routerLink)
+    this.query.set(null)
   }
-
 }

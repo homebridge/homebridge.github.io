@@ -1,20 +1,17 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import { Directive, ElementRef, inject, input, OnChanges } from '@angular/core'
 
-declare var Prism;
+declare let Prism: any
 
-@Directive({
-  selector: '[prism]',
-})
-export class PrismDirective {
-  constructor(
-    private el: ElementRef,
-  ) {}
+@Directive({ selector: '[appPrism]' })
+export class PrismDirective implements OnChanges {
+  private el = inject(ElementRef)
 
-  @Input() set prism(val) {
-    const codeElement = document.createElement('code');
-    codeElement.innerHTML = val;
-    this.el.nativeElement.innerHTML = codeElement.outerHTML;
-    Prism.highlightElement(this.el.nativeElement);
+  readonly appPrism = input('')
+
+  ngOnChanges(): void {
+    const codeElement = document.createElement('code')
+    codeElement.innerHTML = this.appPrism()
+    this.el.nativeElement.innerHTML = codeElement.outerHTML
+    Prism.highlightElement(this.el.nativeElement)
   }
-
 }

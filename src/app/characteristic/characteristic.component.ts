@@ -1,52 +1,67 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Title } from '@angular/platform-browser';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core'
+import { Title } from '@angular/platform-browser'
+import { ActivatedRoute, RouterLink } from '@angular/router'
 
-import { HapService, Characteristic, Service } from '../hap.service';
+import { Characteristic, HapService, Service } from '../hap.service'
 
 @Component({
   selector: 'app-characteristic',
+  imports: [RouterLink],
   templateUrl: './characteristic.component.html',
-  styleUrls: ['./characteristic.component.scss'],
+  styleUrl: './characteristic.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CharacteristicComponent implements OnInit {
-  public characteristicName: string;
-  public characteristic: Characteristic;
+  private currentRoute = inject(ActivatedRoute)
+  private hapService = inject(HapService)
+  private titleService = inject(Title)
 
-  public usedBy: Service[];
+  public readonly characteristicName = signal<string>('')
+  public readonly characteristic = signal<Characteristic | undefined>(undefined)
 
-  constructor(
-    private currentRoute: ActivatedRoute,
-    private hapService: HapService,
-    private titleService: Title,
-  ) { }
+  public readonly usedBy = signal<Service[]>([])
 
   ngOnInit(): void {
-    this.currentRoute.paramMap.subscribe(params => {
-      this.characteristicName = params.get('characteristicName');
-      this.characteristic = this.hapService.getCharacteristicsByName(this.characteristicName);
-      this.usedBy = this.hapService.getServiceTypesUsedByCharacteristic(this.characteristic.UUID);
+    this.currentRoute.paramMap.subscribe((params) => {
+      this.characteristicName.set(params.get('characteristicName') ?? '')
+      const characteristic = this.hapService.getCharacteristicsByName(
+        this.characteristicName(),
+      )
+      this.characteristic.set(characteristic)
+      if (!characteristic) {
+        return
+      }
+      this.usedBy.set(this.hapService.getServiceTypesUsedByCharacteristic(
+        characteristic.UUID,
+      ))
 
-      this.titleService.setTitle(`Homebridge API - ${this.characteristicName}`);
-    });
+      this.titleService.setTitle(`Homebridge API - ${this.characteristicName()}`)
+    })
   }
 
-  get characteristicPermissions() {
-    return this.characteristic.props.perms.map(x => this.hapService.perms[x]).join(', ');
-  }
+  public readonly characteristicPermissions = computed(() => {
+    return (this.characteristic()?.props.perms ?? []).map(x => this.hapService.perms[x]).join(', ')
+  })
 
-  get characteristicEvents() {
-    const events: string[] = [];
+  public readonly characteristicEvents = computed(() => {
+    const events: string[] = []
+    const perms = this.characteristic()?.props.perms ?? []
 
-    if (this.characteristic.props.perms.includes('pr')) {
-      events.push('get');
+    if (perms.includes('pr')) {
+      events.push('get')
     }
 
-    if (this.characteristic.props.perms.includes('pw')) {
-      events.push('set');
+    if (perms.includes('pw')) {
+      events.push('set')
     }
 
-    return events.join(', ');
-  }
-
+    return events.join(', ')
+  })
 }

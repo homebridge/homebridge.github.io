@@ -1,42 +1,51 @@
-import { Component } from '@angular/core';
-import { HapService } from './hap.service';
-import { Router, NavigationEnd } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common'
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterOutlet,
+} from '@angular/router'
 
-declare let gtag: Function;
+import { HapService } from './hap.service'
+import { MatterService } from './matter.service'
+import { SearchComponent } from './search/search.component'
+import { SidebarService } from './sidebar.service'
+import { SidebarComponent } from './sidebar/sidebar.component'
 
 @Component({
   selector: 'app-root',
+  imports: [
+    RouterLink,
+    NgOptimizedImage,
+    SearchComponent,
+    SidebarComponent,
+    RouterOutlet,
+  ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    '(window:resize)': 'onWindowResize()',
+  },
 })
 export class AppComponent {
+  hapService = inject(HapService)
+  matterService = inject(MatterService)
+  sidebarService = inject(SidebarService)
 
-  constructor(
-    public hapService: HapService,
-    router: Router,
-  ) {
+  constructor() {
+    const router = inject(Router)
 
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-
-        // Google Analytics Event Trigger
-        gtag('config', 'UA-165871119-1',
-          {
-            'page_path': '/#' + event.urlAfterRedirects,
-          },
-        );
-
         // Close sidebar after navigation on mobile
-        if (window.innerWidth >= 1200) {
-          return;
-        }
-        const sidebar = document.getElementById('docs-sidebar');
-        if (sidebar && sidebar.classList.contains('sidebar-visible')) {
-          sidebar.classList.remove('sidebar-visible');
-          sidebar.classList.add('sidebar-hidden');
-        }
+        this.sidebarService.closeOnMobile()
       }
-    });
+    })
+  }
 
+  onWindowResize() {
+    this.sidebarService.matchWindowSize()
   }
 }

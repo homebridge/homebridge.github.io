@@ -1,67 +1,89 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Title } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http'
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core'
+import { Title } from '@angular/platform-browser'
+import { ActivatedRoute, RouterLink } from '@angular/router'
+import { MarkdownComponent } from 'ngx-markdown'
 
-import { HapService, Service, Characteristic } from '../hap.service';
-import { HttpClient } from '@angular/common/http';
+import { Characteristic, HapService, Service } from '../hap.service'
+import { PrismDirective } from '../prism.directive'
 
 @Component({
   selector: 'app-service',
+  imports: [RouterLink, MarkdownComponent, PrismDirective],
   templateUrl: './service.component.html',
-  styleUrls: ['./service.component.scss'],
+  styleUrl: './service.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ServiceComponent implements OnInit {
-  public serviceName: string;
-  public service: Service;
+  private currentRoute = inject(ActivatedRoute)
+  private hapService = inject(HapService)
+  private titleService = inject(Title)
+  private httpClient = inject(HttpClient)
 
-  public requiredCharacteristics: Characteristic[];
-  public optionalCharacteristics: Characteristic[];
+  public readonly serviceName = signal<string>('')
+  public readonly service = signal<Service | undefined>(undefined)
 
-  public exampleCode: string;
-  public markdown: string;
+  public readonly requiredCharacteristics = signal<Characteristic[]>([])
+  public readonly optionalCharacteristics = signal<Characteristic[]>([])
 
-  constructor(
-    private currentRoute: ActivatedRoute,
-    private hapService: HapService,
-    private titleService: Title,
-    private httpClient: HttpClient,
-  ) { }
+  public readonly exampleCode = signal<string | null>(null)
+  public readonly markdown = signal<string | null>(null)
 
   ngOnInit(): void {
-    this.currentRoute.paramMap.subscribe(params => {
-      this.serviceName = params.get('serviceName');
-      this.service = this.hapService.getServiceByName(this.serviceName);
+    this.currentRoute.paramMap.subscribe((params) => {
+      this.serviceName.set(params.get('serviceName') ?? '')
+      const service = this.hapService.getServiceByName(this.serviceName())
+      this.service.set(service)
+      if (!service) {
+        return
+      }
 
-      this.requiredCharacteristics = this.service.requiredCharacteristics.map(x => this.hapService.getCharacteristicsByUUID(x));
-      this.optionalCharacteristics = this.service.optionalCharacteristics.map(x => this.hapService.getCharacteristicsByUUID(x));
+      this.requiredCharacteristics.set(service.requiredCharacteristics.map(
+        x => this.hapService.getCharacteristicsByUUID(x),
+      ))
+      this.optionalCharacteristics.set(service.optionalCharacteristics.map(
+        x => this.hapService.getCharacteristicsByUUID(x),
+      ))
 
-      this.getMarkdown();
+      this.getMarkdown()
 
-      this.titleService.setTitle(`Homebridge API - ${this.serviceName}`);
-    });
+      this.titleService.setTitle(`Homebridge API - ${this.serviceName()}`)
+    })
   }
 
   getMarkdown() {
-    this.markdown = null;
-    this.exampleCode = null;
-    this.httpClient.get('/docs/service/' + this.serviceName + '.md', {responseType: 'text'}).subscribe(
-      (res) => {
-        this.markdown = res;
-      },
-      (err) => {
-        this.generateExample();
-      },
-    );
+    this.markdown.set(null)
+    this.exampleCode.set(null)
+    this.httpClient
+      .get(`/docs/service/${this.serviceName()}.md`, { responseType: 'text' })
+      .subscribe(
+        (res) => {
+          this.markdown.set(res)
+        },
+        () => {
+          this.generateExample()
+        },
+      )
   }
 
   generateExample() {
-    this.exampleCode = `// Example ${this.service.displayName} Plugin
+    const service = this.service()
+    if (!service) {
+      return
+    }
+    this.exampleCode.set(`// Example ${service.displayName} Plugin
 
 module.exports = (api) => {
-  api.registerAccessory('Example${this.serviceName}Plugin', Example${this.serviceName}Accessory);
+  api.registerAccessory('Example${this.serviceName()}Plugin', Example${this.serviceName()}Accessory);
 };
 
-class Example${this.serviceName}Accessory {
+class Example${this.serviceName()}Accessory {
 
   constructor(log, config, api) {
       this.log = log;
@@ -74,45 +96,53 @@ class Example${this.serviceName}Accessory {
       // extract name from config
       this.name = config.name;
 
-      // create a new ${this.service.displayName} service
-      this.service = new this.Service(this.Service.${this.serviceName});
+      // create a new ${service.displayName} service
+      this.service = new this.Service(this.Service.${this.serviceName()});
 
       // create handlers for required characteristics
-${this.generateRequiredBindings(this.requiredCharacteristics)}
+${this.generateRequiredBindings(this.requiredCharacteristics())}
   }
 
-${this.generateMethods(this.requiredCharacteristics)}
-}`;
+${this.generateMethods(this.requiredCharacteristics())}
+}`)
   }
 
   generateRequiredBindings(characteristics: Characteristic[]): string {
-    return characteristics.filter(x => x.props.format !== 'tlv8').map((x) => {
-      return `      this.service.getCharacteristic(this.Characteristic.${x.name})
-${this.generateGetHandler(x)}${this.generateSetHandler(x)}`;
-    }).join('\n');
+    return characteristics
+      .filter(x => x.props.format !== 'tlv8')
+      .map((x) => {
+        return `      this.service.getCharacteristic(this.Characteristic.${x.name})
+${this.generateGetHandler(x)}${this.generateSetHandler(x)}`
+      })
+      .join('\n')
   }
 
   generateGetHandler(characteristic: Characteristic): string {
     if (characteristic.props.perms.includes('pr')) {
-      const value =  `        .onGet(this.handle${characteristic.name}Get.bind(this))`;
-      return characteristic.props.perms.includes('pw') ? value + '\n        ' : value + ';\n';
+      const value = `        .onGet(this.handle${characteristic.name}Get.bind(this))`
+      return characteristic.props.perms.includes('pw')
+        ? `${value}\n        `
+        : `${value};\n`
     } else {
-      return `        `;
+      return `        `
     }
   }
 
   generateSetHandler(characteristic: Characteristic): string {
     if (characteristic.props.perms.includes('pw')) {
-      return `.onSet(this.handle${characteristic.name}Set.bind(this));\n`;
+      return `.onSet(this.handle${characteristic.name}Set.bind(this));\n`
     } else {
-      return ``;
+      return ``
     }
   }
 
   generateMethods(characteristics: Characteristic[]) {
-    return characteristics.filter(x => x.props.format !== 'tlv8').map((x) => {
-      return `${this.generateGetMethod(x)}${this.generateSetMethod(x)}`;
-    }).join('\n');
+    return characteristics
+      .filter(x => x.props.format !== 'tlv8')
+      .map((x) => {
+        return `${this.generateGetMethod(x)}${this.generateSetMethod(x)}`
+      })
+      .join('\n')
   }
 
   generateGetMethod(characteristic: Characteristic) {
@@ -124,26 +154,25 @@ ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`;
     this.log.debug('Triggered GET ${characteristic.name}');
 
     // set this to a valid value for ${characteristic.name}
-    const currentValue = ${characteristic.constValues.length ? 'this.Characteristic.' + characteristic.name + '.' + characteristic.constValues[0].key : characteristic.props?.minValue || '1'};
+    const currentValue = ${characteristic.constValues.length ? `this.Characteristic.${characteristic.name}.${characteristic.constValues[0].key}` : characteristic.props?.minValue || '1'};
 
     return currentValue;
-  }\n\n`;
+  }\n\n`
     } else {
-      return ``;
+      return ``
     }
   }
 
   generateSetMethod(characteristic: Characteristic) {
     if (characteristic.props.perms.includes('pw')) {
-    return `  /**
+      return `  /**
    * Handle requests to set the "${characteristic.displayName}" characteristic
    */
   handle${characteristic.name}Set(value) {
     this.log.debug('Triggered SET ${characteristic.name}:' value);
-  }\n`;
+  }\n`
     } else {
-      return ``;
+      return ``
     }
   }
-
 }
