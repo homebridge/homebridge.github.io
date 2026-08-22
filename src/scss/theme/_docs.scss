@@ -242,7 +242,7 @@
     bottom: 1rem;
     font-size: 0.75rem;
     font-weight: normal;
-    color: lighten($theme-text-color-secondary, 10%);
+    color: lighten-by($theme-text-color-secondary, 10%);
   }
   .docs-section {
     padding: 2rem 0;
@@ -260,23 +260,23 @@
     color: $theme-text-color-primary;
   }
   h2 {
-    color: darken($theme-text-color-secondary, 10%);
+    color: darken-by($theme-text-color-secondary, 10%);
   }
   h3 {
     font-size: 1.5rem;
-    color: darken($theme-text-color-secondary, 10%);
+    color: darken-by($theme-text-color-secondary, 10%);
   }
   h4 {
     font-size: 1.25rem;
-    color: darken($theme-text-color-secondary, 10%);
+    color: darken-by($theme-text-color-secondary, 10%);
   }
   h5 {
     font-size: 1rem;
-    color: darken($theme-text-color-secondary, 10%);
+    color: darken-by($theme-text-color-secondary, 10%);
   }
   h6 {
     font-size: 0.875rem;
-    color: darken($theme-text-color-secondary, 10%);
+    color: darken-by($theme-text-color-secondary, 10%);
   }
   ul,
   ol,
@@ -311,42 +311,42 @@
 
   &.callout-block-info {
     border-color: $theme-info-color;
-    background: lighten($theme-info-color, 35%);
+    background: lighten-by($theme-info-color, 35%);
     .callout-title {
-      color: darken($theme-info-color, 15%);
+      color: darken-by($theme-info-color, 15%);
     }
     a {
-      color: darken($theme-info-color, 15%);
+      color: darken-by($theme-info-color, 15%);
     }
   }
   &.callout-block-success {
     border-color: $theme-success-color;
-    background: lighten($theme-success-color, 40%);
+    background: lighten-by($theme-success-color, 40%);
     .callout-title {
-      color: darken($theme-success-color, 15%);
+      color: darken-by($theme-success-color, 15%);
     }
     a {
-      color: darken($theme-success-color, 15%);
+      color: darken-by($theme-success-color, 15%);
     }
   }
   &.callout-block-warning {
     border-color: $theme-warning-color;
-    background: lighten($theme-warning-color, 35%);
+    background: lighten-by($theme-warning-color, 35%);
     .callout-title {
-      color: darken($theme-warning-color, 15%);
+      color: darken-by($theme-warning-color, 15%);
     }
     a {
-      color: darken($theme-warning-color, 15%);
+      color: darken-by($theme-warning-color, 15%);
     }
   }
   &.callout-block-danger {
     border-color: $theme-danger-color;
-    background: lighten($theme-danger-color, 35%);
+    background: lighten-by($theme-danger-color, 35%);
     .callout-title {
-      color: darken($theme-danger-color, 15%);
+      color: darken-by($theme-danger-color, 15%);
     }
     a {
-      color: darken($theme-danger-color, 15%);
+      color: darken-by($theme-danger-color, 15%);
     }
   }
 }
