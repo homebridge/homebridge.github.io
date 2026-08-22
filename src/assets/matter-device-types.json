@@ -55,6 +55,33 @@
         ]
     },
     {
+        "name": "Closure",
+        "matterName": "Closure",
+        "deviceTypeId": 560,
+        "deviceTypeHex": "0x0230",
+        "deviceRevision": 1,
+        "clusters": [
+            {
+                "name": "ClosureControl",
+                "id": "closureControl",
+                "attributes": [
+                    "countdownTime",
+                    "mainState",
+                    "currentErrorList",
+                    "overallCurrentState",
+                    "overallTargetState",
+                    "latchControlModes"
+                ],
+                "exampleAttribute": "countdownTime",
+                "commands": [
+                    "stop",
+                    "moveTo",
+                    "calibrate"
+                ]
+            }
+        ]
+    },
+    {
         "name": "ColorTemperatureLight",
         "matterName": "ColorTemperatureLight",
         "deviceTypeId": 268,
@@ -723,6 +750,77 @@
         ]
     },
     {
+        "name": "MediaPlayer",
+        "matterName": "BasicVideoPlayer",
+        "deviceTypeId": 40,
+        "deviceTypeHex": "0x0028",
+        "deviceRevision": 2,
+        "clusters": [
+            {
+                "name": "OnOff",
+                "id": "onOff",
+                "attributes": [
+                    "onOff",
+                    "globalSceneControl",
+                    "onTime",
+                    "offWaitTime",
+                    "startUpOnOff"
+                ],
+                "exampleAttribute": "onOff",
+                "commands": [
+                    "off",
+                    "on",
+                    "toggle",
+                    "offWithEffect",
+                    "onWithRecallGlobalScene",
+                    "onWithTimedOff"
+                ]
+            },
+            {
+                "name": "MediaPlayback",
+                "id": "mediaPlayback",
+                "attributes": [
+                    "currentState",
+                    "startTime",
+                    "duration",
+                    "sampledPosition",
+                    "playbackSpeed",
+                    "seekRangeEnd",
+                    "seekRangeStart",
+                    "activeAudioTrack",
+                    "availableAudioTracks",
+                    "activeTextTrack",
+                    "availableTextTracks"
+                ],
+                "exampleAttribute": "currentState",
+                "commands": [
+                    "play",
+                    "pause",
+                    "stop",
+                    "startOver",
+                    "previous",
+                    "next",
+                    "rewind",
+                    "fastForward",
+                    "skipForward",
+                    "skipBackward",
+                    "seek",
+                    "activateAudioTrack",
+                    "activateTextTrack",
+                    "deactivateTextTrack"
+                ]
+            },
+            {
+                "name": "KeypadInput",
+                "id": "keypadInput",
+                "attributes": [],
+                "commands": [
+                    "sendKey"
+                ]
+            }
+        ]
+    },
+    {
         "name": "MotionSensor",
         "matterName": "OccupancySensor",
         "deviceTypeId": 263,
@@ -1069,6 +1167,67 @@
         ]
     },
     {
+        "name": "Speaker",
+        "matterName": "Speaker",
+        "deviceTypeId": 34,
+        "deviceTypeHex": "0x0022",
+        "deviceRevision": 1,
+        "clusters": [
+            {
+                "name": "OnOff",
+                "id": "onOff",
+                "attributes": [
+                    "onOff",
+                    "globalSceneControl",
+                    "onTime",
+                    "offWaitTime",
+                    "startUpOnOff"
+                ],
+                "exampleAttribute": "onOff",
+                "commands": [
+                    "off",
+                    "on",
+                    "toggle",
+                    "offWithEffect",
+                    "onWithRecallGlobalScene",
+                    "onWithTimedOff"
+                ]
+            },
+            {
+                "name": "LevelControl",
+                "id": "levelControl",
+                "attributes": [
+                    "currentLevel",
+                    "remainingTime",
+                    "minLevel",
+                    "maxLevel",
+                    "currentFrequency",
+                    "minFrequency",
+                    "maxFrequency",
+                    "onOffTransitionTime",
+                    "onLevel",
+                    "onTransitionTime",
+                    "offTransitionTime",
+                    "defaultMoveRate",
+                    "options",
+                    "startUpCurrentLevel"
+                ],
+                "exampleAttribute": "currentLevel",
+                "commands": [
+                    "moveToLevel",
+                    "move",
+                    "step",
+                    "stop",
+                    "moveToLevelWithOnOff",
+                    "moveWithOnOff",
+                    "stepWithOnOff",
+                    "stopWithOnOff",
+                    "moveToClosestFrequency"
+                ]
+            }
+        ]
+    },
+    {
         "name": "TemperatureSensor",
         "matterName": "TemperatureSensor",
         "deviceTypeId": 770,
@@ -1095,74 +1254,7 @@
         "deviceTypeId": 769,
         "deviceTypeHex": "0x0301",
         "deviceRevision": 6,
-        "clusters": [
-            {
-                "name": "Thermostat",
-                "id": "thermostat",
-                "attributes": [
-                    "localTemperature",
-                    "outdoorTemperature",
-                    "occupancy",
-                    "absMinHeatSetpointLimit",
-                    "absMaxHeatSetpointLimit",
-                    "absMinCoolSetpointLimit",
-                    "absMaxCoolSetpointLimit",
-                    "localTemperatureCalibration",
-                    "occupiedCoolingSetpoint",
-                    "occupiedHeatingSetpoint",
-                    "unoccupiedCoolingSetpoint",
-                    "unoccupiedHeatingSetpoint",
-                    "minHeatSetpointLimit",
-                    "maxHeatSetpointLimit",
-                    "minCoolSetpointLimit",
-                    "maxCoolSetpointLimit",
-                    "minSetpointDeadBand",
-                    "remoteSensing",
-                    "controlSequenceOfOperation",
-                    "systemMode",
-                    "thermostatRunningMode",
-                    "temperatureSetpointHold",
-                    "temperatureSetpointHoldDuration",
-                    "thermostatRunningState",
-                    "setpointChangeSource",
-                    "setpointChangeAmount",
-                    "setpointChangeSourceTimestamp",
-                    "emergencyHeatDelta",
-                    "acType",
-                    "acCapacity",
-                    "acRefrigerantType",
-                    "acCompressorType",
-                    "acErrorCode",
-                    "acLouverPosition",
-                    "acCoilTemperature",
-                    "acCapacityFormat",
-                    "presetTypes",
-                    "scheduleTypes",
-                    "numberOfPresets",
-                    "numberOfSchedules",
-                    "numberOfScheduleTransitions",
-                    "numberOfScheduleTransitionPerDay",
-                    "activePresetHandle",
-                    "activeScheduleHandle",
-                    "presets",
-                    "schedules",
-                    "setpointHoldExpiryTimestamp",
-                    "maxThermostatSuggestions",
-                    "thermostatSuggestions",
-                    "currentThermostatSuggestion",
-                    "thermostatSuggestionNotFollowingReason"
-                ],
-                "exampleAttribute": "occupiedHeatingSetpoint",
-                "commands": [
-                    "setpointRaiseLower",
-                    "setActiveScheduleRequest",
-                    "setActivePresetRequest",
-                    "addThermostatSuggestion",
-                    "removeThermostatSuggestion",
-                    "atomicRequest"
-                ]
-            }
-        ]
+        "clusters": []
     },
     {
         "name": "WaterValve",
