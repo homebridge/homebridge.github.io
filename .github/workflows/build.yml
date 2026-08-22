@@ -1,0 +1,63 @@
+name: Build
+
+# Nothing used to build or lint this repository on a pull request - only CodeQL
+# ran - so a change that broke the build was first discovered by the deploy,
+# after it had already been merged.
+#
+# Pushes to `source` are not built here: `pages.yml` already builds them, as
+# part of deploying.
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          # Deliberately the single version `pages.yml` deploys with, so that a
+          # green check here means the deploy will build too. The site is static
+          # output with no consumers, so a version matrix would only add ways to
+          # fail that production never sees.
+          node-version: 24
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      # `npm run gen` regenerates the HAP and Matter reference from the
+      # `hap-nodejs` and `homebridge` dependencies, so this also catches a
+      # generator broken by a bump to either.
+      - name: Generate
+        run: npm run gen
+
+      - name: Build
+        run: npm run build
+
+      # Last, so that a genuine build failure is reported before this one.
+      #
+      # The deploy runs `gen` before it builds, so the live site always reflects
+      # the current dependencies - which means stale generated files committed
+      # here are invisible until someone reads the repository and believes them.
+      # A `homebridge` bump that added Matter device types went unnoticed this
+      # way. Every generator writes under `src/`, so diffing the whole tree needs
+      # no list of paths to fall out of date.
+      - name: Check the generated files are committed
+        run: |
+          if ! git diff --quiet; then
+            echo "::error::'npm run gen' changed files that are committed to the repository. Run 'npm run gen' locally and commit the result."
+            git diff --stat
+            git diff
+            exit 1
+          fi
+
+  lint:
+    uses: homebridge/.github/.github/workflows/eslint.yml@latest
