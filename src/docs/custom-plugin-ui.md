@@ -360,7 +360,7 @@ const myForm = homebridge.createForm(
       properties: {
         name: {
           title: 'Name',
-          type: string,
+          type: 'string',
         }
       },
       required: ['name'],
