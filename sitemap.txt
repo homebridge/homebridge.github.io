@@ -351,6 +351,7 @@ https://developers.homebridge.io/#/characteristic/WiFiConfigurationControl
 https://developers.homebridge.io/#/characteristic/WiFiSatelliteStatus
 https://developers.homebridge.io/#/matter-device-type/AirQualitySensor
 https://developers.homebridge.io/#/matter-device-type/BridgedNode
+https://developers.homebridge.io/#/matter-device-type/Closure
 https://developers.homebridge.io/#/matter-device-type/ColorTemperatureLight
 https://developers.homebridge.io/#/matter-device-type/ContactSensor
 https://developers.homebridge.io/#/matter-device-type/DimmableLight
@@ -363,6 +364,7 @@ https://developers.homebridge.io/#/matter-device-type/GenericSwitch
 https://developers.homebridge.io/#/matter-device-type/HumiditySensor
 https://developers.homebridge.io/#/matter-device-type/LeakSensor
 https://developers.homebridge.io/#/matter-device-type/LightSensor
+https://developers.homebridge.io/#/matter-device-type/MediaPlayer
 https://developers.homebridge.io/#/matter-device-type/MotionSensor
 https://developers.homebridge.io/#/matter-device-type/OnOffLight
 https://developers.homebridge.io/#/matter-device-type/OnOffOutlet
@@ -371,6 +373,7 @@ https://developers.homebridge.io/#/matter-device-type/Pump
 https://developers.homebridge.io/#/matter-device-type/RoboticVacuumCleaner
 https://developers.homebridge.io/#/matter-device-type/RoomAirConditioner
 https://developers.homebridge.io/#/matter-device-type/SmokeSensor
+https://developers.homebridge.io/#/matter-device-type/Speaker
 https://developers.homebridge.io/#/matter-device-type/TemperatureSensor
 https://developers.homebridge.io/#/matter-device-type/Thermostat
 https://developers.homebridge.io/#/matter-device-type/WaterValve
