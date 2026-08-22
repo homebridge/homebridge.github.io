@@ -48,27 +48,27 @@ code {
 .table-dark th,
 .table-dark td,
 .table-dark thead th {
-  border-color: lighten($theme-text-color-primary, 20%);
+  border-color: lighten-by($theme-text-color-primary, 20%);
 }
 
 .popover {
-  border-color: darken($theme-bg-light, 5%);
+  border-color: darken-by($theme-bg-light, 5%);
 }
 .bs-popover-left > .arrow::before,
 .bs-popover-auto[x-placement^='left'] > .arrow::before {
-  border-left-color: darken($theme-bg-light, 5%);
+  border-left-color: darken-by($theme-bg-light, 5%);
 }
 .bs-popover-right > .arrow::before,
 .bs-popover-auto[x-placement^='right'] > .arrow::before {
-  border-right-color: darken($theme-bg-light, 5%);
+  border-right-color: darken-by($theme-bg-light, 5%);
 }
 .bs-popover-top > .arrow::before,
 .bs-popover-auto[x-placement^='top'] > .arrow::before {
-  border-top-color: darken($theme-bg-light, 5%);
+  border-top-color: darken-by($theme-bg-light, 5%);
 }
 .bs-popover-bottom > .arrow::before,
 .bs-popover-auto[x-placement^='bottom'] > .arrow::before {
-  border-bottom-color: darken($theme-bg-light, 5%);
+  border-bottom-color: darken-by($theme-bg-light, 5%);
 }
 
 a.theme-link {
@@ -123,7 +123,7 @@ a.theme-link {
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
   height: 2.75rem;
-  border-color: darken($theme-bg-light, 5%);
+  border-color: darken-by($theme-bg-light, 5%);
   &:focus {
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
     outline: none;
@@ -278,7 +278,7 @@ a.theme-link {
     @include border-radius(50%);
     padding-top: 2px;
     a {
-      color: lighten($theme-color-primary, 10%);
+      color: lighten-by($theme-color-primary, 10%);
       &:hover {
         color: $theme-color-primary;
       }
