@@ -32,7 +32,11 @@ const sitemap = [
   `${baseUrl}/api/matter-errors`,
   `${baseUrl}/api/matter-devices`,
   `${baseUrl}/api/matter-clusters`,
-  `${baseUrl}/config-schema`,
+  `${baseUrl}/config-screen/overview`,
+  `${baseUrl}/config-screen/schema`,
+  `${baseUrl}/config-screen/schema-examples`,
+  `${baseUrl}/config-screen/custom-ui`,
+  `${baseUrl}/config-screen/custom-ui-examples`,
   `${baseUrl}/categories`,
 ]
 

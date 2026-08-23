@@ -180,16 +180,36 @@
       <li class="nav-item section-title mt-3">
         <a
           class="nav-link"
-          [routerLink]="['/config-schema']"
-          [class.active]="isSectionActive('/config-schema', '/custom-plugin-ui')"
+          [routerLink]="['/config-screen/overview']"
+          [class.active]="isSectionActive('/config-screen')"
         >
-          <span class="theme-icon-holder me-2"><i class="fas fa-code"></i></span>Plugin Config Schema
+          <span class="theme-icon-holder me-2"><i class="fas fa-code"></i></span>Plugin Config Screen
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/custom-plugin-ui']"
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/config-screen/overview']">Overview</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/config-screen/schema']">Config Schema</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/config-screen/schema-examples']"
+          >Schema Examples</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/config-screen/custom-ui']"
           >Custom User Interfaces</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link pointer" routerLinkActive="active" [routerLink]="['/config-screen/custom-ui-examples']"
+          >Custom UI Examples</a
         >
       </li>
 

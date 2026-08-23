@@ -20,8 +20,8 @@ Everything useful that lives outside this site.
 - [homebridge](https://github.com/homebridge/homebridge) — the server itself. The API your plugin receives is defined in `src/api.ts`.
 - [HAP-NodeJS](https://github.com/homebridge/HAP-NodeJS) — the HomeKit Accessory Protocol implementation.
 - [homebridge-matter](https://github.com/homebridge-plugins/homebridge-matter) — the reference plugin for Matter accessories, and the source of most of the [device guides](api/matter-devices).
-- [Homebridge UI](https://github.com/homebridge/homebridge-config-ui-x) — the web interface, which renders your [config schema](config-schema) and any [custom user interface](custom-plugin-ui).
-- [plugin-ui-utils](https://github.com/homebridge/plugin-ui-utils) — the package behind [custom user interfaces](custom-plugin-ui).
+- [Homebridge UI](https://github.com/homebridge/homebridge-config-ui-x) — the web interface, which renders your [config schema](/#/config-screen/schema) and any [custom user interface](/#/config-screen/custom-ui).
+- [plugin-ui-utils](https://github.com/homebridge/plugin-ui-utils) — the package behind [custom user interfaces](/#/config-screen/custom-ui).
 
 ## Wikis and guides
 

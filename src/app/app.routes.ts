@@ -49,6 +49,22 @@ export const routes: Routes = [
     path: 'matter-device-type',
     redirectTo: 'matter-device-type/AirQualitySensor',
   },
+  // The config screen section moved from two flat pages to /config-screen/* in
+  // 2026-08 - the old urls are linked from wikis, plugin READMEs and issues,
+  // so they redirect rather than 404.
+  {
+    path: 'config-schema',
+    redirectTo: 'config-screen/schema',
+  },
+  {
+    path: 'custom-plugin-ui',
+    redirectTo: 'config-screen/custom-ui',
+  },
+  {
+    path: 'config-screen',
+    pathMatch: 'full',
+    redirectTo: 'config-screen/overview',
+  },
   {
     path: 'api',
     loadComponent: () =>
