@@ -22,7 +22,11 @@ https://developers.homebridge.io/#/api/matter-state
 https://developers.homebridge.io/#/api/matter-errors
 https://developers.homebridge.io/#/api/matter-devices
 https://developers.homebridge.io/#/api/matter-clusters
-https://developers.homebridge.io/#/config-schema
+https://developers.homebridge.io/#/config-screen/overview
+https://developers.homebridge.io/#/config-screen/schema
+https://developers.homebridge.io/#/config-screen/schema-examples
+https://developers.homebridge.io/#/config-screen/custom-ui
+https://developers.homebridge.io/#/config-screen/custom-ui-examples
 https://developers.homebridge.io/#/categories
 https://developers.homebridge.io/#/service/AccessCode
 https://developers.homebridge.io/#/service/AccessControl
