@@ -9,7 +9,7 @@ The Homebridge UI finds plugins through npm's search index, looking for the `hom
 Two things to check before the first release:
 
 - **What ends up in the tarball.** Set the `files` field in `package.json` (or use `.npmignore`) so tests, sources and maps are not shipped to users. `npm pack --dry-run` lists exactly what would be published.
-- **A [config schema](config-schema).** Without one, users have to edit `config.json` by hand; with one, the UI generates a settings form.
+- **A [config schema](/#/config-screen/schema).** Without one, users have to edit `config.json` by hand; with one, the UI generates a settings form.
 
 Also declare your [transport keywords](/#/#declaring-supported-transports) so the UI knows whether your plugin publishes over HAP, Matter or both.
 
@@ -25,7 +25,7 @@ It is worth building to the criteria whether or not you apply, because they enco
 - Install successfully and **not start until it is configured**
 - Not run post-install scripts that modify the user's system
 - Not require a TTY or non-standard startup parameters, even for first-time setup
-- Implement a [config schema](config-schema) for the settings GUI
+- Implement a [config schema](/#/config-screen/schema) for the settings GUI
 - Contain no analytics or user tracking
 - Write any files it needs inside the Homebridge storage directory — see [API.user.storagePath](api/reference#apiuserstoragepath)
 - Catch and log its own errors rather than throwing unhandled exceptions
