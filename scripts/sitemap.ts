@@ -23,6 +23,7 @@ const sitemap = [
   `${baseUrl}/api/service`,
   `${baseUrl}/api/characteristics`,
   `${baseUrl}/api/characteristic-warnings`,
+  `${baseUrl}/api/custom-services-characteristics`,
   `${baseUrl}/api/cameras`,
   `${baseUrl}/api/controllers`,
   `${baseUrl}/api/log`,
