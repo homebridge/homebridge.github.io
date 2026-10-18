@@ -21,7 +21,7 @@ jobs:
           persist-credentials: false
 
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           # Deliberately the single version `pages.yml` deploys with, so that a
           # green check here means the deploy will build too. The site is static
