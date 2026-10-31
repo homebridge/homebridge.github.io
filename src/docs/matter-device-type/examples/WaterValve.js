@@ -19,32 +19,34 @@ class ExampleValvePlatform {
       const uuid = api.matter.uuid.generate('example-valve')
       this.uuid = uuid
 
-      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleValvePlatform', [{
-        UUID: uuid,
-        displayName: 'Example Valve',
-        deviceType: api.matter.deviceTypes.WaterValve,
-        serialNumber: 'example-valve',
-        manufacturer: 'Example Co',
-        model: 'Valve v1',
+      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleValvePlatform', [
+        {
+          UUID: uuid,
+          displayName: 'Example Valve',
+          deviceType: api.matter.deviceTypes.WaterValve,
+          serialNumber: 'example-valve',
+          manufacturer: 'Example Co',
+          model: 'Valve v1',
 
-        clusters: {
-          valveConfigurationAndControl: {
-            currentState: 0, // closed
-            targetState: 0,
-          },
-        },
-
-        handlers: {
-          valveConfigurationAndControl: {
-            open: async () => {
-              await myValveApi.open()
-            },
-            close: async () => {
-              await myValveApi.close()
+          clusters: {
+            valveConfigurationAndControl: {
+              currentState: 0, // closed
+              targetState: 0,
             },
           },
+
+          handlers: {
+            valveConfigurationAndControl: {
+              open: async () => {
+                await myValveApi.open()
+              },
+              close: async () => {
+                await myValveApi.close()
+              },
+            },
+          },
         },
-      }])
+      ])
     })
   }
 

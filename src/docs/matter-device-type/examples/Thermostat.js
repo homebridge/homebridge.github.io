@@ -24,34 +24,36 @@ class ExampleThermostatPlatform {
       const uuid = api.matter.uuid.generate('example-thermostat')
       this.uuid = uuid
 
-      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleThermostatPlatform', [{
-        UUID: uuid,
-        displayName: 'Example Thermostat',
-        deviceType: api.matter.deviceTypes.Thermostat,
-        serialNumber: 'example-thermostat',
-        manufacturer: 'Example Co',
-        model: 'Thermostat v1',
+      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleThermostatPlatform', [
+        {
+          UUID: uuid,
+          displayName: 'Example Thermostat',
+          deviceType: api.matter.deviceTypes.Thermostat,
+          serialNumber: 'example-thermostat',
+          manufacturer: 'Example Co',
+          model: 'Thermostat v1',
 
-        clusters: {
-          thermostat: {
+          clusters: {
+            thermostat: {
             // a heating setpoint and no cooling setpoint = a heat-only thermostat
-            occupiedHeatingSetpoint: 2000, // 20.00 degrees
-            systemMode: 4, // heat
+              occupiedHeatingSetpoint: 2000, // 20.00 degrees
+              systemMode: 4, // heat
+            },
           },
-        },
 
-        handlers: {
-          thermostat: {
-            occupiedHeatingSetpointChange: async ({ occupiedHeatingSetpoint }) => {
-              await myThermostatApi.setTarget(occupiedHeatingSetpoint / 100)
-            },
-            systemModeChange: async ({ systemMode }) => {
+          handlers: {
+            thermostat: {
+              occupiedHeatingSetpointChange: async ({ occupiedHeatingSetpoint }) => {
+                await myThermostatApi.setTarget(occupiedHeatingSetpoint / 100)
+              },
+              systemModeChange: async ({ systemMode }) => {
               // 0 = off, 4 = heat
-              await myThermostatApi.setPower(systemMode !== 0)
+                await myThermostatApi.setPower(systemMode !== 0)
+              },
             },
           },
         },
-      }])
+      ])
     })
   }
 

@@ -22,40 +22,42 @@ class ExampleBlindPlatform {
       const uuid = api.matter.uuid.generate('example-blind')
       this.uuid = uuid
 
-      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleBlindPlatform', [{
-        UUID: uuid,
-        displayName: 'Example Blind',
-        deviceType: api.matter.deviceTypes.WindowCovering,
-        serialNumber: 'example-blind',
-        manufacturer: 'Example Co',
-        model: 'Blind v1',
+      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleBlindPlatform', [
+        {
+          UUID: uuid,
+          displayName: 'Example Blind',
+          deviceType: api.matter.deviceTypes.WindowCovering,
+          serialNumber: 'example-blind',
+          manufacturer: 'Example Co',
+          model: 'Blind v1',
 
-        clusters: {
-          windowCovering: {
-            currentPositionLiftPercent100ths: 10000, // fully closed
-            targetPositionLiftPercent100ths: 10000,
+          clusters: {
+            windowCovering: {
+              currentPositionLiftPercent100ths: 10000, // fully closed
+              targetPositionLiftPercent100ths: 10000,
+            },
           },
-        },
 
-        handlers: {
-          windowCovering: {
-            goToLiftPercentage: async ({ liftPercent100thsValue }) => {
+          handlers: {
+            windowCovering: {
+              goToLiftPercentage: async ({ liftPercent100thsValue }) => {
               // invert to the "percent open" most device apis use
-              const openPercent = 100 - (liftPercent100thsValue / 100)
-              await myBlindApi.moveTo(openPercent)
-            },
-            upOrOpen: async () => {
-              await myBlindApi.moveTo(100)
-            },
-            downOrClose: async () => {
-              await myBlindApi.moveTo(0)
-            },
-            stopMotion: async () => {
-              await myBlindApi.stop()
+                const openPercent = 100 - (liftPercent100thsValue / 100)
+                await myBlindApi.moveTo(openPercent)
+              },
+              upOrOpen: async () => {
+                await myBlindApi.moveTo(100)
+              },
+              downOrClose: async () => {
+                await myBlindApi.moveTo(0)
+              },
+              stopMotion: async () => {
+                await myBlindApi.stop()
+              },
             },
           },
         },
-      }])
+      ])
     })
   }
 

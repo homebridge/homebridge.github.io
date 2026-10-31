@@ -11,7 +11,12 @@ import { SidebarService } from '../sidebar.service'
 
 @Component({
   selector: 'app-sidebar',
-  imports: [FormsModule, SearchComponent, RouterLinkActive, RouterLink],
+  imports: [
+    FormsModule,
+    SearchComponent,
+    RouterLinkActive,
+    RouterLink,
+  ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

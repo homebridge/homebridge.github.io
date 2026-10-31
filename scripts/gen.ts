@@ -72,9 +72,15 @@ for (const [name, value] of Object.entries(Characteristic)) {
   }
 }
 
-const sortedcategories = categories.sort((a, b) => (a.id > b.id) ? 1 : -1)
-const sortedServices = services.filter(x => !hiddenServices.includes(x.name)).sort((a, b) => (a.displayName > b.displayName) ? 1 : -1)
-const sortedCharacteristics = characteristics.sort((a, b) => (a.displayName > b.displayName) ? 1 : -1)
+const sortedcategories = categories.sort((a, b) => (a.id > b.id)
+  ? 1
+  : -1)
+const sortedServices = services.filter(x => !hiddenServices.includes(x.name)).sort((a, b) => (a.displayName > b.displayName)
+  ? 1
+  : -1)
+const sortedCharacteristics = characteristics.sort((a, b) => (a.displayName > b.displayName)
+  ? 1
+  : -1)
 
 fs.writeFileSync(path.resolve(import.meta.dirname, '../src/assets/categories.json'), JSON.stringify(sortedcategories, null, 4))
 fs.writeFileSync(path.resolve(import.meta.dirname, '../src/assets/services.json'), JSON.stringify(sortedServices, null, 4))

@@ -24,25 +24,27 @@ class ExampleMeterPlatform {
       const uuid = api.matter.uuid.generate('example-meter')
       this.uuid = uuid
 
-      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleMeterPlatform', [{
-        UUID: uuid,
-        displayName: 'Example Energy Meter',
-        deviceType: api.matter.deviceTypes.ElectricalSensor,
-        serialNumber: 'example-meter',
-        manufacturer: 'Example Co',
-        model: 'Meter v1',
+      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleMeterPlatform', [
+        {
+          UUID: uuid,
+          displayName: 'Example Energy Meter',
+          deviceType: api.matter.deviceTypes.ElectricalSensor,
+          serialNumber: 'example-meter',
+          manufacturer: 'Example Co',
+          model: 'Meter v1',
 
-        clusters: {
-          electricalPowerMeasurement: {
-            voltage: 230_000, // 230 V
-            activeCurrent: 0, // mA
-            activePower: 0, // mW
-          },
-          electricalEnergyMeasurement: {
-            cumulativeEnergyImported: { energy: 0 }, // mWh
+          clusters: {
+            electricalPowerMeasurement: {
+              voltage: 230_000, // 230 V
+              activeCurrent: 0, // mA
+              activePower: 0, // mW
+            },
+            electricalEnergyMeasurement: {
+              cumulativeEnergyImported: { energy: 0 }, // mWh
+            },
           },
         },
-      }])
+      ])
 
       // power readings - update as often as the meter reports
       myMeterApi.onReading(reading => this.updatePower(reading))
@@ -64,7 +66,9 @@ class ExampleMeterPlatform {
   async updateEnergy() {
     const totalWattHours = await myMeterApi.getTotalEnergy()
     await this.api.matter.updateAccessoryState(this.uuid, this.api.matter.clusterNames.ElectricalEnergyMeasurement, {
-      cumulativeEnergyImported: { energy: Math.round(totalWattHours * 1000) },
+      cumulativeEnergyImported: {
+        energy: Math.round(totalWattHours * 1000),
+      },
     })
   }
 

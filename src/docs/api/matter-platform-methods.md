@@ -21,32 +21,34 @@ api.on('didFinishLaunching', async () => {
 
   const uuid = matter.uuid.generate('my-light-unique-id')
 
-  await matter.registerPlatformAccessories('homebridge-example', 'ExamplePlatform', [{
-    UUID: uuid,
-    displayName: 'Living Room Light',
-    deviceType: matter.deviceTypes.OnOffLight,
-    serialNumber: 'my-light-unique-id',
-    manufacturer: 'Example Co',
-    model: 'Light v1',
+  await matter.registerPlatformAccessories('homebridge-example', 'ExamplePlatform', [
+    {
+      UUID: uuid,
+      displayName: 'Living Room Light',
+      deviceType: matter.deviceTypes.OnOffLight,
+      serialNumber: 'my-light-unique-id',
+      manufacturer: 'Example Co',
+      model: 'Light v1',
 
-    // the state to start from, when nothing is stored yet
-    // (see State (Matter) - a stored value wins on later runs)
-    clusters: {
-      onOff: { onOff: false },
-    },
+      // the state to start from, when nothing is stored yet
+      // (see State (Matter) - a stored value wins on later runs)
+      clusters: {
+        onOff: { onOff: false },
+      },
 
-    // what to do when the controller sends a command
-    handlers: {
-      onOff: {
-        on: async () => {
-          await myLightApi.turnOn()
-        },
-        off: async () => {
-          await myLightApi.turnOff()
+      // what to do when the controller sends a command
+      handlers: {
+        onOff: {
+          on: async () => {
+            await myLightApi.turnOn()
+          },
+          off: async () => {
+            await myLightApi.turnOff()
+          },
         },
       },
-    },
-  }])
+    }
+  ])
 })
 ```
 
@@ -165,7 +167,9 @@ A part's `id` is what you pass as the optional last argument to `updateAccessory
 Remove accessories that no longer exist. Only the `uuid` of each accessory is required.
 
 ```js
-await api.matter.unregisterPlatformAccessories('homebridge-example', 'ExamplePlatform', [{ uuid }])
+await api.matter.unregisterPlatformAccessories('homebridge-example', 'ExamplePlatform', [
+  { uuid }
+])
 ```
 
 ### API.matter.updatePlatformAccessories

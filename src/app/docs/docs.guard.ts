@@ -14,10 +14,14 @@ export class DocsGuard {
     }).join('/')
 
     if (fullPath.toLowerCase().endsWith('.md')) {
-      this.router.navigate([fullPath.substr(0, fullPath.lastIndexOf('.'))])
+      this.router.navigate([
+        fullPath.substr(0, fullPath.lastIndexOf('.')),
+      ])
       return false
     } else if (fullPath.startsWith('/.')) {
-      this.router.navigate([fullPath.slice(1)])
+      this.router.navigate([
+        fullPath.slice(1),
+      ])
       return false
     } else {
       return true

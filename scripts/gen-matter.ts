@@ -152,7 +152,9 @@ async function main() {
       deviceRevision: dt.deviceRevision as number,
       clusters,
     }
-  }).sort((a, b) => (a.name > b.name ? 1 : -1))
+  }).sort((a, b) => (a.name > b.name
+    ? 1
+    : -1))
 
   fs.writeFileSync(
     path.resolve(import.meta.dirname, '../src/assets/matter-device-types.json'),
@@ -163,7 +165,9 @@ async function main() {
     friendly,
     id: id as string,
     usedBy: parsed.filter(d => d.clusters.some(c => c.name === friendly)).map(d => d.name),
-  })).sort((a, b) => (a.friendly > b.friendly ? 1 : -1)))
+  })).sort((a, b) => (a.friendly > b.friendly
+    ? 1
+    : -1)))
 
   console.log(`Generated ${parsed.length} Matter device types and ${Object.keys(clusterNames).length} clusters.`)
 }
@@ -189,7 +193,9 @@ function writeClustersPage(rows: Array<{ friendly: string, id: string, usedBy: s
   ]
 
   for (const row of rows) {
-    const usedBy = row.usedBy.length ? row.usedBy.map(d => `\`${d}\``).join(', ') : '—'
+    const usedBy = row.usedBy.length
+      ? row.usedBy.map(d => `\`${d}\``).join(', ')
+      : '—'
     lines.push(`| \`api.matter.clusterNames.${row.friendly}\` | \`${row.id}\` | ${usedBy} |`)
   }
 

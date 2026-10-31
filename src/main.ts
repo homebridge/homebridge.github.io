@@ -43,8 +43,12 @@ bootstrapApplication(AppComponent, {
           const renderer = new MarkedRenderer()
           renderer.link = function ({ href, title, tokens }: Tokens.Link) {
             const text = this.parser.parseInline(tokens)
-            const target = /^(?:[a-z][a-z0-9+.-]*:|\/|#)/i.test(href) ? href : `/#/${href}`
-            const titleAttr = title ? ` title="${title}"` : ''
+            const target = /^(?:[a-z][a-z0-9+.-]*:|\/|#)/i.test(href)
+              ? href
+              : `/#/${href}`
+            const titleAttr = title
+              ? ` title="${title}"`
+              : ''
             return `<a href="${target}"${titleAttr}>${text}</a>`
           }
           return { renderer }

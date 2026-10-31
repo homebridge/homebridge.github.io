@@ -22,29 +22,31 @@ class ExampleSwitchPlatform {
       const uuid = api.matter.uuid.generate('example-switch')
       this.uuid = uuid
 
-      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleSwitchPlatform', [{
-        UUID: uuid,
-        displayName: 'Example Switch',
-        deviceType: api.matter.deviceTypes.OnOffSwitch,
-        serialNumber: 'example-switch',
-        manufacturer: 'Example Co',
-        model: 'Switch v1',
+      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleSwitchPlatform', [
+        {
+          UUID: uuid,
+          displayName: 'Example Switch',
+          deviceType: api.matter.deviceTypes.OnOffSwitch,
+          serialNumber: 'example-switch',
+          manufacturer: 'Example Co',
+          model: 'Switch v1',
 
-        clusters: {
-          onOff: { onOff: false },
-        },
+          clusters: {
+            onOff: { onOff: false },
+          },
 
-        handlers: {
-          onOff: {
-            on: async () => {
-              await mySwitchApi.turnOn()
-            },
-            off: async () => {
-              await mySwitchApi.turnOff()
+          handlers: {
+            onOff: {
+              on: async () => {
+                await mySwitchApi.turnOn()
+              },
+              off: async () => {
+                await mySwitchApi.turnOff()
+              },
             },
           },
         },
-      }])
+      ])
     })
   }
 

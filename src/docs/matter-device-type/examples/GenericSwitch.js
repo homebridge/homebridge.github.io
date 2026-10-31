@@ -22,25 +22,27 @@ class ExampleButtonPlatform {
       const uuid = api.matter.uuid.generate('example-button')
       this.uuid = uuid
 
-      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleButtonPlatform', [{
-        UUID: uuid,
-        displayName: 'Example Button',
-        deviceType: api.matter.deviceTypes.GenericSwitch,
-        serialNumber: 'example-button',
-        manufacturer: 'Example Co',
-        model: 'Button v1',
+      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleButtonPlatform', [
+        {
+          UUID: uuid,
+          displayName: 'Example Button',
+          deviceType: api.matter.deviceTypes.GenericSwitch,
+          serialNumber: 'example-button',
+          manufacturer: 'Example Co',
+          model: 'Button v1',
 
-        clusters: {
-          switch: {
-            currentPosition: 0,
-            // counts the released state, so one more than the buttons:
-            // 2 for a single button, 4 for a three-button remote
-            numberOfPositions: 2,
+          clusters: {
+            switch: {
+              currentPosition: 0,
+              // counts the released state, so one more than the buttons:
+              // 2 for a single button, 4 for a three-button remote
+              numberOfPositions: 2,
+            },
           },
-        },
 
         // no handlers - events flow from the device to the controller
-      }])
+        },
+      ])
 
       // wire the real button up to matter events
       myButtonApi.onPress(gesture => this.handlePress(gesture))

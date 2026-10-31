@@ -154,7 +154,9 @@ ${this.generateGetHandler(x)}${this.generateSetHandler(x)}`
     this.log.debug('Triggered GET ${characteristic.name}');
 
     // set this to a valid value for ${characteristic.name}
-    const currentValue = ${characteristic.constValues.length ? `this.Characteristic.${characteristic.name}.${characteristic.constValues[0].key}` : characteristic.props?.minValue || '1'};
+    const currentValue = ${characteristic.constValues.length
+      ? `this.Characteristic.${characteristic.name}.${characteristic.constValues[0].key}`
+      : characteristic.props?.minValue || '1'};
 
     return currentValue;
   }\n\n`

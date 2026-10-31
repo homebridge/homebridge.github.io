@@ -64,7 +64,9 @@ export class DocsComponent implements OnInit, OnDestroy {
     if (this.url.includes('#')) {
       this.url = this.url.substr(0, this.url.lastIndexOf('#'))
     }
-    this.page.set(this.url === '/' ? '/' + 'home.md' : `${this.url}.md`)
+    this.page.set(this.url === '/'
+      ? '/' + 'home.md'
+      : `${this.url}.md`)
   }
 
   onLoad(page: string) {
