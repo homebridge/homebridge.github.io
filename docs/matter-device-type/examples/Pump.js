@@ -22,29 +22,31 @@ class ExamplePumpPlatform {
       const uuid = api.matter.uuid.generate('example-pump')
       this.uuid = uuid
 
-      await api.matter.registerPlatformAccessories('homebridge-example', 'ExamplePumpPlatform', [{
-        UUID: uuid,
-        displayName: 'Example Pump',
-        deviceType: api.matter.deviceTypes.Pump,
-        serialNumber: 'example-pump',
-        manufacturer: 'Example Co',
-        model: 'Pump v1',
+      await api.matter.registerPlatformAccessories('homebridge-example', 'ExamplePumpPlatform', [
+        {
+          UUID: uuid,
+          displayName: 'Example Pump',
+          deviceType: api.matter.deviceTypes.Pump,
+          serialNumber: 'example-pump',
+          manufacturer: 'Example Co',
+          model: 'Pump v1',
 
-        clusters: {
-          onOff: { onOff: false },
-        },
+          clusters: {
+            onOff: { onOff: false },
+          },
 
-        handlers: {
-          onOff: {
-            on: async () => {
-              await myPumpApi.start()
-            },
-            off: async () => {
-              await myPumpApi.stop()
+          handlers: {
+            onOff: {
+              on: async () => {
+                await myPumpApi.start()
+              },
+              off: async () => {
+                await myPumpApi.stop()
+              },
             },
           },
         },
-      }])
+      ])
     })
   }
 

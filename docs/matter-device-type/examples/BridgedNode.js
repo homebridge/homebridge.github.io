@@ -23,42 +23,48 @@ class ExamplePowerStripPlatform {
       const uuid = api.matter.uuid.generate('example-power-strip')
       this.uuid = uuid
 
-      await api.matter.registerPlatformAccessories('homebridge-example', 'ExamplePowerStripPlatform', [{
-        UUID: uuid,
-        displayName: 'Example Power Strip',
-        deviceType: api.matter.deviceTypes.BridgedNode,
-        serialNumber: 'example-power-strip',
-        manufacturer: 'Example Co',
-        model: 'Strip v1',
+      await api.matter.registerPlatformAccessories('homebridge-example', 'ExamplePowerStripPlatform', [
+        {
+          UUID: uuid,
+          displayName: 'Example Power Strip',
+          deviceType: api.matter.deviceTypes.BridgedNode,
+          serialNumber: 'example-power-strip',
+          manufacturer: 'Example Co',
+          model: 'Strip v1',
 
-        // each part is an endpoint with its own device type, state and handlers
-        parts: [
-          {
-            id: 'outlet-1',
-            displayName: 'Outlet 1',
-            deviceType: api.matter.deviceTypes.OnOffOutlet,
-            clusters: { onOff: { onOff: false } },
-            handlers: {
-              onOff: {
-                on: async () => myStripApi.setSocket(1, true),
-                off: async () => myStripApi.setSocket(1, false),
+          // each part is an endpoint with its own device type, state and handlers
+          parts: [
+            {
+              id: 'outlet-1',
+              displayName: 'Outlet 1',
+              deviceType: api.matter.deviceTypes.OnOffOutlet,
+              clusters: {
+                onOff: { onOff: false },
+              },
+              handlers: {
+                onOff: {
+                  on: async () => myStripApi.setSocket(1, true),
+                  off: async () => myStripApi.setSocket(1, false),
+                },
               },
             },
-          },
-          {
-            id: 'outlet-2',
-            displayName: 'Outlet 2',
-            deviceType: api.matter.deviceTypes.OnOffOutlet,
-            clusters: { onOff: { onOff: false } },
-            handlers: {
-              onOff: {
-                on: async () => myStripApi.setSocket(2, true),
-                off: async () => myStripApi.setSocket(2, false),
+            {
+              id: 'outlet-2',
+              displayName: 'Outlet 2',
+              deviceType: api.matter.deviceTypes.OnOffOutlet,
+              clusters: {
+                onOff: { onOff: false },
+              },
+              handlers: {
+                onOff: {
+                  on: async () => myStripApi.setSocket(2, true),
+                  off: async () => myStripApi.setSocket(2, false),
+                },
               },
             },
-          },
-        ],
-      }])
+          ],
+        },
+      ])
     })
   }
 

@@ -52,24 +52,26 @@ service.getCharacteristic(api.hap.Characteristic.On)
 Over Matter, the handler is part of the accessory you register:
 
 ```js
-await api.matter.registerPlatformAccessories('homebridge-example', 'ExamplePlatform', [{
-  UUID: uuid,
-  displayName: 'Living Room Light',
-  deviceType: api.matter.deviceTypes.OnOffLight,
-  clusters: {
-    onOff: { onOff: false },
-  },
-  handlers: {
-    onOff: {
-      on: async () => {
-        await myLightApi.setPower(true)
-      },
-      off: async () => {
-        await myLightApi.setPower(false)
+await api.matter.registerPlatformAccessories('homebridge-example', 'ExamplePlatform', [
+  {
+    UUID: uuid,
+    displayName: 'Living Room Light',
+    deviceType: api.matter.deviceTypes.OnOffLight,
+    clusters: {
+      onOff: { onOff: false },
+    },
+    handlers: {
+      onOff: {
+        on: async () => {
+          await myLightApi.setPower(true)
+        },
+        off: async () => {
+          await myLightApi.setPower(false)
+        },
       },
     },
-  },
-}])
+  }
+])
 ```
 
 ## Which should a plugin support?

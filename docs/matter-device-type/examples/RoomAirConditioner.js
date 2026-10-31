@@ -24,51 +24,53 @@ class ExampleAirConPlatform {
       const uuid = api.matter.uuid.generate('example-aircon')
       this.uuid = uuid
 
-      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleAirConPlatform', [{
-        UUID: uuid,
-        displayName: 'Example Air Conditioner',
-        deviceType: api.matter.deviceTypes.RoomAirConditioner,
-        serialNumber: 'example-aircon',
-        manufacturer: 'Example Co',
-        model: 'AC v1',
+      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleAirConPlatform', [
+        {
+          UUID: uuid,
+          displayName: 'Example Air Conditioner',
+          deviceType: api.matter.deviceTypes.RoomAirConditioner,
+          serialNumber: 'example-aircon',
+          manufacturer: 'Example Co',
+          model: 'AC v1',
 
-        clusters: {
-          onOff: { onOff: false },
-          thermostat: {
-            occupiedCoolingSetpoint: 2400, // 24.00 degrees
-            systemMode: 3, // cool
+          clusters: {
+            onOff: { onOff: false },
+            thermostat: {
+              occupiedCoolingSetpoint: 2400, // 24.00 degrees
+              systemMode: 3, // cool
+            },
+            fanControl: {
+              fanMode: 0, // off
+              percentSetting: 0,
+            },
           },
-          fanControl: {
-            fanMode: 0, // off
-            percentSetting: 0,
-          },
-        },
 
-        handlers: {
-          onOff: {
-            on: async () => {
-              await myAirConApi.turnOn()
+          handlers: {
+            onOff: {
+              on: async () => {
+                await myAirConApi.turnOn()
+              },
+              off: async () => {
+                await myAirConApi.turnOff()
+              },
             },
-            off: async () => {
-              await myAirConApi.turnOff()
+            thermostat: {
+              occupiedCoolingSetpointChange: async ({ occupiedCoolingSetpoint }) => {
+                await myAirConApi.setTarget(occupiedCoolingSetpoint / 100)
+              },
+              systemModeChange: async ({ systemMode }) => {
+                await myAirConApi.setMode(systemMode)
+              },
             },
-          },
-          thermostat: {
-            occupiedCoolingSetpointChange: async ({ occupiedCoolingSetpoint }) => {
-              await myAirConApi.setTarget(occupiedCoolingSetpoint / 100)
-            },
-            systemModeChange: async ({ systemMode }) => {
-              await myAirConApi.setMode(systemMode)
-            },
-          },
-          fanControl: {
+            fanControl: {
             // percentSetting doubles as fan power: 0 is off, 1-100 is a speed
-            percentSettingChange: async ({ percentSetting }) => {
-              await myAirConApi.setFanSpeed(percentSetting ?? 0)
+              percentSettingChange: async ({ percentSetting }) => {
+                await myAirConApi.setFanSpeed(percentSetting ?? 0)
+              },
             },
           },
         },
-      }])
+      ])
     })
   }
 

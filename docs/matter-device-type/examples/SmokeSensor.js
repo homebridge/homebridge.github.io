@@ -22,30 +22,32 @@ class ExampleSmokeAlarmPlatform {
       const uuid = api.matter.uuid.generate('example-smoke-alarm')
       this.uuid = uuid
 
-      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleSmokeAlarmPlatform', [{
-        UUID: uuid,
-        displayName: 'Example Smoke Alarm',
-        deviceType: api.matter.deviceTypes.SmokeSensor,
-        serialNumber: 'example-smoke-alarm',
-        manufacturer: 'Example Co',
-        model: 'Alarm v1',
+      await api.matter.registerPlatformAccessories('homebridge-example', 'ExampleSmokeAlarmPlatform', [
+        {
+          UUID: uuid,
+          displayName: 'Example Smoke Alarm',
+          deviceType: api.matter.deviceTypes.SmokeSensor,
+          serialNumber: 'example-smoke-alarm',
+          manufacturer: 'Example Co',
+          model: 'Alarm v1',
 
-        clusters: {
-          smokeCoAlarm: {
-            smokeState: 0, // normal
-            expressedState: 0, // normal
-            batteryAlert: 0, // normal
+          clusters: {
+            smokeCoAlarm: {
+              smokeState: 0, // normal
+              expressedState: 0, // normal
+              batteryAlert: 0, // normal
+            },
+            powerSource: {
+              status: 0,
+              order: 0,
+              description: 'Battery',
+              batPercentRemaining: 200, // half-percent steps - 200 means 100%
+            },
           },
-          powerSource: {
-            status: 0,
-            order: 0,
-            description: 'Battery',
-            batPercentRemaining: 200, // half-percent steps - 200 means 100%
-          },
-        },
 
         // sensors have no handlers - they only push state
-      }])
+        },
+      ])
 
       myAlarmApi.onSmokeChange(detected => this.updateSmoke(detected))
     })
