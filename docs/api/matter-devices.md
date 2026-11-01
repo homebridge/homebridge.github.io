@@ -47,7 +47,7 @@ Sensors declare no handlers — they only push readings with [`updateAccessorySt
 - **Humidity** (`relativeHumidityMeasurement.measuredValue`) is in hundredths of a percent: `5500` is 55.00%.
 - **Light level** (`illuminanceMeasurement.measuredValue`) is on a logarithmic scale: `Math.round(10000 * Math.log10(lux))`, and back with `10 ** (value / 10000)`.
 - **Occupancy** — the device type is called `MotionSensor`, but it is an occupancy sensor, and that is how controllers present it. The reading is `occupancySensing.occupancy.occupied`, a boolean.
-- **Air quality** (`airQuality.airQuality`) is an enum from `0` (unknown) to `6` (extremely poor). An `AirQualitySensor` also carries PM2.5, PM10, temperature and humidity clusters, but Apple Home currently shows only the air quality rating — other controllers can read the rest.
+- **Air quality** (`airQuality.airQuality`) is an enum from `0` (unknown) to `6` (extremely poor). An `AirQualitySensor` can also carry PM2.5, PM10, temperature and humidity clusters (Homebridge v2.5.1 or later), but Apple Home currently shows only the air quality rating — other controllers can read the rest.
 - Any sensor can also declare a `PowerSource` cluster to show a battery level — see [reporting a battery](api/matter-state#reporting-a-battery).
 
 Full examples: [Sensors](https://github.com/homebridge-plugins/homebridge-matter/wiki/Section-7-Sensors) in the homebridge-matter wiki.
