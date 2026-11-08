@@ -18,6 +18,14 @@
         ]
     },
     {
+        "name": "BatteryStorage",
+        "matterName": "BatteryStorage",
+        "deviceTypeId": 24,
+        "deviceTypeHex": "0x0018",
+        "deviceRevision": 2,
+        "clusters": []
+    },
+    {
         "name": "BridgedNode",
         "matterName": "BridgedNode",
         "deviceTypeId": 19,
@@ -86,7 +94,7 @@
         "matterName": "ColorTemperatureLight",
         "deviceTypeId": 268,
         "deviceTypeHex": "0x010C",
-        "deviceRevision": 4,
+        "deviceRevision": 5,
         "clusters": [
             {
                 "name": "OnOff",
@@ -241,11 +249,45 @@
         ]
     },
     {
+        "name": "DeviceEnergyManagement",
+        "matterName": "DeviceEnergyManagement",
+        "deviceTypeId": 1293,
+        "deviceTypeHex": "0x050D",
+        "deviceRevision": 3,
+        "clusters": [
+            {
+                "name": "DeviceEnergyManagement",
+                "id": "deviceEnergyManagement",
+                "attributes": [
+                    "esaType",
+                    "esaCanGenerate",
+                    "esaState",
+                    "absMinPower",
+                    "absMaxPower",
+                    "powerAdjustmentCapability",
+                    "forecast",
+                    "optOutState"
+                ],
+                "exampleAttribute": "esaType",
+                "commands": [
+                    "powerAdjustRequest",
+                    "cancelPowerAdjustRequest",
+                    "startTimeAdjustRequest",
+                    "pauseRequest",
+                    "resumeRequest",
+                    "modifyForecastRequest",
+                    "requestConstraintBasedForecast",
+                    "cancelRequest"
+                ]
+            }
+        ]
+    },
+    {
         "name": "DimmableLight",
         "matterName": "DimmableLight",
         "deviceTypeId": 257,
         "deviceTypeHex": "0x0101",
-        "deviceRevision": 3,
+        "deviceRevision": 4,
         "clusters": [
             {
                 "name": "OnOff",
@@ -306,7 +348,7 @@
         "matterName": "DimmablePlugInUnit",
         "deviceTypeId": 267,
         "deviceTypeHex": "0x010B",
-        "deviceRevision": 5,
+        "deviceRevision": 6,
         "clusters": [
             {
                 "name": "OnOff",
@@ -447,6 +489,22 @@
         ]
     },
     {
+        "name": "ElectricalEnergyTariff",
+        "matterName": "ElectricalEnergyTariff",
+        "deviceTypeId": 1299,
+        "deviceTypeHex": "0x0513",
+        "deviceRevision": 1,
+        "clusters": []
+    },
+    {
+        "name": "ElectricalMeter",
+        "matterName": "ElectricalMeter",
+        "deviceTypeId": 1300,
+        "deviceTypeHex": "0x0514",
+        "deviceRevision": 1,
+        "clusters": []
+    },
+    {
         "name": "ElectricalSensor",
         "matterName": "ElectricalSensor",
         "deviceTypeId": 1296,
@@ -497,11 +555,93 @@
         ]
     },
     {
+        "name": "ElectricalUtilityMeter",
+        "matterName": "ElectricalUtilityMeter",
+        "deviceTypeId": 1297,
+        "deviceTypeHex": "0x0511",
+        "deviceRevision": 1,
+        "clusters": [
+            {
+                "name": "MeterIdentification",
+                "id": "meterIdentification",
+                "attributes": [
+                    "meterType",
+                    "pointOfDelivery",
+                    "meterSerialNumber",
+                    "protocolVersion",
+                    "powerThreshold"
+                ],
+                "exampleAttribute": "meterType",
+                "commands": []
+            }
+        ]
+    },
+    {
+        "name": "EnergyEvse",
+        "matterName": "EnergyEvse",
+        "deviceTypeId": 1292,
+        "deviceTypeHex": "0x050C",
+        "deviceRevision": 2,
+        "clusters": [
+            {
+                "name": "EnergyEvse",
+                "id": "energyEvse",
+                "attributes": [
+                    "state",
+                    "supplyState",
+                    "faultState",
+                    "chargingEnabledUntil",
+                    "dischargingEnabledUntil",
+                    "circuitCapacity",
+                    "minimumChargeCurrent",
+                    "maximumChargeCurrent",
+                    "maximumDischargeCurrent",
+                    "userMaximumChargeCurrent",
+                    "randomizationDelayWindow",
+                    "nextChargeStartTime",
+                    "nextChargeTargetTime",
+                    "nextChargeRequiredEnergy",
+                    "nextChargeTargetSoC",
+                    "approximateEvEfficiency",
+                    "stateOfCharge",
+                    "batteryCapacity",
+                    "vehicleId",
+                    "sessionId",
+                    "sessionDuration",
+                    "sessionEnergyCharged",
+                    "sessionEnergyDischarged"
+                ],
+                "exampleAttribute": "state",
+                "commands": [
+                    "disable",
+                    "enableCharging",
+                    "enableDischarging",
+                    "startDiagnostics",
+                    "setTargets",
+                    "getTargets",
+                    "clearTargets"
+                ]
+            },
+            {
+                "name": "EnergyEvseMode",
+                "id": "energyEvseMode",
+                "attributes": [
+                    "supportedModes",
+                    "currentMode"
+                ],
+                "exampleAttribute": "currentMode",
+                "commands": [
+                    "changeToMode"
+                ]
+            }
+        ]
+    },
+    {
         "name": "ExtendedColorLight",
         "matterName": "ExtendedColorLight",
         "deviceTypeId": 269,
         "deviceTypeHex": "0x010D",
-        "deviceRevision": 4,
+        "deviceRevision": 5,
         "clusters": [
             {
                 "name": "OnOff",
@@ -642,7 +782,7 @@
         "matterName": "Fan",
         "deviceTypeId": 43,
         "deviceTypeHex": "0x002B",
-        "deviceRevision": 4,
+        "deviceRevision": 5,
         "clusters": [
             {
                 "name": "FanControl",
@@ -856,7 +996,7 @@
         "matterName": "OnOffLight",
         "deviceTypeId": 256,
         "deviceTypeHex": "0x0100",
-        "deviceRevision": 3,
+        "deviceRevision": 4,
         "clusters": [
             {
                 "name": "OnOff",
@@ -885,7 +1025,7 @@
         "matterName": "OnOffPlugInUnit",
         "deviceTypeId": 266,
         "deviceTypeHex": "0x010A",
-        "deviceRevision": 4,
+        "deviceRevision": 5,
         "clusters": [
             {
                 "name": "OnOff",
@@ -914,7 +1054,7 @@
         "matterName": "OnOffLightSwitch",
         "deviceTypeId": 259,
         "deviceTypeHex": "0x0103",
-        "deviceRevision": 3,
+        "deviceRevision": 4,
         "clusters": [
             {
                 "name": "OnOff",
@@ -939,11 +1079,19 @@
         ]
     },
     {
+        "name": "PowerSource",
+        "matterName": "PowerSource",
+        "deviceTypeId": 17,
+        "deviceTypeHex": "0x0011",
+        "deviceRevision": 1,
+        "clusters": []
+    },
+    {
         "name": "Pump",
         "matterName": "Pump",
         "deviceTypeId": 771,
         "deviceTypeHex": "0x0303",
-        "deviceRevision": 3,
+        "deviceRevision": 4,
         "clusters": [
             {
                 "name": "OnOff",
@@ -1043,7 +1191,7 @@
         "matterName": "RoomAirConditioner",
         "deviceTypeId": 114,
         "deviceTypeHex": "0x0072",
-        "deviceRevision": 3,
+        "deviceRevision": 4,
         "clusters": [
             {
                 "name": "OnOff",
@@ -1076,6 +1224,9 @@
                     "absMaxHeatSetpointLimit",
                     "absMinCoolSetpointLimit",
                     "absMaxCoolSetpointLimit",
+                    "piCoolingDemand",
+                    "piHeatingDemand",
+                    "hvacSystemTypeConfiguration",
                     "localTemperatureCalibration",
                     "occupiedCoolingSetpoint",
                     "occupiedHeatingSetpoint",
@@ -1092,10 +1243,17 @@
                     "thermostatRunningMode",
                     "temperatureSetpointHold",
                     "temperatureSetpointHoldDuration",
+                    "thermostatProgrammingOperationMode",
                     "thermostatRunningState",
                     "setpointChangeSource",
                     "setpointChangeAmount",
                     "setpointChangeSourceTimestamp",
+                    "occupiedSetback",
+                    "occupiedSetbackMin",
+                    "occupiedSetbackMax",
+                    "unoccupiedSetback",
+                    "unoccupiedSetbackMin",
+                    "unoccupiedSetbackMax",
                     "emergencyHeatDelta",
                     "acType",
                     "acCapacity",
@@ -1138,7 +1296,7 @@
         "matterName": "SmokeCoAlarm",
         "deviceTypeId": 118,
         "deviceTypeHex": "0x0076",
-        "deviceRevision": 1,
+        "deviceRevision": 2,
         "clusters": [
             {
                 "name": "SmokeCoAlarm",
@@ -1165,6 +1323,14 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "SolarPower",
+        "matterName": "SolarPower",
+        "deviceTypeId": 23,
+        "deviceTypeHex": "0x0017",
+        "deviceRevision": 1,
+        "clusters": []
     },
     {
         "name": "Speaker",
@@ -1253,8 +1419,122 @@
         "matterName": "Thermostat",
         "deviceTypeId": 769,
         "deviceTypeHex": "0x0301",
-        "deviceRevision": 6,
+        "deviceRevision": 7,
         "clusters": []
+    },
+    {
+        "name": "WaterHeater",
+        "matterName": "WaterHeater",
+        "deviceTypeId": 1295,
+        "deviceTypeHex": "0x050F",
+        "deviceRevision": 1,
+        "clusters": [
+            {
+                "name": "WaterHeaterManagement",
+                "id": "waterHeaterManagement",
+                "attributes": [
+                    "heaterTypes",
+                    "heatDemand",
+                    "tankVolume",
+                    "estimatedHeatRequired",
+                    "tankPercentage",
+                    "boostState"
+                ],
+                "exampleAttribute": "heaterTypes",
+                "commands": [
+                    "boost",
+                    "cancelBoost"
+                ]
+            },
+            {
+                "name": "WaterHeaterMode",
+                "id": "waterHeaterMode",
+                "attributes": [
+                    "supportedModes",
+                    "currentMode"
+                ],
+                "exampleAttribute": "currentMode",
+                "commands": [
+                    "changeToMode"
+                ]
+            },
+            {
+                "name": "Thermostat",
+                "id": "thermostat",
+                "attributes": [
+                    "localTemperature",
+                    "outdoorTemperature",
+                    "occupancy",
+                    "absMinHeatSetpointLimit",
+                    "absMaxHeatSetpointLimit",
+                    "absMinCoolSetpointLimit",
+                    "absMaxCoolSetpointLimit",
+                    "piCoolingDemand",
+                    "piHeatingDemand",
+                    "hvacSystemTypeConfiguration",
+                    "localTemperatureCalibration",
+                    "occupiedCoolingSetpoint",
+                    "occupiedHeatingSetpoint",
+                    "unoccupiedCoolingSetpoint",
+                    "unoccupiedHeatingSetpoint",
+                    "minHeatSetpointLimit",
+                    "maxHeatSetpointLimit",
+                    "minCoolSetpointLimit",
+                    "maxCoolSetpointLimit",
+                    "minSetpointDeadBand",
+                    "remoteSensing",
+                    "controlSequenceOfOperation",
+                    "systemMode",
+                    "thermostatRunningMode",
+                    "temperatureSetpointHold",
+                    "temperatureSetpointHoldDuration",
+                    "thermostatProgrammingOperationMode",
+                    "thermostatRunningState",
+                    "setpointChangeSource",
+                    "setpointChangeAmount",
+                    "setpointChangeSourceTimestamp",
+                    "occupiedSetback",
+                    "occupiedSetbackMin",
+                    "occupiedSetbackMax",
+                    "unoccupiedSetback",
+                    "unoccupiedSetbackMin",
+                    "unoccupiedSetbackMax",
+                    "emergencyHeatDelta",
+                    "acType",
+                    "acCapacity",
+                    "acRefrigerantType",
+                    "acCompressorType",
+                    "acErrorCode",
+                    "acLouverPosition",
+                    "acCoilTemperature",
+                    "acCapacityFormat",
+                    "presetTypes",
+                    "scheduleTypes",
+                    "numberOfPresets",
+                    "numberOfSchedules",
+                    "numberOfScheduleTransitions",
+                    "numberOfScheduleTransitionPerDay",
+                    "activePresetHandle",
+                    "activeScheduleHandle",
+                    "presets",
+                    "schedules",
+                    "setpointHoldExpiryTimestamp",
+                    "maxThermostatSuggestions",
+                    "thermostatSuggestions",
+                    "currentThermostatSuggestion",
+                    "thermostatSuggestionNotFollowingReason"
+                ],
+                "exampleAttribute": "occupiedHeatingSetpoint",
+                "commands": [
+                    "setpointRaiseLower",
+                    "setActiveScheduleRequest",
+                    "setActivePresetRequest",
+                    "addThermostatSuggestion",
+                    "removeThermostatSuggestion",
+                    "atomicRequest"
+                ]
+            }
+        ]
     },
     {
         "name": "WaterValve",
@@ -1292,7 +1572,7 @@
         "matterName": "WindowCovering",
         "deviceTypeId": 514,
         "deviceTypeHex": "0x0202",
-        "deviceRevision": 6,
+        "deviceRevision": 7,
         "clusters": [
             {
                 "name": "WindowCovering",
