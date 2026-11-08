@@ -662,6 +662,15 @@
         "optionalCharacteristics": []
     },
     {
+        "name": "ProximityControl",
+        "displayName": "Proximity Control",
+        "UUID": "00000315-0000-1000-8000-0026BB765291",
+        "requiredCharacteristics": [
+            "00000316-0000-1000-8000-0026BB765291"
+        ],
+        "optionalCharacteristics": []
+    },
+    {
         "name": "SecuritySystem",
         "displayName": "Security System",
         "UUID": "0000007E-0000-1000-8000-0026BB765291",

@@ -373,12 +373,19 @@
         "displayName": "Camera Operating Mode Indicator",
         "UUID": "0000021D-0000-1000-8000-0026BB765291",
         "props": {
-            "format": "bool",
+            "format": "uint8",
             "perms": [
                 "ev",
                 "pr",
                 "pw",
                 "tw"
+            ],
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": 1,
+            "validValues": [
+                0,
+                1
             ]
         },
         "constValues": [
@@ -1484,6 +1491,7 @@
             ],
             "minValue": 0,
             "maxValue": 1,
+            "minStep": 1,
             "validValues": [
                 0,
                 1
@@ -2071,10 +2079,17 @@
         "displayName": "Manually Disabled",
         "UUID": "00000227-0000-1000-8000-0026BB765291",
         "props": {
-            "format": "bool",
+            "format": "uint8",
             "perms": [
                 "ev",
                 "pr"
+            ],
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": 1,
+            "validValues": [
+                0,
+                1
             ]
         },
         "constValues": [
@@ -2812,6 +2827,20 @@
             "minValue": 0,
             "maxValue": 1,
             "minStep": 1
+        },
+        "constValues": []
+    },
+    {
+        "name": "ProximityControlEnabled",
+        "displayName": "Proximity Control Enabled",
+        "UUID": "00000316-0000-1000-8000-0026BB765291",
+        "props": {
+            "format": "bool",
+            "perms": [
+                "ev",
+                "pr",
+                "pw"
+            ]
         },
         "constValues": []
     },
@@ -4569,6 +4598,9 @@
                 "ev",
                 "pr"
             ],
+            "minValue": 0,
+            "maxValue": 1,
+            "minStep": 1,
             "validValues": [
                 0,
                 1

@@ -21,15 +21,20 @@ For the attributes and commands each cluster carries, see the device type that u
 | `api.matter.clusterNames.CarbonMonoxideConcentrationMeasurement` | `carbonMonoxideConcentrationMeasurement` | — |
 | `api.matter.clusterNames.ClosureControl` | `closureControl` | `Closure` |
 | `api.matter.clusterNames.ColorControl` | `colorControl` | `ColorTemperatureLight`, `ExtendedColorLight` |
+| `api.matter.clusterNames.DeviceEnergyManagement` | `deviceEnergyManagement` | `DeviceEnergyManagement` |
+| `api.matter.clusterNames.DeviceEnergyManagementMode` | `deviceEnergyManagementMode` | — |
 | `api.matter.clusterNames.DoorLock` | `doorLock` | `DoorLock` |
 | `api.matter.clusterNames.ElectricalEnergyMeasurement` | `electricalEnergyMeasurement` | `ElectricalSensor` |
 | `api.matter.clusterNames.ElectricalPowerMeasurement` | `electricalPowerMeasurement` | `ElectricalSensor` |
+| `api.matter.clusterNames.EnergyEvse` | `energyEvse` | `EnergyEvse` |
+| `api.matter.clusterNames.EnergyEvseMode` | `energyEvseMode` | `EnergyEvse` |
 | `api.matter.clusterNames.FanControl` | `fanControl` | `Fan` |
 | `api.matter.clusterNames.Identify` | `identify` | — |
 | `api.matter.clusterNames.IlluminanceMeasurement` | `illuminanceMeasurement` | `LightSensor` |
 | `api.matter.clusterNames.KeypadInput` | `keypadInput` | `MediaPlayer` |
 | `api.matter.clusterNames.LevelControl` | `levelControl` | `ColorTemperatureLight`, `DimmableLight`, `DimmableOutlet`, `ExtendedColorLight`, `Speaker` |
 | `api.matter.clusterNames.MediaPlayback` | `mediaPlayback` | `MediaPlayer` |
+| `api.matter.clusterNames.MeterIdentification` | `meterIdentification` | `ElectricalUtilityMeter` |
 | `api.matter.clusterNames.NitrogenDioxideConcentrationMeasurement` | `nitrogenDioxideConcentrationMeasurement` | — |
 | `api.matter.clusterNames.OccupancySensing` | `occupancySensing` | `MotionSensor` |
 | `api.matter.clusterNames.OnOff` | `onOff` | `ColorTemperatureLight`, `DimmableLight`, `DimmableOutlet`, `ExtendedColorLight`, `MediaPlayer`, `OnOffLight`, `OnOffOutlet`, `OnOffSwitch`, `Pump`, `RoomAirConditioner`, `Speaker` |
@@ -46,6 +51,8 @@ For the attributes and commands each cluster carries, see the device type that u
 | `api.matter.clusterNames.SmokeCoAlarm` | `smokeCoAlarm` | `SmokeSensor` |
 | `api.matter.clusterNames.Switch` | `switch` | `GenericSwitch` |
 | `api.matter.clusterNames.TemperatureMeasurement` | `temperatureMeasurement` | `TemperatureSensor` |
-| `api.matter.clusterNames.Thermostat` | `thermostat` | `RoomAirConditioner` |
+| `api.matter.clusterNames.Thermostat` | `thermostat` | `RoomAirConditioner`, `WaterHeater` |
 | `api.matter.clusterNames.ValveConfigurationAndControl` | `valveConfigurationAndControl` | `WaterValve` |
+| `api.matter.clusterNames.WaterHeaterManagement` | `waterHeaterManagement` | `WaterHeater` |
+| `api.matter.clusterNames.WaterHeaterMode` | `waterHeaterMode` | `WaterHeater` |
 | `api.matter.clusterNames.WindowCovering` | `windowCovering` | `WindowCovering` |
